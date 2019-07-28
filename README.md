@@ -1,4 +1,4 @@
-Gatling's SBT plugin demo
+Gatling's SBT Gerrit Test
 =========================
 
 A simple project showing how to configure and use Gatling's SBT plugin to run Gatling simulations. 

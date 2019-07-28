@@ -6,5 +6,11 @@ scalacOptions := Seq(
   "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
   "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
 
-libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.2.0" % "test,it"
-libraryDependencies += "io.gatling"            % "gatling-test-framework"    % "3.2.0" % "test,it"
+val gatlingVer = "3.2.0"
+
+libraryDependencies ++= Seq(
+  "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer,
+  "io.gatling" % "gatling-test-framework" % gatlingVer,
+  "com.github.pureconfig" %% "pureconfig" % "0.11.1",
+  "org.scalatest" %% "scalatest" % "3.0.8"
+).map(_ % "test,it")
