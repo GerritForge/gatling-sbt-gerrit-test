@@ -14,9 +14,12 @@ object GerritTestConfig {
   }
 }
 
-case class GerritTestConfig(accountCookie: String, url: String, userAgent: String)
+case class GerritTestConfig(accountCookie: Option[String],
+                            httpUrl: String,
+                            sshUrl: String,
+                            project: String,
+                            userAgent: String)
 {
-  lazy val domain = new URL(url).getHost.split('.').drop(1).mkString(".")
-
-  lazy val cookie = Cookie("GerritAccount", accountCookie).withDomain(domain)
+  lazy val domain = new URL(httpUrl).getHost.split('.').drop(1).mkString(".")
+  lazy val cookie = accountCookie.map(cookie => Cookie("GerritAccount", cookie).withDomain(domain))
 }

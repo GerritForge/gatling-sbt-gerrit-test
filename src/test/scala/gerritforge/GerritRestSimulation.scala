@@ -10,10 +10,10 @@ import GerritTestConfig._
 
 import ChangesListScenario._
 
-class GerritSimulation extends Simulation {
+class GerritRestSimulation extends Simulation {
 
   val httpProtocol = http
-    .baseUrl(testConfig.url)
+    .baseUrl(testConfig.httpUrl)
     .inferHtmlResources(BlackList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png"""), WhiteList())
     .acceptHeader("*/*")
     .acceptEncodingHeader("gzip, deflate")
@@ -26,7 +26,7 @@ class GerritSimulation extends Simulation {
     "Upgrade-Insecure-Requests" -> "1")
 
   val anonymousUserChangeList = scenario("Anonymous user").exec(listChanges())
-  val authenticatedChangeList = scenario("Regular user").exec(listChanges(Option(testConfig.accountCookie)))
+  val authenticatedChangeList = scenario("Regular user").exec(listChanges(testConfig.accountCookie))
 
   setUp(
     anonymousUserChangeList.inject(rampConcurrentUsers(1) to 20 during (2 minutes)),

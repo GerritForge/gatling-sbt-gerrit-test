@@ -10,9 +10,9 @@ class GerritTestConfigSpec extends FlatSpec with Matchers {
   }
 
   it should "assign the cookie to the Gerrit domain" in {
-    val cookieDomain = testConfig.cookie.domain
+    val cookieDomain = testConfig.cookie.get.domain
     cookieDomain should not be empty
 
-    testConfig.url should endWith(cookieDomain.get)
+    testConfig.httpUrl should endWith(cookieDomain.get)
   }
 }
