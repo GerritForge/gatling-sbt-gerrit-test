@@ -3,3 +3,5 @@ target
 .settings
 .classpath
 .project
+simulation.log
+.DS_Store

@@ -10,16 +10,17 @@ import io.gatling.http.Predef._
 object GerritTestConfig {
   val testConfig = pureconfig.loadConfig[GerritTestConfig]("gerrit") match {
     case Right(config) => config
-    case Left(error) => throw new Exception(error.toList.mkString(","))
+    case Left(error)   => throw new Exception(error.toList.mkString(","))
   }
 }
 
-case class GerritTestConfig(accountCookie: Option[String],
-                            httpUrl: String,
-                            sshUrl: String,
-                            project: String,
-                            userAgent: String)
-{
+case class GerritTestConfig(
+    accountCookie: Option[String],
+    httpUrl: String,
+    sshUrl: String,
+    project: String,
+    userAgent: String
+) {
   lazy val domain = new URL(httpUrl).getHost.split('.').drop(1).mkString(".")
   lazy val cookie = accountCookie.map(cookie => Cookie("GerritAccount", cookie).withDomain(domain))
 }

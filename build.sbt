@@ -13,5 +13,5 @@ libraryDependencies ++= Seq(
   "io.gatling" % "gatling-test-framework" % gatlingVer,
   "com.github.pureconfig" %% "pureconfig" % "0.11.1",
   "org.scalatest" %% "scalatest" % "3.0.8",
-  "com.gerritforge" %% "gatling-git" % "1.0.2-10-gbed2cf3"
+  "com.gerritforge" %% "gatling-git" % "1.0.2-12-gb3728d0"
 ).map(_ % "test,it")

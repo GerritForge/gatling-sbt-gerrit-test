@@ -10,7 +10,7 @@
 
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>simulation.log</file>
-		<append>false</append>
+		<append>true</append>
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
 		</encoder>
