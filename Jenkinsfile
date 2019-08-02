@@ -7,7 +7,7 @@ node {
   try {
     gerritReview labels: [Verified: 0]
     stage('Package') {
-      sh 'sbt assembly'
+      sh 'sbt clean assembly'
       sh "curl ${gatlingUrl} > gatling.zip"
       dir('target') {
         sh "unzip ../gatling.zip"
