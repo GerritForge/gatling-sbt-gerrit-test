@@ -5,6 +5,9 @@ node {
     stage('Compile') {
       sh 'sbt compile'
     }
+    stage('Package') {
+      sh 'sbt assembly'
+    }
     gerritReview labels: [Verified: 1]
   } catch (e) {
     gerritReview labels: [Verified: -1]
