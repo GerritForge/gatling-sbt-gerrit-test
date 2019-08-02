@@ -36,7 +36,6 @@ node('gatling') {
       stage('Run GerritGitSimulation load-test') {
         dir("target/gatling-charts-highcharts-bundle-${gatlingVer}") {
           sh "./bin/gatling.sh -s gerritforge.GerritGitSimulation"
-          archiveArtifacts artifacts: 'results/**/*'
         }
       }
   }
