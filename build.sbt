@@ -9,11 +9,14 @@ scalacOptions := Seq(
 val gatlingVer = "3.2.0"
 
 libraryDependencies ++= Seq(
-  "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer,
-  "io.gatling" % "gatling-test-framework" % gatlingVer,
+  "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
+  "io.gatling" % "gatling-test-framework" % gatlingVer % Test,
+  "org.scalatest" %% "scalatest" % "3.0.8" % Test,
   "com.github.pureconfig" %% "pureconfig" % "0.11.1",
-  "org.scalatest" %% "scalatest" % "3.0.8",
-  "com.gerritforge" %% "gatling-git" % "1.0.4"
-).map(_ % "test,it")
+  "com.gerritforge" %% "gatling-git" % "1.0.4"  excludeAll(
+    ExclusionRule(organization = "io.gatling"),
+    ExclusionRule(organization = "io.gatling.highcharts")
+  )
+)
 
 resolvers += Resolver.sonatypeRepo("snapshots")
