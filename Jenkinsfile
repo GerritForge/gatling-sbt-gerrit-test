@@ -16,11 +16,21 @@ node {
         sh "mv scala-2.12/*.jar gatling-charts-highcharts-bundle-${gatlingVer}/lib/."
         sh "cp -R ../src/test/scala/* gatling-charts-highcharts-bundle-${gatlingVer}/user-files/simulations/."
         sh "cp ../src/test/resources/* gatling-charts-highcharts-bundle-${gatlingVer}/conf/."
+        stash name: "gatling-bundle", includes: "gatling-charts-highcharts-bundle-${gatlingVer}/"
       }
     }
     gerritReview labels: [Verified: 1]
   } catch (e) {
     gerritReview labels: [Verified: -1]
     throw e
+  }
+}
+
+node('gatling') {
+  stage('Run GerritGitSimulation load-test') {
+    dir('target') {
+      unstash "gatling-bundle"
+      sh "./bin/gatling.sh -s GerritGitSimulation"
+    }
   }
 }
