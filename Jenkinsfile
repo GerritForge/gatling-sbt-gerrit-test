@@ -5,9 +5,6 @@ node {
   checkout scm
   try {
     gerritReview labels: [Verified: 0]
-    stage('Compile and Test') {
-      sh 'sbt test'
-    }
     stage('Package') {
       sh 'sbt assembly'
       sh "curl ${gatlingUrl} > gatling.zip"
@@ -16,11 +13,23 @@ node {
         sh "mv scala-2.12/*.jar gatling-charts-highcharts-bundle-${gatlingVer}/lib/."
         sh "cp -R ../src/test/scala/* gatling-charts-highcharts-bundle-${gatlingVer}/user-files/simulations/."
         sh "cp ../src/test/resources/* gatling-charts-highcharts-bundle-${gatlingVer}/conf/."
+        stash name: "gatling-bundle", includes: "gatling-charts-highcharts-bundle-${gatlingVer}/"
       }
     }
     gerritReview labels: [Verified: 1]
   } catch (e) {
     gerritReview labels: [Verified: -1]
     throw e
+  }
+}
+
+node('gatling') {
+  stage('Run GerritGitSimulation load-test') {
+    unstash "gatling-bundle"
+    dir("target/gatling-charts-highcharts-bundle-${gatlingVer}") {
+      sh "find ."
+      sh "./bin/gatling.sh -s GerritGitSimulation"
+      archiveArtifacts artifacts: 'results/**/*'
+    }
   }
 }
