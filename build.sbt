@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "io.gatling" % "gatling-test-framework" % gatlingVer,
   "com.github.pureconfig" %% "pureconfig" % "0.11.1",
   "org.scalatest" %% "scalatest" % "3.0.8",
-  "com.gerritforge" %% "gatling-git" % "1.0.2-14-gb6f8882-SNAPSHOT"
+  "com.gerritforge" %% "gatling-git" % "1.0.4"
 ).map(_ % "test,it")
 
 resolvers += Resolver.sonatypeRepo("snapshots")
