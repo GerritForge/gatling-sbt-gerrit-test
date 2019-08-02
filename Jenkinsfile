@@ -25,11 +25,21 @@ node {
 }
 
 node('gatling') {
-  stage('Run GerritGitSimulation load-test') {
-    unstash "gatling-bundle"
-    dir("target/gatling-charts-highcharts-bundle-${gatlingVer}") {
-      sh "./bin/gatling.sh -s gerritforge.GerritGitSimulation"
-      archiveArtifacts artifacts: 'results/**/*'
-    }
+  unstash "gatling-bundle"
+
+  parallel {
+      stage('Run GerritGitSimulation load-test') {
+        dir("target/gatling-charts-highcharts-bundle-${gatlingVer}") {
+          sh "./bin/gatling.sh -s gerritforge.GerritGitSimulation"
+        }
+      }
+      stage('Run GerritGitSimulation load-test') {
+        dir("target/gatling-charts-highcharts-bundle-${gatlingVer}") {
+          sh "./bin/gatling.sh -s gerritforge.GerritGitSimulation"
+          archiveArtifacts artifacts: 'results/**/*'
+        }
+      }
   }
+
+  archiveArtifacts artifacts: 'target/gatling-charts-highcharts-bundle-${gatlingVer}/results/**/*'
 }
