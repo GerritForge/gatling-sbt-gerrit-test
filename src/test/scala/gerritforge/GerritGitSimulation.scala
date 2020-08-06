@@ -4,24 +4,29 @@ import com.github.barbasa.gatling.git.protocol.GitProtocol
 import gerritforge.GerritGitScenario._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
+import GerritTestConfig.testConfig
 
 import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
 
   val gitProtocol = GitProtocol()
-  val numUsers    = 2
-  val feeder = (1 to numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$idx")
+  val feeder = (1 to testConfig.numUsers) map { idx =>
+    Map("refSpec" -> s"branch-$idx", "force" -> true)
   }
 
-  val gitClone = scenario("Git clone from Gerrit").exec(cloneCommand)
-  val gitPush = scenario("Git push to Gerrit")
+  val gitSshScenario = GerritGitScenario(testConfig.sshUrl)
+  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl)
+
+  val gitSshClone = scenario("Git/SSH clone from Gerrit")
     .feed(feeder.circular)
-    .exec(cloneCommand)
-    .exec(pushCommand)
+    .exec(gitSshScenario.cloneCommand)
+  val gitSshPush = scenario("Git/SSH push to Gerrit")
+    .feed(feeder.circular)
+    .exec(gitSshScenario.pushCommand)
 
   setUp(
-    gitPush.inject(constantConcurrentUsers(numUsers) during (10 seconds))
+    gitSshClone.inject(rampConcurrentUsers (1) to testConfig.numUsers during (testConfig.duration)),
+    gitSshPush.inject(rampConcurrentUsers (1) to testConfig.numUsers during (testConfig.duration)),
   ).protocols(gitProtocol)
 }

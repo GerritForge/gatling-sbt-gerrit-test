@@ -5,15 +5,15 @@ import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSessio
 import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 
-object GerritGitScenario {
+case class GerritGitScenario(gitUrl: String) {
 
   implicit val gitConfig = GatlingGitConfiguration()
 
   val cloneCommand = new GitRequestBuilder(
-    GitRequestSession("clone", s"${testConfig.sshUrl}/${testConfig.project}", "${refSpec}")
+    GitRequestSession("clone", s"$gitUrl/${testConfig.project}", "${refSpec}")
   )
 
   val pushCommand = new GitRequestBuilder(
-    GitRequestSession("push", s"${testConfig.sshUrl}/${testConfig.project}", "${refSpec}")
+    GitRequestSession("push", s"$gitUrl/${testConfig.project}", "${refSpec}", force = "${force}")
   )
 }

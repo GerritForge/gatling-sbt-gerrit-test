@@ -33,7 +33,7 @@ class GerritRestSimulation extends Simulation {
   val authenticatedChangeList = scenario("Regular user").exec(listChanges(testConfig.accountCookie))
 
   setUp(
-    anonymousUserChangeList.inject(rampConcurrentUsers(1) to 20 during (2 minutes)),
-    authenticatedChangeList.inject(rampConcurrentUsers(1) to 10 during (2 minutes))
+    anonymousUserChangeList.inject(rampConcurrentUsers(1) to 20 during (testConfig.duration)),
+    authenticatedChangeList.inject(rampConcurrentUsers(1) to 10 during (testConfig.duration))
   ).protocols(httpProtocol)
 }
