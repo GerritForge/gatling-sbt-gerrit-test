@@ -18,15 +18,14 @@ class GerritGitSimulation extends Simulation {
   val gitSshScenario = GerritGitScenario(testConfig.sshUrl)
   val gitHttpScenario = GerritGitScenario(testConfig.httpUrl)
 
-  val gitSshClone = scenario("Git/SSH clone from Gerrit")
+  val gitCloneAndPush = scenario("Git clone and push to Gerrit")
     .feed(feeder.circular)
     .exec(gitSshScenario.cloneCommand)
-  val gitSshPush = scenario("Git/SSH push to Gerrit")
-    .feed(feeder.circular)
     .exec(gitSshScenario.pushCommand)
+    .exec(gitHttpScenario.cloneCommand)
+    .exec(gitHttpScenario.pushCommand)
 
   setUp(
-    gitSshClone.inject(rampConcurrentUsers (1) to testConfig.numUsers during (testConfig.duration)),
-    gitSshPush.inject(rampConcurrentUsers (1) to testConfig.numUsers during (testConfig.duration)),
+    gitCloneAndPush.inject(rampConcurrentUsers (1) to testConfig.numUsers during (testConfig.duration))
   ).protocols(gitProtocol)
 }
