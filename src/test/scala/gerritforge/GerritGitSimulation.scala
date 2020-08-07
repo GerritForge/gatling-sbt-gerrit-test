@@ -16,7 +16,7 @@ class GerritGitSimulation extends Simulation {
   }
 
   val gitSshScenario = GerritGitScenario(testConfig.sshUrl)
-  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl)
+  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl + "/a")
 
   val gitCloneAndPush = scenario("Git clone and push to Gerrit")
     .feed(feeder.circular)

@@ -15,7 +15,7 @@ object ChangesListScenario {
   def listChanges(authCookie: Option[String] = None) =
     authCookie
       .fold(exec(flushSessionCookies)) { auth =>
-        exec(addCookie(Cookie("GerritAccount", auth).withDomain("gerrithub.io")))
+        exec(addCookie(Cookie("GerritAccount", auth)))
       }
       .exec(
         http("changes list")
