@@ -40,7 +40,7 @@ Get the project
 ---------------
 
 ```bash
-git clone https://github.com/gerritforge/gatling-sbt-gerrit-test.git && cd gatling-sbt-gerrit-test
+$ git clone https://github.com/gerritforge/gatling-sbt-gerrit-test.git && cd gatling-sbt-gerrit-test
 ```
 
 Start SBT
@@ -80,12 +80,12 @@ setup (e.g. AWS or similar) and scale them up to multiple workers.
 For building and publishing the tests into a Docker image:
 
 ```bash
-> make publish
+$ make publish
 ```
 
 For running the tests from Docker, with the environment variables defined in
 `simulation.env`:
 
 ```
-> make run
+$ make run
 ```
