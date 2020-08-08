@@ -77,10 +77,10 @@ The top-level Makefile allows to package all tests into a Docker image and push
 to a Docker registry. The scenario is useful for running Gatling tests on a cloud
 setup (e.g. AWS or similar) and scale them up to multiple workers.
 
-For building and publishing the tests into a Docker image:
+For building the tests into a Docker image:
 
 ```bash
-$ make push
+$ make build
 ```
 
 For running the tests from Docker, with the environment variables defined in
