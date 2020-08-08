@@ -6,14 +6,14 @@ scalacOptions := Seq(
   "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
   "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
 
-val gatlingVer = "3.2.0"
+val gatlingVer = "3.2.1"
 
 libraryDependencies ++= Seq(
+  "com.github.pureconfig" %% "pureconfig" % "0.13.0",
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling" % "gatling-test-framework" % gatlingVer % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % Test,
-  "com.github.pureconfig" %% "pureconfig" % "0.11.1",
-  "com.gerritforge" %% "gatling-git" % "1.0.11"  excludeAll(
+  "com.gerritforge" %% "gatling-git" % "1.0.11" % Test excludeAll(
     ExclusionRule(organization = "io.gatling"),
     ExclusionRule(organization = "io.gatling.highcharts")
   )
