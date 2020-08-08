@@ -5,3 +5,4 @@ target
 .project
 simulation.log
 .DS_Store
+id_rsa*
