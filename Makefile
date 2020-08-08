@@ -3,8 +3,7 @@
 DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
 
 build: prepare
-	sbt assembly
-	docker build -t $(DOCKER_IMAGE) .
+	sbt docker
 
 prepare: id_rsa
 
@@ -17,4 +16,4 @@ run:
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
 
 publish: build
-	docker push $(DOCKER_IMAGE)
+	sbt dockerBuildAndPush
