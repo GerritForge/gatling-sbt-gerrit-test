@@ -28,7 +28,7 @@ val baseDir = "/Users/lucamilanesio/gerrithub/gatling-sbt-gerrit-test"
 dockerfile in docker := {
   val classpath = (managedClasspath in Compile).value
   new Dockerfile {
-    from("denvazh/gatling:3.2.1")
+    from(s"denvazh/gatling:$gatlingVer")
 
     stageFiles(Seq("src/test/resources/logback.xml", "src/test/resources/application.conf").map(new File(_)), "conf/")
     stageFile(new File("src/test/scala/gerritforge"), "simulations/")

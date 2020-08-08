@@ -15,5 +15,5 @@ run:
 		docker run --rm -ti --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
 
-publish: build
+push: build
 	sbt dockerBuildAndPush
