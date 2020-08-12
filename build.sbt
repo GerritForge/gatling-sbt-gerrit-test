@@ -36,6 +36,8 @@ dockerfile in docker := {
     copyRaw("conf/", "/opt/gatling/conf/")
     stageFiles(Seq("id_rsa", "id_rsa.pub", "config").map(new File(_)), ".ssh/")
     addRaw(".ssh/","/root/.ssh/")
+    stageFile(new File(".gitconfig"), ".gitconfig")
+    addRaw(".gitconfig", ".gitconfig")
 
     add(classpath.files, "/opt/gatling/lib/")
   }
