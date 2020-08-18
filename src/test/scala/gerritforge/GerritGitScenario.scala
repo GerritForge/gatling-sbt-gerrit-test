@@ -16,4 +16,8 @@ case class GerritGitScenario(gitUrl: String) {
   val pushCommand = new GitRequestBuilder(
     GitRequestSession("push", s"$gitUrl/${testConfig.project}", "${refSpec}", force = "${force}")
   )
+
+  val createChangeCommand = new GitRequestBuilder(
+    GitRequestSession("push", s"$gitUrl/${testConfig.project}", "HEAD:refs/for/${refSpec}", force = true, computeChangeId = true)
+  )
 }
