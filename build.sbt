@@ -8,8 +8,13 @@ scalacOptions := Seq(
 
 val gatlingVer = "3.2.1"
 
+val circeVer = "0.13.0"
+
 libraryDependencies ++= Seq(
   "com.github.pureconfig" %% "pureconfig" % "0.13.0",
+  "io.circe" %% "circe-core" % circeVer,
+  "io.circe" %% "circe-parser" % circeVer,
+  "io.circe" %% "circe-generic" % circeVer,
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling" % "gatling-test-framework" % gatlingVer % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % Test,
