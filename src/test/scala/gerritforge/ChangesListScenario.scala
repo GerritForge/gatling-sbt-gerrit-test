@@ -28,14 +28,14 @@ object ChangesListScenario {
     "Upgrade-Insecure-Requests" -> "1"
   )
 
-  val postApiHeader = restApiHeader + (
-    "Content-Type" -> "application/json",
-    "x-gerrit-auth" -> "${XSRF_TOKEN}"
-  )
+  def postApiHeader(xsrfCookie: Option[String]) = {
+    val headers: Map[String,String] = restApiHeader + ("Content-Type" -> "application/json")
+    xsrfCookie.fold(headers)(c => headers + ("x-gerrit-auth" -> c))
+  }
 
   val randomNumber = new Random
 
-  def listChanges(authCookie: Option[String] = None) = {
+  def listChanges(authCookie: Option[String] = None, xsrfCookie: Option[String] = None) = {
     val checkStatus = status.in(authCookie.fold(Seq(HTTP_FORBIDDEN))(_ => Seq(HTTP_OK, HTTP_NO_CONTENT)))
 
     val listChanges = http("changes list and get first change")
@@ -95,7 +95,7 @@ object ChangesListScenario {
     val postComments = {
       http("Post comments with score")
         .post("/changes/${project}~${changeNum}/revisions/1/review")
-        .headers(postApiHeader)
+        .headers(postApiHeader(xsrfCookie))
         .body(StringBody("""{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"message":"${reviewMessage}","reviewers":[]}"""))
         .asJson
     }
@@ -106,7 +106,6 @@ object ChangesListScenario {
       .fold(exec(flushSessionCookies)) { auth =>
         exec(addCookie(Cookie("GerritAccount", auth)))
           .exec(http("home page").get("/"))
-          .exec(getCookieValue(CookieKey("XSRF_TOKEN")))
       }
       .exec(listChanges)
       .exec { session =>
