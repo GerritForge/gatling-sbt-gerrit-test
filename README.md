@@ -61,7 +61,7 @@ Run a single simulation
 -----------------------
 
 ```bash
-> gatling:testOnly gerritforge.GatlingRestSimulation
+> gatling:testOnly gerritforge.GerritRestSimulation
 ```
 
 List all tasks
