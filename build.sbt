@@ -28,8 +28,6 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 
 enablePlugins(DockerPlugin)
 
-val baseDir = "/Users/lucamilanesio/gerrithub/gatling-sbt-gerrit-test"
-
 dockerfile in docker := {
   val classpath = (managedClasspath in Compile).value
   new Dockerfile {
