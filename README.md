@@ -68,7 +68,7 @@ List all tasks
 --------------------
 
 ```bash
-> tasks gatling -v
+> tasks -v gatling
 ```
 
 Run tests in Docker
