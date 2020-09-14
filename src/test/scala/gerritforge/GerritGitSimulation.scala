@@ -5,14 +5,16 @@ import gerritforge.GerritGitScenario._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import GerritTestConfig.testConfig
+import java.net.InetAddress
 
 import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
 
+  val hostname = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
   val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$idx", "force" -> true)
+    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
   }
 
   val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
