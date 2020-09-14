@@ -1,6 +1,7 @@
-.PHONY:	run build prepare publish
+.PHONY:	run build prepare publish parallel-run
 
 DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
+JOBS:=2
 
 build: prepare
 	sbt docker
@@ -12,8 +13,15 @@ id_rsa:
 
 run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \
-		docker run --rm -ti --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \
+		docker run --rm --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
+
+background-job-%:
+	make run &> $@.log &
+
+parallel-run:
+	for (( i=0; i<$(JOBS); i++)); do \
+		make background-job-$$i; done
 
 push: build
 	sbt dockerBuildAndPush

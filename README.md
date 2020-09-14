@@ -90,3 +90,14 @@ For running the tests from Docker, with the environment variables defined in
 ```
 $ make run
 ```
+
+For making a parallel execution of multiple runs with concurrent Docker:
+
+```
+$ make JOBS=2 parallel-run
+```
+
+**NOTE: When running multiple containers in parallel, the make command would
+end immediately and the containers will continue to run in  background. Each
+parallel job logs a `background-job-<n>.log` where `<n>` is the Nth parallel
+background execution.**
