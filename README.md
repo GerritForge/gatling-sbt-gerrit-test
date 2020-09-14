@@ -90,3 +90,13 @@ For running the tests from Docker, with the environment variables defined in
 ```
 $ make run
 ```
+
+For making a parallel execution of multiple runs with concurrent Docker:
+
+```
+$ make JOBS=2 parallel-run
+```
+
+*NOTE: When running multiple jobs in parallel, the make command would
+end immediately, and the simulations will continue to run in the background.
+Each parallel simulation job logs a `background-job-<n>.log` under the `target/gatling/` directory.*
