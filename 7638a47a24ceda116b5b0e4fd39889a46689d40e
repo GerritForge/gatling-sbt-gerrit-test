@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2967477c_751376f3",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-09-15T06:21:32Z",
+      "side": 1,
+      "message": "We should probably document this, so that users know they can affect the number of containers.\nFor example:\n\n```\nmake NUM_CONTAINERS\u003d2 run \n```",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "7638a47a24ceda116b5b0e4fd39889a46689d40e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b0d76c8_02bc7550",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-09-15T06:21:32Z",
+      "side": 1,
+      "message": "This is changing the way simulations are executed.\nThey used to be executed sequentially, after this change they will all run in parallel.\n\nThis _might_ be what we want (perhaps it could be configurable?), but it doesn\u0027t seem to be what this ticket wanted to achieve.\n\nAlso, because now the execution happens in the background it is now not possible to follow the output as before.",
+      "range": {
+        "startLine": 17,
+        "startChar": 14,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "7638a47a24ceda116b5b0e4fd39889a46689d40e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
