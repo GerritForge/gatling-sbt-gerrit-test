@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cc25afc5_503d450c",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-09-15T20:31:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2967477c_751376f3",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "7638a47a24ceda116b5b0e4fd39889a46689d40e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b0d76c8_02bc7550",
         "filename": "Makefile",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "7638a47a24ceda116b5b0e4fd39889a46689d40e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fc4f48e_5608153a",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-09-15T20:31:54Z",
+      "side": 1,
+      "message": "Good point, let me define a different target then.",
+      "parentUuid": "0b0d76c8_02bc7550",
+      "range": {
+        "startLine": 17,
+        "startChar": 14,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "7638a47a24ceda116b5b0e4fd39889a46689d40e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
