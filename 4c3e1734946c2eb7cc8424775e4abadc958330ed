@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "25e6647d_9c25f7cb",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-09-16T12:53:05Z",
+      "side": 1,
+      "message": "Good idea: `pwd`/target/gatling seems good to me.",
+      "parentUuid": "b2c45ac5_094916c2",
+      "range": {
+        "startLine": 20,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "4c3e1734946c2eb7cc8424775e4abadc958330ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae9d656b_92f6478a",
         "filename": "Makefile",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2020-09-16T12:49:43Z",
       "side": 1,
       "message": "With `make run` it is easy to stop the execution. Ctrl^C.\n\nWhen running `make parallel-run`, it is more involved: One would need to find all running containers with a docker query first.\nThis might take time and the execution might go on for much longer than actually wanted.\n\nI think a `make stop` would be useful.\n\nThis could be done as a follow up change.\n\nWDYT?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 12
+      },
+      "revId": "4c3e1734946c2eb7cc8424775e4abadc958330ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6a8ece2_5fd8f42a",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-09-16T12:53:05Z",
+      "side": 1,
+      "message": "Yes, one change \u003d one thing. The \u0027stop\u0027 command doesn\u0027t exist yet, it makes sense to introduce it later.",
+      "parentUuid": "ae9d656b_92f6478a",
       "range": {
         "startLine": 22,
         "startChar": 0,
