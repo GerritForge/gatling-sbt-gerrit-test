@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbbfb603_3341e82b",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-09-16T12:49:43Z",
+      "side": 0,
+      "message": "Perhaps we don\u0027t need this, but is the removal of interactive TTY required by this change?",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "8721ea19b9e0b1fe421f1a231ecf9e07fce412bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
