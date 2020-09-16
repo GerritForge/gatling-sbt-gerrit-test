@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5d5fc40_75579a0f",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-09-16T12:55:43Z",
+      "side": 1,
+      "message": "should update location of the logs to `pwd`/target/gatling/background-job-\u003cn\u003e.log`",
+      "range": {
+        "startLine": 102,
+        "startChar": 36,
+        "endLine": 102,
+        "endChar": 62
+      },
+      "revId": "bbb2d8e79ccdc0376d34eb3b80976b3e6f9576b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
