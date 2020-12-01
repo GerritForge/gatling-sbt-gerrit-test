@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01e055b3_316a4ba2",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2020-12-01T14:51:33Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be necessary but would be a bit more realistic.\nAsynchronous gc first acquires a file lock on gc.log as gc.log.lock, if it can\u0027t acquire that lock it returns immediately to avoid running multiple instances concurrently.\n\nWhen running this with the following configuration in the Makefile it seems gc never runs:\n\n run:\n \tdocker run --rm --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \n \\\n \t\t$(DOCKER_IMAGE) -s gerritforge.GerritGitSimulation\n\nWe need to tweak gc.pruneexpire and gc.prunepackexpire to something smaller than their defaults (1.hour.ago / 2.weeks.ago) otherwise gc wouldn\u0027t do much repacking which results in a ton of packfiles slowing down the test unnecessarily. I manually set these options to 2.min.ago in etc/jgit.config of my gerrit test site. Still it seems gc is never triggered.",
+      "parentUuid": "f4205bc3_49650ad2",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 101
+      },
+      "revId": "bc4e7b00628f62c65759c877cfa9d3ef4c1cd84e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8da7c899_966aa30b",
         "filename": "src/test/scala/gerritforge/ProjectGCScenario.scala",
         "patchSetId": 1
