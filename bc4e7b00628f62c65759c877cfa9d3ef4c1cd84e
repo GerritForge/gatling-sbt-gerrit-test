@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4205bc3_49650ad2",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-12-01T14:39:12Z",
+      "side": 1,
+      "message": "This seems a bit aggressive, should we add a pause in between GC cycles?\n1 second, 2 seconds?\nA configurable length?",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 101
+      },
+      "revId": "bc4e7b00628f62c65759c877cfa9d3ef4c1cd84e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8da7c899_966aa30b",
+        "filename": "src/test/scala/gerritforge/ProjectGCScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2020-12-01T14:39:12Z",
+      "side": 1,
+      "message": "Why do we need to get the homepage before running GC?",
+      "range": {
+        "startLine": 24,
+        "startChar": 2,
+        "endLine": 24,
+        "endChar": 39
+      },
+      "revId": "bc4e7b00628f62c65759c877cfa9d3ef4c1cd84e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
