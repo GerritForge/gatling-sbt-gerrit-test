@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f1bb7915_9732c1f2",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-12-01T21:23:05Z",
+      "side": 1,
+      "message": "Nope, but the reason is rather down, as I do not automatically manage the retrieval of the cookies.",
+      "parentUuid": "91142033_8f92877c",
+      "range": {
+        "startLine": 17,
+        "startChar": 45,
+        "endLine": 17,
+        "endChar": 57
+      },
+      "revId": "bc4e7b00628f62c65759c877cfa9d3ef4c1cd84e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f4205bc3_49650ad2",
         "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "I missed to rebuild the docker image that\u0027s why gc wasn\u0027t triggered",
       "parentUuid": "01e055b3_316a4ba2",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 101
+      },
+      "revId": "bc4e7b00628f62c65759c877cfa9d3ef4c1cd84e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a32ff2fb_6176f27f",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-12-01T21:23:05Z",
+      "side": 1,
+      "message": "Yeah, let me address that missed dependency in a follow-up commit.",
+      "parentUuid": "b578ce11_9ec71b7b",
       "range": {
         "startLine": 50,
         "startChar": 4,
