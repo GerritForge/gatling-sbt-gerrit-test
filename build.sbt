@@ -33,7 +33,7 @@ dockerfile in docker := {
   new Dockerfile {
     from(s"denvazh/gatling:$gatlingVer")
 
-    stageFiles(Seq("src/test/resources/logback.xml", "src/test/resources/application.conf").map(new File(_)), "conf/")
+    stageFiles(Seq("src/test/resources/logback.xml", "src/test/resources/application.conf", "src/test/resources/data").map(new File(_)), "conf/")
     stageFile(new File("src/test/scala/gerritforge"), "simulations/")
     copyRaw("simulations/","/opt/gatling/user-files/simulations/")
     copyRaw("conf/", "/opt/gatling/conf/")

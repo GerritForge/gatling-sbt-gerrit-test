@@ -20,4 +20,8 @@ case class GerritGitScenario(gitUrl: String) {
   val createChangeCommand = new GitRequestBuilder(
     GitRequestSession("push", s"$gitUrl/${testConfig.project}", "HEAD:refs/for/${refSpec}", force = true, computeChangeId = true)
   )
+
+  val fetchPatchSetCommand = new GitRequestBuilder(
+    GitRequestSession("fetch", s"$gitUrl/${testConfig.project}", "HEAD:refs/for/${refSpec}")
+  )
 }

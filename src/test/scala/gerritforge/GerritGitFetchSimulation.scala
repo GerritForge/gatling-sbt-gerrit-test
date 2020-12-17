@@ -9,28 +9,21 @@ import java.net.InetAddress
 
 import scala.concurrent.duration._
 
-class GerritGitSimulation extends Simulation {
+class GerritGitFetchSimulation extends Simulation {
 
   val hostname = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
-  val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
-  }
 
-  val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
+  val feeder = csv(s"${testConfig.dataDirectory}/gerrit-git-fetch-simulation.csv")
+
   val gitHttpScenario = GerritGitScenario(testConfig.httpUrl + "/a")
 
-  val gitCloneAndPush = scenario("Git clone and push to Gerrit")
+  val gitCloneAndPushSSH = scenario("Git clone and fetch to Gerrit")
     .feed(feeder.circular)
-    .exec(gitSshScenario.cloneCommand)
-    .exec(gitSshScenario.pushCommand)
-    .exec(gitSshScenario.createChangeCommand)
-    .exec(gitHttpScenario.cloneCommand)
-    .exec(gitHttpScenario.pushCommand)
-    .exec(gitHttpScenario.createChangeCommand)
+    .exec(gitHttpScenario.fetchPatchSetCommand)
 
   setUp(
-    gitCloneAndPush.inject(
+    gitCloneAndPushSSH.inject(
       rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
     )
   ).protocols(gitProtocol)
