@@ -27,8 +27,8 @@ The simulations use the following environment variable to run the tests:
 
 Variable | Description | Sample
 ---------|-------------|---------
- GERRIT_HTTP_URL | Gerrit GUI URL | http://host.docker.internal:8080
- GERRIT_SSH_URL | Gerrit SSH URL | ssh://admin@host.docker.internal:29418
+ GERRIT_HTTP_URL | Gerrit GUI URL | http://localhost:8080
+ GERRIT_SSH_URL | Gerrit SSH URL | ssh://admin@localhost:29418
  GERRIT_PROJECT | Gerrit project for load test | load-test
  ACCOUNT_COOKIE | HTTP Cookie to access the Gerrit GUI | aSceprr3WikzGrfwg2PvpOhMMcH5qp3ehW
  XSRF_TOKEN | XSRF_TOKEN Cookie to access the Gerrit GUI for pOST operations | 7d02b54405863778dfe1
@@ -100,3 +100,6 @@ $ make JOBS=2 parallel-run
 *NOTE: When running multiple jobs in parallel, the make command would
 end immediately, and the simulations will continue to run in the background.
 Each parallel simulation job logs a `background-job-<n>.log` under the `target/gatling/` directory.*
+
+Note: On Mac Os X `GERRIT_HTTP_URL` and `GERRIT_SSH_URL` can be set
+to `host.docker.internal` hostname.
