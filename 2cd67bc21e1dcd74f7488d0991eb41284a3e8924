@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4667e220_6cdd11e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-02T12:50:32Z",
+      "side": 1,
+      "message": "I believe we also need to set the network mode to host?",
+      "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
