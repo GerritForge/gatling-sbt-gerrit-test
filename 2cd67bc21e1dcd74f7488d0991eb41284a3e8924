@@ -16,6 +16,41 @@
       "message": "I believe we also need to set the network mode to host?",
       "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ced69674_0e394473",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2021-01-02T16:41:33Z",
+      "side": 1,
+      "message": "It seems that I don\u0027t have ACL to vote on VRFY label.",
+      "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77a822a5_a6be64e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2021-01-02T16:41:33Z",
+      "side": 1,
+      "message": "Right, it\u0027s done in Makefile:\n\n  --net\u003dhost",
+      "parentUuid": "4667e220_6cdd11e0",
+      "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
