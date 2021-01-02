@@ -51,6 +51,24 @@
       "parentUuid": "4667e220_6cdd11e0",
       "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31ed48d9_002df203",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-02T19:20:50Z",
+      "side": 1,
+      "message": "you should have permission, based on group ownership. let me check why",
+      "parentUuid": "ced69674_0e394473",
+      "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
