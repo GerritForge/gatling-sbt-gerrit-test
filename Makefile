@@ -13,7 +13,7 @@ id_rsa:
 
 run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \
-		docker run --rm --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \
+		docker run --net=host --rm --env-file simulation.env -v `pwd`/target/gatling:/opt/gatling/results \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
 
 background-job-%:
