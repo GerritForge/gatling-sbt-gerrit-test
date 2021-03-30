@@ -104,6 +104,23 @@
       "message": "@luca did y",
       "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64b2315a_ed642112",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2021-03-30T07:55:20Z",
+      "side": 1,
+      "message": "I can still only vote CRVW+1 and nothing else.",
+      "revId": "2cd67bc21e1dcd74f7488d0991eb41284a3e8924",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
