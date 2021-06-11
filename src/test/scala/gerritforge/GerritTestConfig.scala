@@ -25,5 +25,7 @@ case class GerritTestConfig(
     project: String,
     userAgent: String,
     numUsers: Int,
-    duration: FiniteDuration
+    duration: FiniteDuration,
+    secondsToPause: Option[Int],
+    requestType: Option[String]
 )

@@ -36,6 +36,8 @@ Variable | Description | Sample
  GIT_HTTP_PASSWORD | Password for Git/HTTP testing | secret
  NUM_USERS | Number of concurrent user sessions | 10
  DURATION | Total duration of the test | 2 minutes
+ SECONDS_TO_PAUSE | number of seconds to pause between the runs of the scenario | 0
+ REQUEST_TYPE | the request type ssh or http any other value will trigger both protocols | ssh
 
 Get the project
 ---------------

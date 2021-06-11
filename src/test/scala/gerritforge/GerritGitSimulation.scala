@@ -7,6 +7,8 @@ import io.gatling.core.scenario.Simulation
 import GerritTestConfig.testConfig
 import java.net.InetAddress
 
+import io.gatling.core.structure.ChainBuilder
+
 import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
@@ -20,18 +22,46 @@ class GerritGitSimulation extends Simulation {
   val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
   val gitHttpScenario = GerritGitScenario(testConfig.httpUrl + "/a")
 
-  val gitCloneAndPush = scenario("Git clone and push to Gerrit")
-    .feed(feeder.circular)
-    .exec(gitSshScenario.cloneCommand)
+  private def playSshProtocol(): ChainBuilder ={
+    exec(gitSshScenario.cloneCommand)
+    .exec(gitSshScenario.pushCommand)
+    .exec(gitSshScenario.createChangeCommand)
+  }
+
+  private def playHttpProtocol(): ChainBuilder= {
+    exec(gitHttpScenario.cloneCommand)
+    .exec(gitHttpScenario.pushCommand)
+    .exec(gitHttpScenario.createChangeCommand)
+  }
+
+  private def playBothProtocols(): ChainBuilder ={
+    exec(gitSshScenario.cloneCommand)
     .exec(gitSshScenario.pushCommand)
     .exec(gitSshScenario.createChangeCommand)
     .exec(gitHttpScenario.cloneCommand)
     .exec(gitHttpScenario.pushCommand)
     .exec(gitHttpScenario.createChangeCommand)
+  }
+
+  val gitCloneAndPush = scenario("Git clone and push to Gerrit")
+    .feed(feeder.circular)
+    .doIfOrElse(testConfig.requestType.nonEmpty){
+      doSwitchOrElse(testConfig.requestType.get)(
+        "ssh" -> playSshProtocol(),
+        "http"-> playHttpProtocol()
+      ) (
+        playBothProtocols()
+      )
+    } {
+      playBothProtocols()
+    }
+
+    .doIf(testConfig.secondsToPause.nonEmpty) {
+      pause(testConfig.secondsToPause.get)
+    }
 
   setUp(
     gitCloneAndPush.inject(
-      rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
-    )
+      constantUsersPerSec(testConfig.numUsers) during (testConfig.duration))
   ).protocols(gitProtocol)
 }
