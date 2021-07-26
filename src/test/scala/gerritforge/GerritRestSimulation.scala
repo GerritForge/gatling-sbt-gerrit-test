@@ -36,8 +36,8 @@ class GerritRestSimulation extends Simulation {
     "reviewScore" -> (randomInt.nextInt(5) - 2)
   ))
 
-  val anonymousUserChangeList = scenario("Anonymous user").exec(listChanges())
-  val authenticatedChangeList = scenario("Regular user").feed(randomReview).exec(listChanges(testConfig.accountCookie, testConfig.xsrfToken))
+  val anonymousUserChangeList = scenario("Anonymous user").exec(listChanges(testConfig.project))
+  val authenticatedChangeList = scenario("Regular user").feed(randomReview).exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
 
   setUp(
     anonymousUserChangeList.inject(rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)),

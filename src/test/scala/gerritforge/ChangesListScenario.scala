@@ -35,11 +35,11 @@ object ChangesListScenario {
 
   val randomNumber = new Random
 
-  def listChanges(authCookie: Option[String] = None, xsrfCookie: Option[String] = None) = {
+  def listChanges(projectName: String, authCookie: Option[String] = None, xsrfCookie: Option[String] = None) = {
     val checkStatus = status.in(authCookie.fold(Seq(HTTP_FORBIDDEN))(_ => Seq(HTTP_OK, HTTP_NO_CONTENT)))
 
     val listChanges = http("changes list and get first change")
-      .get("/q/status:open")
+      .get(s"/q/status:open+project:${projectName}")
       .headers(restApiHeader)
       .resources(
         http("get server version")
@@ -47,7 +47,7 @@ object ChangesListScenario {
         http("get server info")
           .get("/config/server/info"),
         http("get list of changes")
-          .get("/changes/?O=81&S=0&n=500&q=status%3Aopen")
+          .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}")
           .check(
             bodyString.transform(_.drop(XSS_LEN))
               .transform(decode[List[ChangeDetail]](_))
