@@ -50,3 +50,5 @@ dockerfile in docker := {
 imageNames in docker := Seq(
   ImageName("gerritforge/gatling-sbt-gerrit-test"),
 )
+
+scalafmtOnCompile := true
