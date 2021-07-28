@@ -23,20 +23,25 @@ object ChangesListScenario {
   val XSS_LEN = 5
 
   val restApiHeader = Map(
-    "Accept" -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Pragma" -> "no-cache",
+    "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Pragma"                    -> "no-cache",
     "Upgrade-Insecure-Requests" -> "1"
   )
 
   def postApiHeader(xsrfCookie: Option[String]) = {
-    val headers: Map[String,String] = restApiHeader + ("Content-Type" -> "application/json")
+    val headers: Map[String, String] = restApiHeader + ("Content-Type" -> "application/json")
     xsrfCookie.fold(headers)(c => headers + ("x-gerrit-auth" -> c))
   }
 
   val randomNumber = new Random
 
-  def listChanges(projectName: String, authCookie: Option[String] = None, xsrfCookie: Option[String] = None) = {
-    val checkStatus = status.in(authCookie.fold(Seq(HTTP_FORBIDDEN))(_ => Seq(HTTP_OK, HTTP_NO_CONTENT)))
+  def listChanges(
+      projectName: String,
+      authCookie: Option[String] = None,
+      xsrfCookie: Option[String] = None
+  ) = {
+    val checkStatus =
+      status.in(authCookie.fold(Seq(HTTP_FORBIDDEN))(_ => Seq(HTTP_OK, HTTP_NO_CONTENT)))
 
     val listChanges = http("changes list and get first change")
       .get(s"/q/status:open+project:${projectName}")
@@ -49,10 +54,13 @@ object ChangesListScenario {
         http("get list of changes")
           .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}")
           .check(
-            bodyString.transform(_.drop(XSS_LEN))
+            bodyString
+              .transform(_.drop(XSS_LEN))
               .transform(decode[List[ChangeDetail]](_))
               .transform(_.right.get)
-              .saveAs("changeDetails")))
+              .saveAs("changeDetails")
+          )
+      )
 
     val getChangeDetails = http("get change details")
       .get("${changeUrl}")
@@ -85,17 +93,24 @@ object ChangesListScenario {
         http("get related changes")
           .get("/changes/${id}/revisions/1/related"),
         http("get cherry picks")
-          .get("/changes/?O=a&q=project%3A${project}%20change%3A${changeId}%20-change%3A${changeNum}%20-is%3Aabandoned"),
+          .get(
+            "/changes/?O=a&q=project%3A${project}%20change%3A${changeId}%20-change%3A${changeNum}%20-is%3Aabandoned"
+          ),
         http("get conflicting changes")
           .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A${changeNum}"),
         http("check for other changes submittable together")
-          .get("/changes/${id}/submitted_together?o=NON_VISIBLE_CHANGES"))
+          .get("/changes/${id}/submitted_together?o=NON_VISIBLE_CHANGES")
+      )
 
     val postComments = {
       http("Post comments with score")
         .post("/changes/${project}~${changeNum}/revisions/1/review")
         .headers(postApiHeader(xsrfCookie))
-        .body(StringBody("""{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"message":"${reviewMessage}","reviewers":[]}"""))
+        .body(
+          StringBody(
+            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"message":"${reviewMessage}","reviewers":[]}"""
+          )
+        )
         .asJson
     }
 
@@ -110,15 +125,14 @@ object ChangesListScenario {
       .doIf(session => !session("changeDetails").as[List[ChangeDetail]].isEmpty) {
         exec { session =>
           val changes = session("changeDetails").as[List[ChangeDetail]]
-          val change = changes(randomNumber.nextInt(changes.size))
+          val change  = changes(randomNumber.nextInt(changes.size))
           session
             .set("changeUrl", change.url)
             .set("id", s"${change.project}~${change._number}")
             .set("changeNum", change._number)
             .set("changeId", change.change_id)
             .set("project", change.project)
-        }
-          .pause(2 seconds)
+        }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
       }

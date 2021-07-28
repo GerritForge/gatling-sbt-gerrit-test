@@ -24,23 +24,33 @@ class GerritRestSimulation extends Simulation {
     .userAgentHeader("gatling-test")
 
   val restApiHeader = Map(
-    "Accept" -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Pragma" -> "no-cache",
+    "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Pragma"                    -> "no-cache",
     "Upgrade-Insecure-Requests" -> "1"
   )
 
   val randomInt = new Random
 
-  val randomReview = Iterator.continually(Map(
-    "reviewMessage" -> (1 to (10 + randomInt.nextInt(10))).map(_ => Random.alphanumeric.take(randomInt.nextInt(10)).mkString).mkString(" "),
-    "reviewScore" -> (randomInt.nextInt(5) - 2)
-  ))
+  val randomReview = Iterator.continually(
+    Map(
+      "reviewMessage" -> (1 to (10 + randomInt.nextInt(10)))
+        .map(_ => Random.alphanumeric.take(randomInt.nextInt(10)).mkString)
+        .mkString(" "),
+      "reviewScore" -> (randomInt.nextInt(5) - 2)
+    )
+  )
 
   val anonymousUserChangeList = scenario("Anonymous user").exec(listChanges(testConfig.project))
-  val authenticatedChangeList = scenario("Regular user").feed(randomReview).exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
+  val authenticatedChangeList = scenario("Regular user")
+    .feed(randomReview)
+    .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
 
   setUp(
-    anonymousUserChangeList.inject(rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)),
-    authenticatedChangeList.inject(rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration))
+    anonymousUserChangeList.inject(
+      rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
+    ),
+    authenticatedChangeList.inject(
+      rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
+    )
   ).protocols(httpProtocol)
 }

@@ -11,7 +11,7 @@ import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
 
-  val hostname = InetAddress.getLocalHost.getHostName
+  val hostname    = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
   val feeder = (1 to testConfig.numUsers) map { idx =>
     Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
