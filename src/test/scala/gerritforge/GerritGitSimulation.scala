@@ -5,8 +5,9 @@ import gerritforge.GerritGitScenario._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import GerritTestConfig.testConfig
-import java.net.InetAddress
+import io.gatling.core.structure.ChainBuilder
 
+import java.net.InetAddress
 import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
@@ -18,16 +19,21 @@ class GerritGitSimulation extends Simulation {
   }
 
   val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
-  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl + "/a")
+  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl.map(_ + "/a"))
 
   val gitCloneAndPush = scenario("Git clone and push to Gerrit")
     .feed(feeder.circular)
-    .exec(gitSshScenario.cloneCommand)
-    .exec(gitSshScenario.pushCommand)
-    .exec(gitSshScenario.createChangeCommand)
-    .exec(gitHttpScenario.cloneCommand)
-    .exec(gitHttpScenario.pushCommand)
-    .exec(gitHttpScenario.createChangeCommand)
+    .exec(ChainBuilder(gitSshScenario.pushCommand.toList ++
+        gitHttpScenario.pushCommand.toList))
+    .exec(ChainBuilder(gitSshScenario.cloneCommand.toList ++
+          gitHttpScenario.cloneCommand.toList))
+    .exec(ChainBuilder(gitSshScenario.createChangeCommand.toList ++
+          gitHttpScenario.createChangeCommand.toList))
+
+  require(
+    testConfig.httpUrl.orElse(testConfig.sshUrl).isDefined,
+    "Either GERRIT_HTTP_URL or GERRIT_SSH_URL must be defined"
+  )
 
   setUp(
     gitCloneAndPush.inject(

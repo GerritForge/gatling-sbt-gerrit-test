@@ -7,21 +7,25 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import GerritTestConfig._
 import ChangesListScenario._
+import io.gatling.http.protocol.HttpProtocol
 
 import scala.util.Random
 
 class GerritRestSimulation extends Simulation {
 
-  val httpProtocol = http
-    .baseUrl(testConfig.httpUrl)
-    .inferHtmlResources(
-      BlackList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png"""),
-      WhiteList()
-    )
-    .acceptHeader("*/*")
-    .acceptEncodingHeader("gzip, deflate")
-    .acceptLanguageHeader("en-GB,en;q=0.5")
-    .userAgentHeader("gatling-test")
+  val httpProtocol: Option[HttpProtocol] = testConfig.httpUrl.map(
+    url =>
+      http
+        .baseUrl(url)
+        .inferHtmlResources(
+          BlackList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png"""),
+          WhiteList()
+        )
+        .acceptHeader("*/*")
+        .acceptEncodingHeader("gzip, deflate")
+        .acceptLanguageHeader("en-GB,en;q=0.5")
+        .userAgentHeader("gatling-test")
+  )
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -44,6 +48,8 @@ class GerritRestSimulation extends Simulation {
   val authenticatedChangeList = scenario("Regular user")
     .feed(randomReview)
     .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
+
+  require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
 
   setUp(
     anonymousUserChangeList.inject(

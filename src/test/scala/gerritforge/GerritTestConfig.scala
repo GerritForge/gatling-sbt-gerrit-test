@@ -20,8 +20,8 @@ object GerritTestConfig {
 case class GerritTestConfig(
     accountCookie: Option[String],
     xsrfToken: Option[String],
-    httpUrl: String,
-    sshUrl: String,
+    httpUrl: Option[String],
+    sshUrl: Option[String],
     project: String,
     userAgent: String,
     numUsers: Int,
