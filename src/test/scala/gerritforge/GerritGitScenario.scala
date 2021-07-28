@@ -4,26 +4,36 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
 import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
+import io.gatling.core.action.builder.ActionBuilder
 
-case class GerritGitScenario(gitUrl: String) {
+case class GerritGitScenario(gitUrl: Option[String]) {
 
   implicit val gitConfig = GatlingGitConfiguration()
 
-  val cloneCommand = new GitRequestBuilder(
-    GitRequestSession("clone", s"$gitUrl/${testConfig.project}", "${refSpec}")
+  val cloneCommand: Option[ActionBuilder] = gitUrl.map(
+    url =>
+      new GitRequestBuilder(
+        GitRequestSession("clone", s"$url/${testConfig.project}", "${refSpec}")
+      )
   )
 
-  val pushCommand = new GitRequestBuilder(
-    GitRequestSession("push", s"$gitUrl/${testConfig.project}", "${refSpec}", force = "${force}")
+  val pushCommand: Option[ActionBuilder] = gitUrl.map(
+    url =>
+      new GitRequestBuilder(
+        GitRequestSession("push", s"$url/${testConfig.project}", "${refSpec}", force = "${force}")
+      )
   )
 
-  val createChangeCommand = new GitRequestBuilder(
-    GitRequestSession(
-      "push",
-      s"$gitUrl/${testConfig.project}",
-      "HEAD:refs/for/${refSpec}",
-      force = true,
-      computeChangeId = true
-    )
+  val createChangeCommand: Option[ActionBuilder] = gitUrl.map(
+    url =>
+      new GitRequestBuilder(
+        GitRequestSession(
+          "push",
+          s"$url/${testConfig.project}",
+          "HEAD:refs/for/${refSpec}",
+          force = true,
+          computeChangeId = true
+        )
+      )
   )
 }
