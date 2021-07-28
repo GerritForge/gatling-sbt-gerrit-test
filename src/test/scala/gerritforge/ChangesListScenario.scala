@@ -52,8 +52,7 @@ object ChangesListScenario {
             bodyString.transform(_.drop(XSS_LEN))
               .transform(decode[List[ChangeDetail]](_))
               .transform(_.right.get)
-              .transform(changes => changes(randomNumber.nextInt(changes.size)))
-              .saveAs("changeDetail")))
+              .saveAs("changeDetails")))
 
     val getChangeDetails = http("get change details")
       .get("${changeUrl}")
@@ -108,17 +107,20 @@ object ChangesListScenario {
           .exec(http("home page").get("/"))
       }
       .exec(listChanges)
-      .exec { session =>
-        val change = session("changeDetail").as[ChangeDetail]
-        session
-          .set("changeUrl", change.url)
-          .set("id", s"${change.project}~${change._number}")
-          .set("changeNum", change._number)
-          .set("changeId", change.change_id)
-          .set("project", change.project)
+      .doIf(session => !session("changeDetails").as[List[ChangeDetail]].isEmpty) {
+        exec { session =>
+          val changes = session("changeDetails").as[List[ChangeDetail]]
+          val change = changes(randomNumber.nextInt(changes.size))
+          session
+            .set("changeUrl", change.url)
+            .set("id", s"${change.project}~${change._number}")
+            .set("changeNum", change._number)
+            .set("changeId", change.change_id)
+            .set("project", change.project)
+        }
+          .pause(2 seconds)
+          .exec(getChangeDetails)
+          .exec(authCookie.fold(httpHead)(_ => postComments))
       }
-      .pause(2 seconds)
-      .exec(getChangeDetails)
-      .exec(authCookie.fold(httpHead)(_ => postComments))
   }
 }
