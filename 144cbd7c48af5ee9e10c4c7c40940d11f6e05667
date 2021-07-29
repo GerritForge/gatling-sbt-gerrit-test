@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce5275e8_68c4619c",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T09:54:39Z",
+      "side": 1,
+      "message": "nit: unused",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 51
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16699a47_1302946c",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T09:54:39Z",
+      "side": 1,
+      "message": "I think the `doIf` is redundant.\nEach command is already an Option, so it will be executed only when defined anyway.\n\nI believe removing the doIf altogether would do the same thing:\n\n```\n    .feed(feeder.circular)\n    .exec(ChainBuilder(gitSshScenario.cloneCommand.toList ++\n      gitHttpScenario.pushCommand.toList ++\n      gitHttpScenario.createChangeCommand.toList ++\n      gitHttpScenario.cloneCommand.toList ++\n      gitHttpScenario.pushCommand.toList ++\n      gitHttpScenario.createChangeCommand.toList))\n```\n\nI think this is more DRY because the check on whether the `url` is defined is done only once when constructing the `command`, and not, again, at exec time.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 5
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b2b7fb9_09406225",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T09:54:39Z",
+      "side": 1,
+      "message": "nit: these parameters do not necessarily come from environment variable.\nI would refer to them as they are expressed in the application.conf.\n\ngerrit.http-url\ngerrit.ssh-url",
+      "range": {
+        "startLine": 44,
+        "startChar": 12,
+        "endLine": 44,
+        "endChar": 45
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d55c98c_65ed3083",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T09:54:39Z",
+      "side": 1,
+      "message": "nit: gerrit.http-url?",
+      "range": {
+        "startLine": 52,
+        "startChar": 35,
+        "endLine": 52,
+        "endChar": 50
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
