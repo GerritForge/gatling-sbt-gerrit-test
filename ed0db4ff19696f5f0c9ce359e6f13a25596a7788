@@ -39,6 +39,30 @@
       },
       "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72e7b4bd_90e1b659",
+        "filename": "build.sbt",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-07-29T22:28:34Z",
+      "side": 1,
+      "message": "I am fine in reverting this change; however, we should have a way to avoid the code to diverge again.\n\nDelegating the check to the \"good will\" of the IDE isn\u0027t good enough, otherwise we would have not gotten the formatting in this state.\n\nWhat about failing the compile step instead of formatting the code? WDYT?",
+      "parentUuid": "db3472e0_b4520023",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
