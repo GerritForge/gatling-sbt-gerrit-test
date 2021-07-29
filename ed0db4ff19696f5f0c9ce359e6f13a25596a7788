@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e48e079e_e57594c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T08:03:17Z",
+      "side": 1,
+      "message": "Sorry I didn\u0027t submit my comment on time.\nThis option is discouraged by the scala format documentation[1]:\n\n```\nThis option is discouraged since it messes up undo buffers in the editor and it slows down compilation. It is recommended to use \"format on save\" in the editor instead.\n```\n\nShould we consider removing and enable the format on save instead?\n\nhttps://scalameta.org/scalafmt/docs/installation.html#format-on-compile",
+      "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db3472e0_b4520023",
+        "filename": "build.sbt",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-29T08:03:17Z",
+      "side": 1,
+      "message": "This option is discouraged by the scala format documentation[1]:\n\n```\nThis option is discouraged since it messes up undo buffers in the editor and it slows down compilation. It is recommended to use \"format on save\" in the editor instead.\n```\n\nhttps://scalameta.org/scalafmt/docs/installation.html#format-on-compile",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
