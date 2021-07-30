@@ -63,6 +63,30 @@
       },
       "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "093a7ea8_3783f6c7",
+        "filename": "build.sbt",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-07-30T07:52:05Z",
+      "side": 1,
+      "message": "When I code reviewed some gatling-sbt-gerrit-test changes yesterday, I coded some code changes and I didn\u0027t have any problem with the IDE undo buffers.\n\nThe advantage of not having to care about formatting is very appealing, so I\u0027d be happy if we could keep it as it is.\n\nI suggest that we leave it as it is and, if it becomes a problem, we can always failing the compile step as an alternative approach.\n\nWDYT?",
+      "parentUuid": "72e7b4bd_90e1b659",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
