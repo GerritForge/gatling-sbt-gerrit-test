@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f631a274_ae301354",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-04T20:29:23Z",
+      "side": 1,
+      "message": "Verified E2E: there isn\u0027t Git progress shown anymore.",
+      "revId": "88b749cb962868af41a82daa358a572d7934e7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24bcdde4_f44e3da9",
@@ -14,6 +31,30 @@
       "writtenOn": "2021-08-04T07:56:24Z",
       "side": 1,
       "message": "I can\u0027t see where this is being used.\nDid you forget to push part of this change or am I missing something?",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 1
+      },
+      "revId": "88b749cb962868af41a82daa358a572d7934e7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d26dbb7e_50045ded",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-04T20:29:23Z",
+      "side": 1,
+      "message": "See https://github.com/GerritForge/gatling-git/blob/3d5b9f86e2649688971c28bd5b6c9c4548f6d8d4/src/main/scala/com/github/barbasa/gatling/git/GatlingGitConfiguration.scala#L84",
+      "parentUuid": "24bcdde4_f44e3da9",
       "range": {
         "startLine": 52,
         "startChar": 0,
