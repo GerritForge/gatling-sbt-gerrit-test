@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f2a1f70_36cbb328",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-04T20:23:22Z",
+      "side": 1,
+      "message": "@Marcin can you verify this change? (you are on Linux)",
+      "revId": "3ed97212b3d3c2483d631ece3bf878bed8711f46",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
