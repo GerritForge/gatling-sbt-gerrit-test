@@ -142,6 +142,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5544c48c_63c05e8f",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-08-04T07:59:25Z",
+      "side": 1,
+      "message": "Fair enough",
+      "parentUuid": "b50ff8c7_5676f6d5",
+      "range": {
+        "startLine": 44,
+        "startChar": 12,
+        "endLine": 44,
+        "endChar": 45
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d55c98c_65ed3083",
@@ -179,6 +203,30 @@
       "side": 1,
       "message": "Same comment as above.",
       "parentUuid": "6d55c98c_65ed3083",
+      "range": {
+        "startLine": 52,
+        "startChar": 35,
+        "endLine": 52,
+        "endChar": 50
+      },
+      "revId": "144cbd7c48af5ee9e10c4c7c40940d11f6e05667",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db30b790_f069bfe6",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-08-04T07:59:25Z",
+      "side": 1,
+      "message": "Yep",
+      "parentUuid": "fd53072b_8334572c",
       "range": {
         "startLine": 52,
         "startChar": 35,
