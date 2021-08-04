@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24bcdde4_f44e3da9",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2021-08-04T07:56:24Z",
+      "side": 1,
+      "message": "I can\u0027t see where this is being used.\nDid you forget to push part of this change or am I missing something?",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 1
+      },
+      "revId": "88b749cb962868af41a82daa358a572d7934e7ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
