@@ -87,6 +87,30 @@
       },
       "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0057235_eea32506",
+        "filename": "build.sbt",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-05T01:07:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "093a7ea8_3783f6c7",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "ed0db4ff19696f5f0c9ce359e6f13a25596a7788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
