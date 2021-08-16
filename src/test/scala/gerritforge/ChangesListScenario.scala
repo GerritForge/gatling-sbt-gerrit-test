@@ -74,7 +74,7 @@ object ChangesListScenario {
         http("fetch robot-comments")
           .get("/changes/${id}/robotcomments"),
         http("get change details")
-          .get("/changes/${id}/detail?O=916314"),
+          .get("/changes/${id}/detail?o=LABELS&o=CURRENT_ACTIONS&o=ALL_REVISIONS&o  =SUBMITTABLE"),
         http("get draft comments")
           .get("/changes/${id}/drafts")
           .check(checkStatus),
