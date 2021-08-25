@@ -13,14 +13,25 @@ case class GerritGitScenario(gitUrl: Option[String]) {
   val cloneCommand: Option[ActionBuilder] = gitUrl.map(
     url =>
       new GitRequestBuilder(
-        GitRequestSession("clone", s"$url/${testConfig.project}", "${refSpec}")
+        GitRequestSession(
+          "clone",
+          s"$url/${testConfig.project}",
+          "${refSpec}",
+          ignoreFailureRegexps = List(".*want.+not valid.*")
+        )
       )
   )
 
   val pushCommand: Option[ActionBuilder] = gitUrl.map(
     url =>
       new GitRequestBuilder(
-        GitRequestSession("push", s"$url/${testConfig.project}", "${refSpec}", force = "${force}")
+        GitRequestSession(
+          "push",
+          s"$url/${testConfig.project}",
+          "${refSpec}",
+          force = "${force}",
+          ignoreFailureRegexps = List(".*no common ancestry.*")
+        )
       )
   )
 
@@ -32,7 +43,8 @@ case class GerritGitScenario(gitUrl: Option[String]) {
           s"$url/${testConfig.project}",
           "HEAD:refs/for/${refSpec}",
           force = true,
-          computeChangeId = true
+          computeChangeId = true,
+          ignoreFailureRegexps = List(".*no common ancestry.*")
         )
       )
   )
