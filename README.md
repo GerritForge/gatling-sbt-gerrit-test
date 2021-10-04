@@ -97,6 +97,11 @@ For making a parallel execution of multiple runs with concurrent Docker:
 $ make JOBS=2 parallel-run
 ```
 
-*NOTE: When running multiple jobs in parallel, the make command would
+*NOTES*:
+* When running multiple jobs in parallel, the make command would
 end immediately, and the simulations will continue to run in the background.
-Each parallel simulation job logs a `background-job-<n>.log` under the `target/gatling/` directory.*
+Each parallel simulation job logs a `background-job-<n>.log` under the `target/gatling/` directory.
+* A public key to associate with the user running the Gatling tests is present in the repository (`id_rsa.pub`).
+Before running the tests, make sure to add it to the users' SSH keys.
+* The repo the tests will run against (`GERRIT_PROJECT`) will need the following ACLs to be set:
+![ACLs](./images/ACLs.png)
