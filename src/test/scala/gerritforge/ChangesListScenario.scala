@@ -1,6 +1,6 @@
 package gerritforge
 
-import java.net.HttpURLConnection
+import java.net.{HttpURLConnection, URLEncoder}
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
@@ -11,6 +11,7 @@ import io.circe.parser._
 import io.circe.generic.auto._
 import io.circe.syntax._
 import HttpURLConnection._
+import java.nio.charset.StandardCharsets
 
 import scala.util.Random
 
@@ -21,6 +22,7 @@ case class ChangeDetail(_number: Int, project: String, change_id: String) {
 object ChangesListScenario {
 
   val XSS_LEN = 5
+  val encoding = StandardCharsets.UTF_8.toString()
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -128,10 +130,10 @@ object ChangesListScenario {
           val change  = changes(randomNumber.nextInt(changes.size))
           session
             .set("changeUrl", change.url)
-            .set("id", s"${change.project}~${change._number}")
+            .set("id", s"${URLEncoder.encode(change.project, encoding)}~${change._number}")
             .set("changeNum", change._number)
             .set("changeId", change.change_id)
-            .set("project", change.project)
+            .set("project", URLEncoder.encode(change.project, encoding))
         }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
