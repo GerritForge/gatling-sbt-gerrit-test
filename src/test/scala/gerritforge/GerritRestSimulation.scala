@@ -44,7 +44,6 @@ class GerritRestSimulation extends Simulation {
     )
   )
 
-  val anonymousUserChangeList = scenario("Anonymous user").exec(listChanges(testConfig.project))
   val authenticatedChangeList = scenario("Regular user")
     .feed(randomReview)
     .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
@@ -52,9 +51,6 @@ class GerritRestSimulation extends Simulation {
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
 
   setUp(
-    anonymousUserChangeList.inject(
-      rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
-    ),
     authenticatedChangeList.inject(
       rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
     )
