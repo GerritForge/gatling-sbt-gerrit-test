@@ -1,6 +1,6 @@
 package gerritforge
 
-import java.net.HttpURLConnection
+import java.net.{HttpURLConnection, URLEncoder}
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
@@ -128,10 +128,10 @@ object ChangesListScenario {
           val change  = changes(randomNumber.nextInt(changes.size))
           session
             .set("changeUrl", change.url)
-            .set("id", s"${change.project}~${change._number}")
+            .set("id", s"${URLEncoder.encode(change.project)}~${change._number}")
             .set("changeNum", change._number)
             .set("changeId", change.change_id)
-            .set("project", change.project)
+            .set("project", URLEncoder.encode(change.project))
         }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
