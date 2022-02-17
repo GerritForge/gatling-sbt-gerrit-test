@@ -36,6 +36,7 @@ Variable | Description | Sample
  GIT_HTTP_PASSWORD | Password for Git/HTTP testing | secret
  NUM_USERS | Number of concurrent user sessions | 10
  DURATION | Total duration of the test | 2 minutes
+ RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
 
 Get the project
 ---------------
