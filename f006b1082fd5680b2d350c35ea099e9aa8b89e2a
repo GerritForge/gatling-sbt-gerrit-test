@@ -70,6 +70,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bca817b_814b43ce",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T21:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4121b89_0f394d43",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "f006b1082fd5680b2d350c35ea099e9aa8b89e2a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dcb23c58_00abe8f7",
@@ -93,6 +117,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfad3425_e8fab415",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T21:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dcb23c58_00abe8f7",
+      "range": {
+        "startLine": 48,
+        "startChar": 32,
+        "endLine": 48,
+        "endChar": 96
+      },
+      "revId": "f006b1082fd5680b2d350c35ea099e9aa8b89e2a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3198ba46_9c920e6f",
@@ -106,6 +154,30 @@
       "writtenOn": "2022-03-01T20:48:48Z",
       "side": 1,
       "message": "equality with true is redundant, `testConfig.runAnonymousUser` is already a boolean",
+      "range": {
+        "startLine": 54,
+        "startChar": 19,
+        "endLine": 54,
+        "endChar": 59
+      },
+      "revId": "f006b1082fd5680b2d350c35ea099e9aa8b89e2a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "081531c5_455a607a",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T21:49:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3198ba46_9c920e6f",
       "range": {
         "startLine": 54,
         "startChar": 19,
