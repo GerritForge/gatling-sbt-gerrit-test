@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a6153e4_0fcfe35b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T22:14:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3010efc8_caa5dc03",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 25
+      },
+      "revId": "a68bdb445861d4425f216c0989b91a660f0685b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6a0b3d1_cf6a9fc9",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8b62716_31ac6a0f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T22:14:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6a0b3d1_cf6a9fc9",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 69
+      },
+      "revId": "a68bdb445861d4425f216c0989b91a660f0685b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41b3a296_c521bcef",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-03-01T20:52:16Z",
       "side": 1,
       "message": "this is the same as L131, consider to DRY this out.\n\nIs this the only place in gatling tests where we need to url encode the project?",
+      "range": {
+        "startLine": 136,
+        "startChar": 28,
+        "endLine": 136,
+        "endChar": 71
+      },
+      "revId": "a68bdb445861d4425f216c0989b91a660f0685b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90ab22d3_07ae8e3c",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-03-01T22:14:17Z",
+      "side": 1,
+      "message": "Looks like, after these changes gatling tests are passing for project name a/test_repo. Before I\u0027m getting 404",
+      "parentUuid": "41b3a296_c521bcef",
       "range": {
         "startLine": 136,
         "startChar": 28,
