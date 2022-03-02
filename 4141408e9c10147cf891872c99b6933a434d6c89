@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "416b1a5a_5fa50522",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2022-03-02T09:14:50Z",
+      "side": 1,
+      "message": "Nit: You can avoid repeating yourself a little by doing the following:\n  val scenarios \u003d authenticatedChangeList +: if (testConfig.restRunAnonymousUser) List(anonymousUserChangeList) else Nil",
+      "revId": "4141408e9c10147cf891872c99b6933a434d6c89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
