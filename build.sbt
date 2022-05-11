@@ -1,6 +1,8 @@
-enablePlugins(GatlingPlugin)
+enablePlugins(GatlingPlugin, DockerPlugin, GitVersioning)
 
 scalaVersion := "2.12.8"
+git.useGitDescribe := true
+git.formattedShaVersion := git.gitHeadCommit.value map { sha => "v"+sha.take(7) }
 
 scalacOptions := Seq(
   "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
@@ -26,8 +28,6 @@ libraryDependencies ++= Seq(
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-enablePlugins(DockerPlugin)
-
 dockerfile in docker := {
   val classpath = (managedClasspath in Compile).value
   new Dockerfile {
@@ -48,7 +48,8 @@ dockerfile in docker := {
 }
 
 imageNames in docker := Seq(
-  ImageName("gerritforge/gatling-sbt-gerrit-test"),
+  ImageName("gerritforge/gatling-sbt-gerrit-test:latest"),
+  ImageName(s"gerritforge/gatling-sbt-gerrit-test:${version.value}")
 )
 
 scalafmtOnCompile := true
