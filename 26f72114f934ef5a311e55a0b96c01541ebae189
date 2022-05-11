@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e531d17_d02d221c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-05-11T09:59:25Z",
+      "side": 1,
+      "message": "Once this is merge we will need to publish a new docker image",
+      "revId": "26f72114f934ef5a311e55a0b96c01541ebae189",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
