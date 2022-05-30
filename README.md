@@ -34,6 +34,7 @@ Variable | Description | Sample
  XSRF_TOKEN | XSRF_TOKEN Cookie to access the Gerrit GUI for pOST operations | 7d02b54405863778dfe1
  GIT_HTTP_USERNAME | Username for Git/HTTP testing | admin
  GIT_HTTP_PASSWORD | Password for Git/HTTP testing | secret
+ GIT_TIMEOUT | Timeout in seconds for Git operations testing | 30
  NUM_USERS | Number of concurrent user sessions | 10
  DURATION | Total duration of the test | 2 minutes
  RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
