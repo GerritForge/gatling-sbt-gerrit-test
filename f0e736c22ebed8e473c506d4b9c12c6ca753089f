@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b518c19_780ce5cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-01T15:18:08Z",
+      "side": 1,
+      "message": "LGTM 🔥",
+      "revId": "f0e736c22ebed8e473c506d4b9c12c6ca753089f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7319d841_9aefacbd",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-01T15:18:08Z",
+      "side": 1,
+      "message": "nit: new line",
+      "revId": "f0e736c22ebed8e473c506d4b9c12c6ca753089f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
