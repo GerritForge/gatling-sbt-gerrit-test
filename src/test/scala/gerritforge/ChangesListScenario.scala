@@ -15,7 +15,9 @@ import java.nio.charset.StandardCharsets
 
 import scala.util.Random
 
-case class ChangeDetail(_number: Int, project: String, change_id: String) {
+case class ChangeOwner(_account_id: Int, name: String)
+
+case class ChangeDetail(_number: Int, project: String, change_id: String, owner: ChangeOwner) {
   lazy val url = s"/c/${project}/+/${_number}/"
 }
 
@@ -72,7 +74,9 @@ object ChangesListScenario {
           .get("/accounts/self/capabilities")
           .check(checkStatus),
         http("fetch comments")
-          .get("/changes/${id}/comments"),
+          .get("/changes/${id}/comments?enable-context=true&context-padding=3"),
+        http("fetch ported comments")
+          .get("/changes/${id}/revisions/current/ported_comments/"),
         http("fetch robot-comments")
           .get("/changes/${id}/robotcomments"),
         http("get change details")
@@ -80,6 +84,8 @@ object ChangesListScenario {
         http("get draft comments")
           .get("/changes/${id}/drafts")
           .check(checkStatus),
+        http("get ported drafts comments")
+          .get("/changes/${id}/revisions/current/ported_comments/"),
         http("get download commands")
           .get("/changes/${id}/edit/?download-commands=true")
           .check(checkStatus),
@@ -90,6 +96,8 @@ object ChangesListScenario {
         http("get list of reviewed files")
           .get("/changes/${id}/revisions/1/files?reviewed")
           .check(checkStatus),
+        http("get files")
+          .get("/changes/${id}/revisions/1/files"),
         http("check if change is mergeable")
           .get("/changes/${id}/revisions/current/mergeable"),
         http("get related changes")
@@ -110,7 +118,7 @@ object ChangesListScenario {
         .headers(postApiHeader(xsrfCookie))
         .body(
           StringBody(
-            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"message":"${reviewMessage}","reviewers":[]}"""
+            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"comments":{"/PATCHSET_LEVEL":[{"message":"${reviewMessage}","unresolved":false}]},"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[],"remove_from_attention_set":[{"user":${ownerId},"reason":"${ownerName} replied on the change"}]}"""
           )
         )
         .asJson
@@ -134,6 +142,8 @@ object ChangesListScenario {
             .set("changeNum", change._number)
             .set("changeId", change.change_id)
             .set("project", encode(change.project))
+            .set("ownerId", change.owner._account_id)
+            .set("ownerName", encode(change.owner.name))
         }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
