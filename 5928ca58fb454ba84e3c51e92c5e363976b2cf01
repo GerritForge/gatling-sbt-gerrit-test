@@ -227,6 +227,30 @@
       },
       "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "428e3fa9_3aeaec33",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-06-07T18:40:33Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4ea8ada2_e0bbbb2e",
+      "range": {
+        "startLine": 121,
+        "startChar": 258,
+        "endLine": 121,
+        "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
