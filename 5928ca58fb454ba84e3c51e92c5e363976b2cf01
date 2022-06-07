@@ -114,6 +114,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4845056c_de27b151",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T19:38:32Z",
+      "side": 1,
+      "message": "What\u0027s the action you were recording, just browsing through the UI?",
+      "parentUuid": "a1daef1f_472e4214",
+      "range": {
+        "startLine": 77,
+        "startChar": 40,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f82da119_129921ac",
         "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
         "patchSetId": 1
@@ -267,6 +291,54 @@
       "side": 1,
       "message": "done",
       "parentUuid": "4ea8ada2_e0bbbb2e",
+      "range": {
+        "startLine": 121,
+        "startChar": 258,
+        "endLine": 121,
+        "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b039eaf5_6e66dde9",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T19:38:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e1decd7c_8c8f2e1e",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 356
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f65d8987_dbc7ca29",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T19:38:32Z",
+      "side": 1,
+      "message": "Did you mean to cut stable-3.3, so that these changes (targeting master) will be relevant from 3.4 onwards, rather than stable-3.5 onwards?",
+      "parentUuid": "428e3fa9_3aeaec33",
       "range": {
         "startLine": 121,
         "startChar": 258,
