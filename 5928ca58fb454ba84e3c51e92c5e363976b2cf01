@@ -39,6 +39,98 @@
       "message": "We should probably create a 3.5 branch before this change, isn\u0027t it?",
       "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3c734b_13b4eb04",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T09:11:42Z",
+      "side": 1,
+      "message": "Why are we testing these specific endpoint and get parameters?\nAre they working on any gerrit branch?",
+      "range": {
+        "startLine": 77,
+        "startChar": 40,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f82da119_129921ac",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T09:11:42Z",
+      "side": 1,
+      "message": "This was meant to be `ported_drafts` right?",
+      "range": {
+        "startLine": 88,
+        "startChar": 49,
+        "endLine": 88,
+        "endChar": 64
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53fe1b91_12de4fa9",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T09:11:42Z",
+      "side": 1,
+      "message": "What\u0027s the reason of this change?",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 356
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2010044a_7ed7cf65",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-06-07T09:11:42Z",
+      "side": 1,
+      "message": "Attention-set is only been introduced from gerrit 3.3 right?\nWould this stop working when targeting any previous version of gerrit?",
+      "range": {
+        "startLine": 121,
+        "startChar": 258,
+        "endLine": 121,
+        "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
