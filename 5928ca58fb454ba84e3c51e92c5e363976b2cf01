@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "474b6356_a47132a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2022-06-07T07:28:05Z",
+      "side": 1,
+      "message": "calls",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b10bc776_7f8e155b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2022-06-07T07:28:05Z",
+      "side": 1,
+      "message": "We should probably create a 3.5 branch before this change, isn\u0027t it?",
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
