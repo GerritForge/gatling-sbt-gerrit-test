@@ -66,6 +66,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a1daef1f_472e4214",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-06-07T18:39:28Z",
+      "side": 1,
+      "message": "This is what I see from the gatling recorder",
+      "parentUuid": "9b3c734b_13b4eb04",
+      "range": {
+        "startLine": 77,
+        "startChar": 40,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f82da119_129921ac",
         "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
         "patchSetId": 1
@@ -77,6 +101,30 @@
       "writtenOn": "2022-06-07T09:11:42Z",
       "side": 1,
       "message": "This was meant to be `ported_drafts` right?",
+      "range": {
+        "startLine": 88,
+        "startChar": 49,
+        "endLine": 88,
+        "endChar": 64
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37aea932_a3b92604",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-06-07T18:39:28Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "f82da119_129921ac",
       "range": {
         "startLine": 88,
         "startChar": 49,
@@ -128,6 +176,54 @@
         "startChar": 258,
         "endLine": 121,
         "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ea8ada2_e0bbbb2e",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-06-07T18:39:28Z",
+      "side": 1,
+      "message": "Agree we should cut stable-3.4 branch from current master",
+      "parentUuid": "2010044a_7ed7cf65",
+      "range": {
+        "startLine": 121,
+        "startChar": 258,
+        "endLine": 121,
+        "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1decd7c_8c8f2e1e",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2022-06-07T18:39:28Z",
+      "side": 1,
+      "message": "This is what I see from the gatling recorder when posting comment with score. This means that this is the payload which is send by the user.",
+      "parentUuid": "53fe1b91_12de4fa9",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 356
       },
       "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
