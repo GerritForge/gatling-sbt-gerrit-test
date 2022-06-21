@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57dd0231_f54e676a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2022-06-21T19:40:32Z",
+      "side": 1,
+      "message": "I have no V+1 permissions and I cannot add it to myself... but I\u0027m running it on Ubuntu for couple of days already...",
+      "revId": "5d5305eed57ec99d12f888fc726499e21acc9db0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
