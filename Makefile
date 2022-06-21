@@ -22,7 +22,7 @@ background-job-%:
 	make run &> `pwd`/target/gatling/$@.log &
 
 parallel-run:
-	for (( i=0; i<$(JOBS); i++)); do \
+	for i in $$(seq 1 ${JOBS}); do \
 		make background-job-$$i; done
 
 push: build
