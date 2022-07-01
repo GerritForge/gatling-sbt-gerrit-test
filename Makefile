@@ -13,17 +13,17 @@ id_rsa:
 
 run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \
-		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env ${GERRIT_PROJECT_ENV} -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			--add-host=host.docker.internal:host-gateway \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
 
 background-job-%:
 	mkdir -p `pwd`/target/gatling
-	make run &> `pwd`/target/gatling/$@.log &
+	if [ ! -z "${GERRIT_PROJECT}" ]; then GERRIT_PROJECT_ENV="-e GERRIT_PROJECT=${GERRIT_PROJECT}" make run &> `pwd`/target/gatling/$@.log; else make run &> `pwd`/target/gatling/$@.log; fi &
 
 parallel-run:
 	for i in $$(seq 1 ${JOBS}); do \
-		make background-job-$$i; done
+		if [ ! -z "${REPO_PREFIX}" ]; then GERRIT_PROJECT="${REPO_PREFIX}_$$i" make background-job-$$i; else make background-job-$$i; fi; done
 
 push: build
 	sbt dockerBuildAndPush

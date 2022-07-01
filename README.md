@@ -93,7 +93,8 @@ For running the tests from Docker, with the environment variables defined in
 $ make run
 ```
 
-For making a parallel execution of multiple runs with concurrent Docker:
+For making a parallel execution of multiple runs against the same `GERRIT_PROJECT`
+with concurrent Docker:
 
 ```
 $ make JOBS=2 parallel-run
@@ -107,3 +108,19 @@ Each parallel simulation job logs a `background-job-<n>.log` under the `target/g
 Before running the tests, make sure to add it to the users' SSH keys.
 * The repo the tests will run against (`GERRIT_PROJECT`) will need the following ACLs to be set:
 ![ACLs](./images/ACLs.png)
+
+For making a parallel execution of multiple runs against a different project
+each with concurrent Docker:
+
+```
+$ REPO_PREFIX=repo make JOBS=2 parallel-run
+```
+
+*NOTES*:
+* Repository name used by each docker container adheres to the template:
+`${REPO_PREFIX}_${n}` where `n` is a job number. In the example above
+2 jobs will be started performing tests against `repo_1` and `repo_2` repositories
+correspondingly.
+* Repositories must be created upfront and notes from parallel calls against
+single repo apply. For test purposes sites only consider setting ACLs on
+`All-Projects` project level so that test repositories can inherit from it.
