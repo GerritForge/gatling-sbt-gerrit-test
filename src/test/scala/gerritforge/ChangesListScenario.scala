@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets
 
 import scala.util.Random
 
-case class ChangeDetail(_number: Int, project: String, change_id: String) {
+case class ChangeDetail(_number: Int, project: String, change_id: String, current_revision: String) {
   lazy val url = s"/c/${project}/+/${_number}/"
 }
 
@@ -54,7 +54,7 @@ object ChangesListScenario {
         http("get server info")
           .get("/config/server/info"),
         http("get list of changes")
-          .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}")
+          .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}&o=CURRENT_REVISION")
           .check(
             bodyString
               .transform(_.drop(XSS_LEN))
@@ -86,14 +86,14 @@ object ChangesListScenario {
         http("get project config")
           .get("/projects/${project}/config"),
         http("get available actions")
-          .get("/changes/${id}/revisions/1/actions"),
+          .get("/changes/${id}/revisions/${revision}/actions"),
         http("get list of reviewed files")
-          .get("/changes/${id}/revisions/1/files?reviewed")
+          .get("/changes/${id}/revisions/${revision}/files?reviewed")
           .check(checkStatus),
         http("check if change is mergeable")
           .get("/changes/${id}/revisions/current/mergeable"),
         http("get related changes")
-          .get("/changes/${id}/revisions/1/related"),
+          .get("/changes/${id}/revisions/${revision}/related"),
         http("get cherry picks")
           .get(
             "/changes/?O=a&q=project%3A${project}%20change%3A${changeId}%20-change%3A${changeNum}%20-is%3Aabandoned"
@@ -106,7 +106,7 @@ object ChangesListScenario {
 
     val postComments = {
       http("Post comments with score")
-        .post("/changes/${project}~${changeNum}/revisions/1/review")
+        .post("/changes/${project}~${changeNum}/revisions/${revision}/review")
         .headers(postApiHeader(xsrfCookie))
         .body(
           StringBody(
@@ -134,6 +134,7 @@ object ChangesListScenario {
             .set("changeNum", change._number)
             .set("changeId", change.change_id)
             .set("project", encode(change.project))
+            .set("revision", encode(change.current_revision))
         }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
