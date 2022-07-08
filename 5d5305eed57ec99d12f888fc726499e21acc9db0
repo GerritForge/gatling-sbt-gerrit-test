@@ -16,6 +16,23 @@
       "message": "I have no V+1 permissions and I cannot add it to myself... but I\u0027m running it on Ubuntu for couple of days already...",
       "revId": "5d5305eed57ec99d12f888fc726499e21acc9db0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6065252b_463ec82b",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-07-08T21:19:56Z",
+      "side": 1,
+      "message": "This option is only available in very recent Docker versions.\nIt should be instead made optional rather than added hardcoded.",
+      "revId": "5d5305eed57ec99d12f888fc726499e21acc9db0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": []
