@@ -160,6 +160,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5daa0353_f2a7815f",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-07-08T20:27:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "83a9617c_5c8f09bb",
+      "range": {
+        "startLine": 77,
+        "startChar": 40,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f82da119_129921ac",
@@ -387,6 +411,30 @@
       "side": 1,
       "message": "Well, we should cut a stable-3.2 branch, because the attention-set is available from 3.3 onwards.",
       "parentUuid": "f65d8987_dbc7ca29",
+      "range": {
+        "startLine": 121,
+        "startChar": 258,
+        "endLine": 121,
+        "endChar": 283
+      },
+      "revId": "5928ca58fb454ba84e3c51e92c5e363976b2cf01",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a140f8c_bca6653a",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-07-08T20:27:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b075debe_638389d6",
       "range": {
         "startLine": 121,
         "startChar": 258,
