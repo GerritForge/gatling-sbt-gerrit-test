@@ -42,7 +42,8 @@ object ChangesListScenario {
   def listChanges(
       projectName: String,
       authCookie: Option[String] = None,
-      xsrfCookie: Option[String] = None
+      xsrfCookie: Option[String] = None,
+      stickyCookie: Option[String] = None
   ) = {
     val checkStatus =
       status.in(authCookie.fold(Seq(HTTP_FORBIDDEN))(_ => Seq(HTTP_OK, HTTP_NO_CONTENT)))
@@ -126,11 +127,16 @@ object ChangesListScenario {
 
     val httpHead = http("head").head("/")
 
-    authCookie
+    val builder = authCookie
       .fold(exec(flushSessionCookies)) { auth =>
         exec(addCookie(Cookie("GerritAccount", auth)))
           .exec(http("home page").get("/"))
       }
+
+    stickyCookie
+      .fold(builder) { c =>
+        val cookie = c.split(':')
+        builder.exec(addCookie(Cookie(cookie(0),cookie(1))))}
       .exec(listChanges)
       .doIf(session => !session("changeDetails").as[List[ChangeDetail]].isEmpty) {
         exec { session =>

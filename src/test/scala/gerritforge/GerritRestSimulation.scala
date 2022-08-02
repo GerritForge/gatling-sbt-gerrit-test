@@ -48,7 +48,7 @@ class GerritRestSimulation extends Simulation {
   val anonymousUserChangeList = List(scenario("Anonymous user").exec(listChanges(testConfig.project)))
   val authenticatedChangeList: List[ScenarioBuilder] = List(scenario("Regular user")
     .feed(randomReview)
-    .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
+    .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken, testConfig.stickyCookie))
   )
 
   val scenarios =  if (testConfig.restRunAnonymousUser) authenticatedChangeList ++ anonymousUserChangeList else authenticatedChangeList
