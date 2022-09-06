@@ -57,7 +57,7 @@ object ChangesListScenario {
         http("get server info")
           .get("/config/server/info"),
         http("get list of changes")
-          .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}&o=CURRENT_REVISION")
+          .get(s"/changes/?O=81&S=0&n=100&q=status%3Aopen+project:${projectName}&o=CURRENT_REVISION")
           .check(
             bodyString
               .transform(_.drop(XSS_LEN))
