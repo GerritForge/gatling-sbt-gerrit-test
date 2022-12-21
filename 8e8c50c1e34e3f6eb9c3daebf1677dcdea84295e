@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "7f9cb66c_04f3a759",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,10 @@
         "endChar": 52
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5f38bd53_317d7313",
         "filename": "/COMMIT_MSG",
@@ -43,10 +44,27 @@
         "endChar": 48
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd249b3b_b3f18bca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-12-21T11:09:40Z",
+      "side": 1,
+      "message": "Is this still needed?",
+      "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "048baab0_65a0ab57",
         "filename": "Makefile",
@@ -66,10 +84,10 @@
         "endChar": 77
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e043c926_12d750df",
         "filename": "README.md",
@@ -89,10 +107,10 @@
         "endChar": 57
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "6cd92e55_46f6b0bf",
         "filename": "src/test/resources/data/gerrit-git-fetch-simulation.csv",
@@ -112,10 +130,10 @@
         "endChar": 0
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "907130a4_73a62c8f",
         "filename": "src/test/scala/gerritforge/GerritGitFetchSimulation.scala",
@@ -135,10 +153,10 @@
         "endChar": 30
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "3364f7cf_6dea86b3",
         "filename": "src/test/scala/gerritforge/GerritGitFetchSimulation.scala",
@@ -158,10 +176,10 @@
         "endChar": 80
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "83f98dc3_845b406a",
         "filename": "src/test/scala/gerritforge/GerritGitFetchSimulation.scala",
@@ -181,10 +199,10 @@
         "endChar": 46
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5a827070_00d0e604",
         "filename": "src/test/scala/gerritforge/GerritGitScenario.scala",
@@ -204,8 +222,7 @@
         "endChar": 90
       },
       "revId": "8e8c50c1e34e3f6eb9c3daebf1677dcdea84295e",
-      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
-      "unresolved": true
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

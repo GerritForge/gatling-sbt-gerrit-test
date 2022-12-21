@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4da2cee9_7e2d72d8",
+        "filename": "build.sbt",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2022-12-21T11:09:40Z",
+      "side": 0,
+      "message": "Should be only on the left",
+      "revId": "3165e176caf0f4dd9054c1a193469cad1cf2d247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
