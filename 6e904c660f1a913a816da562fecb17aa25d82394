@@ -16,6 +16,24 @@
       "message": "I get some warnings that I think are due to the update - we should address these before merging:\n\n```\ngatling-sbt-gerrit-test/build.sbt:29: warning: method sonatypeRepo in class ResolverFunctions is deprecated (since 1.7.0): Use sonatypeOssRepos instead e.g. `resolvers ++\u003d Resolver.sonatypeOssRepos(\"snapshots\")`\nresolvers +\u003d Resolver.sonatypeRepo(\"snapshots\")\n\ngatling-sbt-gerrit-test/build.sbt:31: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash\ndockerfile in docker :\u003d {\n\ngatling-sbt-gerrit-test/build.sbt:32: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash\n  val classpath \u003d (managedClasspath in Compile).value\n  \ngatling-sbt-gerrit-test/build.sbt:50: warning: method in in trait ScopingSetting is deprecated (since 1.5.0): `in` is deprecated; migrate to slash syntax - https://www.scala-sbt.org/1.x/docs/Migrating-from-sbt-013x.html#slash\nimageNames in docker :\u003d Seq(",
       "revId": "6e904c660f1a913a816da562fecb17aa25d82394",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70443106_70fa072c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-01-11T22:15:39Z",
+      "side": 1,
+      "message": "Apologies for the awful formatting.",
+      "parentUuid": "e847a574_661c04b5",
+      "revId": "6e904c660f1a913a816da562fecb17aa25d82394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
