@@ -1,4 +1,4 @@
-addSbtPlugin("io.gatling" % "gatling-sbt" % "3.0.0")
+addSbtPlugin("io.gatling" % "gatling-sbt" % "4.2.6")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.0")
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.7")
 addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.7.0")

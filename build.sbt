@@ -35,15 +35,14 @@ libraryDependencies ++= Seq(
   )
 )
 
-resolvers ++= Seq(
-  Resolver.sonatypeRepo("snapshots"),
+resolvers ++= Resolver.sonatypeOssRepos("snapshots") ++ Seq(
   "Eclipse JGit Snapshots" at "https://repo.eclipse.org/content/groups/jgit"
 //  Resolver.url("https://repo.eclipse.org/content/groups/jgit")
 //   "Eclipse JGit Snapshots" at "https://repo.eclipse.org/content/groups/jgit"
 )
 
-dockerfile in docker := {
-  val classpath = (managedClasspath in Compile).value
+docker / dockerfile  := {
+  val classpath = (Compile / managedClasspath).value
   new Dockerfile {
     from(s"gerritforge/gatling:$gatlingVer")
 
@@ -64,7 +63,7 @@ dockerfile in docker := {
   }
 }
 
-imageNames in docker := Seq(
+docker/ imageNames := Seq(
   ImageName("gerritforge/gatling-sbt-gerrit-test:latest"),
   ImageName(s"gerritforge/gatling-sbt-gerrit-test:${version.value}")
 )

@@ -17,13 +17,19 @@ import scala.util.Random
 
 case class ChangeOwner(_account_id: Int, name: String)
 
-case class ChangeDetail(_number: Int, project: String, change_id: String, owner: ChangeOwner, current_revision: String) {
+case class ChangeDetail(
+    _number: Int,
+    project: String,
+    change_id: String,
+    owner: ChangeOwner,
+    current_revision: String
+) {
   lazy val url = s"/c/${project}/+/${_number}/"
 }
 
 object ChangesListScenario {
 
-  val XSS_LEN = 5
+  val XSS_LEN  = 5
   val encoding = StandardCharsets.UTF_8.toString()
 
   val restApiHeader = Map(
@@ -56,7 +62,9 @@ object ChangesListScenario {
         http("get server info")
           .get("/config/server/info"),
         http("get list of changes")
-          .get(s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}&o=CURRENT_REVISION")
+          .get(
+            s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:${projectName}&o=CURRENT_REVISION"
+          )
           .check(
             bodyString
               .transform(_.drop(XSS_LEN))
@@ -151,7 +159,7 @@ object ChangesListScenario {
       }
   }
 
-  def encode(value:String): String = {
+  def encode(value: String): String = {
     URLEncoder.encode(value, encoding)
   }
 }
