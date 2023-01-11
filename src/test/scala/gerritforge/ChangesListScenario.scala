@@ -69,64 +69,67 @@ object ChangesListScenario {
             bodyString
               .transform(_.drop(XSS_LEN))
               .transform(decode[List[ChangeDetail]](_))
-              .transform(_.right.get)
+              .transform {
+                case Right(changeDetailList) => changeDetailList
+                case Left(decodingError)     => throw decodingError
+              }
               .saveAs("changeDetails")
           )
       )
 
     val getChangeDetails = http("get change details")
-      .get("${changeUrl}")
+      .get("#{changeUrl}")
       .headers(restApiHeader)
       .resources(
         http("check account capabilities")
           .get("/accounts/self/capabilities")
           .check(checkStatus),
         http("fetch comments")
-          .get("/changes/${id}/comments?enable-context=true&context-padding=3"),
+          .get("/changes/#{id}/comments?enable-context=true&context-padding=3"),
         http("fetch ported comments")
-          .get("/changes/${id}/revisions/current/ported_comments/"),
+          .get("/changes/#{id}/revisions/current/ported_comments/"),
         http("fetch robot-comments")
-          .get("/changes/${id}/robotcomments"),
+          .get("/changes/#{id}/robotcomments"),
         http("get change details")
-          .get("/changes/${id}/detail?o=LABELS&o=CURRENT_ACTIONS&o=ALL_REVISIONS&o=SUBMITTABLE"),
+          .get("/changes/#{id}/detail?o=LABELS&o=CURRENT_ACTIONS&o=ALL_REVISIONS&o=SUBMITTABLE"),
         http("get draft comments")
-          .get("/changes/${id}/drafts")
+          .get("/changes/#{id}/drafts")
           .check(checkStatus),
         http("get ported drafts comments")
-          .get("/changes/${id}/revisions/current/ported_drafts/"),
+          .get("/changes/#{id}/revisions/current/ported_drafts/"),
         http("get download commands")
-          .get("/changes/${id}/edit/?download-commands=true")
+          .get("/changes/#{id}/edit/?download-commands=true")
           .check(checkStatus),
         http("get project config")
-          .get("/projects/${project}/config"),
+          .get("/projects/#{project}/config"),
         http("get available actions")
-          .get("/changes/${id}/revisions/${revision}/actions"),
+          .get("/changes/#{id}/revisions/#{revision}/actions"),
         http("get list of reviewed files")
-          .get("/changes/${id}/revisions/${revision}/files?reviewed")
+          .get("/changes/#{id}/revisions/#{revision}/files?reviewed")
           .check(checkStatus),
         http("get files")
-          .get("/changes/${id}/revisions/1/files"),
+          .get("/changes/#{id}/revisions/1/files"),
         http("check if change is mergeable")
-          .get("/changes/${id}/revisions/current/mergeable"),
+          .get("/changes/#{id}/revisions/current/mergeable"),
         http("get related changes")
-          .get("/changes/${id}/revisions/${revision}/related"),
+          .get("/changes/#{id}/revisions/#{revision}/related"),
         http("get cherry picks")
           .get(
-            "/changes/?O=a&q=project%3A${project}%20change%3A${changeId}%20-change%3A${changeNum}%20-is%3Aabandoned"
+            "/changes/?O=a&q=project%3A#{project}%20change%3A#{changeId}%20-change%3A#{changeNum}%20-is%3Aabandoned"
           ),
         http("get conflicting changes")
-          .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A${changeNum}"),
+          .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A#{changeNum}"),
         http("check for other changes submittable together")
-          .get("/changes/${id}/submitted_together?o=NON_VISIBLE_CHANGES")
+          .get("/changes/#{id}/submitted_together?o=NON_VISIBLE_CHANGES")
       )
 
     val postComments = {
       http("Post comments with score")
-        .post("/changes/${project}~${changeNum}/revisions/${revision}/review")
+        .post("/changes/#{project}~#{changeNum}/revisions/#{revision}/review")
         .headers(postApiHeader(xsrfCookie))
         .body(
           StringBody(
-            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":${reviewScore}},"comments":{"/PATCHSET_LEVEL":[{"message":"${reviewMessage}","unresolved":false}]},"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[],"remove_from_attention_set":[{"user":${ownerId},"reason":"${ownerName} replied on the change"}]}"""
+            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":#{reviewScore}},"comments":{"/PATCHSET_LEVEL":[{"message":"#{reviewMessage}","unresolved":false}]},"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[],"remove_from_attention_set":[{"user":#{ownerId},"reason":"#{ownerName} replied on the change"}]}"""
           )
         )
         .asJson

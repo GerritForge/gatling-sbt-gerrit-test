@@ -19,8 +19,8 @@ class GerritRestSimulation extends Simulation {
       http
         .baseUrl(url)
         .inferHtmlResources(
-          BlackList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png"""),
-          WhiteList()
+          AllowList(),
+          DenyList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png""")
         )
         .acceptHeader("*/*")
         .acceptEncodingHeader("gzip, deflate")
