@@ -1,14 +1,14 @@
 enablePlugins(GatlingPlugin, DockerPlugin, GitVersioning)
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.10"
 git.useGitDescribe := true
 git.formattedShaVersion := git.gitHeadCommit.value map { sha => "v"+sha.take(7) }
 
 scalacOptions := Seq(
-  "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
+  "-encoding", "UTF-8", "-deprecation",
   "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
 
-val gatlingVer = "3.2.1"
+val gatlingVer = "3.8.4"
 
 val circeVer = "0.13.0"
 
@@ -20,15 +20,17 @@ libraryDependencies ++= Seq(
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling" % "gatling-test-framework" % gatlingVer % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % Test,
-  "com.gerritforge" %% "gatling-git" % "1.0.18" excludeAll(
+  "com.gerritforge" %% "gatling-git" % "2.0.1" excludeAll(
     ExclusionRule(organization = "io.gatling"),
     ExclusionRule(organization = "io.gatling.highcharts")
   )
 )
 
-resolvers ++= Resolver.sonatypeOssRepos("snapshots")
+resolvers ++= Resolver.sonatypeOssRepos("snapshots") ++ Seq(
+  "Eclipse JGit Snapshots" at "https://repo.eclipse.org/content/groups/jgit"
+)
 
-docker / dockerfile := {
+docker / dockerfile  := {
   val classpath = (Compile / managedClasspath).value
   new Dockerfile {
     from(s"denvazh/gatling:$gatlingVer")
