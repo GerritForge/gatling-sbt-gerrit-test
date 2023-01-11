@@ -1,14 +1,12 @@
 package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
-import gerritforge.GerritGitScenario._
+import gerritforge.GerritTestConfig.testConfig
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
-import GerritTestConfig.testConfig
-import io.gatling.core.structure.ChainBuilder
+import io.gatling.core.structure.ScenarioBuilder
 
 import java.net.InetAddress
-import scala.concurrent.duration._
 
 class GerritGitSimulation extends Simulation {
 
@@ -18,29 +16,21 @@ class GerritGitSimulation extends Simulation {
     Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
   }
 
-  val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
-  val gitHttpScenario = GerritGitScenario(testConfig.httpUrl.map(_ + "/a"))
+  val gitSshScenario  = testConfig.sshUrl.map(GerritGitScenario)
+  val gitHttpScenario = testConfig.httpUrl.map(_ + "/a").map(GerritGitScenario)
 
-  val gitCloneAndPush = scenario("Git clone and push to Gerrit")
+  val gitCloneAndPush: ScenarioBuilder = scenario("Git clone and push to Gerrit")
     .feed(feeder.circular)
-    .exec(
-      ChainBuilder(
-        gitSshScenario.pushCommand.toList ++
-          gitHttpScenario.pushCommand.toList
-      )
-    )
-    .exec(
-      ChainBuilder(
-        gitSshScenario.cloneCommand.toList ++
-          gitHttpScenario.cloneCommand.toList
-      )
-    )
-    .exec(
-      ChainBuilder(
-        gitSshScenario.createChangeCommand.toList ++
-          gitHttpScenario.createChangeCommand.toList
-      )
-    )
+    .doIf(gitSshScenario.isDefined) {
+      exec(gitSshScenario.get.pushCommand)
+        .exec(gitSshScenario.get.cloneCommand)
+        .exec(gitSshScenario.get.createChangeCommand)
+    }
+    .doIf(gitHttpScenario.isDefined) {
+      exec(gitHttpScenario.get.pushCommand)
+        .exec(gitHttpScenario.get.cloneCommand)
+        .exec(gitHttpScenario.get.createChangeCommand)
+    }
 
   require(
     testConfig.httpUrl.orElse(testConfig.sshUrl).isDefined,
