@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb754070_cea5ecad",
+        "filename": ".bsp/sbt.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-16T11:05:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd667920_fd142f12",
+      "revId": "fc7e9220cea7a1ac3c6f8620c9f33f9127f0a9b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91a22d2b_c9f9520e",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-16T10:51:43Z",
       "side": 1,
       "message": "Nit: the reformatting could be part of a separate commit, as I don\u0027t think it\u0027s relevant to this change.",
+      "revId": "fc7e9220cea7a1ac3c6f8620c9f33f9127f0a9b1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10c73fb3_8c4d257e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-16T11:05:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91a22d2b_c9f9520e",
       "revId": "fc7e9220cea7a1ac3c6f8620c9f33f9127f0a9b1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
