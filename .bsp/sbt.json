@@ -1,0 +1,1 @@
+{"name":"sbt","version":"1.8.2","bspVersion":"2.1.0-M1","languages":["scala"],"argv":["/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/bin/java","-Xms100m","-Xmx100m","-classpath","/Users/dani/.sbt/launchers/1.8.2/sbt-launch.jar","-Dsbt.script=/opt/homebrew/bin/sbt","xsbt.boot.Boot","-bsp"]}
