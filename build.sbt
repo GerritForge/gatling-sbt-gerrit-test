@@ -26,10 +26,10 @@ libraryDependencies ++= Seq(
   )
 )
 
-resolvers += Resolver.sonatypeRepo("snapshots")
+resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 
-dockerfile in docker := {
-  val classpath = (managedClasspath in Compile).value
+docker / dockerfile := {
+  val classpath = (Compile / managedClasspath).value
   new Dockerfile {
     from(s"denvazh/gatling:$gatlingVer")
 
@@ -47,7 +47,7 @@ dockerfile in docker := {
   }
 }
 
-imageNames in docker := Seq(
+docker / imageNames := Seq(
   ImageName("gerritforge/gatling-sbt-gerrit-test:latest"),
   ImageName(s"gerritforge/gatling-sbt-gerrit-test:${version.value}")
 )
