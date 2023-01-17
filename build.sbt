@@ -33,7 +33,7 @@ resolvers ++= Resolver.sonatypeOssRepos("snapshots") ++ Seq(
 docker / dockerfile := {
   val classpath = (Compile / managedClasspath).value
   new Dockerfile {
-    from(s"denvazh/gatling:$gatlingVer")
+    from(s"gerritforge/gatling:$gatlingVer")
 
     stageFiles(Seq("src/test/resources/logback.xml", "src/test/resources/application.conf").map(new File(_)), "conf/")
     stageFile(new File("src/test/scala/gerritforge"), "simulations/")
