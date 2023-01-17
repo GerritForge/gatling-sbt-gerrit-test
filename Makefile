@@ -14,7 +14,7 @@ id_rsa:
 run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \
 		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
-			$(DOCKER_IMAGE) -s gerritforge.$$simulation; done
+			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
 
 background-job-%:
 	mkdir -p `pwd`/target/gatling
