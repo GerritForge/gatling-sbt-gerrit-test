@@ -1,12 +1,7 @@
 package gerritforge
 
-import java.net.URL
-
 import pureconfig._
 import pureconfig.generic.auto._
-
-import io.gatling.core.Predef._
-import io.gatling.http.Predef._
 
 import scala.concurrent.duration.FiniteDuration
 

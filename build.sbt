@@ -5,10 +5,22 @@ git.useGitDescribe := true
 git.formattedShaVersion := git.gitHeadCommit.value map { sha => "v"+sha.take(7) }
 
 scalacOptions := Seq(
-  "-encoding", "UTF-8", "-release:8", "-deprecation",
-  "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
+  "-encoding",
+  "UTF-8",
+  "-release:8",
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-language:implicitConversions",
+  "-language:postfixOps",
+  "-Ywarn-unused:imports", // Warn if an import selector is not referenced
+  "-Ywarn-unused:locals",  // Warn if a local definition is unused
+  "-Ywarn-unused:patvars", // Warn if a variable bound in a pattern is unused
+  "-Ywarn-unused:privates", // Warn if a private member is unused
+  "-Xfatal-warnings"
+)
 
-val gatlingVer = "3.8.4"
+val gatlingVer = "3.9.0"
 
 val circeVer = "0.13.0"
 
@@ -35,12 +47,15 @@ docker / dockerfile := {
   new Dockerfile {
     from(s"gerritforge/gatling:$gatlingVer")
 
-    stageFiles(Seq("src/test/resources/logback.xml", "src/test/resources/application.conf").map(new File(_)), "conf/")
+    stageFiles(
+      Seq("src/test/resources/logback.xml", "src/test/resources/application.conf").map(new File(_)),
+      "conf/"
+    )
     stageFile(new File("src/test/scala/gerritforge"), "simulations/")
-    copyRaw("simulations/","/opt/gatling/user-files/simulations/")
+    copyRaw("simulations/", "/opt/gatling/user-files/simulations/")
     copyRaw("conf/", "/opt/gatling/conf/")
     stageFiles(Seq("id_rsa", "id_rsa.pub", "config").map(new File(_)), ".ssh/")
-    addRaw(".ssh/","/root/.ssh/")
+    addRaw(".ssh/", "/root/.ssh/")
     stageFile(new File(".gitconfig"), ".gitconfig")
     addRaw(".gitconfig", ".gitconfig")
     addRaw(".gitconfig", "/root/")
