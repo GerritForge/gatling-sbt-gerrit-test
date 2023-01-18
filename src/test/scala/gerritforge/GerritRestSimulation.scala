@@ -2,12 +2,11 @@ package gerritforge
 
 import io.gatling.core.scenario.Simulation
 
-import scala.concurrent.duration._
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import GerritTestConfig._
 import ChangesListScenario._
-import io.gatling.core.structure.{PopulationBuilder, ScenarioBuilder}
+import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.protocol.HttpProtocol
 
 import scala.util.Random
