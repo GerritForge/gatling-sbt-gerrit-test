@@ -8,7 +8,7 @@ scalacOptions := Seq(
   "-encoding", "UTF-8", "-release:8", "-deprecation",
   "-feature", "-unchecked", "-language:implicitConversions", "-language:postfixOps")
 
-val gatlingVer = "3.8.4"
+val gatlingVer = "3.9.0"
 
 val circeVer = "0.13.0"
 
