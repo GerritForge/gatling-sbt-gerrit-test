@@ -6,10 +6,8 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 import scala.concurrent.duration._
-import io.circe._
 import io.circe.parser._
 import io.circe.generic.auto._
-import io.circe.syntax._
 import HttpURLConnection._
 import java.nio.charset.StandardCharsets
 
