@@ -4,7 +4,7 @@ DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
 JOBS:=2
 
 build: prepare
-	sbt docker
+	sbt docker:publishLocal
 
 prepare: id_rsa
 
