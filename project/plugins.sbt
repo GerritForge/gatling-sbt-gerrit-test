@@ -1,5 +1,5 @@
 addSbtPlugin("io.gatling" % "gatling-sbt" % "4.2.6")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.0")
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.7")
-addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.7.0")
+addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.9.13")
 addSbtPlugin("com.github.sbt" % "sbt-git" % "2.0.0")
