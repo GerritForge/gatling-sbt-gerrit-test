@@ -4,7 +4,10 @@ DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
 JOBS:=2
 
 build: prepare
-	sbt docker:publishLocal
+	sbt "Docker / publishLocal"
+
+publish: prepare
+	sbt "Docker / publish"
 
 prepare: id_rsa
 
@@ -23,6 +26,3 @@ background-job-%:
 parallel-run:
 	for i in $$(seq 1 ${JOBS}); do \
 		make background-job-$$i; done
-
-push: build
-	sbt dockerBuildAndPush

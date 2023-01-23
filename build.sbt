@@ -33,8 +33,8 @@ libraryDependencies ++= Seq(
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling"            % "gatling-test-framework"    % gatlingVer % Test,
   "org.scalatest"         %% "scalatest"                % "3.0.8" % Test,
-  "io.gatling"            % "gatling-app"               % gatlingVer, // Need to avoid "Couldn't locate Gatling
-  // libraries in the classpath" when creating docker image
+  "io.gatling"            % "gatling-app"               % gatlingVer, // Need to avoid "Couldn't
+  // locate Gatling libraries in the classpath" when creating docker image
   "com.gerritforge"       %% "gatling-git"              % "2.0.1" excludeAll (
     ExclusionRule(organization = "io.gatling"),
     ExclusionRule(organization = "io.gatling.highcharts")
@@ -46,11 +46,13 @@ resolvers ++= Resolver.sonatypeOssRepos("snapshots") ++ Seq(
 )
 
 name := "gatling-sbt-gerrit-test"
-dockerUpdateLatest := true
 dockerBaseImage := s"gerritforge/gatling:$gatlingVer"
+dockerBuildxPlatforms := Seq("linux/arm64/v8", "linux/amd64")
+dockerUsername := Some("gerritforge")
+dockerUpdateLatest := true
+
 Docker / daemonUserUid := None
 Docker / daemonUser := "daemon"
-dockerBuildxPlatforms := Seq("linux/arm64/v8", "linux/amd64")
 Docker / defaultLinuxInstallLocation := "/opt/gatling"
 Universal / mappings ++= {
   val classpath = (Compile / managedClasspath).value
