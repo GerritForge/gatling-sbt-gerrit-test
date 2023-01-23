@@ -16,6 +16,24 @@
       "message": "nit: wrap long line. Is the sbt formatter suggesting the long line?",
       "revId": "9a87c104fa058ed7612d835b9b704eaa84850ce6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aa8fd8d_7a41a4d1",
+        "filename": "build.sbt",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T15:26:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3295e747_6159d326",
+      "revId": "9a87c104fa058ed7612d835b9b704eaa84850ce6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
