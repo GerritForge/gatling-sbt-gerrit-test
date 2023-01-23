@@ -46,11 +46,13 @@ resolvers ++= Resolver.sonatypeOssRepos("snapshots") ++ Seq(
 )
 
 name := "gatling-sbt-gerrit-test"
-dockerUpdateLatest := true
 dockerBaseImage := s"gerritforge/gatling:$gatlingVer"
+dockerBuildxPlatforms := Seq("linux/arm64/v8", "linux/amd64")
+dockerUsername := Some("gerritforge")
+dockerUpdateLatest := true
+
 Docker / daemonUserUid := None
 Docker / daemonUser := "daemon"
-dockerBuildxPlatforms := Seq("linux/arm64/v8", "linux/amd64")
 Docker / defaultLinuxInstallLocation := "/opt/gatling"
 Universal / mappings ++= {
   val classpath = (Compile / managedClasspath).value
