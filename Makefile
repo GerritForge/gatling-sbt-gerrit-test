@@ -6,6 +6,9 @@ JOBS:=2
 build: prepare
 	sbt docker:publishLocal
 
+publish: prepare
+	sbt docker:publish
+
 prepare: id_rsa
 
 id_rsa:
