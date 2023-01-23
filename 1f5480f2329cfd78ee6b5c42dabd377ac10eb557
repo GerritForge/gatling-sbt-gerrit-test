@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b4835e_ff357318",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:35:43Z",
+      "side": 1,
+      "message": "Can you explain why we need to change library in the commit body?",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68ad992f_b06f90ce",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:35:43Z",
+      "side": 1,
+      "message": "Is this part of this change?",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "391a0263_9b9331c0",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:35:43Z",
+      "side": 1,
+      "message": "What is this `daemon` user for?",
+      "range": {
+        "startLine": 51,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 19
+      },
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "523b0b39_8bb11888",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:35:43Z",
+      "side": 1,
+      "message": "Is this needed? Can we just copy the files over?\nI can\u0027t recall why we were doing that before :/",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
