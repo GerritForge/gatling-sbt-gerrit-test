@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "119525e6_494811a8",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:57:38Z",
+      "side": 1,
+      "message": "Might be worth adding a comment or a link to any useful doc in case we would stumble across this issue again?",
+      "parentUuid": "d686a8e4_a0fdfff7",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "391a0263_9b9331c0",
         "filename": "build.sbt",
         "patchSetId": 13
@@ -125,6 +143,24 @@
       "side": 1,
       "message": "I tried and it doesn\u0027t work unfortunately, I then understood why we did it before, haha. All files written by the container are written under the `defaultLinuxInstallLocation` that we set to `/opt/gatling/`, I did try moving this to be `/root/` or `/` but the pluging isn\u0027t able to write there. So the files need to be added to this staging area and then added in the write place via a more low level docker api. I also tried doing it directly via the low level docker api, but it wasn\u0027t able to access the files directly from the file system.",
       "parentUuid": "523b0b39_8bb11888",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aaeb8f73_fc8eb6d0",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-23T14:57:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5bfc2578_f279df25",
       "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
