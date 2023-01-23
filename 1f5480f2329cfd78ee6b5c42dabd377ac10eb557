@@ -89,6 +89,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a375cc0_dd361a64",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-01-23T15:11:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "119525e6_494811a8",
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "391a0263_9b9331c0",
@@ -102,6 +120,30 @@
       "writtenOn": "2023-01-23T14:35:43Z",
       "side": 1,
       "message": "What is this `daemon` user for?",
+      "range": {
+        "startLine": 51,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 19
+      },
+      "revId": "1f5480f2329cfd78ee6b5c42dabd377ac10eb557",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98e23d37_496625a7",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-01-23T15:11:26Z",
+      "side": 1,
+      "message": "Without this image creation find as sbt-native-packager tries to add a user but fails as `adduser: command not found`. To disable the creation of the user sbt-native-packager [recommended this approach](https://review.gerrithub.io/c/GerritForge/gatling-sbt-gerrit-test/+/548636/comments/391a0263_9b9331c0).",
+      "parentUuid": "391a0263_9b9331c0",
       "range": {
         "startLine": 51,
         "startChar": 9,
