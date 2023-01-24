@@ -16,6 +16,24 @@
       "message": "This is not needed.",
       "revId": "f346d307c685ea0dc0030e536f58ea5861e2b017",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50bb62b1_f6790d4f",
+        "filename": "build.sbt",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-01-24T11:34:51Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f42092d9_19fb2958",
+      "revId": "f346d307c685ea0dc0030e536f58ea5861e2b017",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

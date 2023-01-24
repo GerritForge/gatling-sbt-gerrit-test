@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1370b3f5_9e279353",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-01-24T11:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3de83bdc_19c9e350",
+      "range": {
+        "startLine": 11,
+        "startChar": 5,
+        "endLine": 11,
+        "endChar": 6
+      },
+      "revId": "1b4ae9556a08ce6d1659141248a14481d5c26d58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70fafd4d_c36bb735",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-24T10:56:32Z",
       "side": 1,
       "message": "Might be good running the tests and make sure they pass before publishing",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 7
+      },
+      "revId": "1b4ae9556a08ce6d1659141248a14481d5c26d58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4abbefe_b3f546d6",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-01-24T11:34:51Z",
+      "side": 1,
+      "message": "There are no tests as to speak, there are only `gatling:tests` which need the whole Gerrit setup to run. Don\u0027t think it makes sense to run them at this stage.",
+      "parentUuid": "70fafd4d_c36bb735",
       "range": {
         "startLine": 9,
         "startChar": 0,
