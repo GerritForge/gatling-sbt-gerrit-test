@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f42092d9_19fb2958",
+        "filename": "build.sbt",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-01-24T11:11:02Z",
+      "side": 1,
+      "message": "This is not needed.",
+      "revId": "f346d307c685ea0dc0030e536f58ea5861e2b017",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
