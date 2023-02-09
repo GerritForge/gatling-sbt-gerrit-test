@@ -42,7 +42,7 @@ case class GerritGitScenario(gitUrl: Option[String]) {
           "push",
           s"$url/${testConfig.project}",
           "HEAD:refs/for/${refSpec}",
-          force = true,
+          force = false,
           computeChangeId = true,
           ignoreFailureRegexps = List(".*no common ancestry.*")
         )

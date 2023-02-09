@@ -15,7 +15,7 @@ class GerritGitSimulation extends Simulation {
   val hostname    = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
   val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
+    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> false)
   }
 
   val gitSshScenario  = GerritGitScenario(testConfig.sshUrl)
@@ -25,14 +25,14 @@ class GerritGitSimulation extends Simulation {
     .feed(feeder.circular)
     .exec(
       ChainBuilder(
-        gitSshScenario.pushCommand.toList ++
-          gitHttpScenario.pushCommand.toList
+        gitSshScenario.cloneCommand.toList ++
+          gitHttpScenario.cloneCommand.toList
       )
     )
     .exec(
       ChainBuilder(
-        gitSshScenario.cloneCommand.toList ++
-          gitHttpScenario.cloneCommand.toList
+        gitSshScenario.pushCommand.toList ++
+          gitHttpScenario.pushCommand.toList
       )
     )
     .exec(
