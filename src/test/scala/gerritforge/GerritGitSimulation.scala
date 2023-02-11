@@ -13,23 +13,19 @@ class GerritGitSimulation extends Simulation {
   val hostname    = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
   val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
+    Map("refSpec" -> s"master", "force" -> false)
   }
 
   val gitSshScenario  = testConfig.sshUrl.map(GerritGitScenario)
   val gitHttpScenario = testConfig.httpUrl.map(_ + "/a").map(GerritGitScenario)
 
-  val gitCloneAndPush: ScenarioBuilder = scenario("Git clone and push to Gerrit")
+  val gitClone: ScenarioBuilder = scenario("Git clone")
     .feed(feeder.circular)
     .doIf(gitSshScenario.isDefined) {
-      exec(gitSshScenario.get.pushCommand)
-        .exec(gitSshScenario.get.cloneCommand)
-        .exec(gitSshScenario.get.createChangeCommand)
+      exec(gitSshScenario.get.cloneCommand)
     }
     .doIf(gitHttpScenario.isDefined) {
-      exec(gitHttpScenario.get.pushCommand)
-        .exec(gitHttpScenario.get.cloneCommand)
-        .exec(gitHttpScenario.get.createChangeCommand)
+      exec(gitHttpScenario.get.cloneCommand)
     }
 
   require(
@@ -38,8 +34,8 @@ class GerritGitSimulation extends Simulation {
   )
 
   setUp(
-    gitCloneAndPush.inject(
-      rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
+    gitClone.inject(
+      atOnceUsers(testConfig.numUsers)
     )
-  ).protocols(gitProtocol)
+  ).protocols(gitProtocol).maxDuration(testConfig.duration)
 }
