@@ -133,6 +133,21 @@ object ChangesListScenario {
         .asJson
     }
 
+    val createTags = {
+      http("create tag")
+        .put("/projects/#{project}/tags/tag-#{changeNum}")
+        .headers(postApiHeader(xsrfCookie))
+        .body(StringBody("""{"revision":"#{revision}"}"""))
+        .asJson
+    }
+    val deleteTags = {
+      http("delete tag")
+        .post("/projects/#{project}/tags:delete")
+        .headers(postApiHeader(xsrfCookie))
+        .body(StringBody("""{"tags": ["tag-#{changeNum}"]}"""))
+        .asJson
+    }
+
     val httpHead = http("head").head("/")
 
     authCookie
@@ -157,6 +172,9 @@ object ChangesListScenario {
         }.pause(2 seconds)
           .exec(getChangeDetails)
           .exec(authCookie.fold(httpHead)(_ => postComments))
+          .exec(authCookie.fold(httpHead)(_ => createTags))
+          .pause(3 seconds)
+          .exec(authCookie.fold(httpHead)(_ => deleteTags))
       }
   }
 
