@@ -10,6 +10,8 @@ import io.gatling.http.Predef._
 
 trait ScenarioBase {
 
+  val XSS_LEN = 5
+
   val scns: List[ScenarioBuilder]
 
   def setupAuthenticatedSession(scnTitle: String): ScenarioBuilder = {

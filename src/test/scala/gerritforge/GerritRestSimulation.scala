@@ -2,7 +2,7 @@ package gerritforge
 
 import gerritforge.ChangesListScenario._
 import gerritforge.GerritTestConfig._
-import gerritforge.restsimulations.ChangeScenarios
+import gerritforge.restsimulations.{ChangeScenarios, TagScenarios}
 import gerritforge.restsimulations.GatlingRestUtils.{httpProtocol, randomReview}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
@@ -18,7 +18,7 @@ class GerritRestSimulation extends Simulation {
       .feed(randomReview)
       .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
   )
-  val authenticatedScenarios = authenticatedChangeList ++ ChangeScenarios.scns
+  val authenticatedScenarios = authenticatedChangeList ++ ChangeScenarios.scns ++ TagScenarios.scns
 
   val scenarios =
     if (testConfig.restRunAnonymousUser)
