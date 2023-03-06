@@ -22,13 +22,13 @@ class GerritGitSimulation extends Simulation {
   val gitCloneAndPush: ScenarioBuilder = scenario("Git clone and push to Gerrit")
     .feed(feeder.circular)
     .doIf(gitSshScenario.isDefined) {
-        exec(gitSshScenario.get.cloneCommand)
+      exec(gitSshScenario.get.cloneCommand)
         .exec(gitSshScenario.get.pushCommand)
         .exec(gitSshScenario.get.createChangeCommand)
     }
     .doIf(gitHttpScenario.isDefined) {
-        exec(gitHttpScenario.get.cloneCommand)
-          .exec(gitHttpScenario.get.pushCommand)
+      exec(gitHttpScenario.get.cloneCommand)
+        .exec(gitHttpScenario.get.pushCommand)
         .exec(gitHttpScenario.get.createChangeCommand)
     }
 
