@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7b72de6_3be79c11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-03-07T09:36:08Z",
+      "side": 1,
+      "message": "Would it make sense to add the motivation to add this? It sounds pretty straightforward but for people without context would be good.",
+      "revId": "893beb3b4c04e29a2976a15d1aacdc33e4bc5e8c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
