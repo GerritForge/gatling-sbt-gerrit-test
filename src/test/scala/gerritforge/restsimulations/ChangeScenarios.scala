@@ -25,5 +25,19 @@ object ChangeScenarios extends ScenarioBase {
           .body(StringBody("{}"))
       )
 
-  override val scns: List[ScenarioBuilder] = List(abandonAndRestoreChangeScn)
+  val submitChangeScn : ScenarioBuilder = {
+    setupAuthenticatedSession("Submit Change")
+      .exec(http("request_1")
+        .post(s"/changes/${testConfig.project}~#{changeNumber}/revisions/1/review")
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(StringBody("""{"labels":{"Code-Review":2}}""")).asJson,
+      )
+      .exec(http("Submit Change")
+        .post(s"/changes/${testConfig.project}~#{changeNumber}/revisions/1/submit")
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(StringBody("""{}""")),
+    )
+  }
+
+  override val scns: List[ScenarioBuilder] = List(abandonAndRestoreChangeScn, submitChangeScn)
 }
