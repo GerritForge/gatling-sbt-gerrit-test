@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "091eb526_fb80a041",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-20T22:40:34Z",
+      "side": 1,
+      "message": "This should be part of the authenticated tests",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "e7f83d7e90f8859599093613bd6d231c04a1b439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c366ed4_65966398",
+        "filename": "src/test/scala/gerritforge/restsimulations/GatlingRestUtils.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-20T22:40:34Z",
+      "side": 1,
+      "message": "This shouldn\u0027t matter",
+      "range": {
+        "startLine": 38,
+        "startChar": 76,
+        "endLine": 38,
+        "endChar": 94
+      },
+      "revId": "e7f83d7e90f8859599093613bd6d231c04a1b439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c24da996_d291fb02",
+        "filename": "src/test/scala/gerritforge/restsimulations/GatlingRestUtils.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-20T22:40:34Z",
+      "side": 1,
+      "message": "Why 500? I don\u0027t believe any user would have 500 changes on their screen.",
+      "range": {
+        "startLine": 38,
+        "startChar": 35,
+        "endLine": 38,
+        "endChar": 38
+      },
+      "revId": "e7f83d7e90f8859599093613bd6d231c04a1b439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80d1ebc9_3043ae80",
+        "filename": "src/test/scala/gerritforge/restsimulations/ScenarioBase.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-20T22:40:34Z",
+      "side": 1,
+      "message": "Why `4 seconds` here? Do we need to pause?",
+      "range": {
+        "startLine": 33,
+        "startChar": 17,
+        "endLine": 33,
+        "endChar": 26
+      },
+      "revId": "e7f83d7e90f8859599093613bd6d231c04a1b439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
