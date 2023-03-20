@@ -1,6 +1,10 @@
 package gerritforge.restsimulations
 
+import gerritforge.ChangeDetail
+import gerritforge.ChangesListScenario.XSS_LEN
 import gerritforge.GerritTestConfig.testConfig
+import io.circe.generic.auto._
+import io.circe.parser._
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocol
@@ -21,6 +25,29 @@ object GatlingRestUtils {
         .acceptLanguageHeader("en-GB,en;q=0.5")
         .userAgentHeader("gatling-test")
   )
+
+  def firstOpenChangeDetails(
+      projectName: String
+  ) =
+    http("changes list and get first change")
+      .get(s"/q/status:open+project:$projectName")
+      .headers(restApiHeader)
+      .resources(
+        http("get list of changes")
+          .get(
+            s"/changes/?O=81&S=0&n=500&q=status%3Aopen+project:$projectName&o=CURRENT_REVISION"
+          )
+          .check(
+            bodyString
+              .transform(_.drop(XSS_LEN))
+              .transform(decode[List[ChangeDetail]](_))
+              .transform {
+                case Right(changeDetailList) => changeDetailList
+                case Left(decodingError)     => throw decodingError
+              }
+              .saveAs("changeDetails")
+          )
+      )
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
