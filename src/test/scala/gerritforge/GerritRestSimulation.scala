@@ -2,6 +2,7 @@ package gerritforge
 
 import gerritforge.ChangesListScenario._
 import gerritforge.GerritTestConfig._
+import gerritforge.restsimulations.ChangeScenarios
 import gerritforge.restsimulations.GatlingRestUtils.{httpProtocol, randomReview}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
@@ -17,10 +18,12 @@ class GerritRestSimulation extends Simulation {
       .feed(randomReview)
       .exec(listChanges(testConfig.project, testConfig.accountCookie, testConfig.xsrfToken))
   )
+  val authenticatedScenarios = authenticatedChangeList ++ ChangeScenarios.scns
 
   val scenarios =
-    if (testConfig.restRunAnonymousUser) authenticatedChangeList ++ anonymousUserChangeList
-    else authenticatedChangeList
+    if (testConfig.restRunAnonymousUser)
+      authenticatedScenarios ++ anonymousUserChangeList
+    else authenticatedScenarios
 
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
 
