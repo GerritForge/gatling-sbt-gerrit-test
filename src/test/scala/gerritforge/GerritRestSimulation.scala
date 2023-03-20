@@ -2,6 +2,7 @@ package gerritforge
 
 import gerritforge.ChangesListScenario._
 import gerritforge.GerritTestConfig._
+import gerritforge.restsimulations.AbandonChange
 import gerritforge.restsimulations.GatlingRestUtils.{httpProtocol, randomReview}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
@@ -19,7 +20,8 @@ class GerritRestSimulation extends Simulation {
   )
 
   val scenarios =
-    if (testConfig.restRunAnonymousUser) authenticatedChangeList ++ anonymousUserChangeList
+    if (testConfig.restRunAnonymousUser)
+      AbandonChange.scn :: authenticatedChangeList ++ anonymousUserChangeList
     else authenticatedChangeList
 
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
