@@ -1,31 +1,15 @@
 package gerritforge
 
-import io.gatling.core.scenario.Simulation
-
+import gerritforge.ChangesListScenario._
+import gerritforge.GerritTestConfig._
+import gerritforge.restsimulations.GatlingRestUtils.httpProtocol
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._
-import GerritTestConfig._
-import ChangesListScenario._
+import io.gatling.core.scenario.Simulation
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.protocol.HttpProtocol
 
 import scala.util.Random
 
 class GerritRestSimulation extends Simulation {
-
-  val httpProtocol: Option[HttpProtocol] = testConfig.httpUrl.map(
-    url =>
-      http
-        .baseUrl(url)
-        .inferHtmlResources(
-          AllowList(),
-          DenyList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png""")
-        )
-        .acceptHeader("*/*")
-        .acceptEncodingHeader("gzip, deflate")
-        .acceptLanguageHeader("en-GB,en;q=0.5")
-        .userAgentHeader("gatling-test")
-  )
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
