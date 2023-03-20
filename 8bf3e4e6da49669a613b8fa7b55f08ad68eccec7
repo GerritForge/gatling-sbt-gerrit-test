@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97516ed9_b6520dbf",
+        "filename": "src/test/scala/gerritforge/ChangesListScenario.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-20T22:54:43Z",
+      "side": 1,
+      "message": "These have nothing to do with the changes list: it looks like the wrong place to me.",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 5
+      },
+      "revId": "8bf3e4e6da49669a613b8fa7b55f08ad68eccec7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
