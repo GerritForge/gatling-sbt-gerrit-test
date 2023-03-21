@@ -22,6 +22,75 @@
       },
       "revId": "2ea64cee780cf1d6cfab8bbff8c94c6d5575718b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7662d5c4_739f5e16",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-21T18:33:47Z",
+      "side": 1,
+      "message": "Why pause?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "2ea64cee780cf1d6cfab8bbff8c94c6d5575718b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "588603b3_ba12727e",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-21T18:33:47Z",
+      "side": 1,
+      "message": "Why pause?",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 15
+      },
+      "revId": "2ea64cee780cf1d6cfab8bbff8c94c6d5575718b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c07601d3_30330a34",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-21T18:33:47Z",
+      "side": 1,
+      "message": "What if someone (another user? thread? test?) gives a Code-Review -2 in the meantime? If you make this change WIP (and exclude the WIP changes in the other scenarios), you have the guarantee that nobody would touch it :-)",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 88
+      },
+      "revId": "2ea64cee780cf1d6cfab8bbff8c94c6d5575718b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
