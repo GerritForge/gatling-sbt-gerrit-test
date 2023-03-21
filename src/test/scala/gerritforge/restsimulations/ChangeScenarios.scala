@@ -54,5 +54,27 @@ object ChangeScenarios extends ScenarioBase {
       )
   }
 
-  override val scns: List[ScenarioBuilder] = List(abandonAndRestoreChangeScn, submitChangeScn)
+  val makeChangeWip: ScenarioBuilder =
+    setupAuthenticatedSession("Make change WIP")
+      .exec(
+        http("Create Change")
+          .post("/changes/")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody(s"""{"project":"${testConfig.project}",
+               |"branch":"master",
+               |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
+          )
+          .check(regex("_number\":(\\d+),").saveAs("changeToWip"))
+      )
+      .pause(1)
+      .exec(
+        http("Make Change WIP")
+          .post(s"/changes/${testConfig.project}~#{changeToWip}/wip")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{}"""))
+      )
+
+  override val scns: List[ScenarioBuilder] =
+    List(abandonAndRestoreChangeScn, submitChangeScn, makeChangeWip)
 }
