@@ -1,9 +1,10 @@
 package gerritforge.restsimulations
 
-import gerritforge.ChangeDetail
-import gerritforge.ChangesListScenario.randomNumber
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.restsimulations.GatlingRestUtils.firstOpenChangeDetails
+import gerritforge.restsimulations.GatlingRestUtils.{
+  addChangeNumberToSession,
+  firstOpenChangeDetails
+}
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
@@ -20,16 +21,7 @@ trait ScenarioBase {
         scenario(scnTitle)
           .exec(addCookie(Cookie("GerritAccount", cookie)))
           .exec(firstOpenChangeDetails(testConfig.project))
-          .doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
-            exec { session =>
-              val changes: Seq[ChangeDetail] = session("changeDetails").as[List[ChangeDetail]]
-              val change                     = changes(randomNumber.nextInt(changes.size))
-              session.set(
-                "changeNumber",
-                change._number
-              )
-            }
-          }
+          .exec(addChangeNumberToSession)
       case None => throw new Exception("Requires authentication")
     }
   }
