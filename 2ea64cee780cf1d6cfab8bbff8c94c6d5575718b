@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84b51954_7670847c",
+        "filename": "build.sbt",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-21T18:14:57Z",
+      "side": 1,
+      "message": "Not sure why this now seems to be needed, can reviewers check this is the same for them? (So sbt fails if Provided is removed).\nJust to make sure it\u0027s not my machine that got into a bad state.",
+      "range": {
+        "startLine": 37,
+        "startChar": 66,
+        "endLine": 37,
+        "endChar": 76
+      },
+      "revId": "2ea64cee780cf1d6cfab8bbff8c94c6d5575718b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
