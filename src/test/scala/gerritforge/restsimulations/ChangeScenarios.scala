@@ -6,6 +6,7 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
+import java.util.Calendar
 object ChangeScenarios extends ScenarioBase {
 
   val abandonAndRestoreChangeScn: ScenarioBuilder =
@@ -23,5 +24,33 @@ object ChangeScenarios extends ScenarioBase {
           .body(StringBody("{}"))
       )
 
-  override val scns: List[ScenarioBuilder] = List(abandonAndRestoreChangeScn)
+  val submitChangeScn: ScenarioBuilder = {
+    setupAuthenticatedSession("Submit Change")
+      .exec(
+        http("Create Change")
+          .post("/changes/")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody(s"""{"project":"${testConfig.project}",
+            |"branch":"master",
+            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
+          .check(regex("_number\":(\\d+),").saveAs("newChangeNumber"))
+      )
+      .pause(1)
+      .exec(
+        http("Approve Change")
+          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/review")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{"labels":{"Code-Review":2}}"""))
+          .asJson
+      )
+      .pause(1)
+      .exec(
+        http("Submit Change")
+          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/submit")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{}"""))
+      )
+  }
+
+  override val scns: List[ScenarioBuilder] = List(abandonAndRestoreChangeScn, submitChangeScn)
 }
