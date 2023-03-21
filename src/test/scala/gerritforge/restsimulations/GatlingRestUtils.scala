@@ -1,7 +1,7 @@
 package gerritforge.restsimulations
 
 import gerritforge.ChangeDetail
-import gerritforge.ChangesListScenario.XSS_LEN
+import gerritforge.ChangesListScenario.{XSS_LEN, randomNumber}
 import gerritforge.GerritTestConfig.testConfig
 import io.circe.generic.auto._
 import io.circe.parser._
@@ -26,7 +26,7 @@ object GatlingRestUtils {
         .userAgentHeader("gatling-test")
   )
 
-  def firstOpenChangeDetails(
+  def openChangesDetails(
       projectName: String
   ) =
     http("changes list and get first change")
@@ -48,6 +48,18 @@ object GatlingRestUtils {
               .saveAs("changeDetails")
           )
       )
+
+  def addRandomChangeNumberToSession =
+    doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
+      exec { session =>
+        val changes: Seq[ChangeDetail] = session("changeDetails").as[List[ChangeDetail]]
+        val change                     = changes(randomNumber.nextInt(changes.size))
+        session.set(
+          "changeNumber",
+          change._number
+        )
+      }
+    }
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
