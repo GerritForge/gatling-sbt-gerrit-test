@@ -22,6 +22,30 @@
       },
       "revId": "c644984cb35ffcb2c8f8b489be5430ad9147fcfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce0d2cce_1560b108",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-21T20:14:08Z",
+      "side": 1,
+      "message": "good question, don\u0027t really need it to be honest, just tought it would be a slightly more realistic scenario as a chagne wouldn\u0027t be created and immeaditily closed.\n\nHowever you can easily argue than 1 second is not much time either.\n\nHappy to remove it if we don\u0027t think it provides any value.",
+      "parentUuid": "820c0bc2_9b6d8a99",
+      "range": {
+        "startLine": 70,
+        "startChar": 7,
+        "endLine": 70,
+        "endChar": 12
+      },
+      "revId": "c644984cb35ffcb2c8f8b489be5430ad9147fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
