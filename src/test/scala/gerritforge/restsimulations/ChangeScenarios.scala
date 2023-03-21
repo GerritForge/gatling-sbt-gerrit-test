@@ -10,6 +10,8 @@ object ChangeScenarios extends ScenarioBase {
 
   val abandonAndRestoreChangeScn: ScenarioBuilder =
     setupAuthenticatedSession("Abandon and then Restore Change")
+      .exec(openChangesDetails(testConfig.project))
+      .exec(addRandomChangeNumberToSession)
       .exec(
         http("abandon change")
           .post(s"/changes/${testConfig.project}~#{changeNumber}/abandon")
