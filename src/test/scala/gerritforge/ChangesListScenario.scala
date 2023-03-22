@@ -121,20 +121,6 @@ object ChangesListScenario {
           .get("/changes/#{id}/submitted_together?o=NON_VISIBLE_CHANGES")
       )
 
-    val postComments = {
-      http("Post comments with score")
-        .post("/changes/#{project}~#{changeNum}/revisions/#{revision}/review")
-        .headers(postApiHeader(xsrfCookie))
-        .body(
-          StringBody(
-            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":#{reviewScore}},"comments":{"/PATCHSET_LEVEL":[{"message":"#{reviewMessage}","unresolved":false}]},"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[],"remove_from_attention_set":[{"user":#{ownerId},"reason":"#{ownerName} replied on the change"}]}"""
-          )
-        )
-        .asJson
-    }
-
-    val httpHead = http("head").head("/")
-
     authCookie
       .fold(exec(flushSessionCookies)) { auth =>
         exec(addCookie(Cookie("GerritAccount", auth)))
@@ -156,7 +142,6 @@ object ChangesListScenario {
             .set("revision", encode(change.current_revision))
         }.pause(2 seconds)
           .exec(getChangeDetails)
-          .exec(authCookie.fold(httpHead)(_ => postComments))
       }
   }
 
