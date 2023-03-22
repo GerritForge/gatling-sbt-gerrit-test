@@ -16,7 +16,8 @@ object TagScenarios extends ScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
-  val tagGroups = 500
+  val tagGroups          = 500
+  val tagsToDeleteAtOnce = 150
 
   val randomNumTags = new Random
 
