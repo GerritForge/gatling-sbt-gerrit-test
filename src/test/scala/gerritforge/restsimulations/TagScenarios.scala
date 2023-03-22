@@ -23,6 +23,7 @@ object TagScenarios extends ScenarioBase {
 
   val createTag = {
     setupAuthenticatedSession("Create a new Tag")
+      .feed((1 to 999).map(i => Map("userId" -> i)).circular)
       .foreach(
         Range(1, randomNumTags.nextInt(TagScenarios.numTags))
           .map(s"${System.nanoTime}-" + _)
@@ -31,7 +32,7 @@ object TagScenarios extends ScenarioBase {
       ) {
         exec(
           http("create tag")
-            .put(s"/projects/${testConfig.project}/tags/tag-#{tagNum}")
+            .put(s"/projects/${testConfig.project}/tags/tag-#{tagNum}-#{userId}")
             .headers(postApiHeader(testConfig.xsrfToken))
             .body(StringBody("""{"revision":"HEAD"}"""))
             .asJson
