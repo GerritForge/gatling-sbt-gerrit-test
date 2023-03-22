@@ -36,9 +36,10 @@ object TagScenarios extends ScenarioBase {
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
+      .feed((1 to testConfig.numUsers).map(i => Map("userId" -> i)).circular)
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0&m=-gatling-user-#{userId}")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -68,6 +69,7 @@ object TagScenarios extends ScenarioBase {
             .headers(postApiHeader(testConfig.xsrfToken))
             .body(StringBody("""{"tags": #{tagNames}}"""))
             .asJson
+
         )
       }
   }
