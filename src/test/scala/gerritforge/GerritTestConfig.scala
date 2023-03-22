@@ -21,5 +21,6 @@ case class GerritTestConfig(
     userAgent: String,
     numUsers: Int,
     duration: FiniteDuration,
-    restRunAnonymousUser: Boolean
+    restRunAnonymousUser: Boolean,
+    accountId: Int
 )
