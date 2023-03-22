@@ -33,6 +33,28 @@ object GatlingRestUtils {
              |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
       )
 
+  def addRandomChangeNumberToSession =
+    doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
+      exec { session =>
+        val changes: Seq[ChangeDetail] = session("changeDetails").as[List[ChangeDetail]]
+        val change                     = changes(randomNumber.nextInt(changes.size))
+        session.set(
+          "changeNumber",
+          change._number
+        )
+      }
+    }
+
+  def createChange =
+    http("Create Change")
+      .post("/changes/")
+      .headers(postApiHeader(testConfig.xsrfToken))
+      .body(
+        StringBody(s"""{"project":"${testConfig.project}",
+             |"branch":"master",
+             |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
+      )
+
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Pragma"                    -> "no-cache",
