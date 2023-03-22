@@ -9,41 +9,38 @@ import io.circe.syntax._
 import io.circe.parser.decode
 import io.circe.generic.auto._
 
+import java.util.UUID
 import scala.util.Random
 
 object TagScenarios extends ScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
-  val numTags = 500
+  val tagGroups = 500
 
   val randomNumTags = new Random
 
   val randomTagNumbers = new Random
 
-  val createTag = {
+  def padWithLeadingZeros(num: Int) = f"$num%03d"
+
+  val createTag =
     setupAuthenticatedSession("Create a new Tag")
-      .foreach(
-        Range(1, randomNumTags.nextInt(TagScenarios.numTags))
-          .map(s"${System.nanoTime}-" + _)
-          .toSeq,
-        "tagNum"
-      ) {
-        exec(
-          http("create tag")
-            .put(s"/projects/${testConfig.project}/tags/tag-#{tagNum}")
-            .headers(postApiHeader(testConfig.xsrfToken))
-            .body(StringBody("""{"revision":"HEAD"}"""))
-            .asJson
-        )
-      }
-  }
+      .feed((1 to tagGroups).map(i => Map("tagGroupId" -> padWithLeadingZeros(i))).circular)
+      .feed(Iterator.continually(Map("tagId" -> UUID.randomUUID())))
+      .exec(
+        http("create tag")
+          .put(s"/projects/${testConfig.project}/tags/tag-#{tagId}-#{tagGroupId}")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{"revision":"HEAD"}"""))
+          .asJson
+      )
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=$tagGroups&S=0")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -56,13 +53,10 @@ object TagScenarios extends ScenarioBase {
               .saveAs("tagDetails")
           )
       )
-      .doIf(session => !session("tagDetails").as[List[TagDetail]].isEmpty) {
+      .doIf(session => session("tagDetails").as[List[TagDetail]].nonEmpty) {
         exec { session =>
-          val tags    = session("tagDetails").as[List[TagDetail]]
-          val numTags = randomNumTags.nextInt(tags.size)
-          val randomTagRefs = Random
-            .shuffle(tags)
-            .drop(numTags)
+          val tags = session("tagDetails").as[List[TagDetail]]
+          val randomTagRefs = tags
             .map(_.ref)
             .map(_.drop("refs/tags/".length))
           val tagNames = randomTagRefs.asJson
