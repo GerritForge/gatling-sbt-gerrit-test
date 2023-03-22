@@ -38,7 +38,7 @@ Variable | Description | Sample
  NUM_USERS | Number of concurrent user sessions | 10
  DURATION | Total duration of the test | 2m
  RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
-
+ REVIEWER_ACCOUNT | Account of the user executing the review | 1000000
 Get the project
 ---------------
 
@@ -108,5 +108,7 @@ Before running the tests, make sure to add it to the users' SSH keys.
 * The authenticated user will also need `Code-Review +2 ` permissions on the selected project.
 * The project will need a master branch.
 * The only submit requirement for the selected project *needs* to be `Code-Review +2`.
+* REVIEWER_ACCOUNT can be any form of identifier for a user, including account id or email.
+    It cannot be yourself or a non-existing user.
 * The repo the tests will run against (`GERRIT_PROJECT`) will need the following ACLs to be set:
 ![ACLs](./images/ACLs.png)
