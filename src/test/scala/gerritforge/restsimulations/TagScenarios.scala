@@ -9,6 +9,7 @@ import io.circe.syntax._
 import io.circe.parser.decode
 import io.circe.generic.auto._
 
+import java.util.UUID
 import scala.util.Random
 
 object TagScenarios extends ScenarioBase {
@@ -23,20 +24,14 @@ object TagScenarios extends ScenarioBase {
 
   val createTag = {
     setupAuthenticatedSession("Create a new Tag")
-      .foreach(
-        Range(1, randomNumTags.nextInt(TagScenarios.numTags))
-          .map(s"${System.nanoTime}-" + _)
-          .toSeq,
-        "tagNum"
-      ) {
-        exec(
-          http("create tag")
-            .put(s"/projects/${testConfig.project}/tags/tag-#{tagNum}")
-            .headers(postApiHeader(testConfig.xsrfToken))
-            .body(StringBody("""{"revision":"HEAD"}"""))
-            .asJson
-        )
-      }
+      .feed((1 to numTags).map(i => Map("tagId" -> s"${UUID.randomUUID()}-$i")).circular)
+      .exec(
+        http("create tag")
+          .put(s"/projects/${testConfig.project}/tags/tag-#{tagId}")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{"revision":"HEAD"}"""))
+          .asJson
+      )
   }
 
   val deleteTags = {
