@@ -35,10 +35,15 @@ object TagScenarios extends ScenarioBase {
   }
 
   val deleteTags = {
+    val tagsPerUser: Int = numTags / testConfig.numUsers
     setupAuthenticatedSession("List and remove a Tag")
+      .feed((1 to 10).map(_ => Map("toSkip" -> (randomNumTags
+        .nextInt(testConfig.numUsers)-1) * tagsPerUser)).circular)
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(
+            s"/projects/${testConfig.project}/tags/?n=$tagsPerUser&s=#{toSkip}"
+          )
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -51,13 +56,10 @@ object TagScenarios extends ScenarioBase {
               .saveAs("tagDetails")
           )
       )
-      .doIf(session => !session("tagDetails").as[List[TagDetail]].isEmpty) {
+      .doIf(session => session("tagDetails").as[List[TagDetail]].nonEmpty) {
         exec { session =>
-          val tags    = session("tagDetails").as[List[TagDetail]]
-          val numTags = randomNumTags.nextInt(tags.size)
-          val randomTagRefs = Random
-            .shuffle(tags)
-            .drop(numTags)
+          val tags = session("tagDetails").as[List[TagDetail]]
+          val randomTagRefs = tags
             .map(_.ref)
             .map(_.drop("refs/tags/".length))
           val tagNames = randomTagRefs.asJson
