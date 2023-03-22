@@ -6,8 +6,6 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-import java.util.Calendar
-
 object ChangeScenarios extends ScenarioBase {
 
   val abandonAndRestoreChangeScn: ScenarioBuilder =
@@ -30,12 +28,7 @@ object ChangeScenarios extends ScenarioBase {
   val submitChangeScn: ScenarioBuilder = {
     setupAuthenticatedSession("Submit Change")
       .exec(
-        http("Create Change")
-          .post("/changes/")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody(s"""{"project":"${testConfig.project}",
-            |"branch":"master",
-            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
+        createChange
           .check(regex("_number\":(\\d+),").saveAs("newChangeNumber"))
       )
       .exec(
@@ -56,14 +49,7 @@ object ChangeScenarios extends ScenarioBase {
   val makeChangeWipScn: ScenarioBuilder =
     setupAuthenticatedSession("Make change WIP")
       .exec(
-        http("Create Change")
-          .post("/changes/")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody(s"""{"project":"${testConfig.project}",
-               |"branch":"master",
-               |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
-          )
+        createChange
           .check(regex("_number\":(\\d+),").saveAs("changeToWip"))
       )
       .exec(
@@ -76,16 +62,7 @@ object ChangeScenarios extends ScenarioBase {
   val addAndThenRemoveReviewerScn =
     setupAuthenticatedSession("Add and Remove Reviewer")
       .exec(
-        http("Create Change")
-          .post("/changes/")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody(s"""{"project":"${testConfig.project}",
-                 |"branch":"master",
-                 |"subject":"Test commit subject - ${Calendar
-                            .getInstance()
-                            .getTime}"}""".stripMargin)
-          )
+        createChange
           .check(regex("_number\":(\\d+),").saveAs("changeToReview"))
       )
       .pause(1)
