@@ -136,6 +136,26 @@ object ChangeScenarios extends ScenarioBase {
         .body(StringBody("{}"))
     )
 
+  val postCommentScn = setupAuthenticatedSession("Post Comment")
+    .exec(
+      createChange
+        .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+    )
+    .exec(
+      http("Post Comment")
+        .post(
+          s"/changes/${testConfig.project}~#{changeNumber}/revisions/1/review"
+        )
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(
+          StringBody(
+            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":0},
+              |"comments":{"/PATCHSET_LEVEL":[{"message":"some message","unresolved":false}]},
+              |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
+          )
+        )
+    )
+
   override val scns: List[ScenarioBuilder] =
     List(
       abandonAndRestoreChangeScn,
@@ -143,6 +163,7 @@ object ChangeScenarios extends ScenarioBase {
       makeChangeWipScn,
       addAndThenRemoveReviewerScn,
       deleteVoteScn,
-      changePrivateStateScn
+      changePrivateStateScn,
+      postCommentScn
     )
 }
