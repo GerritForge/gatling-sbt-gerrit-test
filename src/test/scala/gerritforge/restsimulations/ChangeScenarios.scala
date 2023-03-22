@@ -76,6 +76,35 @@ object ChangeScenarios extends ScenarioBase {
           .body(StringBody("""{}"""))
       )
 
+  val addReviewerScn =
+    setupAuthenticatedSession("Add and Remove Reviewer")
+      .exec(
+        http("Create Change")
+          .post("/changes/")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody(s"""{"project":"${testConfig.project}",
+                 |"branch":"master",
+                 |"subject":"Test commit subject - ${Calendar
+                            .getInstance()
+                            .getTime}"}""".stripMargin)
+          )
+          .check(regex("_number\":(\\d+),").saveAs("changeToReview"))
+      )
+      .pause(1)
+      .exec(
+        http("Add Reviewer")
+          .post(
+            s"/changes/${testConfig.project}~#{changeToReview}/reviewers"
+          )
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody(
+              s"""{"reviewer":${testConfig.reviewerAccountId}}"""
+            )
+          )
+      )
+
   override val scns: List[ScenarioBuilder] =
-    List(abandonAndRestoreChangeScn, submitChangeScn, makeChangeWipScn)
+    List(abandonAndRestoreChangeScn, submitChangeScn, makeChangeWipScn, addReviewerScn)
 }
