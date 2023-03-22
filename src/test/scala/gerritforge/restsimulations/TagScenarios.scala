@@ -9,41 +9,49 @@ import io.circe.syntax._
 import io.circe.parser.decode
 import io.circe.generic.auto._
 
+import java.util.UUID
 import scala.util.Random
 
 object TagScenarios extends ScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
-  val numTags = 500
+  val numTagGroups       = 500
+  val tagsToDeleteAtOnce = 150
 
   val randomNumTags = new Random
 
   val randomTagNumbers = new Random
 
-  val createTag = {
-    setupAuthenticatedSession("Create a new Tag")
-      .foreach(
-        Range(1, randomNumTags.nextInt(TagScenarios.numTags))
-          .map(s"${System.nanoTime}-" + _)
-          .toSeq,
-        "tagNum"
-      ) {
-        exec(
-          http("create tag")
-            .put(s"/projects/${testConfig.project}/tags/tag-#{tagNum}")
-            .headers(postApiHeader(testConfig.xsrfToken))
-            .body(StringBody("""{"revision":"HEAD"}"""))
-            .asJson
-        )
-      }
+  def tagGroupIds = {
+    /*
+      We tag groupIds to 3 digits, so that groupId 1 becomes 001, so on so forth.
+      This is to avoid that when querying for groupId 1 we also select group 10,11,100,[...]
+     */
+    def padWithLeadingZeros(num: Int) = f"$num%03d"
+    (1 to numTagGroups).map(tagGroup => Map("tagGroupId" -> padWithLeadingZeros(tagGroup))).circular
   }
+
+  val createTag =
+    setupAuthenticatedSession("Create a new Tag")
+      .feed(tagGroupIds)
+      .feed(
+        Iterator.continually(Map("tagId" -> s"${System.currentTimeMillis()}-${UUID.randomUUID()}"))
+      )
+      .exec(
+        http("create tag")
+          .put(s"/projects/${testConfig.project}/tags/tag-#{tagId}-#{tagGroupId}")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(StringBody("""{"revision":"HEAD"}"""))
+          .asJson
+      )
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
+      .feed(tagGroupIds)
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=$tagsToDeleteAtOnce&m=-#{tagGroupId}")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -56,16 +64,14 @@ object TagScenarios extends ScenarioBase {
               .saveAs("tagDetails")
           )
       )
-      .doIf(session => !session("tagDetails").as[List[TagDetail]].isEmpty) {
+      .doIf(session => session("tagDetails").as[List[TagDetail]].nonEmpty) {
         exec { session =>
-          val tags    = session("tagDetails").as[List[TagDetail]]
-          val numTags = randomNumTags.nextInt(tags.size)
-          val randomTagRefs = Random
-            .shuffle(tags)
-            .drop(numTags)
-            .map(_.ref)
-            .map(_.drop("refs/tags/".length))
-          val tagNames = randomTagRefs.asJson
+          val tagNames =
+            session("tagDetails")
+              .as[List[TagDetail]]
+              .map(_.ref)
+              .map(_.drop("refs/tags/".length))
+              .asJson
           session.set("tagNames", tagNames)
         }.exec(
           http("delete tag")
