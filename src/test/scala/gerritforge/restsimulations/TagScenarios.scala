@@ -16,17 +16,20 @@ object TagScenarios extends ScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
-  val numTags = 500
+  val numTags            = 500
+  val tagsToDeleteAtOnce = 150
 
   val randomNumTags = new Random
 
   val randomTagNumbers = new Random
 
   def padWithLeadingZeros(num: Int) = f"$num%03d"
+  def feedTagGroupId =
+    (1 to numTags).map(i => Map("tagGroupId" -> padWithLeadingZeros(i))).circular
 
   val createTag = {
     setupAuthenticatedSession("Create a new Tag")
-      .feed((1 to numTags).map(i => Map("tagGroupId" -> padWithLeadingZeros(i))).circular)
+      .feed(feedTagGroupId)
       .feed(Iterator.continually(Map("tagId" -> UUID.randomUUID())))
       .exec(
         http("create tag")
@@ -39,9 +42,10 @@ object TagScenarios extends ScenarioBase {
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
+      .feed(feedTagGroupId)
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=$tagsToDeleteAtOnce&m=-#{tagGroupId}")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
