@@ -9,6 +9,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocol
 
+import java.util.Calendar
 import scala.util.Random
 
 object GatlingRestUtils {
@@ -59,6 +60,16 @@ object GatlingRestUtils {
         )
       }
     }
+
+  def createChange =
+    http("Create Change")
+      .post("/changes/")
+      .headers(postApiHeader(testConfig.xsrfToken))
+      .body(
+        StringBody(s"""{"project":"${testConfig.project}",
+             |"branch":"master",
+             |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
+      )
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
