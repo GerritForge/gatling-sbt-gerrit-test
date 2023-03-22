@@ -32,13 +32,14 @@ object TagScenarios extends ScenarioBase {
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
+      .pause(1)
   }
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=150")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -51,13 +52,10 @@ object TagScenarios extends ScenarioBase {
               .saveAs("tagDetails")
           )
       )
-      .doIf(session => !session("tagDetails").as[List[TagDetail]].isEmpty) {
+      .doIf(session => session("tagDetails").as[List[TagDetail]].nonEmpty) {
         exec { session =>
-          val tags    = session("tagDetails").as[List[TagDetail]]
-          val numTags = randomNumTags.nextInt(tags.size)
-          val randomTagRefs = Random
-            .shuffle(tags)
-            .drop(numTags)
+          val tags = session("tagDetails").as[List[TagDetail]]
+          val randomTagRefs = tags
             .map(_.ref)
             .map(_.drop("refs/tags/".length))
           val tagNames = randomTagRefs.asJson
