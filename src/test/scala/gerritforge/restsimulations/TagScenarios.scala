@@ -24,21 +24,25 @@ object TagScenarios extends ScenarioBase {
 
   val createTag = {
     setupAuthenticatedSession("Create a new Tag")
-      .feed((1 to numTags).map(i => Map("tagId" -> s"${UUID.randomUUID()}-$i")).circular)
+      .feed(
+        (1 to numTags).map(i => Map("tagId" -> s"${UUID.randomUUID()}", "tagNum" -> i)).circular
+      )
       .exec(
         http("create tag")
-          .put(s"/projects/${testConfig.project}/tags/tag-#{tagId}")
+          .put(s"/projects/${testConfig.project}/tags/tag-#{tagId}-#{tagNum}")
           .headers(postApiHeader(testConfig.xsrfToken))
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
+      .pause(1)
   }
 
   val deleteTags = {
     setupAuthenticatedSession("List and remove a Tag")
+      .feed((1 to numTags).map(i => Map("tagNum" -> i)).circular)
       .exec(
         http("list tags")
-          .get(s"/projects/${testConfig.project}/tags/?n=${numTags}&S=0")
+          .get(s"/projects/${testConfig.project}/tags/?n=$numTags&m=-#{tagNum}")
           .headers(postApiHeader(testConfig.xsrfToken))
           .check(
             bodyString
@@ -51,13 +55,10 @@ object TagScenarios extends ScenarioBase {
               .saveAs("tagDetails")
           )
       )
-      .doIf(session => !session("tagDetails").as[List[TagDetail]].isEmpty) {
+      .doIf(session => session("tagDetails").as[List[TagDetail]].nonEmpty) {
         exec { session =>
-          val tags    = session("tagDetails").as[List[TagDetail]]
-          val numTags = randomNumTags.nextInt(tags.size)
-          val randomTagRefs = Random
-            .shuffle(tags)
-            .drop(numTags)
+          val tags = session("tagDetails").as[List[TagDetail]]
+          val randomTagRefs = tags
             .map(_.ref)
             .map(_.drop("refs/tags/".length))
           val tagNames = randomTagRefs.asJson
