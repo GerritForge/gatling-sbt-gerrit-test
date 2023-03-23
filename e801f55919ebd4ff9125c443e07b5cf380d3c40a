@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "442bcc69_28c96deb",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-03-23T09:03:37Z",
+      "side": 1,
+      "message": "what\u0027s the benefit of `$i` here?\nIsn\u0027t the random UUID enough to generate unique tag names?",
+      "range": {
+        "startLine": 27,
+        "startChar": 73,
+        "endLine": 27,
+        "endChar": 76
+      },
+      "revId": "e801f55919ebd4ff9125c443e07b5cf380d3c40a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
