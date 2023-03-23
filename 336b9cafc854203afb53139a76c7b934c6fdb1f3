@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "320b0ada_9795b7b9",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2023-03-23T22:37:32Z",
+      "side": 1,
+      "message": "if I understand the code correctly it returns the list of changes so why it is named *first*OpenChangeDetails",
+      "range": {
+        "startLine": 13,
+        "startChar": 12,
+        "endLine": 13,
+        "endChar": 34
+      },
+      "revId": "336b9cafc854203afb53139a76c7b934c6fdb1f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
