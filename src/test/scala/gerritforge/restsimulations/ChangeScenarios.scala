@@ -90,6 +90,59 @@ object ChangeScenarios extends ScenarioBase {
           .body(StringBody("{}"))
       )
 
+  val commentChangeScn = setupAuthenticatedSession("Add Comment")
+    .exec(
+      createChange
+        .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+    )
+    .pause(1)
+    .exec(
+      http("Comment Change")
+        .post(
+          s"/changes/${testConfig.project}~#{changeNumber}/revisions/1/review"
+        )
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(
+          StringBody(
+            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":0},
+              |"comments":{"/PATCHSET_LEVEL":[{"message":"some message","unresolved":false}]},
+              |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
+          )
+        )
+    )
+
+  val deleteVoteScn = setupAuthenticatedSession("Delete Vote")
+    .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeToVote")))
+    .pause(1)
+    .exec(
+      http("Vote On Change")
+        .post(
+          s"/changes/${testConfig.project}~#{changeToVote}/revisions/1/review"
+        )
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(
+          StringBody(
+            """{"labels":{"Code-Review":-1}}""".stripMargin
+          )
+        )
+    )
+    .pause(1)
+    .exec(
+      http("Remove Vote for Label")
+        .delete(
+          s"/changes/${testConfig.project}~#{changeToVote}/reviewers/${testConfig.reviewerAccountId}/votes/Code-Review"
+        )
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(StringBody("{}"))
+    )
+
   override val scns: List[ScenarioBuilder] =
-    List(abandonAndRestoreChangeScn, submitChangeScn, makeChangeWipScn, addAndThenRemoveReviewerScn)
+    List(
+      abandonAndRestoreChangeScn,
+      submitChangeScn,
+      makeChangeWipScn,
+      addAndThenRemoveReviewerScn,
+      commentChangeScn,
+      deleteVoteScn
+    )
 }
