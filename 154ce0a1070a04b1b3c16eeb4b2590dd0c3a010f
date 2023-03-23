@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e229261_e2a47802",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-23T18:22:29Z",
+      "side": 1,
+      "message": "That\u0027s not good IMHO, because we want then each user to be able to select individual set of tags. We do need two suffixes, one for the user (deterministic) and another to just create a number of tags (System.nanoTime or UUID.randomUUID() are basically equivalent)",
+      "range": {
+        "startLine": 27,
+        "startChar": 48,
+        "endLine": 27,
+        "endChar": 65
+      },
+      "revId": "154ce0a1070a04b1b3c16eeb4b2590dd0c3a010f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
