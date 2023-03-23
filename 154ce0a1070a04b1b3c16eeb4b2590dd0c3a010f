@@ -22,6 +22,30 @@
       },
       "revId": "154ce0a1070a04b1b3c16eeb4b2590dd0c3a010f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17db9201_36f85ac7",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-23T18:50:17Z",
+      "side": 1,
+      "message": "The problem with the foreach was that it wasn\u0027t getting re-evaluated every time as we thought it was.\n\nI tried remove the `deleteTags` scenario, and after 500 created tags, we stopped creating tags all together.\n\nI believe the only reason this gave the impression of working was because we where deleting tags as we where creating them, allowing us to create tags with names of tags that had been previously created but then deleted.\n\nUsing `Iterator.continually` allows us to avoid this, but yes agreed, randomUUID or nanoTime doesn\u0027t make much of a different.\n\nI also agree that we need another constant set of tags, I will add another feed to achieve that.",
+      "parentUuid": "8e229261_e2a47802",
+      "range": {
+        "startLine": 27,
+        "startChar": 48,
+        "endLine": 27,
+        "endChar": 65
+      },
+      "revId": "154ce0a1070a04b1b3c16eeb4b2590dd0c3a010f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
