@@ -137,6 +137,27 @@ object ChangeScenarios extends ScenarioBase {
         .body(StringBody("{}"))
     )
 
+  val changePrivateStateScn = setupAuthenticatedSession("Change Private State")
+    .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeToMarkPrivate")))
+    .pause(1)
+    .exec(
+      http("Mark Private")
+        .post(s"/changes/${testConfig.project}~#{changeToMarkPrivate}/private")
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(
+          StringBody(
+            s"""{"message":"Marking change #{changeToMarkPrivate} as private for testing purposes"}"""
+          )
+        )
+    )
+    .pause(1)
+    .exec(
+      http("UnMark Private")
+        .delete(s"/changes/${testConfig.project}~#{changeToMarkPrivate}/private")
+        .headers(postApiHeader(testConfig.xsrfToken))
+        .body(StringBody("{}"))
+    )
+
   override val scns: List[ScenarioBuilder] =
     List(
       abandonAndRestoreChangeScn,
@@ -144,6 +165,7 @@ object ChangeScenarios extends ScenarioBase {
       makeChangeWipScn,
       addAndThenRemoveReviewerScn,
       commentChangeScn,
-      deleteVoteScn
+      deleteVoteScn,
+      changePrivateStateScn
     )
 }
