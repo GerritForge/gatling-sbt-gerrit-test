@@ -13,6 +13,10 @@ object ChangeScenarios extends ScenarioBase {
   val abandonAndRestoreChangeScn: ScenarioBuilder =
     setupAuthenticatedSession("Abandon and then Restore Change")
       .exec(
+        createChange
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+      )
+      .exec(
         http("abandon change")
           .post(s"/changes/${testConfig.project}~#{changeNumber}/abandon")
           .headers(postApiHeader(testConfig.xsrfToken))
