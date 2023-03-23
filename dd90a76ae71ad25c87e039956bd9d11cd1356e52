@@ -22,6 +22,30 @@
       },
       "revId": "dd90a76ae71ad25c87e039956bd9d11cd1356e52",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df0d9bb1_50e78c8e",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-23T09:33:51Z",
+      "side": 0,
+      "message": "So no, I think we got a bit confused with our gatling concepts, `foreach` and `feed` are quite similar, `feed` will inject each data record into a user\u0027s session.\n\nSo the users are coming from the simulation (the `setup` bit in the main), and this feed creates new records, for each user in the simulation. \n\nSo this should work.",
+      "parentUuid": "5891a02b_a1efb998",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 31,
+        "endChar": 9
+      },
+      "revId": "dd90a76ae71ad25c87e039956bd9d11cd1356e52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -22,6 +22,30 @@
       },
       "revId": "e801f55919ebd4ff9125c443e07b5cf380d3c40a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71b279b1_89eb4769",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-23T09:33:51Z",
+      "side": 1,
+      "message": "We do find that sometimes id\u0027s clash, this is just an extra guarantee that the generated names will be unique.",
+      "parentUuid": "442bcc69_28c96deb",
+      "range": {
+        "startLine": 27,
+        "startChar": 73,
+        "endLine": 27,
+        "endChar": 76
+      },
+      "revId": "e801f55919ebd4ff9125c443e07b5cf380d3c40a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
