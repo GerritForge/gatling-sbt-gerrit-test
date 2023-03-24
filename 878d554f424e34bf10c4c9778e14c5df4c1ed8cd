@@ -22,6 +22,30 @@
       },
       "revId": "878d554f424e34bf10c4c9778e14c5df4c1ed8cd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dbd8cd5_dc3dbdbd",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T15:46:08Z",
+      "side": 1,
+      "message": "interesting, without this we do get 400 Bad Request.",
+      "parentUuid": "82073e86_90e2dbfd",
+      "range": {
+        "startLine": 114,
+        "startChar": 10,
+        "endLine": 114,
+        "endChar": 33
+      },
+      "revId": "878d554f424e34bf10c4c9778e14c5df4c1ed8cd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
