@@ -1,14 +1,13 @@
 package gerritforge.restsimulations
 
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.restsimulations.GatlingRestUtils._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
 import java.net.HttpURLConnection.{HTTP_NO_CONTENT, HTTP_OK}
 
-object ChangeScenarios extends ScenarioBase {
+object ChangeScenarios extends ChangeScenarioBase {
 
   val abandonAndRestoreChangeScn: ScenarioBuilder =
     setupAuthenticatedSession("Abandon and then Restore Change")
@@ -17,172 +16,150 @@ object ChangeScenarios extends ScenarioBase {
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
       .exec(
-        http("abandon change")
-          .post(s"/changes/${testConfig.project}~#{changeNumber}/abandon")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("{}"))
+        authenticatedChangesPostRequest(
+          "abandon change",
+          "/abandon"
+        )
       )
       .exec(
-        http("restore change")
-          .post(s"/changes/${testConfig.project}~#{changeNumber}/restore")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("{}"))
+        authenticatedChangesPostRequest(
+          "restore change",
+          "/restore"
+        )
       )
 
-  val submitChangeScn: ScenarioBuilder = {
+  val submitChangeScn: ScenarioBuilder =
     setupAuthenticatedSession("Submit Change")
       .exec(
         createChange
-          .check(regex("_number\":(\\d+),").saveAs("newChangeNumber"))
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
       .exec(
-        http("Approve Change")
-          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/review")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{"labels":{"Code-Review":2}}"""))
-          .asJson
+        authenticatedChangesPostRequest(
+          "Approve Change",
+          "/revisions/1/review",
+          """{"labels":{"Code-Review":2}}"""
+        )
       )
       .exec(
-        http("Submit Change")
-          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/submit")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("{}"))
+        authenticatedChangesPostRequest(
+          "Submit Change",
+          "/revisions/1/submit"
+        )
       )
-  }
 
   val makeChangeWipScn: ScenarioBuilder =
     setupAuthenticatedSession("Make change WIP")
       .exec(
         createChange
-          .check(regex("_number\":(\\d+),").saveAs("newChangeNumber"))
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
       .exec(
-        http("Mark Change as WIP")
-          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/wip")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{}"""))
+        authenticatedChangesPostRequest(
+          "Mark Change as WIP",
+          "/wip"
+        )
       )
       .exec(
-        http("Make Change as Ready")
-          .post(s"/changes/${testConfig.project}~#{newChangeNumber}/ready")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{}"""))
+        authenticatedChangesPostRequest(
+          "Mark Change as Ready",
+          "/ready"
+        )
       )
 
   val addAndThenRemoveReviewerScn =
     setupAuthenticatedSession("Add and Remove Reviewer")
       .exec(
         createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeToReview"))
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
       .exec(
-        http("Add Reviewer")
-          .post(
-            s"/changes/${testConfig.project}~#{changeToReview}/reviewers"
-          )
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody(
-              s"""{"reviewer":${testConfig.reviewerAccountId}}"""
-            )
-          )
+        authenticatedChangesPostRequest(
+          "Add Reviewer",
+          "/reviewers",
+          s"""{"reviewer":${testConfig.reviewerAccountId}}"""
+        )
       )
       .exec(
-        http("Remove Reviewer")
-          .post(
-            s"/changes/${testConfig.project}~#{changeToReview}/reviewers/${testConfig.reviewerAccountId}/delete"
-          )
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{"notify": "NONE"}"""))
+        authenticatedChangesPostRequest(
+          "Remove Reviewer",
+          s"/reviewers/${testConfig.reviewerAccountId}/delete",
+          """{"notify": "NONE"}"""
+        )
       )
 
-  val deleteVoteScn = setupAuthenticatedSession("Delete Vote")
-    .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeToVote")))
-    .exec(
-      http("Vote On Change")
-        .post(
-          s"/changes/${testConfig.project}~#{changeToVote}/revisions/1/review"
+  val deleteVoteScn =
+    setupAuthenticatedSession("Delete Vote")
+      .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
+      .exec(
+        authenticatedChangesPostRequest(
+          "Vote On Change",
+          "/revisions/1/review",
+          """{"labels":{"Code-Review":-1}}""".stripMargin
         )
-        .headers(postApiHeader(testConfig.xsrfToken))
-        .body(
-          StringBody(
-            """{"labels":{"Code-Review":-1}}""".stripMargin
-          )
+      )
+      .exec(
+        authenticatedChangesPostRequest(
+          "Remove Vote for Label",
+          "/reviewers/self/votes/Code-Review/delete",
+          """{"notify": "NONE"}"""
         )
-    )
-    .exec(
-      http("Remove Vote for Label")
-        .post(
-          s"/changes/${testConfig.project}~#{changeToVote}/reviewers/self/votes/Code-Review/delete"
-        )
-        .headers(postApiHeader(testConfig.xsrfToken))
-        .body(StringBody("""{"notify": "NONE"}"""))
-    )
+      )
 
   val changePrivateStateScn = setupAuthenticatedSession("Change Private State")
-    .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeToMarkPrivate")))
+    .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
     .exec(
-      http("Mark Private")
-        .post(s"/changes/${testConfig.project}~#{changeToMarkPrivate}/private")
-        .headers(postApiHeader(testConfig.xsrfToken))
-        .body(
-          StringBody(
-            s"""{"message":"Marking change #{changeToMarkPrivate} as private for testing purposes"}"""
-          )
-        )
+      authenticatedChangesPostRequest(
+        "Mark Private",
+        "/private",
+        s"""{"message":"Marking change #{changeNumber} as private for testing purposes"}"""
+      )
     )
     .exec(
-      http("UnMark Private")
-        .post(s"/changes/${testConfig.project}~#{changeToMarkPrivate}/private.delete")
-        .headers(postApiHeader(testConfig.xsrfToken))
-        .body(StringBody("{}"))
+      authenticatedChangesPostRequest(
+        "UnMark Private",
+        "/private.delete"
+      )
     )
 
-  val postCommentScn = setupAuthenticatedSession("Post Comment")
-    .exec(
-      createChange
-        .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
-    )
-    .exec(
-      http("Post Comment")
-        .post(
-          s"/changes/${testConfig.project}~#{changeNumber}/revisions/1/review"
+  val postCommentScn =
+    setupAuthenticatedSession("Post Comment")
+      .exec(
+        createChange
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+      )
+      .exec(
+        authenticatedChangesPostRequest(
+          "Post Comment",
+          "/revisions/1/review",
+          """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":0},
+            |"comments":{"/PATCHSET_LEVEL":[{"message":"some message","unresolved":false}]},
+            |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
         )
-        .headers(postApiHeader(testConfig.xsrfToken))
-        .body(
-          StringBody(
-            """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":0},
-              |"comments":{"/PATCHSET_LEVEL":[{"message":"some message","unresolved":false}]},
-              |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
-          )
-        )
-    )
+      )
 
-  val addThenRemoveHashtags = {
+  val addThenRemoveHashtags =
     setupAuthenticatedSession("Add then Remove Hashtags")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
       .exec(
-        http("Add Hastag")
-          .post(s"/changes/${testConfig.project}~#{changeNumber}/hashtags")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody("""{"add":["test", "test1", "test2"]}""")
-          )
+        authenticatedChangesPostRequest(
+          "Add Hashtag",
+          "/hashtags",
+          """{"add":["test", "test1", "test2"]}"""
+        )
       )
       .exec(
-        http("Remove Hastag")
-          .post(s"/changes/${testConfig.project}~#{changeNumber}/hashtags")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody("""{"remove":["test"]}""")
-          )
+        authenticatedChangesPostRequest(
+          "Remove Hastag",
+          "/hashtags",
+          """{"remove":["test"]}"""
+        )
       )
-  }
 
-  val addThenRemoveTopics = {
+  val addThenRemoveTopics =
     setupAuthenticatedSession("Add then Remove Topics")
       .exec(
         createChange
@@ -201,9 +178,8 @@ object ChangeScenarios extends ScenarioBase {
           .delete(s"/changes/${testConfig.project}~#{changeNumber}/topic")
           .headers(postApiHeader(testConfig.xsrfToken, contentType = None))
       )
-  }
 
-  val listThenGetDetailsScn = {
+  val listThenGetDetailsScn =
     setupAuthenticatedSession("List and Get Change Details")
       .exec(listChanges)
       .exec(pickRandomChange)
@@ -234,7 +210,7 @@ object ChangeScenarios extends ScenarioBase {
               .get("/changes/#{id}/edit/?download-commands=true")
               .check(status.in(Seq(HTTP_OK, HTTP_NO_CONTENT))),
             http("get project config")
-              .get("/projects/#{project}/config"),
+              .get(s"/projects/${testConfig.project}/config"),
             http("get available actions")
               .get("/changes/#{id}/revisions/#{revision}/actions"),
             http("get list of reviewed files")
@@ -248,7 +224,7 @@ object ChangeScenarios extends ScenarioBase {
               .get("/changes/#{id}/revisions/#{revision}/related"),
             http("get cherry picks")
               .get(
-                "/changes/?O=a&q=project%3A#{project}%20change%3A#{changeId}%20-change%3A#{changeNum}%20-is%3Aabandoned"
+                s"/changes/?O=a&q=project%3A${encode(testConfig.project)}%20change%3A#{changeId}%20-change%3A#{changeNum}%20-is%3Aabandoned"
               ),
             http("get conflicting changes")
               .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A#{changeNum}"),
@@ -256,7 +232,8 @@ object ChangeScenarios extends ScenarioBase {
               .get("/changes/#{id}/submitted_together?o=NON_VISIBLE_CHANGES")
           )
       )
-  }
+
+  val listChangesScn = scenario("Anonymous User Listing Changes").exec(listThenGetDetailsScn)
 
   override val scns: List[ScenarioBuilder] =
     List(
@@ -268,7 +245,6 @@ object ChangeScenarios extends ScenarioBase {
       changePrivateStateScn,
       postCommentScn,
       addThenRemoveHashtags,
-      addThenRemoveTopics,
-      listThenGetDetailsScn
+      addThenRemoveTopics
     )
 }

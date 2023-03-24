@@ -1,22 +1,18 @@
 package gerritforge
 
 import gerritforge.GerritTestConfig._
-import gerritforge.restsimulations.GatlingRestUtils.{httpProtocol, listChanges}
+import gerritforge.restsimulations.TagScenarios.httpProtocol
 import gerritforge.restsimulations.{ChangeScenarios, TagScenarios}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 
 class GerritRestSimulation extends Simulation {
 
-  val anonymousUserChangeList = List(
-    scenario("Anonymous user").exec(listChanges)
-  )
-
   val authenticatedScenarios = ChangeScenarios.scns ++ TagScenarios.scns
 
   val scenarios =
     if (testConfig.restRunAnonymousUser)
-      authenticatedScenarios ++ anonymousUserChangeList
+      ChangeScenarios.listChangesScn :: authenticatedScenarios
     else authenticatedScenarios
 
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
