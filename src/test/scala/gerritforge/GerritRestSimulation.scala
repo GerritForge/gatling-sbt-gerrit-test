@@ -1,8 +1,8 @@
 package gerritforge
 
 import gerritforge.GerritTestConfig._
-import gerritforge.restsimulations.TagScenarios.httpProtocol
-import gerritforge.restsimulations.{ChangeScenarios, TagScenarios}
+import gerritforge.restscenarios.TagScenarios.httpProtocol
+import gerritforge.restscenarios.{ChangeScenarios, TagScenarios}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 

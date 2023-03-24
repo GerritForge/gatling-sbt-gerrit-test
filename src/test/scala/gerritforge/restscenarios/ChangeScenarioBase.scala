@@ -1,4 +1,4 @@
-package gerritforge.restsimulations
+package gerritforge.restscenarios
 
 import gerritforge.EncodeUtils.encode
 import gerritforge.GerritTestConfig.testConfig
