@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d4f5aa_92973f23",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T15:13:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ceeb518_23b18c97",
+      "range": {
+        "startLine": 19,
+        "startChar": 6,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "c7ad3ed39ad3483080e40f4676d922c3f4d73614",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ba2da5e_c3a3f61b",
@@ -108,6 +132,54 @@
       "side": 1,
       "message": "This was the last 1% of 409, Marcin found out that when querying for groups 1,2,3..9, we would select also group 10,11,12, so on so fort.\nSo now we set everything to 3 digits, so it\u0027ll be 001,002...",
       "parentUuid": "e198e15e_699cc3b0",
+      "range": {
+        "startLine": 29,
+        "startChar": 58,
+        "endLine": 29,
+        "endChar": 80
+      },
+      "revId": "c7ad3ed39ad3483080e40f4676d922c3f4d73614",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b5396d3_bf07fa55",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T15:13:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ba2da5e_c3a3f61b",
+      "range": {
+        "startLine": 29,
+        "startChar": 33,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "c7ad3ed39ad3483080e40f4676d922c3f4d73614",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae5a801a_b4058808",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T15:13:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a56e6332_6e1396ae",
       "range": {
         "startLine": 29,
         "startChar": 58,
