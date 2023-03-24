@@ -38,7 +38,6 @@ object ChangeScenarios extends ScenarioBase {
             |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
           .check(regex("_number\":(\\d+),").saveAs("newChangeNumber"))
       )
-      .pause(1)
       .exec(
         http("Approve Change")
           .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/review")
@@ -46,7 +45,6 @@ object ChangeScenarios extends ScenarioBase {
           .body(StringBody("""{"labels":{"Code-Review":2}}"""))
           .asJson
       )
-      .pause(1)
       .exec(
         http("Submit Change")
           .post(s"/changes/${testConfig.project}~#{newChangeNumber}/revisions/1/submit")
@@ -55,26 +53,6 @@ object ChangeScenarios extends ScenarioBase {
       )
   }
 
-  val makeChangeWipScn: ScenarioBuilder =
-    setupAuthenticatedSession("Make change WIP")
-      .exec(
-        http("Create Change")
-          .post("/changes/")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(
-            StringBody(s"""{"project":"${testConfig.project}",
-               |"branch":"master",
-               |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin)
-          )
-          .check(regex("_number\":(\\d+),").saveAs("changeToWip"))
-      )
-      .exec(
-        http("Make Change WIP")
-          .post(s"/changes/${testConfig.project}~#{changeToWip}/wip")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{}"""))
-      )
-
   override val scns: List[ScenarioBuilder] =
-    List(abandonAndRestoreChangeScn, submitChangeScn, makeChangeWipScn)
+    List(abandonAndRestoreChangeScn, submitChangeScn)
 }
