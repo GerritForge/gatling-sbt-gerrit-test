@@ -1,4 +1,4 @@
-package gerritforge.restsimulations
+package gerritforge.restscenarios
 
 import gerritforge.GerritTestConfig.testConfig
 import io.gatling.core.Predef._
