@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40cd1929_6aaded3b",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T11:01:46Z",
+      "side": 1,
+      "message": "Is this testing anything we don\u0027t test already?",
+      "range": {
+        "startLine": 93,
+        "startChar": 6,
+        "endLine": 93,
+        "endChar": 22
+      },
+      "revId": "a2d7ab48d7b98f56eb79077b796177309371a93e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "624563f9_890ec93b",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T11:01:46Z",
+      "side": 1,
+      "message": "Think we said to not have pauses in the end.\n\nWe might end up inserting random pauses later on, rather than always 1 second.",
+      "range": {
+        "startLine": 116,
+        "startChar": 4,
+        "endLine": 116,
+        "endChar": 13
+      },
+      "revId": "a2d7ab48d7b98f56eb79077b796177309371a93e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b9051f7_0d8511d4",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T11:01:46Z",
+      "side": 1,
+      "message": "Probably not needed, but would be cool to have a random number betwee -2 and 2?",
+      "range": {
+        "startLine": 125,
+        "startChar": 40,
+        "endLine": 125,
+        "endChar": 42
+      },
+      "revId": "a2d7ab48d7b98f56eb79077b796177309371a93e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
