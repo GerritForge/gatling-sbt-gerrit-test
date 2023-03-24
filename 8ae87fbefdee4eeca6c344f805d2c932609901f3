@@ -46,6 +46,30 @@
       },
       "revId": "8ae87fbefdee4eeca6c344f805d2c932609901f3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61695b3e_aa9f47f8",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T15:47:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7f08e5d_efa7db2a",
+      "range": {
+        "startLine": 106,
+        "startChar": 5,
+        "endLine": 114,
+        "endChar": 7
+      },
+      "revId": "8ae87fbefdee4eeca6c344f805d2c932609901f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
