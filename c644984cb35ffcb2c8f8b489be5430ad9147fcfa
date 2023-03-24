@@ -70,6 +70,30 @@
       },
       "revId": "c644984cb35ffcb2c8f8b489be5430ad9147fcfa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86083227_6d48070e",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T10:00:56Z",
+      "side": 1,
+      "message": "that\u0027s a great shout, let\u0027s do that.",
+      "parentUuid": "a0c5b2e6_09218915",
+      "range": {
+        "startLine": 70,
+        "startChar": 7,
+        "endLine": 70,
+        "endChar": 12
+      },
+      "revId": "c644984cb35ffcb2c8f8b489be5430ad9147fcfa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
