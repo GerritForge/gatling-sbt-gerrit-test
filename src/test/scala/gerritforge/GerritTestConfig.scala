@@ -2,6 +2,7 @@ package gerritforge
 
 import pureconfig._
 import pureconfig.generic.auto._
+import EncodeUtils._
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -23,4 +24,6 @@ case class GerritTestConfig(
     duration: FiniteDuration,
     restRunAnonymousUser: Boolean,
     reviewerAccountId: Int
-)
+) {
+  val encodedProject = encode(project)
+}
