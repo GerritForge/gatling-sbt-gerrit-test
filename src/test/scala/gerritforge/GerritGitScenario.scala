@@ -14,7 +14,7 @@ case class GerritGitScenario(gitUrl: String) {
     new GitRequestBuilder(
       GitRequestSession(
         "clone",
-        s"$gitUrl/${testConfig.project}",
+        s"$gitUrl/${testConfig.encodedProject}",
         "#{refSpec}",
         ignoreFailureRegexps = List(".*want.+not valid.*")
       )
@@ -24,7 +24,7 @@ case class GerritGitScenario(gitUrl: String) {
     new GitRequestBuilder(
       GitRequestSession(
         "push",
-        s"$gitUrl/${testConfig.project}",
+        s"$gitUrl/${testConfig.encodedProject}",
         "#{refSpec}",
         force = "#{force}",
         ignoreFailureRegexps = List(".*no common ancestry.*")
@@ -35,7 +35,7 @@ case class GerritGitScenario(gitUrl: String) {
     new GitRequestBuilder(
       GitRequestSession(
         "push",
-        s"$gitUrl/${testConfig.project}",
+        s"$gitUrl/${testConfig.encodedProject}",
         "HEAD:refs/for/#{refSpec}",
         force = true,
         computeChangeId = true,
