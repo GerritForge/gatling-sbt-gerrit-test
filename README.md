@@ -105,5 +105,8 @@ end immediately, and the simulations will continue to run in the background.
 Each parallel simulation job logs a `background-job-<n>.log` under the `target/gatling/` directory.
 * A public key to associate with the user running the Gatling tests is present in the repository (`id_rsa.pub`).
 Before running the tests, make sure to add it to the users' SSH keys.
+* The authenticated user will also need `Code-Review +2 ` permissions on the selected project.
+* The project will need a master branch.
+* The only submit requirement for the selected project *needs* to be `Code-Review +2`.
 * The repo the tests will run against (`GERRIT_PROJECT`) will need the following ACLs to be set:
 ![ACLs](./images/ACLs.png)
