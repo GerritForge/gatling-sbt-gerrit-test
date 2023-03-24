@@ -16,6 +16,24 @@
       "message": "Test is passing even if I set non existing REVIEWER_ACCOUNT_ID",
       "revId": "420449dd1cb4575dab52a5dfa67dfb05c472cd58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c5b98ff_b7d8a93a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T10:20:01Z",
+      "side": 1,
+      "message": "Yes, very good catch. The test passes even if you set the currently logged in user\nas the reviewer.\n\nI believe this might be a bug in the endpoint, returning 200 even when it\nshouldn\u0027t.\nWas planning on raising a ticket for this.",
+      "parentUuid": "48cf4841_2aeb68d0",
+      "revId": "420449dd1cb4575dab52a5dfa67dfb05c472cd58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
