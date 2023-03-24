@@ -156,6 +156,30 @@ object ChangeScenarios extends ScenarioBase {
         )
     )
 
+  val addThenRemoveHashtags = {
+    setupAuthenticatedSession("Add then Remove Hashtags")
+      .exec(
+        createChange
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+      )
+      .exec(
+        http("Add Hastag")
+          .post(s"/changes/${testConfig.project}~#{changeNumber}/hashtags")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody("""{"add":["test", "test1", "test2"]}""")
+          )
+      )
+      .exec(
+        http("Remove Hastag")
+          .post(s"/changes/${testConfig.project}~#{changeNumber}/hashtags")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody("""{"remove":["test"]}""")
+          )
+      )
+  }
+
   override val scns: List[ScenarioBuilder] =
     List(
       abandonAndRestoreChangeScn,
@@ -164,6 +188,7 @@ object ChangeScenarios extends ScenarioBase {
       addAndThenRemoveReviewerScn,
       deleteVoteScn,
       changePrivateStateScn,
-      postCommentScn
+      postCommentScn,
+      addThenRemoveHashtags
     )
 }
