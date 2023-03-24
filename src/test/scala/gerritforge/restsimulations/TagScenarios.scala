@@ -1,7 +1,6 @@
 package gerritforge.restsimulations
 
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.restsimulations.GatlingRestUtils._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
@@ -10,7 +9,6 @@ import io.circe.parser.decode
 import io.circe.generic.auto._
 
 import java.util.UUID
-import scala.util.Random
 
 object TagScenarios extends ScenarioBase {
 
@@ -19,20 +17,16 @@ object TagScenarios extends ScenarioBase {
   val numTagGroups       = 500
   val tagsToDeleteAtOnce = 150
 
-  val randomNumTags = new Random
-
-  val randomTagNumbers = new Random
-
   def tagGroupIds = {
     /*
-      We tag groupIds to 3 digits, so that groupId 1 becomes 001, so on so forth.
+      We pad groupIds to 3 digits, so that groupId 1 becomes 001, so on so forth.
       This is to avoid that when querying for groupId 1 we also select group 10,11,100,[...]
      */
     def padWithLeadingZeros(num: Int) = f"$num%03d"
     (1 to numTagGroups).map(tagGroup => Map("tagGroupId" -> padWithLeadingZeros(tagGroup))).circular
   }
 
-  val createTag =
+  val createTagScn =
     setupAuthenticatedSession("Create a new Tag")
       .feed(tagGroupIds)
       .feed(
@@ -46,7 +40,7 @@ object TagScenarios extends ScenarioBase {
           .asJson
       )
 
-  val deleteTags = {
+  val deleteTagsScn = {
     setupAuthenticatedSession("List and remove a Tag")
       .feed(tagGroupIds)
       .exec(
@@ -83,5 +77,5 @@ object TagScenarios extends ScenarioBase {
       }
   }
 
-  override val scns: List[ScenarioBuilder] = List(createTag, deleteTags)
+  override val scns: List[ScenarioBuilder] = List(createTagScn, deleteTagsScn)
 }
