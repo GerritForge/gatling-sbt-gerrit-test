@@ -117,6 +117,30 @@
       },
       "revId": "154ce0a1070a04b1b3c16eeb4b2590dd0c3a010f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "657c381a_682073ce",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-24T14:37:53Z",
+      "side": 1,
+      "message": "Sorry I misread what you said.\n\nI thought that by only listing `n` amount of tags, we\u0027re only deleting a subset,\ndo we want to reduce it further?",
+      "parentUuid": "bb02a626_7e18cea5",
+      "range": {
+        "startLine": 57,
+        "startChar": 10,
+        "endLine": 57,
+        "endChar": 56
+      },
+      "revId": "154ce0a1070a04b1b3c16eeb4b2590dd0c3a010f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
