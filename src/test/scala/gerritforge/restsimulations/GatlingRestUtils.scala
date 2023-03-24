@@ -49,8 +49,8 @@ object GatlingRestUtils {
     )
   )
 
-  def postApiHeader(xsrfCookie: Option[String]) = {
-    val headers: Map[String, String] = restApiHeader + ("Content-Type" -> "application/json")
+  def postApiHeader(xsrfCookie: Option[String], contentType: Option[String] = Some("application/json")) = {
+    val headers: Map[String, String] = restApiHeader ++ contentType.map("Content-Type" -> _)
     xsrfCookie.fold(headers)(c => headers + ("x-gerrit-auth" -> c))
   }
 

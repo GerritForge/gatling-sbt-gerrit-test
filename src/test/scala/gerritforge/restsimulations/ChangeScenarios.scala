@@ -180,6 +180,27 @@ object ChangeScenarios extends ScenarioBase {
       )
   }
 
+  val addThenRemoveTopics = {
+    setupAuthenticatedSession("Add then Remove Topics")
+      .exec(
+        createChange
+          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+      )
+      .exec(
+        http("Add Topic")
+          .put(s"/changes/${testConfig.project}~#{changeNumber}/topic")
+          .headers(postApiHeader(testConfig.xsrfToken))
+          .body(
+            StringBody("""{"topic":"testTopic"}""")
+          )
+      )
+      .exec(
+        http("Remove Topic")
+          .delete(s"/changes/${testConfig.project}~#{changeNumber}/topic")
+          .headers(postApiHeader(testConfig.xsrfToken, contentType = None))
+      )
+  }
+
   override val scns: List[ScenarioBuilder] =
     List(
       abandonAndRestoreChangeScn,
@@ -189,6 +210,7 @@ object ChangeScenarios extends ScenarioBase {
       deleteVoteScn,
       changePrivateStateScn,
       postCommentScn,
-      addThenRemoveHashtags
+      addThenRemoveHashtags,
+      addThenRemoveTopics
     )
 }
