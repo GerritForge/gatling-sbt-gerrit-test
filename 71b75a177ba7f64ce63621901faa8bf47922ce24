@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a330e1e_2a874889",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-27T13:25:12Z",
+      "side": 1,
+      "message": "Add to the documentation that:\n- The project where tests are executed need to have Code-Review +2 as the only requirement for merge\n- The project needs to have a \u0027master\u0027 branch\n- The user running the tests needs to have Code-Review +2 permissions\n\nAlso, make it optional if the user doesn\u0027t have those permissions (env. variable?)",
+      "revId": "71b75a177ba7f64ce63621901faa8bf47922ce24",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
