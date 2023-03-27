@@ -188,6 +188,30 @@
       },
       "revId": "c7ad3ed39ad3483080e40f4676d922c3f4d73614",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a39d796_e5959a42",
+        "filename": "src/test/scala/gerritforge/restsimulations/TagScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-27T08:38:54Z",
+      "side": 1,
+      "message": "Maybe adding a comment explaining why?",
+      "parentUuid": "ae5a801a_b4058808",
+      "range": {
+        "startLine": 29,
+        "startChar": 58,
+        "endLine": 29,
+        "endChar": 80
+      },
+      "revId": "c7ad3ed39ad3483080e40f4676d922c3f4d73614",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
