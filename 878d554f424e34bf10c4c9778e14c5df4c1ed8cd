@@ -46,6 +46,30 @@
       },
       "revId": "878d554f424e34bf10c4c9778e14c5df4c1ed8cd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d9f2827_8ac1874c",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-27T13:40:33Z",
+      "side": 1,
+      "message": "It would also be best to specify to NOT notify anyone, otherwise you may end up generating tons of notifications.\n\n```\n{ \"notify\": \"NONE\" }\n```",
+      "parentUuid": "8dbd8cd5_dc3dbdbd",
+      "range": {
+        "startLine": 114,
+        "startChar": 10,
+        "endLine": 114,
+        "endChar": 33
+      },
+      "revId": "878d554f424e34bf10c4c9778e14c5df4c1ed8cd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
