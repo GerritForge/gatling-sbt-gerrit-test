@@ -12,15 +12,20 @@ class GerritGitSimulation extends Simulation {
 
   val hostname    = InetAddress.getLocalHost.getHostName
   val gitProtocol = GitProtocol()
-  val feeder = (1 to testConfig.numUsers) map { idx =>
+  val refSpecFeeder = (1 to testConfig.numUsers) map { idx =>
     Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
   }
+
+  val numHashtags = 100
+  val hashtagFeeder =
+    (1 to numHashtags).map(id => Map("hashtag" -> s"hashtag-$id")).circular
 
   val gitSshScenario  = testConfig.sshUrl.map(GerritGitScenario)
   val gitHttpScenario = testConfig.httpUrl.map(_ + "/a").map(GerritGitScenario)
 
   val gitCloneAndPush: ScenarioBuilder = scenario("Git clone and push to Gerrit")
-    .feed(feeder.circular)
+    .feed(hashtagFeeder)
+    .feed(refSpecFeeder.circular)
     .doIf(gitSshScenario.isDefined) {
       exec(gitSshScenario.get.pushCommand)
         .exec(gitSshScenario.get.cloneCommand)

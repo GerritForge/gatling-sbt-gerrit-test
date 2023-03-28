@@ -1,8 +1,6 @@
 package gerritforge.restscenarios.changes
 
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object DeleteVote extends ChangeScenarioBase {
 
@@ -10,7 +8,11 @@ object DeleteVote extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Delete Vote")
-      .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
+      .feed(hashtagFeeder)
+      .exec(
+        listChangeWithHashtag
+      )
+      .exec(pickRandomChange)
       .exec(
         authenticatedChangesPostRequest(
           "Vote On Change",

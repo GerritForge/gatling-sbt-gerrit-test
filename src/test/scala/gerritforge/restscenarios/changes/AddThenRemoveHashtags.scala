@@ -1,18 +1,17 @@
 package gerritforge.restscenarios.changes
 
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object AddThenRemoveHashtags extends ChangeScenarioBase {
   override def simulationName: String = "ADD_THEN_REMOVE_HASHTAG"
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Add then Remove Hashtags")
+      .feed(hashtagFeeder)
       .exec(
-        createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+        listChangeWithHashtag
       )
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(

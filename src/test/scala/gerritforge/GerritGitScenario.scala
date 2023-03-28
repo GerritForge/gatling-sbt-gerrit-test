@@ -40,7 +40,7 @@ case class GerritGitScenario(gitUrl: String) {
         force = true,
         computeChangeId = true,
         ignoreFailureRegexps = List(".*no common ancestry.*"),
-        pushOptions = List("t=my-test")
+        pushOptions = "t=#{hashtag}"
       )
     )
 }

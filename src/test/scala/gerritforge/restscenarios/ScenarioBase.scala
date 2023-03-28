@@ -12,6 +12,10 @@ import scala.util.Random
 trait ScenarioBase extends PauseSimulation {
   def scn: ScenarioBuilder
 
+  val numHashtags = 3
+  val hashtagFeeder =
+    (1 to numHashtags).map(id => Map("hashtag" -> s"hashtag-$id")).circular
+
   val randomNumber = new Random
   val XSS_LEN      = 5
 

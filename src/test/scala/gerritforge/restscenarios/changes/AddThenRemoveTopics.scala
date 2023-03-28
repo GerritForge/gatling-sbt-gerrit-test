@@ -11,10 +11,11 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Add then Remove Topics")
+      .feed(hashtagFeeder)
       .exec(
-        createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+        listChangeWithHashtag
       )
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Topic")
