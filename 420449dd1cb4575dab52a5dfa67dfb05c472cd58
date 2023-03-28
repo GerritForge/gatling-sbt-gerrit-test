@@ -34,6 +34,24 @@
       "parentUuid": "48cf4841_2aeb68d0",
       "revId": "420449dd1cb4575dab52a5dfa67dfb05c472cd58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6e47a8b_53ae0863",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-28T09:56:25Z",
+      "side": 1,
+      "message": "Yes, it is indeed a Gerrit bug, look here below what it returns when you pass a non-existent account:\n\n```\n\u003c HTTP/1.1 200 OK\n\u003c Date: Tue, 28 Mar 2023 09:44:14 GMT\n\u003c X-Frame-Options: DENY\n\u003c Content-Disposition: attachment\n\u003c X-Content-Type-Options: nosniff\n\u003c Cache-Control: no-cache, no-store, max-age\u003d0, must-revalidate\n\u003c Pragma: no-cache\n\u003c Expires: Mon, 01 Jan 1990 00:00:00 GMT\n\u003c Content-Type: application/json;charset\u003dutf-8\n\u003c Content-Length: 118\n\u003c\n)]}\u0027\n{\"input\":\"3000\",\"error\":\"Account \\u00273000\\u0027 not found\\n3000 does not identify a registered user or group\"}\n```",
+      "parentUuid": "9c5b98ff_b7d8a93a",
+      "revId": "420449dd1cb4575dab52a5dfa67dfb05c472cd58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
