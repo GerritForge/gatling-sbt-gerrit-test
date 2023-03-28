@@ -92,6 +92,11 @@ For running the tests from Docker, with the environment variables defined in
 ```
 $ make run
 ```
+Additionally, every test accepts an optional "${SIMULATION_NAME}_PAUSE" and a 
+"${SIMULATION_NAME}_STDDEV_PAUSE" environment variable, that can either be set or not.
+
+This will set `pause` value for each step of that simulation, helping it becoming more realistic.
+The simulation name can be easily spotted in each object that implements `ScenarioBase`.
 
 For making a parallel execution of multiple runs with concurrent Docker:
 
