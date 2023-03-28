@@ -1,8 +1,6 @@
 package gerritforge.restscenarios.changes
 
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object MarkChangeWIP extends ChangeScenarioBase {
 
@@ -10,10 +8,7 @@ object MarkChangeWIP extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Make change WIP")
-      .exec(
-        createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
-      )
+      .exec(listChangeWithHashtag(simulationName))
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(

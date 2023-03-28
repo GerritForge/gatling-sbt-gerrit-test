@@ -1,9 +1,7 @@
 package gerritforge.restscenarios.changes
 
 import gerritforge.GerritTestConfig.testConfig
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object AddThenRemoveReviewer extends ChangeScenarioBase {
 
@@ -11,10 +9,8 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Add and Remove Reviewer")
-      .exec(
-        createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
-      )
+      .exec(listChangeWithHashtag(simulationName))
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(

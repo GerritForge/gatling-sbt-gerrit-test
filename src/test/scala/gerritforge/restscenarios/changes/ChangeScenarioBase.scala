@@ -49,6 +49,27 @@ trait ChangeScenarioBase extends ScenarioBase {
           )
       )
 
+  def listChangeWithHashtag(hashtag: String) =
+    http("changes list and get first change")
+      .get(s"/q/project:${testConfig.encodedProject}")
+      .headers(restApiHeader)
+      .resources(
+        http("get list of changes")
+          .get(
+            s"/changes/?n=500&q=project:${testConfig.encodedProject}+hashtag:$hashtag&o=CURRENT_REVISION"
+          )
+          .check(
+            bodyString
+              .transform(_.drop(XSS_LEN))
+              .transform(decode[List[ChangeDetail]](_))
+              .transform {
+                case Right(changeDetailList) => changeDetailList
+                case Left(decodingError)     => throw decodingError
+              }
+              .saveAs("changeDetails")
+          )
+      )
+
   def pickRandomChange =
     doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
       exec { session =>
@@ -58,6 +79,7 @@ trait ChangeScenarioBase extends ScenarioBase {
           .set("id", s"${encode(change.project)}~${change._number}")
           .set("changeUrl", change.url)
           .set("changeNum", change._number)
+          .set("changeNumber", change._number)
           .set("changeId", change.change_id)
           .set("revision", encode(change.current_revision))
       }

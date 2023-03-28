@@ -1,8 +1,6 @@
 package gerritforge.restscenarios.changes
 
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object PostComment extends ChangeScenarioBase {
 
@@ -10,10 +8,8 @@ object PostComment extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Post Comment")
-      .exec(
-        createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
-      )
+      .exec(listChangeWithHashtag(simulationName))
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(

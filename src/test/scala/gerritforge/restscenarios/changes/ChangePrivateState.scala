@@ -1,8 +1,6 @@
 package gerritforge.restscenarios.changes
 
-import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
 
 object ChangePrivateState extends ChangeScenarioBase {
 
@@ -10,7 +8,8 @@ object ChangePrivateState extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("Change Private State")
-      .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
+      .exec(listChangeWithHashtag(simulationName))
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
