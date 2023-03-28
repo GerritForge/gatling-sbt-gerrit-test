@@ -23,7 +23,7 @@ case class GerritTestConfig(
     numUsers: Int,
     duration: FiniteDuration,
     restRunAnonymousUser: Boolean,
-    reviewerAccountId: Int
+    reviewerAccount: Int
 ) {
   val encodedProject = encode(project)
 }

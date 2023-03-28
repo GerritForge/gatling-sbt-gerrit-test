@@ -77,13 +77,13 @@ object ChangeScenarios extends ChangeScenarioBase {
         authenticatedChangesPostRequest(
           "Add Reviewer",
           "/reviewers",
-          s"""{"reviewer":${testConfig.reviewerAccountId}}"""
+          s"""{"reviewer":${testConfig.reviewerAccount}}"""
         )
       )
       .exec(
         authenticatedChangesPostRequest(
           "Remove Reviewer",
-          s"/reviewers/${testConfig.reviewerAccountId}/delete",
+          s"/reviewers/${testConfig.reviewerAccount}/delete",
           """{"notify": "NONE"}"""
         )
       )
