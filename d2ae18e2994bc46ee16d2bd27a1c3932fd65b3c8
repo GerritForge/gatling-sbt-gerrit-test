@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68edc6b9_4af9bbbd",
+        "filename": "src/test/scala/gerritforge/GerritGitScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2023-03-28T20:27:04Z",
+      "side": 1,
+      "message": "nit: IMHO `t` for short version of hashtag is a bit unfortunate as it looks like short version of `topic`, I would propose to use the long version IOW `hashtag` so that there is no place for misinterpretation ;)",
+      "range": {
+        "startLine": 43,
+        "startChar": 28,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "d2ae18e2994bc46ee16d2bd27a1c3932fd65b3c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
