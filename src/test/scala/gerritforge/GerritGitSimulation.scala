@@ -10,8 +10,7 @@ import java.net.InetAddress
 
 class GerritGitSimulation extends Simulation {
 
-  val hostname    = InetAddress.getLocalHost.getHostName
-  val gitProtocol = GitProtocol()
+  val hostname = InetAddress.getLocalHost.getHostName
   val feeder = (1 to testConfig.numUsers) map { idx =>
     Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
   }
@@ -41,5 +40,5 @@ class GerritGitSimulation extends Simulation {
     gitCloneAndPush.inject(
       rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
     )
-  ).protocols(gitProtocol)
+  ).protocols(GitProtocol)
 }
