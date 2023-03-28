@@ -68,6 +68,30 @@
       },
       "revId": "96b73aff23a176d126c0ddccf828583d65c6fbff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a63bf41f_42e0bcc6",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 21
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-28T10:17:15Z",
+      "side": 1,
+      "message": "My bad, it isn\u0027t supported here.",
+      "parentUuid": "2f7b62d0_de0afcdf",
+      "range": {
+        "startLine": 138,
+        "startChar": 26,
+        "endLine": 138,
+        "endChar": 28
+      },
+      "revId": "96b73aff23a176d126c0ddccf828583d65c6fbff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
