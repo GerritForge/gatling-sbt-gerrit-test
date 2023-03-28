@@ -92,6 +92,13 @@ For running the tests from Docker, with the environment variables defined in
 ```
 $ make run
 ```
+Additionally, every test accepts an optional "${scenarioName}_PAUSE" and a
+"${scenarioName}_STDDEV_PAUSE" environment variable, that can either be set or not.
+
+For example: `AbandonThenRestoreChange_PAUSE`
+
+This will set `pause` value for each step of that scenario, helping it become more realistic.
+The scenario name is the simple name of the class implementing that scenario.
 
 For making a parallel execution of multiple runs with concurrent Docker:
 
