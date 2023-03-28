@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "feb51a0d_ede67b8e",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-28T10:25:25Z",
+      "side": 1,
+      "message": "According to the documentation [1] there is no body.\n\n[1] https://gerrit-documentation.storage.googleapis.com/Documentation/3.4.8/rest-api-changes.html#delete-topic",
+      "range": {
+        "startLine": 202,
+        "startChar": 10,
+        "endLine": 202,
+        "endChar": 33
+      },
+      "revId": "993e67da6da4f052cc5d4d57588672378d846b03",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
