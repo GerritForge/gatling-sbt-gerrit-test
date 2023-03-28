@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4701329_5eeff301",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 21
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-28T10:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eada0b96_73dbd90a",
+      "range": {
+        "startLine": 111,
+        "startChar": 9,
+        "endLine": 111,
+        "endChar": 15
+      },
+      "revId": "a51c42399aaf03085d421540dbf321838c5e0778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "944b14cf_7e2972a0",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-27T13:42:18Z",
       "side": 1,
       "message": "Best to use notification settings to:\n```\n{\n    \"notify\": \"NONE\"\n  }\n```",
+      "range": {
+        "startLine": 115,
+        "startChar": 26,
+        "endLine": 115,
+        "endChar": 28
+      },
+      "revId": "a51c42399aaf03085d421540dbf321838c5e0778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45a506fb_e80efcf1",
+        "filename": "src/test/scala/gerritforge/restsimulations/ChangeScenarios.scala",
+        "patchSetId": 21
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-28T10:13:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "944b14cf_7e2972a0",
       "range": {
         "startLine": 115,
         "startChar": 26,
