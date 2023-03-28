@@ -39,7 +39,8 @@ case class GerritGitScenario(gitUrl: String) {
         "HEAD:refs/for/#{refSpec}",
         force = true,
         computeChangeId = true,
-        ignoreFailureRegexps = List(".*no common ancestry.*")
+        ignoreFailureRegexps = List(".*no common ancestry.*"),
+        pushOptions = List("t=my-test")
       )
     )
 }
