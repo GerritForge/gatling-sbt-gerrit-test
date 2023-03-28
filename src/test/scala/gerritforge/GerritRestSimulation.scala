@@ -22,7 +22,8 @@ class GerritRestSimulation extends Simulation {
     PostComment.scn,
     SubmitChangeScn.scn,
     CreateTag.scn,
-    DeleteTag.scn
+    DeleteTag.scn,
+    AddPatchset.scn
   )
 
   val scenarios =
