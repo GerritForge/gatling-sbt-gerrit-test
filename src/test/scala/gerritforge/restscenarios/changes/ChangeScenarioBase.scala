@@ -1,11 +1,12 @@
-package gerritforge.restscenarios
+package gerritforge.restscenarios.changes
 
 import gerritforge.EncodeUtils.encode
 import gerritforge.GerritTestConfig.testConfig
+import gerritforge.restscenarios.ScenarioBase
+import io.circe.generic.auto._
+import io.circe.parser._
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import io.circe.parser._
-import io.circe.generic.auto._
 
 import java.util.Calendar
 
