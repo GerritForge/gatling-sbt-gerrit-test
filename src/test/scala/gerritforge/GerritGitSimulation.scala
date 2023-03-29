@@ -41,5 +41,5 @@ class GerritGitSimulation extends Simulation {
     gitCloneAndPush.inject(
       rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
     )
-  ).protocols(gitProtocol)
+  ).protocols(gitProtocol).maxDuration(testConfig.duration)
 }

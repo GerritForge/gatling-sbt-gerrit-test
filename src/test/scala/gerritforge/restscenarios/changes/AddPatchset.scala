@@ -20,10 +20,12 @@ object AddPatchset extends ChangeScenarioBase {
           .headers(postApiHeader(testConfig.xsrfToken))
           .body(StringBody("""{"binary_content":"data:text/plain;base64,c29tZSB0ZXN0Cg=="}"""))
       )
+      .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Publish Patchset")
           .post(s"/changes/${testConfig.encodedProject}~#{changeNumber}/edit:publish")
           .headers(postApiHeader(testConfig.xsrfToken))
           .body(StringBody("""{"notify":"NONE"}"""))
       )
+      .pause(pauseDuration, pauseStdDev)
 }
