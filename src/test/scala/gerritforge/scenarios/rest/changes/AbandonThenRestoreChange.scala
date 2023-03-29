@@ -1,13 +1,13 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object AddThenRemoveHashtags extends ChangeScenarioBase {
+object AbandonThenRestoreChange extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add then Remove Hashtags")
+    setupAuthenticatedSession("Abandon and then Restore Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -15,17 +15,15 @@ object AddThenRemoveHashtags extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Add Hashtag",
-          "/hashtags",
-          """{"add":["test", "test1", "test2"]}"""
+          "abandon change",
+          "/abandon"
         )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Remove Hastag",
-          "/hashtags",
-          """{"remove":["test"]}"""
+          "restore change",
+          "/restore"
         )
       )
       .pause(pauseDuration, pauseStdDev)
