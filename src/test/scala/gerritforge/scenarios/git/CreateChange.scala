@@ -12,24 +12,25 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(feeder.circular)
-      .feed(userIdFeeder)
       .foreach(hashtagLoop, "hashtagId") {
-        exec(
-          new GitRequestBuilder(
-            GitRequestSession(
-              "push",
-              s"$url/${testConfig.encodedProject}",
-              "#{refSpec}"
-            )
-          )
-        ).pause(pauseDuration, pauseStdDev)
+        feed(refSpecFeeder)
+          .feed(userIdFeeder.circular)
           .exec(
             new GitRequestBuilder(
               GitRequestSession(
                 "push",
                 s"$url/${testConfig.encodedProject}",
-                "HEAD:refs/for/#{refSpec}",
+                "#{refSpec}-#{userId}"
+              )
+            )
+          )
+          .pause(pauseDuration, pauseStdDev)
+          .exec(
+            new GitRequestBuilder(
+              GitRequestSession(
+                "push",
+                s"$url/${testConfig.encodedProject}",
+                "HEAD:refs/for/#{refSpec}-#{userId}",
                 computeChangeId = true,
                 pushOptions = "hashtag=#{hashtagId},hashtag=#{userId}"
               )
