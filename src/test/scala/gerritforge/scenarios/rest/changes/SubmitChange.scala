@@ -1,13 +1,13 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object PostComment extends ChangeScenarioBase {
+object SubmitChange extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Post Comment")
+    setupAuthenticatedSession("Submit Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -15,11 +15,16 @@ object PostComment extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Post Comment",
+          "Approve Change",
           "/revisions/1/review",
-          """{"drafts":"PUBLISH_ALL_REVISIONS","labels":{"Code-Review":0},
-            |"comments":{"/PATCHSET_LEVEL":[{"message":"some message","unresolved":false}]},
-            |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
+          """{"labels":{"Code-Review":2}}"""
+        )
+      )
+      .pause(pauseDuration, pauseStdDev)
+      .exec(
+        authenticatedChangesPostRequest(
+          "Submit Change",
+          "/revisions/1/submit"
         )
       )
       .pause(pauseDuration, pauseStdDev)
