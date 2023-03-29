@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3d80a7_046614ab",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-29T13:31:49Z",
+      "side": 0,
+      "message": "This should stay",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "82792cdf916a41fa112ef0bd98bb9169da46f0ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
