@@ -6,22 +6,19 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class CreateChangeCommand(url: String) extends GitScenarioBase {
+case class PushNewBranch(url: String) extends GitScenarioBase {
 
   override def scn: ScenarioBuilder =
-    scenario(s"Create Change Command over $protocol")
-      .feed(feeder.circular)
+    scenario(s"Git Push Command over $protocol")
+      .feed(feeder)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
             "push",
             s"$url/${testConfig.encodedProject}",
-            "HEAD:refs/for/#{refSpec}",
-            force = true,
-            computeChangeId = true,
-            ignoreFailureRegexps = List(".*no common ancestry.*"),
-            pushOptions = List("t=my-test")
+            "#{refSpec}"
           )
         )
       )
+      .pause(pauseDuration, pauseStdDev)
 }
