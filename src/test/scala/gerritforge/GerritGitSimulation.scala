@@ -4,16 +4,15 @@ import com.github.barbasa.gatling.git.protocol.GitProtocol
 import gerritforge.GerritTestConfig.testConfig
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand, PushCommand}
 import io.gatling.core.Predef._
-import io.gatling.core.scenario.Simulation
 
-class GerritGitSimulation extends Simulation {
+class GerritGitSimulation extends SimulationBase {
 
   val scenarios = (testConfig.sshUrl ++ testConfig.httpUrl)
     .flatMap(
       url =>
         List(
           CloneCommand(url).scn,
-          CreateChangeCommand(url).scn,
+          CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn,
           PushCommand(url).scn
         )
     )
