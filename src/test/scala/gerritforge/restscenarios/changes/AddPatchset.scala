@@ -27,4 +27,5 @@ object AddPatchset extends ChangeScenarioBase {
             )
           )
       )
+      .pause(pauseDuration, pauseStdDev)
 }
