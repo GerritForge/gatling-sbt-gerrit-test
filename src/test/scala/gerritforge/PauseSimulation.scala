@@ -10,7 +10,7 @@ trait PauseSimulation {
   lazy val pauseDuration: FiniteDuration =
     FiniteDuration(sys.env.getOrElse(s"${scenarioName}_PAUSE", "0").toLong, "seconds")
   lazy val stdDevDuration =
-    FiniteDuration(sys.env.getOrElse(s"${scenarioName}_STDDEV_PAUSE", "0").toLong, "seconds")
+    FiniteDuration(sys.env.getOrElse(s"${scenarioName}_STDDEV_PAUSE", "0").toLong, "milliseconds")
   lazy val pauseStdDev = normalPausesWithStdDevDuration(stdDevDuration)
   println(
     s"$scenarioName: sleeping for ${pauseDuration.toMillis} ms with a ${stdDevDuration.toMillis}ms stdandard deviation"
