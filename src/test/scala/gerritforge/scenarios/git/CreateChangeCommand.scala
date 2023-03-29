@@ -6,22 +6,36 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class CreateChangeCommand(url: String) extends GitScenarioBase {
+case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
+
+  val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
       .feed(feeder.circular)
-      .exec(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            s"$url/${testConfig.encodedProject}",
-            "HEAD:refs/for/#{refSpec}",
-            force = true,
-            computeChangeId = true,
-            ignoreFailureRegexps = List(".*no common ancestry.*"),
-            pushOptions = "hashtag=gerrit-git-scenario"
+      .feed(userIdFeeder)
+      .foreach(hashtagLoop, "hashtagId") {
+        exec(
+          new GitRequestBuilder(
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              "#{refSpec}"
+            )
           )
-        )
-      )
+        ).pause(pauseDuration, pauseStdDev)
+          .exec(
+            new GitRequestBuilder(
+              GitRequestSession(
+                "push",
+                s"$url/${testConfig.encodedProject}",
+                "HEAD:refs/for/#{refSpec}",
+                computeChangeId = true,
+                pushOptions = "hashtag=#{hashtagId},hashtag=#{userId}"
+              )
+            )
+          )
+          .pause(pauseDuration, pauseStdDev)
+      }
+
 }
