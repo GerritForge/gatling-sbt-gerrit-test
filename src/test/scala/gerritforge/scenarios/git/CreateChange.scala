@@ -27,8 +27,7 @@ case class CreateChange(url: String) extends GitScenarioBase {
             "push",
             s"$url/${testConfig.encodedProject}",
             "HEAD:refs/for/#{refSpec}",
-            computeChangeId = true,
-            pushOptions = List("t=my-test")
+            computeChangeId = true
           )
         )
       )
