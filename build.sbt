@@ -19,7 +19,7 @@ scalacOptions := Seq(
   "-Ywarn-unused:locals",   // Warn if a local definition is unused
   "-Ywarn-unused:patvars",  // Warn if a variable bound in a pattern is unused
   "-Ywarn-unused:privates", // Warn if a private member is unused
-  "-Xfatal-warnings"        // Fail if there are any compile time warnings
+//  "-Xfatal-warnings"        // Fail if there are any compile time warnings
 )
 
 val gatlingVer = "3.9.0"

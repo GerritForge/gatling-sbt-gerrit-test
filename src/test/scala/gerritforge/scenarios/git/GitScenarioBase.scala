@@ -15,6 +15,8 @@ trait GitScenarioBase extends ScenarioBase {
   val hostname           = InetAddress.getLocalHost.getHostName
   implicit val gitConfig = GatlingGitConfiguration()
 
-  val refSpecFeeder =
-    Iterator.continually(Map("refSpec" -> UUID.randomUUID()))
+  def refSpecFeeder =
+    Iterator.continually(
+      Map("refSpec" -> s"${System.nanoTime()}-${UUID.randomUUID()}")
+    )
 }

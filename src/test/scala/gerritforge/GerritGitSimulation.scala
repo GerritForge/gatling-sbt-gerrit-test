@@ -15,7 +15,7 @@ class GerritGitSimulation extends SimulationBase {
         List(
           Clone(url).scn,
           ForcePushBranch(url).scn,
-          CreateChange(url, allRestScenarios.map(_.scenarioName)).scn,
+          CreateChange(url, allRestScenarios.map(_.scenarioName)).scn
           PushNewBranch(url).scn
         )
     )
