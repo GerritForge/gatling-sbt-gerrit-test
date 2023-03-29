@@ -6,32 +6,36 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class CreateChange(url: String) extends GitScenarioBase {
+case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
+
+  val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(feeder)
-      .exec(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            s"$url/${testConfig.encodedProject}",
-            "#{refSpec}"
+      .feed(refSpecFeeder)
+      .feed(userIdFeeder)
+      .foreach(hashtagLoop, "hashtagId") {
+        exec(
+          new GitRequestBuilder(
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              "#{refSpec}"
+            )
           )
-        )
-      )
-      .pause(pauseDuration, pauseStdDev)
-      .exec(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            s"$url/${testConfig.encodedProject}",
-            "HEAD:refs/for/#{refSpec}",
-            computeChangeId = true,
-            pushOptions = List("t=my-test")
+        ).pause(pauseDuration, pauseStdDev)
+          .exec(
+            new GitRequestBuilder(
+              GitRequestSession(
+                "push",
+                s"$url/${testConfig.encodedProject}",
+                "HEAD:refs/for/#{refSpec}",
+                computeChangeId = true,
+                pushOptions = "t=#{hashtagId},t=#{userId}"
+              )
+            )
           )
-        )
-      )
-      .pause(pauseDuration, pauseStdDev)
+          .pause(pauseDuration, pauseStdDev)
+      }
 
 }

@@ -10,7 +10,7 @@ case class Clone(url: String) extends GitScenarioBase {
 
   override def scn: ScenarioBuilder =
     scenario(s"Clone Command over $protocol")
-      .feed(feeder)
+      .feed(refSpecFeeder)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
