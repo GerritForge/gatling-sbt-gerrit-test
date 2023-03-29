@@ -1,14 +1,13 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
-import gerritforge.GerritTestConfig.testConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object AddThenRemoveReviewer extends ChangeScenarioBase {
+object AddThenRemoveHashtags extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add and Remove Reviewer")
+    setupAuthenticatedSession("Add then Remove Hashtags")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -16,17 +15,17 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Add Reviewer",
-          "/reviewers",
-          s"""{"reviewer":${testConfig.reviewerAccount}}"""
+          "Add Hashtag",
+          "/hashtags",
+          """{"add":["test", "test1", "test2"]}"""
         )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Remove Reviewer",
-          s"/reviewers/${testConfig.reviewerAccount}/delete",
-          """{"notify": "NONE"}"""
+          "Remove Hastag",
+          "/hashtags",
+          """{"remove":["test"]}"""
         )
       )
       .pause(pauseDuration, pauseStdDev)
