@@ -1,4 +1,4 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
