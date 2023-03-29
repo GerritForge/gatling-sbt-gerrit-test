@@ -1,42 +1,25 @@
 package gerritforge
 
 import gerritforge.GerritTestConfig._
-import gerritforge.scenarios.rest.changes._
 import gerritforge.scenarios.rest.tags.CreateTag.httpProtocol
-import gerritforge.scenarios.rest.tags._
 import io.gatling.core.Predef._
-import io.gatling.core.scenario.Simulation
 
 import scala.concurrent.duration.FiniteDuration
 
-class GerritRestSimulation extends Simulation {
-
-  val authenticatedScenarios = List(
-    AbandonThenRestoreChange.scn,
-    AddThenRemoveHashtags.scn,
-    AddThenRemoveReviewer.scn,
-    AddThenRemoveTopics.scn,
-    ChangePrivateState.scn,
-    DeleteVote.scn,
-    MarkChangeWIP.scn,
-    PostComment.scn,
-    SubmitChange.scn,
-    CreateTag.scn,
-    DeleteTag.scn,
-    AddPatchset.scn
-  )
+class GerritRestSimulation extends SimulationBase {
 
   val scenarios =
     if (testConfig.restRunAnonymousUser)
-      ListThenGetDetails.scn :: authenticatedScenarios
+      allRestScenarios
     else authenticatedScenarios
 
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
 
   val pauseStdDevSecs = 5
   setUp(
-    scenarios.map(
-      _.inject(rampConcurrentUsers(1) to testConfig.numUsers during testConfig.duration)
+    scenarios.toList.map(
+      _.scn
+        .inject(rampConcurrentUsers(1) to testConfig.numUsers during testConfig.duration)
         .pauses(normalPausesWithStdDevDuration(FiniteDuration(pauseStdDevSecs, "seconds")))
     )
   ).protocols(httpProtocol)
