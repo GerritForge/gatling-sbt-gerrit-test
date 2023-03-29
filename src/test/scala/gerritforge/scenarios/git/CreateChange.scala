@@ -13,7 +13,7 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
       .feed(refSpecFeeder)
-      .feed(userIdFeeder)
+      .feed(userIdFeeder.circular)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
           new GitRequestBuilder(
