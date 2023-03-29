@@ -1,8 +1,8 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import gerritforge.EncodeUtils.encode
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.restscenarios.ScenarioBase
+import gerritforge.scenarios.rest.RestScenarioBase
 import io.circe.generic.auto._
 import io.circe.parser._
 import io.gatling.core.Predef._
@@ -10,7 +10,7 @@ import io.gatling.http.Predef._
 
 import java.util.Calendar
 
-trait ChangeScenarioBase extends ScenarioBase {
+trait ChangeScenarioBase extends RestScenarioBase {
 
   case class ChangeDetail(
       _number: Int,
