@@ -6,19 +6,17 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class PushCommand(url: String) extends GitScenarioBase {
-
+case class Clone(url: String) extends GitScenarioBase {
   override def scn: ScenarioBuilder =
-    scenario(s"Git Push Command over $protocol")
+    scenario(s"Clone Command over $protocol")
       .feed(feeder.circular)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
-            "push",
+            "clone",
             s"$url/${testConfig.encodedProject}",
             "#{refSpec}",
-            force = "#{force}",
-            ignoreFailureRegexps = List(".*no common ancestry.*")
+            ignoreFailureRegexps = List(".*want.+not valid.*")
           )
         )
       )
