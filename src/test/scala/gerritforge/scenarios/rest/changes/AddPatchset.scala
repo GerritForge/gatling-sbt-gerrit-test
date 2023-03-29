@@ -9,13 +9,9 @@ object AddPatchset extends ChangeScenarioBase {
 
   override def scn: ScenarioBuilder =
     setupAuthenticatedSession("Add Patchset")
-      .exec(
-        createChange
-          .check(
-            regex("_number\":(\\d+),").saveAs("changeNumber"),
-            regex("change_id\":\"(.*)\",").saveAs("changeId")
-          )
-      )
+      .feed(userIdFeeder.circular)
+      .exec(listChangeWithHashtags(List(scenarioName, "#{userId}")))
+      .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Patchset")
