@@ -2,7 +2,7 @@ package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand, PushCommand}
+import gerritforge.scenarios.git.{Clone, CreateChange, ForcePushBranch, PushNewBranch}
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 
@@ -14,9 +14,10 @@ class GerritGitSimulation extends Simulation {
     .flatMap(
       url =>
         List(
-          CloneCommand(url).scn,
-          CreateChangeCommand(url).scn,
-          PushCommand(url).scn
+          Clone(url).scn,
+          ForcePushBranch(url).scn,
+          CreateChange(url).scn,
+          PushNewBranch(url).scn
         )
     )
     .toList
