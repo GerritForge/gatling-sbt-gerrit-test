@@ -9,7 +9,7 @@ import io.gatling.core.structure.ScenarioBuilder
 case class Clone(url: String) extends GitScenarioBase {
   override def scn: ScenarioBuilder =
     scenario(s"Clone Command over $protocol")
-      .feed(feeder.circular)
+      .feed(refSpecFeeder)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
