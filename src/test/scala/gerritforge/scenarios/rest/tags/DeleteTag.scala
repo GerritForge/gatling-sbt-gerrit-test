@@ -1,4 +1,4 @@
-package gerritforge.restscenarios.tags
+package gerritforge.scenarios.rest.tags
 
 import gerritforge.GerritTestConfig.testConfig
 import io.circe.generic.auto._

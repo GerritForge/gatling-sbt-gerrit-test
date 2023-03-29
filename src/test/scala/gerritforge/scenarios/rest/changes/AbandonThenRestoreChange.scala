@@ -1,15 +1,14 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object MarkChangeWIP extends ChangeScenarioBase {
-
-  override def simulationName: String = "MARK_CHANGE_WIP_SCENARIO"
+object AbandonThenRestoreChange extends ChangeScenarioBase {
+  override def simulationName: String = "ABANDON_THEN_RESTORE_SCENARIO"
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Make change WIP")
+    setupAuthenticatedSession("Abandon and then Restore Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -17,15 +16,15 @@ object MarkChangeWIP extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Mark Change as WIP",
-          "/wip"
+          "abandon change",
+          "/abandon"
         )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "Mark Change as Ready",
-          "/ready"
+          "restore change",
+          "/restore"
         )
       )
       .pause(pauseDuration, pauseStdDev)

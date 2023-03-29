@@ -1,14 +1,15 @@
-package gerritforge.restscenarios.changes
+package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
-object AbandonThenRestoreChange extends ChangeScenarioBase {
-  override def simulationName: String = "ABANDON_THEN_RESTORE_SCENARIO"
+object SubmitChangeScn extends ChangeScenarioBase {
+
+  override def simulationName: String = "SUBMIT_CHANGE"
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Abandon and then Restore Change")
+    setupAuthenticatedSession("Submit Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -16,15 +17,16 @@ object AbandonThenRestoreChange extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "abandon change",
-          "/abandon"
+          "Approve Change",
+          "/revisions/1/review",
+          """{"labels":{"Code-Review":2}}"""
         )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
-          "restore change",
-          "/restore"
+          "Submit Change",
+          "/revisions/1/submit"
         )
       )
       .pause(pauseDuration, pauseStdDev)
