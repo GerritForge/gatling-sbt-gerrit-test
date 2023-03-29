@@ -13,6 +13,16 @@ case class CloneCommand(url: String) extends GitScenarioBase {
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
+            "push",
+            s"$url/${testConfig.encodedProject}",
+            "#{refSpec}"
+          )
+        )
+      )
+      .pause(pauseDuration, pauseStdDev)
+      .exec(
+        new GitRequestBuilder(
+          GitRequestSession(
             "clone",
             s"$url/${testConfig.encodedProject}",
             "#{refSpec}",
