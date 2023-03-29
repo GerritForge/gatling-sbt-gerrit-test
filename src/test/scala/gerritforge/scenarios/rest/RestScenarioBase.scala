@@ -1,16 +1,15 @@
-package gerritforge.restscenarios
+package gerritforge.scenarios.rest
 
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.PauseSimulation
+import gerritforge.scenarios.ScenarioBase
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
+import io.gatling.http.Predef.{Cookie, addCookie, http}
 import io.gatling.http.protocol.HttpProtocol
 
 import scala.util.Random
 
-trait ScenarioBase extends PauseSimulation {
-  def scn: ScenarioBuilder
+trait RestScenarioBase extends ScenarioBase {
 
   val randomNumber = new Random
   val XSS_LEN      = 5

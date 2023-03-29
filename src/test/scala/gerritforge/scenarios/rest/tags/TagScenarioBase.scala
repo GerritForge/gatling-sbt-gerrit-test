@@ -1,9 +1,9 @@
-package gerritforge.restscenarios.tags
+package gerritforge.scenarios.rest.tags
 
-import gerritforge.restscenarios.ScenarioBase
+import gerritforge.scenarios.rest.RestScenarioBase
 import io.gatling.core.Predef._
 
-trait TagScenarioBase extends ScenarioBase {
+trait TagScenarioBase extends RestScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
