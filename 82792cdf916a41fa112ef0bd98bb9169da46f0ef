@@ -22,6 +22,30 @@
       },
       "revId": "82792cdf916a41fa112ef0bd98bb9169da46f0ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bd83ad6_e5292ac6",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-29T13:42:17Z",
+      "side": 0,
+      "message": "In a slightly varied form, but yes, this should stay.",
+      "parentUuid": "ab3d80a7_046614ab",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "82792cdf916a41fa112ef0bd98bb9169da46f0ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
