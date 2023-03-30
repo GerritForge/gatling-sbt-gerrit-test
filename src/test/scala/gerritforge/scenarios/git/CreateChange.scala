@@ -10,33 +10,38 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
+  var branchNeedsCreating = false
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .foreach(hashtagLoop, "hashtagId") {
-        feed(refSpecFeeder)
-          .feed(userIdFeeder.circular)
+      .exec { branchToBeCreated(true) }
+      .feed(refSpecFeeder.circular)
+      .feed(userIdFeeder.circular)
+      .doIf("#{branchToBeCreated}") {
+        exec { branchToBeCreated(false) }
           .exec(
             new GitRequestBuilder(
               GitRequestSession(
                 "push",
                 s"$url/${testConfig.encodedProject}",
-                "#{refSpec}-#{userId}"
-              )
-            )
-          )
-          .pause(pauseDuration, pauseStdDev)
-          .exec(
-            new GitRequestBuilder(
-              GitRequestSession(
-                "push",
-                s"$url/${testConfig.encodedProject}",
-                "HEAD:refs/for/#{refSpec}-#{userId}",
-                computeChangeId = true,
-                pushOptions = "hashtag=#{hashtagId},hashtag=#{userId}"
+                s"#{refSpec}-#{userId}",
+                user = "#{userId}"
               )
             )
           )
           .pause(pauseDuration, pauseStdDev)
       }
-
+      .foreach(hashtagLoop, "hashtagId") {
+        exec(
+          new GitRequestBuilder(
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              "HEAD:refs/for/#{refSpec}-#{userId}",
+              computeChangeId = true,
+              pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
+              user = "#{userId}"
+            )
+          )
+        ).pause(pauseDuration, pauseStdDev)
+      }
 }
