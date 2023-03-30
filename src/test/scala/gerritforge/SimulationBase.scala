@@ -23,7 +23,7 @@ trait SimulationBase extends Simulation {
   )
 
   val anonymousScenarios = List(
-//    ListThenGetDetails
+    ListThenGetDetails
   )
 
   val allRestScenarios: Seq[ScenarioBase] = authenticatedScenarios ++ anonymousScenarios
