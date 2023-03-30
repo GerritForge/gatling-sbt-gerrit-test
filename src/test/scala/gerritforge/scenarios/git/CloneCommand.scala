@@ -7,9 +7,29 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
 case class CloneCommand(url: String) extends GitScenarioBase {
+
   override def scn: ScenarioBuilder =
     scenario(s"Clone Command over $protocol")
-      .feed(feeder.circular)
+      .feed(refSpecFeeder.circular)
+      .feed(userIdFeeder.circular)
+      .doIf { session =>
+        !alreadyFedUsers.contains(session("userId").as[String])
+      } {
+        exec { session =>
+          alreadyFedUsers = session("userId").as[String] :: alreadyFedUsers
+          session
+        }.exec(
+          new GitRequestBuilder(
+            //We push a new refspec as the subsequent clone needs the ref to exist.
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              s"#{refSpec}"
+            )
+          )
+        )
+      }
+      .pause(pauseDuration, pauseStdDev)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(

@@ -10,7 +10,7 @@ case class PushCommand(url: String) extends GitScenarioBase {
 
   override def scn: ScenarioBuilder =
     scenario(s"Git Push Command over $protocol")
-      .feed(feeder.circular)
+      .feed(refSpecFeeder.circular)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
