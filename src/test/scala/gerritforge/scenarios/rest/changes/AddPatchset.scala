@@ -4,6 +4,7 @@ import gerritforge.GerritTestConfig.testConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
+import org.scalatest.time.SpanSugar.convertIntToGrainOfTime
 
 object AddPatchset extends ChangeScenarioBase {
 
@@ -23,4 +24,5 @@ object AddPatchset extends ChangeScenarioBase {
             )
           )
       )
+      .pause(5 seconds, pauseStdDev)
 }
