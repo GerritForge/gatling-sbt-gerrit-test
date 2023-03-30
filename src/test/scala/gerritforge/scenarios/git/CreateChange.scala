@@ -12,31 +12,38 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .foreach(hashtagLoop, "hashtagId") {
-        feed(refSpecFeeder)
-          .feed(userIdFeeder.circular)
-          .exec(
-            new GitRequestBuilder(
-              GitRequestSession(
-                "push",
-                s"$url/${testConfig.encodedProject}",
-                "#{refSpec}-#{userId}"
-              )
+      .feed(refSpecFeeder.circular)
+      .feed(userIdFeeder.circular)
+      .doIf { session =>
+        !alreadyFedUsers.contains(session("userId").as[String])
+      } {
+        exec { session =>
+          alreadyFedUsers = session("userId").as[String] :: alreadyFedUsers
+          session
+        }.exec(
+          new GitRequestBuilder(
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              s"#{refSpec}-#{userId}",
+              user = "#{userId}"
             )
           )
-          .pause(pauseDuration, pauseStdDev)
-          .exec(
-            new GitRequestBuilder(
-              GitRequestSession(
-                "push",
-                s"$url/${testConfig.encodedProject}",
-                "HEAD:refs/for/#{refSpec}-#{userId}",
-                computeChangeId = true,
-                pushOptions = "hashtag=#{hashtagId},hashtag=#{userId}"
-              )
-            )
-          )
-          .pause(pauseDuration, pauseStdDev)
+        )
       }
-
+      .pause(pauseDuration, pauseStdDev)
+      .foreach(hashtagLoop, "hashtagId") {
+        exec(
+          new GitRequestBuilder(
+            GitRequestSession(
+              "push",
+              s"$url/${testConfig.encodedProject}",
+              "HEAD:refs/for/#{refSpec}-#{userId}",
+              computeChangeId = true,
+              pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
+              user = "#{userId}"
+            )
+          )
+        ).pause(pauseDuration, pauseStdDev)
+      }
 }
