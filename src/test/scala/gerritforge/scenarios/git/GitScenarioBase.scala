@@ -2,6 +2,7 @@ package gerritforge.scenarios.git
 
 import com.github.barbasa.gatling.git.GatlingGitConfiguration
 import gerritforge.GerritTestConfig.testConfig
+import java.util.UUID
 import gerritforge.scenarios.ScenarioBase
 
 import java.net.InetAddress
@@ -14,7 +15,9 @@ trait GitScenarioBase extends ScenarioBase {
   val hostname           = InetAddress.getLocalHost.getHostName
   implicit val gitConfig = GatlingGitConfiguration()
 
-  val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
-  }
+  val refSpecFeeder =
+    (1 to testConfig.numUsers) map { idx =>
+      Map("refSpec" -> s"branch-$hostname-$idx-$scenarioName-${UUID.randomUUID()}")
+    //RandomUUID is needed to ensure unique-ness across different runs.
+    }
 }
