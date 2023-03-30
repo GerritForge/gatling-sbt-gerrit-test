@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f87305f9_3ef017b0",
+        "filename": "src/test/scala/gerritforge/scenarios/git/ForcePushBranch.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-03-30T11:34:37Z",
+      "side": 1,
+      "message": "should this be hardcoded?",
+      "range": {
+        "startLine": 18,
+        "startChar": 13,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "d9584ff09c93f5f67dff9e89b00a570a8c689b18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
