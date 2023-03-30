@@ -34,7 +34,7 @@ libraryDependencies ++= Seq(
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling"            % "gatling-test-framework"    % gatlingVer % Test,
   "org.scalatest"         %% "scalatest"                % "3.0.8" % Test,
-  "com.gerritforge"       %% "gatling-git"              % "2.0.1-5-g245adf4-SNAPSHOT" excludeAll (
+  "com.gerritforge"       %% "gatling-git"              % "2.0.1-5-g7b6cd8a-SNAPSHOT" excludeAll (
     ExclusionRule(organization = "io.gatling"),
     ExclusionRule(organization = "io.gatling.highcharts")
   )
