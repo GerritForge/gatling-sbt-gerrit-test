@@ -10,16 +10,21 @@ case class Clone(url: String) extends GitScenarioBase {
 
   override def scn: ScenarioBuilder =
     scenario(s"Clone Command over $protocol")
+      .exec { branchToBeCreated(true) }
       .feed(refSpecFeeder)
-      .exec(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            s"$url/${testConfig.encodedProject}",
-            "#{refSpec}"
+      .doIf("#{branchToBeCreated}") {
+        exec {
+          branchToBeCreated(false)
+        }.exec(
+            new GitRequestBuilder(
+              GitRequestSession(
+                "push",
+                s"$url/${testConfig.encodedProject}",
+                s"#{refSpec}"
+              )
+            )
           )
-        )
-      )
+      }
       .pause(pauseDuration, pauseStdDev)
       .exec(
         new GitRequestBuilder(

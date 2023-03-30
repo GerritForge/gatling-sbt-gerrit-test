@@ -2,7 +2,7 @@ package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
 import gerritforge.GerritTestConfig.testConfig
-import gerritforge.scenarios.git.{Clone, CreateChange, ForcePushBranch, PushNewBranch}
+import gerritforge.scenarios.git.{Clone, CreateChange}
 import io.gatling.core.Predef._
 
 class GerritGitSimulation extends SimulationBase {
@@ -14,9 +14,9 @@ class GerritGitSimulation extends SimulationBase {
       url =>
         List(
           Clone(url).scn,
-          ForcePushBranch(url).scn,
+//          ForcePushBranch(url).scn, TODO IS THIS WANTED?
           CreateChange(url, allRestScenarios.map(_.scenarioName)).scn
-          PushNewBranch(url).scn
+//          PushNewBranch(url).scn TODO IS THIS WANTED?
         )
     )
     .toList
