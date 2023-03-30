@@ -22,6 +22,30 @@
       },
       "revId": "d9584ff09c93f5f67dff9e89b00a570a8c689b18",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2c55750_c1f7a6f4",
+        "filename": "src/test/scala/gerritforge/scenarios/git/ForcePushBranch.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-30T12:22:54Z",
+      "side": 1,
+      "message": "The idea here was to push a branch and keep force pushing to it, but it might not be the best way of doing it, you\u0027re right.\nWill evaluate other options.",
+      "parentUuid": "f87305f9_3ef017b0",
+      "range": {
+        "startLine": 18,
+        "startChar": 13,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "d9584ff09c93f5f67dff9e89b00a570a8c689b18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
