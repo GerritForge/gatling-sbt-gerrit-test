@@ -22,6 +22,30 @@
       },
       "revId": "bbce1d8dc812c8cba091fd8146ebddc4854ce5c5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c1e8dbc_8496497d",
+        "filename": "build.sbt",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-03-30T16:55:48Z",
+      "side": 1,
+      "message": "We will need too, this is still a WIP because of this.",
+      "parentUuid": "d489b4ba_16212cab",
+      "range": {
+        "startLine": 37,
+        "startChar": 57,
+        "endLine": 37,
+        "endChar": 76
+      },
+      "revId": "bbce1d8dc812c8cba091fd8146ebddc4854ce5c5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
