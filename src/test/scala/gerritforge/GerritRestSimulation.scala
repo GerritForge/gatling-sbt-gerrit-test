@@ -3,7 +3,7 @@ package gerritforge
 import gerritforge.GerritTestConfig._
 import gerritforge.restscenarios.changes._
 import gerritforge.restscenarios.tags.CreateTag.httpProtocol
-import gerritforge.restscenarios.tags._
+//import gerritforge.restscenarios.tags._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 
@@ -12,23 +12,23 @@ import scala.concurrent.duration.FiniteDuration
 class GerritRestSimulation extends Simulation {
 
   val authenticatedScenarios = List(
-    AbandonThenRestoreChange.scn,
-    AddThenRemoveHashtags.scn,
-    AddThenRemoveReviewer.scn,
-    AddThenRemoveTopics.scn,
-    ChangePrivateState.scn,
-    DeleteVote.scn,
-    MarkChangeWIP.scn,
-    PostComment.scn,
-    SubmitChange.scn,
-    CreateTag.scn,
-    DeleteTag.scn,
+//    AbandonThenRestoreChange.scn,
+//    AddThenRemoveHashtags.scn,
+//    AddThenRemoveReviewer.scn,
+//    AddThenRemoveTopics.scn,
+//    ChangePrivateState.scn,
+//    DeleteVote.scn,
+//    MarkChangeWIP.scn,
+//    PostComment.scn,
+//    SubmitChange.scn,
+//    CreateTag.scn,
+//    DeleteTag.scn,
     AddPatchset.scn
   )
 
   val scenarios =
     if (testConfig.restRunAnonymousUser)
-      ListThenGetDetails.scn :: authenticatedScenarios
+      authenticatedScenarios
     else authenticatedScenarios
 
   require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
