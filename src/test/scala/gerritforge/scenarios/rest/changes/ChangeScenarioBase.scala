@@ -30,45 +30,37 @@ trait ChangeScenarioBase extends RestScenarioBase {
 
   def listChanges =
     http("changes list and get first change")
-      .get(s"/q/status:open+project:${testConfig.encodedProject}")
+      .get(
+        s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}&o=CURRENT_REVISION"
+      )
       .headers(restApiHeader)
-      .resources(
-        http("get list of changes")
-          .get(
-            s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}&o=CURRENT_REVISION"
-          )
-          .check(
-            bodyString
-              .transform(_.drop(XSS_LEN))
-              .transform(decode[List[ChangeDetail]](_))
-              .transform {
-                case Right(changeDetailList) => changeDetailList
-                case Left(decodingError)     => throw decodingError
-              }
-              .saveAs("changeDetails")
-          )
+      .check(
+        bodyString
+          .transform(_.drop(XSS_LEN))
+          .transform(decode[List[ChangeDetail]](_))
+          .transform {
+            case Right(changeDetailList) => changeDetailList
+            case Left(decodingError)     => throw decodingError
+          }
+          .saveAs("changeDetails")
       )
 
   def listChangesWithHashtags(hashtags: List[String]) = {
     val hashtagQuery = hashtags.map(h => s"hashtag:$h").mkString("+")
     http("changes list and get first change")
-      .get(s"/q/status:open+project:${testConfig.encodedProject}")
+      .get(
+        s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}+$hashtagQuery&o=CURRENT_REVISION"
+      )
       .headers(restApiHeader)
-      .resources(
-        http("get list of changes")
-          .get(
-            s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}+$hashtagQuery&o=CURRENT_REVISION"
-          )
-          .check(
-            bodyString
-              .transform(_.drop(XSS_LEN))
-              .transform(decode[List[ChangeDetail]](_))
-              .transform {
-                case Right(changeDetailList) => changeDetailList
-                case Left(decodingError)     => throw decodingError
-              }
-              .saveAs("changeDetails")
-          )
+      .check(
+        bodyString
+          .transform(_.drop(XSS_LEN))
+          .transform(decode[List[ChangeDetail]](_))
+          .transform {
+            case Right(changeDetailList) => changeDetailList
+            case Left(decodingError)     => throw decodingError
+          }
+          .saveAs("changeDetails")
       )
   }
 
