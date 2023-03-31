@@ -1,8 +1,8 @@
 package gerritforge.restscenarios.changes
 
 import gerritforge.GerritTestConfig.testConfig
-import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.core.Predef._
+import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 
 object AddPatchset extends ChangeScenarioBase {
@@ -11,19 +11,20 @@ object AddPatchset extends ChangeScenarioBase {
     setupAuthenticatedSession("Add Patchset")
       .exec(
         createChange
-          .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
+          .check(
+            regex("_number\":(\\d+),").saveAs("changeNumber"),
+            regex("change_id\":\"(.*)\",").saveAs("changeId")
+          )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Patchset")
-          .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/edit/test-patchset.txt")
+          .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/message")
           .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{"binary_content":"data:text/plain;base64,c29tZSB0ZXN0Cg=="}"""))
-      )
-      .exec(
-        http("Publish Patchset")
-          .post(s"/changes/${testConfig.encodedProject}~#{changeNumber}/edit:publish")
-          .headers(postApiHeader(testConfig.xsrfToken))
-          .body(StringBody("""{"notify":"NONE"}"""))
+          .body(
+            StringBody(
+              s"""{"message":"New commit message\n\nChange-Id: #{changeId}\n","notify": "NONE"}"""
+            )
+          )
       )
 }
