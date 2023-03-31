@@ -15,7 +15,7 @@ trait ChangeScenarioBase extends ScenarioBase {
   case class ChangeDetail(
       _number: Int,
       project: String,
-      current_revision: String,
+//      current_revision: String,
       change_id: String
   ) {
     lazy val url = s"/c/$project/+/${_number}/"
@@ -59,7 +59,7 @@ trait ChangeScenarioBase extends ScenarioBase {
           .set("changeUrl", change.url)
           .set("changeNum", change._number)
           .set("changeId", change.change_id)
-          .set("revision", encode(change.current_revision))
+//          .set("revision", encode(change.current_revision))
       }
     }
 
