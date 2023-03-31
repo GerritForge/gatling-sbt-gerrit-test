@@ -7,6 +7,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef.{Cookie, addCookie, http}
 import io.gatling.http.protocol.HttpProtocol
 
+import java.util.UUID
 import scala.util.Random
 
 trait RestScenarioBase extends ScenarioBase {
@@ -43,6 +44,8 @@ trait RestScenarioBase extends ScenarioBase {
       "reviewScore" -> (randomInt.nextInt(5) - 2)
     )
   )
+
+  var randomFeeder = Iterator.continually(Map("randomValue" -> UUID.randomUUID()))
 
   def postApiHeader(
       xsrfCookie: Option[String],

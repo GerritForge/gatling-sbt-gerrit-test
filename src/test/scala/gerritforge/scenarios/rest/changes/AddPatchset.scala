@@ -10,6 +10,7 @@ object AddPatchset extends ChangeScenarioBase {
   override def scn: ScenarioBuilder =
     setupAuthenticatedSession("Add Patchset")
       .feed(userIdFeeder.circular)
+      .feed(randomFeeder)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
@@ -19,7 +20,7 @@ object AddPatchset extends ChangeScenarioBase {
           .headers(postApiHeader(testConfig.xsrfToken))
           .body(
             StringBody(
-              s"""{"message":"New commit message\n\nChange-Id: #{changeId}\n","notify": "NONE"}"""
+              s"""{"message":"New commit message #{randomValue}\n\nChange-Id: #{changeId}\n","notify": "NONE"}"""
             )
           )
       )
