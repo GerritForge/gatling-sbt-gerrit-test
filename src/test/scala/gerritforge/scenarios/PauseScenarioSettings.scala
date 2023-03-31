@@ -1,11 +1,16 @@
-package gerritforge
+package gerritforge.scenarios
 
 import io.gatling.core.Predef.normalPausesWithStdDevDuration
 
 import scala.concurrent.duration.FiniteDuration
 
-trait PauseSimulation {
-  def scenarioName: String = this.getClass.getSimpleName.dropRight(1) //To drop final `$`
+trait PauseScenarioSettings {
+  def scenarioName: String = {
+    this.getClass.getSimpleName match {
+      case simpleName if simpleName.endsWith("$") => simpleName.dropRight(1)
+      case simpleName                             => simpleName
+    }
+  }
 
   lazy val pauseDuration: FiniteDuration =
     FiniteDuration(sys.env.getOrElse(s"${scenarioName}_PAUSE", "1").toLong, "seconds")
