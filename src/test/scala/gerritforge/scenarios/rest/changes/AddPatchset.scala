@@ -12,7 +12,6 @@ object AddPatchset extends ChangeScenarioBase {
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Patchset")
           .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/message")
