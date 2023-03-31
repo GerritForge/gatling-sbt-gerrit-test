@@ -11,7 +11,7 @@ object ListThenGetDetails extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("List and Get Change Details")
-      .exec(listChanges)
+      .exec(listChanges())
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
@@ -55,10 +55,10 @@ object ListThenGetDetails extends ChangeScenarioBase {
               .get("/changes/#{id}/revisions/#{revision}/related"),
             http("get cherry picks")
               .get(
-                s"/changes/?O=a&q=project%3A${testConfig.encodedProject}%20change%3A#{changeId}%20-change%3A#{changeNum}%20-is%3Aabandoned"
+                s"/changes/?O=a&q=project%3A${testConfig.encodedProject}%20change%3A#{changeId}%20-change%3A#{changeNumber}%20-is%3Aabandoned"
               ),
             http("get conflicting changes")
-              .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A#{changeNum}"),
+              .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A#{changeNumber}"),
             http("check for other changes submittable together")
               .get("/changes/#{id}/submitted_together?o=NON_VISIBLE_CHANGES")
           )
