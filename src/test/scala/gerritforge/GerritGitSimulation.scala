@@ -7,8 +7,6 @@ import io.gatling.core.Predef._
 
 class GerritGitSimulation extends SimulationBase {
 
-  val gitProtocol = GitProtocol()
-
   val scenarios = (testConfig.sshUrl ++ testConfig.httpUrl)
     .flatMap(
       url =>
@@ -27,5 +25,5 @@ class GerritGitSimulation extends SimulationBase {
         rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
       )
     )
-  ).protocols(gitProtocol)
+  ).protocols(GitProtocol)
 }
