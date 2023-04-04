@@ -26,7 +26,8 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
               "push",
               s"$url/${testConfig.encodedProject}",
               s"#{refSpec}-#{userId}",
-              user = "#{userId}"
+              userId = "#{userId}",
+              name = "Push to setup create branch"
             )
           )
         )
@@ -41,7 +42,8 @@ case class CreateChange(url: String, scenarioHashtags: Seq[String]) extends GitS
               "HEAD:refs/for/#{refSpec}-#{userId}",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
-              user = "#{userId}"
+              userId = "#{userId}",
+              name = "Push create branch"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
