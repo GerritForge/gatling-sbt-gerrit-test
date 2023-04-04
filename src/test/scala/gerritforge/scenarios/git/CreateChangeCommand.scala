@@ -26,7 +26,8 @@ case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) exten
               "push",
               s"$url/${testConfig.encodedProject}",
               s"#{refSpec}-#{userId}",
-              userId = "#{userId}"
+              userId = "#{userId}",
+              requestName = "Push to setup create branch"
             )
           )
         )
@@ -41,7 +42,8 @@ case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) exten
               "HEAD:refs/for/#{refSpec}-#{userId}",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
-              userId = "#{userId}"
+              userId = "#{userId}",
+              requestName = "Push create branch"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
