@@ -23,7 +23,8 @@ case class Clone(url: String) extends GitScenarioBase {
             GitRequestSession(
               "push",
               s"$url/${testConfig.encodedProject}",
-              s"#{refSpec}"
+              s"#{refSpec}",
+              name = "Push to setup Clone"
             )
           )
         )
