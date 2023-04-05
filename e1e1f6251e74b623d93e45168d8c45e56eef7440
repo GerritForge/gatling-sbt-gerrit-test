@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b786b647_83428806",
+        "filename": "build.sbt",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T03:51:29Z",
+      "side": 1,
+      "message": "If this is needed, can you explain in the commit message why we need to bump up the version as part of this change?",
+      "revId": "e1e1f6251e74b623d93e45168d8c45e56eef7440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87720595_1e8c9fc8",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T03:51:29Z",
+      "side": 1,
+      "message": "Is this part of this change?",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "e1e1f6251e74b623d93e45168d8c45e56eef7440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
