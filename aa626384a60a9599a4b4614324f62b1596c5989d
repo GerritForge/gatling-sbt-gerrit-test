@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4024e4c8_d6ced6a7",
+        "filename": "src/test/scala/gerritforge/PauseSimulation.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:14:13Z",
+      "side": 1,
+      "message": "Is this part of this change?",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e2b2486_82075588",
+        "filename": "src/test/scala/gerritforge/PauseSimulation.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:14:13Z",
+      "side": 1,
+      "message": "Is this part of this change?",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "314cfca3_7b136c95",
+        "filename": "src/test/scala/gerritforge/SimulationBase.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:14:13Z",
+      "side": 1,
+      "message": "leftover",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fab31b0a_e24acc76",
+        "filename": "src/test/scala/gerritforge/scenarios/git/GitScenarioBase.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:14:13Z",
+      "side": 1,
+      "message": "I assume having the nanotime in the refspec is for debugging purposes only, right ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 27,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
