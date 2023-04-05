@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1ea8961_ff291e53",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T03:32:36Z",
+      "side": 1,
+      "message": "Can you explain the reason why we need this change in behaviour?",
+      "revId": "8d55b6b5aed843d975d80b40d59cb5128073b5e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
