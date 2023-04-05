@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88f25cf7_7a03c29b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T03:37:32Z",
+      "side": 1,
+      "message": "nit: Rest simulation 😐",
+      "revId": "a30f4c27347098a369d920c86ad710a51ee5d220",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
