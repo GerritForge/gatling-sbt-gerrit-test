@@ -16,6 +16,29 @@
       "message": "nit: Rest simulation 😐",
       "revId": "a30f4c27347098a369d920c86ad710a51ee5d220",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "585102e2_e36c7bbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T03:43:39Z",
+      "side": 1,
+      "message": "I was expecting to see changes only to `GerritGit*` files, however, I can see some *Rest* files being modified. Is it expected?\n\nMaybe just the commit message is a bit misleading? As in we are not only modifying the Git simulations, but the REST one as well.",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "a30f4c27347098a369d920c86ad710a51ee5d220",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
