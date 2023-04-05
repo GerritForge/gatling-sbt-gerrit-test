@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e5348b9_33b312dd",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:18:37Z",
+      "side": 1,
+      "message": "Explain why we need to bump up the version in the commit message.",
+      "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "415a9742_69be1297",
+        "filename": "src/test/scala/gerritforge/scenarios/git/Clone.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-05T04:18:37Z",
+      "side": 1,
+      "message": "Why are we pushing in a Clone scenario?",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 11
+      },
+      "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
