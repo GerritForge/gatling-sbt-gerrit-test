@@ -24,7 +24,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
     http("Create Change")
       .post("/changes/")
       .headers(postApiHeader(testConfig.xsrfToken))
-      .body(StringBody(s"""{"project":"${testConfig.encodedProject}",
+      .body(StringBody(s"""{"project":"${testConfig.project}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
 
