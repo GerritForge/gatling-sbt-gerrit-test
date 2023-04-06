@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "454da290_f6af1791",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-04-06T12:05:03Z",
+      "side": 1,
+      "message": "Can you expand the comment explaining why it is not necessary?",
+      "revId": "979b964028dba39381bc5e0cff7faede06b4e6e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
