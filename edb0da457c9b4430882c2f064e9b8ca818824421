@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cc1ace2_76965f66",
+        "filename": "build.sbt",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-04-12T09:36:09Z",
+      "side": 1,
+      "message": "By the time gatling-git will have been release properly this will have already been updated in the previous change so won\u0027t be here.",
+      "parentUuid": "2e5348b9_33b312dd",
+      "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "415a9742_69be1297",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-04-05T04:18:37Z",
       "side": 1,
       "message": "Why are we pushing in a Clone scenario?",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 11
+      },
+      "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a27a2dc4_fb4b6950",
+        "filename": "src/test/scala/gerritforge/scenarios/git/Clone.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-04-12T09:36:09Z",
+      "side": 1,
+      "message": "We are pushing a branch so we have a branch to clone.\nThe push will be executed only once, all subsequent calls will just clone.",
+      "parentUuid": "415a9742_69be1297",
       "range": {
         "startLine": 22,
         "startChar": 4,
