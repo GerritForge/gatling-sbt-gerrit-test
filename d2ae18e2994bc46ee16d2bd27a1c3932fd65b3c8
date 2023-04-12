@@ -46,6 +46,30 @@
       },
       "revId": "d2ae18e2994bc46ee16d2bd27a1c3932fd65b3c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c9e6b1_ee27e5be",
+        "filename": "src/test/scala/gerritforge/GerritGitScenario.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-04-12T09:15:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60ac954a_77399318",
+      "range": {
+        "startLine": 43,
+        "startChar": 28,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "d2ae18e2994bc46ee16d2bd27a1c3932fd65b3c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
