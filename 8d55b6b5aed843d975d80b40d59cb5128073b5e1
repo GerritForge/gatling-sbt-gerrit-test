@@ -16,6 +16,24 @@
       "message": "Can you explain the reason why we need this change in behaviour?",
       "revId": "8d55b6b5aed843d975d80b40d59cb5128073b5e1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf4903c5_ff03a476",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-04-12T09:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1ea8961_ff291e53",
+      "revId": "8d55b6b5aed843d975d80b40d59cb5128073b5e1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
