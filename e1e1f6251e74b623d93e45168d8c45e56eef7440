@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afa7eefc_a3b5dcda",
+        "filename": "build.sbt",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-05-08T14:26:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b786b647_83428806",
+      "revId": "e1e1f6251e74b623d93e45168d8c45e56eef7440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "87720595_1e8c9fc8",
@@ -70,6 +88,30 @@
         "id": 1020677
       },
       "writtenOn": "2023-05-08T14:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87720595_1e8c9fc8",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "e1e1f6251e74b623d93e45168d8c45e56eef7440",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "860d291c_f5792458",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-05-08T14:26:22Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "87720595_1e8c9fc8",
