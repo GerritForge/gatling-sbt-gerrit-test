@@ -8,11 +8,6 @@ import io.gatling.core.scenario.Simulation
 
 class GerritGitSimulation extends Simulation {
 
-  val hostname = InetAddress.getLocalHost.getHostName
-  val feeder = (1 to testConfig.numUsers) map { idx =>
-    Map("refSpec" -> s"branch-$hostname-$idx", "force" -> true)
-  }
-
   val scenarios = (testConfig.sshUrl ++ testConfig.httpUrl)
     .flatMap(
       url =>
