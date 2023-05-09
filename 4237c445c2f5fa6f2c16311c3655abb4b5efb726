@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d1165ef_fca9019d",
+        "filename": "src/test/scala/gerritforge/PauseSimulation.scala",
+        "patchSetId": 20
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:18:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb4d027_60f8377e",
+      "range": {
+        "startLine": 13,
+        "startChar": 84,
+        "endLine": 13,
+        "endChar": 96
+      },
+      "revId": "4237c445c2f5fa6f2c16311c3655abb4b5efb726",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4310e710_92488b8d",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-05-09T10:16:45Z",
       "side": 1,
       "message": "listChange`s`WithHashtags",
+      "range": {
+        "startLine": 52,
+        "startChar": 6,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "4237c445c2f5fa6f2c16311c3655abb4b5efb726",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21fecf6b_d3c4136f",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 20
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:18:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4310e710_92488b8d",
       "range": {
         "startLine": 52,
         "startChar": 6,
