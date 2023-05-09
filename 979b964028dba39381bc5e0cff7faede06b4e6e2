@@ -16,6 +16,24 @@
       "message": "Can you expand the comment explaining why it is not necessary?",
       "revId": "979b964028dba39381bc5e0cff7faede06b4e6e2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f4e067f_13f86c8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:24:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "454da290_f6af1791",
+      "revId": "979b964028dba39381bc5e0cff7faede06b4e6e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
