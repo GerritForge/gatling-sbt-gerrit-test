@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f543f35b_c4f1b52c",
+        "filename": "src/test/scala/gerritforge/PauseSimulation.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4024e4c8_d6ced6a7",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e2b2486_82075588",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-04-05T04:14:13Z",
       "side": 1,
       "message": "Is this part of this change?",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6215ba91_921119b6",
+        "filename": "src/test/scala/gerritforge/PauseSimulation.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2b2486_82075588",
       "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f229f1e5_4fa1e861",
+        "filename": "src/test/scala/gerritforge/SimulationBase.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "314cfca3_7b136c95",
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fab31b0a_e24acc76",
@@ -65,6 +119,30 @@
       "writtenOn": "2023-04-05T04:14:13Z",
       "side": 1,
       "message": "I assume having the nanotime in the refspec is for debugging purposes only, right ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 27,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "aa626384a60a9599a4b4614324f62b1596c5989d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7484b46b_0dd47937",
+        "filename": "src/test/scala/gerritforge/scenarios/git/GitScenarioBase.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fab31b0a_e24acc76",
       "range": {
         "startLine": 19,
         "startChar": 27,
