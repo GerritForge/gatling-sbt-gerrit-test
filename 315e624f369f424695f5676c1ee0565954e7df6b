@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc435585_c0345990",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-05-09T10:03:24Z",
+      "side": 1,
+      "message": "this can go",
+      "revId": "315e624f369f424695f5676c1ee0565954e7df6b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db8588e3_64b0fbb5",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CloneCommand.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-05-09T10:03:24Z",
+      "side": 1,
+      "message": "Maybe add a comment here to explain why we are doing this trick",
+      "range": {
+        "startLine": 22,
+        "startChar": 10,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "315e624f369f424695f5676c1ee0565954e7df6b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
