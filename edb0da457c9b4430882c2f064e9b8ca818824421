@@ -81,6 +81,30 @@
       },
       "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4666bbbf_95097059",
+        "filename": "src/test/scala/gerritforge/scenarios/git/Clone.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-05-09T10:03:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a27a2dc4_fb4b6950",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 11
+      },
+      "revId": "edb0da457c9b4430882c2f064e9b8ca818824421",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
