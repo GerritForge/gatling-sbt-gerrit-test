@@ -22,7 +22,7 @@ class GerritRestSimulation extends Simulation {
     PostComment.scn,
     SubmitChange.scn,
     CreateTag.scn,
-    DeleteTag.scn,
+//    DeleteTag.scn,
     AddPatchset.scn
   )
 
