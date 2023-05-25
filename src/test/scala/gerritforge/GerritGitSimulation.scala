@@ -23,5 +23,5 @@ class GerritGitSimulation extends SimulationBase {
         rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
       )
     )
-  ).protocols(GitProtocol)
+  ).protocols(GitProtocol).maxDuration(testConfig.duration)
 }

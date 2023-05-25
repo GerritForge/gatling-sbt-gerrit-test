@@ -22,5 +22,5 @@ class GerritRestSimulation extends SimulationBase {
         .inject(rampConcurrentUsers(1) to testConfig.numUsers during testConfig.duration)
         .pauses(normalPausesWithStdDevDuration(FiniteDuration(pauseStdDevSecs, "seconds")))
     )
-  ).protocols(httpProtocol)
+  ).protocols(httpProtocol).maxDuration(testConfig.duration)
 }
