@@ -16,6 +16,23 @@
       "message": "Please ignore the latest patch set. It\u0027s just to verify issue: [1], that only gerrit.googlesource.com is affected.\n\n[1] https://crbug.com/gerrit/15648",
       "revId": "d2990c707c18914a82a02719eb02941901b1840d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ba7c89_d6b6d8b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-05-25T09:24:22Z",
+      "side": 1,
+      "message": "@Davido, is this still needed?\nIt\u0027s been inactive for long time now.",
+      "revId": "d2990c707c18914a82a02719eb02941901b1840d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
