@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object AddThenRemoveHashtags extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add then Remove Hashtags")
+  setupCookies("Add then Remove Hashtags")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
