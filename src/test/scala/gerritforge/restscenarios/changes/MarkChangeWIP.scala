@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object MarkChangeWIP extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Make change WIP")
+    setupCookies("Make change WIP")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))

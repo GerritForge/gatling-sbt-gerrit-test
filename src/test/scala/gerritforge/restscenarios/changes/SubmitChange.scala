@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object SubmitChange extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Submit Change")
+    setupCookies("Submit Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))

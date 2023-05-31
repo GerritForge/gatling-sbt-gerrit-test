@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object PostComment extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Post Comment")
+    setupCookies("Post Comment")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))

@@ -10,8 +10,13 @@ import java.net.HttpURLConnection.{HTTP_NO_CONTENT, HTTP_OK}
 object ListThenGetDetails extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
+<<<<<<< HEAD:src/test/scala/gerritforge/restscenarios/changes/ListThenGetDetails.scala
     setupAuthenticatedSession("List and Get Change Details")
       .exec(listChanges)
+=======
+    setupCookies("List and Get Change Details")
+      .exec(listChanges())
+>>>>>>> 4363041 ([DO NOT MERGE] Allow specify cookie for session stickiness):src/test/scala/gerritforge/scenarios/rest/changes/ListThenGetDetails.scala
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(

@@ -8,7 +8,7 @@ import io.gatling.http.Predef._
 object AddPatchset extends ChangeScenarioBase {
 
   override def scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add Patchset")
+    setupCookies("Add Patchset")
       .exec(
         createChange
           .check(
