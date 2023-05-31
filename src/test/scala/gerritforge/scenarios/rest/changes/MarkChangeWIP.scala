@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object MarkChangeWIP extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Make change WIP")
+  setupCookies("Make change WIP")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
