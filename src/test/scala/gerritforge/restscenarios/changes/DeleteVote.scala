@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object DeleteVote extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Delete Vote")
+    setupCookies("Delete Vote")
       .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
       .exec(
         authenticatedChangesPostRequest(

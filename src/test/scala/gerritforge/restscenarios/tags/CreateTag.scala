@@ -10,7 +10,7 @@ import java.util.UUID
 object CreateTag extends TagScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Create a new Tag")
+    setupCookies("Create a new Tag")
       .feed(tagGroupIds)
       .feed(
         Iterator.continually(Map("tagId" -> s"${System.currentTimeMillis()}-${UUID.randomUUID()}"))

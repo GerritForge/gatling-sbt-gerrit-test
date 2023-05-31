@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object AbandonThenRestoreChange extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Abandon and then Restore Change")
+    setupCookies("Abandon and then Restore Change")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
