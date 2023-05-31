@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object ChangePrivateState extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Change Private State")
+  setupCookies("Change Private State")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
