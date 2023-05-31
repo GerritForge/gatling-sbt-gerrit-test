@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object DeleteVote extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Delete Vote")
+  setupCookies("Delete Vote")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
