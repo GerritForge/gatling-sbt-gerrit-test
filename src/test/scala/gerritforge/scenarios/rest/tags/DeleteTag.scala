@@ -11,7 +11,7 @@ import io.gatling.http.Predef._
 object DeleteTag extends TagScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("List and remove a Tag")
+    setupCookies("List and remove a Tag")
       .feed(tagGroupIds)
       .exec(
         http("list tags")
