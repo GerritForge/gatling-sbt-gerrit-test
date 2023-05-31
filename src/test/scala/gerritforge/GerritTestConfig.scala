@@ -20,7 +20,8 @@ case class GerritTestConfig(
     numUsers: Int,
     duration: FiniteDuration,
     restRunAnonymousUser: Boolean,
-    reviewerAccount: Int
+    reviewerAccount: Int,
+    stickyCookie: Option[String]
 ) {
   val encodedProject = encode(project)
 }
