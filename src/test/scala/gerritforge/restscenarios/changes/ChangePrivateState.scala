@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 object ChangePrivateState extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Change Private State")
+    setupCookies("Change Private State")
       .exec(createChange.check(regex("_number\":(\\d+),").saveAs("changeNumber")))
       .pause(pauseDuration, pauseStdDev)
       .exec(

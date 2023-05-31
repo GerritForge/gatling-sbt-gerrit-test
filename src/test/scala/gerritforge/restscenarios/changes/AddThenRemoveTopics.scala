@@ -8,7 +8,7 @@ import io.gatling.http.Predef._
 object AddThenRemoveTopics extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add then Remove Topics")
+    setupCookies("Add then Remove Topics")
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
