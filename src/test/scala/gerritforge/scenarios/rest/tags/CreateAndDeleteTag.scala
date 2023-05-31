@@ -11,7 +11,7 @@ object CreateAndDeleteTag extends RestScenarioBase {
   private val timestamp = System.currentTimeMillis()
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Create a new Tag")
+  setupCookies("Create a new Tag")
       .exec { session =>
         session.setAll("userId" -> session.userId)
       }
