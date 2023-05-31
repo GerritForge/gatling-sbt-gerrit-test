@@ -55,6 +55,11 @@ trait RestScenarioBase extends ScenarioBase {
     xsrfCookie.fold(headers)(c => headers + ("x-gerrit-auth" -> c))
   }
 
+  def setupCookies(scnTitle: String): ScenarioBuilder = {
+    val builder = setupAuthenticatedSession(scnTitle)
+    addStickyCookie(builder)
+  }
+
   def setupAuthenticatedSession(scnTitle: String): ScenarioBuilder = {
     testConfig.accountCookie match {
       case Some(cookie) =>
@@ -62,5 +67,13 @@ trait RestScenarioBase extends ScenarioBase {
           .exec(addCookie(Cookie("GerritAccount", cookie)))
       case None => throw new Exception("Requires authentication")
     }
+  }
+
+  def addStickyCookie(builder: ScenarioBuilder): ScenarioBuilder = {
+    testConfig.stickyCookie
+      .fold(builder) { c =>
+        val cookie = c.split(':')
+        builder.exec(addCookie(Cookie(cookie(0), cookie(1))))
+      }
   }
 }

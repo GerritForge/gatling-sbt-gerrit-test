@@ -10,7 +10,7 @@ import java.net.HttpURLConnection.{HTTP_NO_CONTENT, HTTP_OK}
 object ListThenGetDetails extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("List and Get Change Details")
+    setupCookies("List and Get Change Details")
       .exec(listChanges())
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)

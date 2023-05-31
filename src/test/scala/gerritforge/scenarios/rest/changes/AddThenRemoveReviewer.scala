@@ -7,7 +7,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object AddThenRemoveReviewer extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add and Remove Reviewer")
+    setupCookies("Add and Remove Reviewer")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)

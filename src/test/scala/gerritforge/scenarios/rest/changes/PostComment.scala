@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 object PostComment extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Post Comment")
+    setupCookies("Post Comment")
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
