@@ -23,7 +23,7 @@ case class CloneCommand(url: String) extends GitScenarioBase {
             //We push a new refspec as the subsequent clone needs the ref to exist.
             GitRequestSession(
               "push",
-              s"$url/${testConfig.encodedProject}",
+              s"$url/${testConfig.project}",
               s"#{refSpec}",
               requestName = "Push to setup Clone"
             )
@@ -35,7 +35,7 @@ case class CloneCommand(url: String) extends GitScenarioBase {
         new GitRequestBuilder(
           GitRequestSession(
             "clone",
-            s"$url/${testConfig.encodedProject}",
+            s"$url/${testConfig.project}",
             "#{refSpec}",
             ignoreFailureRegexps = List(".*want.+not valid.*")
           )
