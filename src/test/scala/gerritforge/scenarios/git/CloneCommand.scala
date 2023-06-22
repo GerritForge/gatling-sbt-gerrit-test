@@ -35,7 +35,7 @@ case class CloneCommand(url: String) extends GitScenarioBase {
         new GitRequestBuilder(
           GitRequestSession(
             "clone",
-            s"$url/${testConfig.project}",
+            s"$url/a/${testConfig.project}",
             "#{refSpec}",
             ignoreFailureRegexps = List(".*want.+not valid.*")
           )
