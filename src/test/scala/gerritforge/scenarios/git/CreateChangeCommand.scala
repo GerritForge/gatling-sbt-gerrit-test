@@ -24,7 +24,7 @@ case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) exten
           new GitRequestBuilder(
             GitRequestSession(
               "push",
-              s"$url/${testConfig.encodedProject}",
+              s"$url/${testConfig.project}",
               s"#{refSpec}-#{userId}",
               userId = "#{userId}",
               requestName = "Push to setup create branch"
@@ -38,7 +38,7 @@ case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) exten
           new GitRequestBuilder(
             GitRequestSession(
               "push",
-              s"$url/${testConfig.encodedProject}",
+              s"$url/${testConfig.project}",
               "HEAD:refs/for/#{refSpec}-#{userId}",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
