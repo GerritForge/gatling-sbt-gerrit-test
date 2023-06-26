@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95526572_0cf1d1de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-26T13:17:12Z",
+      "side": 1,
+      "message": "Please, can you describe the issue in the commit?",
+      "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "409ed7c5_96c73e8f",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-26T13:17:12Z",
+      "side": 1,
+      "message": "why dont you extract this into a variable? maybe it would be more readable. up to you.",
+      "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
