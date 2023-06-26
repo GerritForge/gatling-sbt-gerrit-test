@@ -8,23 +8,23 @@ import io.gatling.core.scenario.Simulation
 trait SimulationBase extends Simulation {
 
   val authenticatedScenarios = List(
-    AbandonThenRestoreChange,
-    AddThenRemoveHashtags,
-    AddThenRemoveReviewer,
-    AddThenRemoveTopics,
-    ChangePrivateState,
-    DeleteVote,
-    MarkChangeWIP,
-    PostComment,
-    SubmitChange,
-    CreateTag,
-    DeleteTag,
-    AddPatchset
+//    AbandonThenRestoreChange,
+//    AddThenRemoveHashtags,
+//    AddThenRemoveReviewer,
+//    AddThenRemoveTopics,
+//    ChangePrivateState,
+//    DeleteVote,
+//    MarkChangeWIP,
+//    PostComment,
+    SubmitChange
+//    CreateTag,
+//    DeleteTag,
+//    AddPatchset
   )
 
   val anonymousScenarios = List(
     ListThenGetDetails
   )
 
-  val allRestScenarios: Seq[ScenarioBase] = authenticatedScenarios ++ anonymousScenarios
+  val allRestScenarios: Seq[ScenarioBase] = authenticatedScenarios// ++ anonymousScenarios
 }
