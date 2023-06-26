@@ -51,6 +51,23 @@
       "parentUuid": "409ed7c5_96c73e8f",
       "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716410a8_d093e2ea",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-06-26T15:04:55Z",
+      "side": 1,
+      "message": "The java.util.Calendar class has several limitations and design flaws, and the newer java.time package provides a more intuitive and reliable API.\n\nyou could use:\n- LocalTime.now() method returns the current time based on the system clock. It provides more fine-grained control over time without the need to deal with calendar-specific details.\n-  use the ZonedDateTime class from java.time to obtain a date and time with time zone information.\n- you can use a clock are instal variable from `ChangeScenarioBase`:\n```\ntrait ChangeScenarioBase extends RestScenarioBase {\nval Clock clock\n...\n}\n```\nand you could get the time from the clock.",
+      "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
