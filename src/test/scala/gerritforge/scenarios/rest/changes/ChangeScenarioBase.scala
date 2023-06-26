@@ -22,9 +22,9 @@ trait ChangeScenarioBase extends RestScenarioBase {
   }
   def createChange =
     http("Create Change")
-      .post("/changes/")
+      .post("/changes/?trace=gatling-tests")
       .headers(postApiHeader(testConfig.xsrfToken))
-      .body(StringBody(s"""{"project":"${testConfig.project}",
+      .body(StringBody(s"""{"project":"${testConfig.encodedProject}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
 
