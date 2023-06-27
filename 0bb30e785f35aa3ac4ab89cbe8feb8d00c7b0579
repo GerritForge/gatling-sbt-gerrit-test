@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91d2b9e8_3485a00d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-06-27T12:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95526572_0cf1d1de",
+      "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "409ed7c5_96c73e8f",
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "Or making EncodeUtils a package object that would become just \n`${encode(testConfig.project)}`\nanyway, lgtm",
       "parentUuid": "409ed7c5_96c73e8f",
+      "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d04256b_6be89c7a",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-06-27T12:56:32Z",
+      "side": 1,
+      "message": "@Diego, here we\u0027re moving away from using the encoded project name, so we\u0027re using the NOT encoded project name.\n\n@Alvaro, I don\u0027t think this is that unreadable?",
+      "parentUuid": "2c322b07_12aa324d",
       "revId": "0bb30e785f35aa3ac4ab89cbe8feb8d00c7b0579",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
