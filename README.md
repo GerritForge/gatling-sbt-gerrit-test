@@ -12,7 +12,9 @@ Pre-requisites
 Run Gerrit v3.2.x with a project available for load-testing purposes and
 create a user with a well-known password and associated SSH key.
 The project needs to have force-push and create-reference permissions enabled
-in the ACLs for the load-test user.
+in the ACLs for the load-test user. Additionally, if the user is different
+from the local git user (you will see "invalid committer" errors
+in the `target/simulation.log`) you will need the forge-committer-identity permission.
 
 The test is destructive, do not use any existing production projects for load-testing
 purposes.
@@ -46,31 +48,26 @@ Get the project
 $ git clone https://github.com/gerritforge/gatling-sbt-gerrit-test.git && cd gatling-sbt-gerrit-test
 ```
 
-Start SBT
----------
-```bash
-$ sbt
-```
-
 Run all simulations
 -------------------
 
 ```bash
-> gatling:test
+$ sbt gatling:test
 ```
 
 Run a single simulation
 -----------------------
 
 ```bash
-> gatling:testOnly gerritforge.GerritRestSimulation
+$ sbt "gatling:testOnly gerritforge.GerritGitSimulation"
+$ sbt "gatling:testOnly gerritforge.GerritRestSimulation"
 ```
 
 List all tasks
 --------------------
 
 ```bash
-> tasks -v gatling
+$ sbt "tasks -v gatling"
 ```
 
 Run tests in Docker
@@ -89,7 +86,7 @@ $ make build
 For running the tests from Docker, with the environment variables defined in
 `simulation.env`:
 
-```
+```bash
 $ make run
 ```
 Additionally, every test accepts an optional "${scenarioName}_PAUSE" and a
@@ -99,10 +96,12 @@ For example: `AbandonThenRestoreChange_PAUSE`
 
 This will set `pause` value for each step of that scenario, helping it become more realistic.
 The scenario name is the simple name of the class implementing that scenario.
+Setting the pause per test also helps if the server under test struggles with the
+load of http requests.
 
 For making a parallel execution of multiple runs with concurrent Docker:
 
-```
+```bash
 $ make JOBS=2 parallel-run
 ```
 
