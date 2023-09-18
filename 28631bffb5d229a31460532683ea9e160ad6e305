@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e009114_1c51fefb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-09-18T08:36:12Z",
+      "side": 1,
+      "message": "nit: I dont know if make sense instead of \"Update README\" extend the description so when we do `git log --pretty\u003doneline` we can a good summary.",
+      "revId": "28631bffb5d229a31460532683ea9e160ad6e305",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
