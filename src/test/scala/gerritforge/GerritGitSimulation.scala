@@ -7,15 +7,16 @@ import io.gatling.core.Predef._
 
 class GerritGitSimulation extends SimulationBase {
 
-  val scenarios = (testConfig.sshUrl ++ testConfig.httpUrl)
-    .flatMap(
-      url =>
-        List(
-          CloneCommand(url).scn,
-          CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn
-        )
-    )
-    .toList
+  val scenarios =
+    (testConfig.sshUrl.filterNot(_.isEmpty) ++ testConfig.httpUrl.filterNot(_.isEmpty))
+      .flatMap(
+        url =>
+          List(
+            CloneCommand(url).scn,
+            CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn
+          )
+      )
+      .toList
 
   setUp(
     scenarios.map(
