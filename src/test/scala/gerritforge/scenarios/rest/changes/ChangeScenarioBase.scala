@@ -23,7 +23,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def createChange =
     http("Create Change")
       .post("/changes/")
-      .headers(postApiHeader(testConfig.xsrfToken))
+      .headers(addApiHeaders(testConfig.xsrfToken))
       .body(StringBody(s"""{"project":"${testConfig.project}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
@@ -68,6 +68,6 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def authenticatedChangesPostRequest(title: String, url: String, body: String = "{}") =
     http(title)
       .post(s"/changes/${testConfig.encodedProject}~#{changeNumber}$url")
-      .headers(postApiHeader(testConfig.xsrfToken))
+      .headers(addApiHeaders(testConfig.xsrfToken))
       .body(StringBody(body))
 }
