@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "903afb3d_b7377bc3",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-16T20:22:42Z",
+      "side": 1,
+      "message": "One for a different change, but this isn\u0027t where we should get `httpProtocol` from.",
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "62608f75_c6b84c86",
         "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
         "patchSetId": 2
@@ -26,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e657383d_6be6d817",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-16T20:22:42Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "62608f75_c6b84c86",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8bca7fce_269f0133",
         "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
         "patchSetId": 2
@@ -37,6 +78,30 @@
       "writtenOn": "2023-10-16T15:46:17Z",
       "side": 1,
       "message": "The timestamp in the tag name is not needed, but easier for debugging purposes. Anyway, in the real use case scenario (testing with jenkins in aws) all the clusters are teared down after running the tests, so that we don\u0027t leave rubbish behind.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "695c5750_bff1d531",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-16T20:22:42Z",
+      "side": 1,
+      "message": "I think this is helpful for local testing. As each run will have unique tags, they won\u0027t leak into the next run.",
+      "parentUuid": "8bca7fce_269f0133",
       "range": {
         "startLine": 11,
         "startChar": 0,
