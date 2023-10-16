@@ -17,8 +17,7 @@ trait SimulationBase extends Simulation {
     MarkChangeWIP,
     PostComment,
     SubmitChange,
-    CreateTag,
-    DeleteTag,
+    CreateAndDeleteTag,
     AddPatchset
   )
 

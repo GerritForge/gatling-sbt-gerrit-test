@@ -47,7 +47,7 @@ trait RestScenarioBase extends ScenarioBase {
 
   var randomFeeder = Iterator.continually(Map("randomValue" -> UUID.randomUUID()))
 
-  def postApiHeader(
+  def addApiHeaders(
       xsrfCookie: Option[String],
       contentType: Option[String] = Some("application/json")
   ) = {

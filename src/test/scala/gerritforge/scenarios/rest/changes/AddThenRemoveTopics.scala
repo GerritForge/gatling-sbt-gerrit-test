@@ -16,7 +16,7 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
       .exec(
         http("Add Topic")
           .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/topic")
-          .headers(postApiHeader(testConfig.xsrfToken))
+          .headers(addApiHeaders(testConfig.xsrfToken))
           .body(
             StringBody("""{"topic":"testTopic"}""")
           )
@@ -25,7 +25,7 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
       .exec(
         http("Remove Topic")
           .delete(s"/changes/${testConfig.encodedProject}~#{changeNumber}/topic")
-          .headers(postApiHeader(testConfig.xsrfToken, contentType = None))
+          .headers(addApiHeaders(testConfig.xsrfToken, contentType = None))
       )
       .pause(pauseDuration, pauseStdDev)
 }

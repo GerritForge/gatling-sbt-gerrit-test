@@ -1,7 +1,7 @@
 package gerritforge
 
 import gerritforge.GerritTestConfig._
-import gerritforge.scenarios.rest.tags.CreateTag.httpProtocol
+import gerritforge.scenarios.rest.tags.CreateAndDeleteTag.httpProtocol
 import io.gatling.core.Predef._
 
 import scala.concurrent.duration.FiniteDuration

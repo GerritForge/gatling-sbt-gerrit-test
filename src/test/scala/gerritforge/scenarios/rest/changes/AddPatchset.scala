@@ -17,7 +17,7 @@ object AddPatchset extends ChangeScenarioBase {
       .exec(
         http("Add Patchset")
           .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/message")
-          .headers(postApiHeader(testConfig.xsrfToken))
+          .headers(addApiHeaders(testConfig.xsrfToken))
           .body(
             StringBody(
               s"""{"message":"New commit message #{randomValue}\n\nChange-Id: #{changeId}\n","notify": "NONE"}"""
