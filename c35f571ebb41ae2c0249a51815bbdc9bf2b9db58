@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62608f75_c6b84c86",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-16T15:46:17Z",
+      "side": 1,
+      "message": "I think that because the new test is using this method, the renaming of it is not an unrelated change, happy to move it to another change if it is though. \n\nThoughts?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bca7fce_269f0133",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-16T15:46:17Z",
+      "side": 1,
+      "message": "The timestamp in the tag name is not needed, but easier for debugging purposes. Anyway, in the real use case scenario (testing with jenkins in aws) all the clusters are teared down after running the tests, so that we don\u0027t leave rubbish behind.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21bae8c7_9439494e",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-16T15:46:17Z",
+      "side": 1,
+      "message": "I am not sure if in the removed DeleteTag test the (list tags) operation was recorded by design or as a side effect on how to list and delete the tags created in the CreateTag test (removed). \n\nDo we need to record in the load tests the (list-tags)[https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#list-tags] ? \n\nIf so I believe this would be the right place to do it.",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 7
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
