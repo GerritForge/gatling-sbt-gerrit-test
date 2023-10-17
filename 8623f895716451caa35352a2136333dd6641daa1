@@ -46,6 +46,30 @@
       },
       "revId": "8623f895716451caa35352a2136333dd6641daa1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2ce0758_a9e8fdb8",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/DeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-17T09:46:12Z",
+      "side": 0,
+      "message": "Basically before this change gatling tests were recording the stats of \"delete tag\" but actually using the delete-tags (POST) api endpiont. Now we do it using the delete-tag (DELETE).",
+      "parentUuid": "7c59f558_2bbf6e93",
+      "range": {
+        "startLine": 44,
+        "startChar": 25,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "8623f895716451caa35352a2136333dd6641daa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
