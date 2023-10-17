@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fe7334f_fa00f832",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-17T09:59:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "903afb3d_b7377bc3",
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62608f75_c6b84c86",
@@ -232,6 +250,30 @@
       "side": 1,
       "message": "Before the gatling refactoring, this [1] is the list of APIs we reported on.\nAfter the refactoring we get more, which is good [2].\n\nWhilst I think is good not to loose any API that we were testing earlier, I would keep the focus of this ticket as small as possible in preparation for the imminent 3.9 release.\n\nSo I suggest not to add it for now, perhaps as a follow up change.\n\n[1] https://gerrit-ci.gerritforge.com/job/gatling-gerrit-test/1149/gatling/report/gerritrestsimulation-20230401003021177/\n\n[2] https://gerrit-ci.gerritforge.com/job/gatling-gerrit-test/1359/gatling/report/gerritrestsimulation-20230922114719515/",
       "parentUuid": "21bae8c7_9439494e",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 7
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "215aed4a_ea9ec678",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-17T09:59:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96247956_cf26183b",
       "range": {
         "startLine": 24,
         "startChar": 6,
