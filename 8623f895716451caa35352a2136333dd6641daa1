@@ -70,6 +70,30 @@
       },
       "revId": "8623f895716451caa35352a2136333dd6641daa1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44f57d0b_283a080e",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/DeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T09:59:22Z",
+      "side": 0,
+      "message": "This is fine, there is no specific requirement to use the tags listing API.\nI think point to the tag deletion API directly is perfectly fine.\nWe can always add additional tests for more APIs later on.",
+      "parentUuid": "c2ce0758_a9e8fdb8",
+      "range": {
+        "startLine": 44,
+        "startChar": 25,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "8623f895716451caa35352a2136333dd6641daa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
