@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6480a739_1b2bed60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T08:54:26Z",
+      "side": 1,
+      "message": "Good stuff, did you guys manage to verify this fixes 3.7?",
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "903afb3d_b7377bc3",
@@ -65,6 +82,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7a8438c_9b94a5ce",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T08:54:26Z",
+      "side": 1,
+      "message": "I think it is fine to leave it here if it\u0027s related.",
+      "parentUuid": "e657383d_6be6d817",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bca7fce_269f0133",
@@ -112,6 +153,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10b3387f_12a1527f",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T08:54:26Z",
+      "side": 1,
+      "message": "Yep let\u0027s leave it.",
+      "parentUuid": "695c5750_bff1d531",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 2
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21bae8c7_9439494e",
@@ -125,6 +190,30 @@
       "writtenOn": "2023-10-16T15:46:17Z",
       "side": 1,
       "message": "I am not sure if in the removed DeleteTag test the (list tags) operation was recorded by design or as a side effect on how to list and delete the tags created in the CreateTag test (removed). \n\nDo we need to record in the load tests the (list-tags)[https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#list-tags] ? \n\nIf so I believe this would be the right place to do it.",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 7
+      },
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96247956_cf26183b",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T08:54:26Z",
+      "side": 1,
+      "message": "Before the gatling refactoring, this [1] is the list of APIs we reported on.\nAfter the refactoring we get more, which is good [2].\n\nWhilst I think is good not to loose any API that we were testing earlier, I would keep the focus of this ticket as small as possible in preparation for the imminent 3.9 release.\n\nSo I suggest not to add it for now, perhaps as a follow up change.\n\n[1] https://gerrit-ci.gerritforge.com/job/gatling-gerrit-test/1149/gatling/report/gerritrestsimulation-20230401003021177/\n\n[2] https://gerrit-ci.gerritforge.com/job/gatling-gerrit-test/1359/gatling/report/gerritrestsimulation-20230922114719515/",
+      "parentUuid": "21bae8c7_9439494e",
       "range": {
         "startLine": 24,
         "startChar": 6,

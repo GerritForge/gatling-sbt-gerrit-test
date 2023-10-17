@@ -22,6 +22,30 @@
       },
       "revId": "8623f895716451caa35352a2136333dd6641daa1",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c59f558_2bbf6e93",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/DeleteTag.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2023-10-17T08:54:26Z",
+      "side": 0,
+      "message": "Is this now not reported by the `CreateAndDeleteTag`?",
+      "parentUuid": "5d0f12f6_09a5f18b",
+      "range": {
+        "startLine": 44,
+        "startChar": 25,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "8623f895716451caa35352a2136333dd6641daa1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
