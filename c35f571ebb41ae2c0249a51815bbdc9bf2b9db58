@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5642ee22_ce09ef30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-18T07:51:23Z",
+      "side": 1,
+      "message": "I believe we should resume the previous delete tags scenario, which was a valid use-case. Creating and deleting one single tag has never been an issue, but deleting multiple tags at once was buggy, hence we wanted to have a suite of Gatling tests for it.\n\nCan we resume it maybe with a different name?\n\n@Dani @Diego what do you think?",
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "903afb3d_b7377bc3",
         "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
         "patchSetId": 2
