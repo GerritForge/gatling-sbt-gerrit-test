@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e010986e_7fdffe34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-18T10:23:15Z",
+      "side": 1,
+      "message": "Thank you @Luca, it is a bit more clear now. In fact I pointed it out on [this comment](https://review.gerrithub.io/c/GerritForge/gatling-sbt-gerrit-test/+/1170812/comment/5d0f12f6_09a5f18b/) that I feel I missed some requirements.\nOn this comment maybe we can elaborate more if the delete-tags needs to be tested because is buggy, but not sure I understand if\n- is it buggy by itself ? So that a new scenario to create and delete multiple tags will suffice? or\n- is it buggy because we explicitly want to test the delete-tags endpoint in concurrency ? \nHappy to discuss this when @Dani is available.",
+      "parentUuid": "5642ee22_ce09ef30",
+      "revId": "c35f571ebb41ae2c0249a51815bbdc9bf2b9db58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "903afb3d_b7377bc3",
         "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
         "patchSetId": 2
