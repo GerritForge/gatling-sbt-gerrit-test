@@ -7,10 +7,7 @@ import EncodeUtils.encode
 import scala.concurrent.duration.FiniteDuration
 
 object GerritTestConfig {
-  val testConfig = ConfigSource.default.at("gerrit").load[GerritTestConfig] match {
-    case Right(config) => config
-    case Left(error)   => throw new Exception(error.toList.mkString(","))
-  }
+  val testConfig: GerritTestConfig = ConfigSource.default.at("gerrit").loadOrThrow[GerritTestConfig]
 }
 
 case class GerritTestConfig(
