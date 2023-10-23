@@ -6,7 +6,7 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class CreateChangeCommand(url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
+class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
