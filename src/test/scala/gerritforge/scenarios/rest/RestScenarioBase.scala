@@ -4,8 +4,7 @@ import gerritforge.GerritTestConfig.testConfig
 import gerritforge.scenarios.ScenarioBase
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef.{Cookie, addCookie, http}
-import io.gatling.http.protocol.HttpProtocol
+import io.gatling.http.Predef.{Cookie, addCookie}
 
 import java.util.UUID
 import scala.util.Random
@@ -14,20 +13,6 @@ trait RestScenarioBase extends ScenarioBase {
 
   val randomNumber = new Random
   val XSS_LEN      = 5
-
-  val httpProtocol: Option[HttpProtocol] = testConfig.httpUrl.map(
-    url =>
-      http
-        .baseUrl(url)
-        .inferHtmlResources(
-          AllowList(),
-          DenyList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png""")
-        )
-        .acceptHeader("*/*")
-        .acceptEncodingHeader("gzip, deflate")
-        .acceptLanguageHeader("en-GB,en;q=0.5")
-        .userAgentHeader("gatling-test")
-  )
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
