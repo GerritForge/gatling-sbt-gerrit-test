@@ -3,6 +3,7 @@ package gerritforge.scenarios.rest.changes
 import gerritforge.EncodeUtils.encode
 import gerritforge.GerritTestConfig.testConfig
 import gerritforge.scenarios.rest.RestScenarioBase
+import gerritforge.scenarios.rest.changes.ChangeScenarioBase.ChangeDetail
 import io.circe.generic.auto._
 import io.circe.parser._
 import io.gatling.core.Predef._
@@ -12,14 +13,6 @@ import java.util.Calendar
 
 trait ChangeScenarioBase extends RestScenarioBase {
 
-  case class ChangeDetail(
-      _number: Int,
-      project: String,
-      current_revision: String,
-      change_id: String
-  ) {
-    lazy val url = s"/c/$project/+/${_number}/"
-  }
   def createChange =
     http("Create Change")
       .post("/changes/")
@@ -70,4 +63,15 @@ trait ChangeScenarioBase extends RestScenarioBase {
       .post(s"/changes/${testConfig.encodedProject}~#{changeNumber}$url")
       .headers(addApiHeaders(testConfig.xsrfToken))
       .body(StringBody(body))
+}
+
+object ChangeScenarioBase {
+  final case class ChangeDetail(
+      _number: Int,
+      project: String,
+      current_revision: String,
+      change_id: String
+  ) {
+    lazy val url = s"/c/$project/+/${_number}/"
+  }
 }
