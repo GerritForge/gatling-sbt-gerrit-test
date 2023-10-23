@@ -12,8 +12,8 @@ class GerritGitSimulation extends SimulationBase {
       .flatMap(
         url =>
           List(
-            CloneCommand(url).scn,
-            CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn
+            new CloneCommand(url).scn,
+            new CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn
           )
       )
       .toList
