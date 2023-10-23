@@ -6,7 +6,7 @@ import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-case class CloneCommand(url: String) extends GitScenarioBase {
+class CloneCommand(val url: String) extends GitScenarioBase {
 
   override def scn: ScenarioBuilder =
     scenario(s"Clone Command over $protocol")
