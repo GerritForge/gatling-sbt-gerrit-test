@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41d7b07a_7549344b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-23T15:41:23Z",
+      "side": 1,
+      "message": "Interesting, you could have an ADT:\n```\ntrait Command {\n}\nobject Command {\n    case class Clone(...) extends Command { ... }\n    case class CreateChange(...) extends Command { ... }\n}\n\n```\n\nAnd you could refer them as `Command.Clone(....)` or `Command.CreateChange(...)`",
+      "revId": "9b851df587d51936a40bbb50c80a31d7edd74788",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
