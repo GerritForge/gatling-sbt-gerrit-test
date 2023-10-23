@@ -16,6 +16,24 @@
       "message": "nit: you can remove the type. Compiler should know it because of `loadOrThrow[GerritTestConfig]`",
       "revId": "32f7b300f755c0d67bafbac48afc936297d85515",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06415c17_07fa8bbf",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-23T15:37:15Z",
+      "side": 1,
+      "message": "It can, but as a public member I preferred it have the type. Anyway, no big deal, I\u0027ll remove it.",
+      "parentUuid": "6f5886b3_27fc840b",
+      "revId": "32f7b300f755c0d67bafbac48afc936297d85515",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
