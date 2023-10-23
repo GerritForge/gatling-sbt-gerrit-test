@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e86f67d_090bbe05",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-23T15:36:13Z",
+      "side": 1,
+      "message": "nit: For clarity, I would say:\n````\nMove `httpProtocol` in the `GerritRestSimulation` class.\n```",
+      "revId": "a08a88c2a83c791f545655d15631ff9d53211acb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
