@@ -1,8 +1,9 @@
 package gerritforge
 
 import gerritforge.GerritTestConfig._
-import gerritforge.scenarios.rest.tags.CreateAndDeleteTag.httpProtocol
 import io.gatling.core.Predef._
+import io.gatling.http.Predef.http
+import io.gatling.http.protocol.HttpProtocol
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -13,7 +14,25 @@ class GerritRestSimulation extends SimulationBase {
       allRestScenarios
     else authenticatedScenarios
 
-  require(httpProtocol.isDefined, "GERRIT_HTTP_URL must be defined to run REST-API simulation")
+  val httpProtocol: HttpProtocol = testConfig.httpUrl
+    .map(
+      url =>
+        http
+          .baseUrl(url)
+          .inferHtmlResources(
+            AllowList(),
+            DenyList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png""")
+          )
+          .acceptHeader("*/*")
+          .acceptEncodingHeader("gzip, deflate")
+          .acceptLanguageHeader("en-GB,en;q=0.5")
+          .userAgentHeader("gatling-test")
+    )
+    .getOrElse(
+      throw new IllegalArgumentException(
+        "GERRIT_HTTP_URL must be defined to run REST-API simulation"
+      )
+    )
 
   val pauseStdDevSecs = 5
   setUp(
