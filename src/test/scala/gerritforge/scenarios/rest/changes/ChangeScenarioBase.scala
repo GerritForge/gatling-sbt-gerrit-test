@@ -31,7 +31,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def listChanges(filters: Option[String] = None) = {
     http("changes list and get first change")
       .get(
-        s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}${filters.fold("")(identity)}&o=CURRENT_REVISION"
+        s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}${filters.getOrElse("")}&o=CURRENT_REVISION"
       )
       .headers(restApiHeader)
       .check(
