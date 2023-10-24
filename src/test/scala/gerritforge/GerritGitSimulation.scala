@@ -1,11 +1,12 @@
 package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
+import gerritforge.GerritRestSimulation.authenticatedScenarios
 import gerritforge.GerritTestConfig.testConfig
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import io.gatling.core.Predef._
 
-class GerritGitSimulation extends SimulationBase {
+class GerritGitSimulation extends Simulation {
 
   val scenarios =
     (testConfig.sshUrl.filterNot(_.isEmpty) ++ testConfig.httpUrl.filterNot(_.isEmpty))

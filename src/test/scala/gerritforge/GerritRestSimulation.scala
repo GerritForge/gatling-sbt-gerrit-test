@@ -1,13 +1,17 @@
 package gerritforge
 
+import gerritforge.GerritRestSimulation.{allRestScenarios, authenticatedScenarios}
 import gerritforge.GerritTestConfig._
+import gerritforge.scenarios.ScenarioBase
+import gerritforge.scenarios.rest.changes._
+import gerritforge.scenarios.rest.tags.CreateAndDeleteTag
 import io.gatling.core.Predef._
 import io.gatling.http.Predef.http
 import io.gatling.http.protocol.HttpProtocol
 
 import scala.concurrent.duration.FiniteDuration
 
-class GerritRestSimulation extends SimulationBase {
+class GerritRestSimulation extends Simulation {
 
   val scenarios =
     if (testConfig.restRunAnonymousUser)
@@ -42,4 +46,26 @@ class GerritRestSimulation extends SimulationBase {
         .pauses(normalPausesWithStdDevDuration(FiniteDuration(pauseStdDevSecs, "seconds")))
     )
   ).protocols(httpProtocol).maxDuration(testConfig.duration)
+}
+
+object GerritRestSimulation {
+  val authenticatedScenarios = List(
+    AbandonThenRestoreChange,
+    AddThenRemoveHashtags,
+    AddThenRemoveReviewer,
+    AddThenRemoveTopics,
+    ChangePrivateState,
+    DeleteVote,
+    MarkChangeWIP,
+    PostComment,
+    SubmitChange,
+    CreateAndDeleteTag,
+    AddPatchset
+  )
+
+  val anonymousScenarios = List(
+    ListThenGetDetails
+  )
+
+  val allRestScenarios: Seq[ScenarioBase] = authenticatedScenarios ++ anonymousScenarios
 }
