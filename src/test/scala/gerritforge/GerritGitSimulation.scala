@@ -1,7 +1,7 @@
 package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
-import gerritforge.GerritRestSimulation.authenticatedScenarios
+import gerritforge.GerritRestSimulation.allRestScenarios
 import gerritforge.GerritTestConfig.testConfig
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import io.gatling.core.Predef._
@@ -14,7 +14,7 @@ class GerritGitSimulation extends Simulation {
         url =>
           List(
             new CloneCommand(url).scn,
-            new CreateChangeCommand(url, authenticatedScenarios.map(_.scenarioName)).scn
+            new CreateChangeCommand(url, allRestScenarios.map(_.scenarioName)).scn
           )
       )
       .toList

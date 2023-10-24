@@ -11,7 +11,8 @@ object ListThenGetDetails extends ChangeScenarioBase {
 
   override val scn: ScenarioBuilder =
     setupAuthenticatedSession("List and Get Change Details")
-      .exec(listChanges())
+      .feed(userIdFeeder.circular)
+      .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
