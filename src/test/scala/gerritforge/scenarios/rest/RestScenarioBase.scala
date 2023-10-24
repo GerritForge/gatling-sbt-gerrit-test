@@ -11,8 +11,7 @@ import scala.util.Random
 
 trait RestScenarioBase extends ScenarioBase {
 
-  val randomNumber = new Random
-  val XSS_LEN      = 5
+  val XSS_LEN = 5
 
   val restApiHeader = Map(
     "Accept"                    -> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -20,13 +19,12 @@ trait RestScenarioBase extends ScenarioBase {
     "Upgrade-Insecure-Requests" -> "1"
   )
 
-  val randomInt = new Random
   val randomReview = Iterator.continually(
     Map(
-      "reviewMessage" -> (1 to (10 + randomInt.nextInt(10)))
-        .map(_ => Random.alphanumeric.take(randomInt.nextInt(10)).mkString)
+      "reviewMessage" -> (1 to (10 + Random.nextInt(10)))
+        .map(_ => Random.alphanumeric.take(Random.nextInt(10)).mkString)
         .mkString(" "),
-      "reviewScore" -> (randomInt.nextInt(5) - 2)
+      "reviewScore" -> (Random.nextInt(5) - 2)
     )
   )
 

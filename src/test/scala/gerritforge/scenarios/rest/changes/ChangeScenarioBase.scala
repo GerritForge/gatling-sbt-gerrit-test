@@ -10,6 +10,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 import java.util.Calendar
+import scala.util.Random
 
 trait ChangeScenarioBase extends RestScenarioBase {
 
@@ -48,7 +49,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
     doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
       exec { session =>
         val changes = session("changeDetails").as[List[ChangeDetail]]
-        val change  = changes(randomNumber.nextInt(changes.size))
+        val change  = changes(Random.nextInt(changes.size))
         session.setAll(
           "id"           -> s"${encode(change.project)}~${change._number}",
           "changeUrl"    -> change.url,
