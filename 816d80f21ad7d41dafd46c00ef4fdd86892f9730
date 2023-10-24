@@ -46,6 +46,30 @@
       },
       "revId": "816d80f21ad7d41dafd46c00ef4fdd86892f9730",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e09fd18_33dafed0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-24T21:26:35Z",
+      "side": 1,
+      "message": "Also note that we serialise `List[ChangeDetail]` already, so it\u0027s definitely serialisable.",
+      "parentUuid": "71cb2600_55931091",
+      "range": {
+        "startLine": 12,
+        "startChar": 49,
+        "endLine": 12,
+        "endChar": 61
+      },
+      "revId": "816d80f21ad7d41dafd46c00ef4fdd86892f9730",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
