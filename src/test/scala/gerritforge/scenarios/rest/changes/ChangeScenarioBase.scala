@@ -49,12 +49,13 @@ trait ChangeScenarioBase extends RestScenarioBase {
       exec { session =>
         val changes = session("changeDetails").as[List[ChangeDetail]]
         val change  = changes(randomNumber.nextInt(changes.size))
-        session
-          .set("id", s"${encode(change.project)}~${change._number}")
-          .set("changeUrl", change.url)
-          .set("changeNumber", change._number)
-          .set("changeId", change.change_id)
-          .set("revision", encode(change.current_revision))
+        session.setAll(
+          "id"           -> s"${encode(change.project)}~${change._number}",
+          "changeUrl"    -> change.url,
+          "changeNumber" -> change._number,
+          "changeId"     -> change.change_id,
+          "revision"     -> encode(change.current_revision)
+        )
       }
     }
 
