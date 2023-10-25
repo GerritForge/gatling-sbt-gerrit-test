@@ -39,7 +39,6 @@ Variable | Description | Sample
  GIT_TIMEOUT | Timeout in seconds for Git operations testing | 30
  NUM_USERS | Number of concurrent user sessions | 10
  DURATION | Total duration of the test | 2m
- RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
  REVIEWER_ACCOUNT | Account of the user executing the review | 1000000
 Get the project
 ---------------
