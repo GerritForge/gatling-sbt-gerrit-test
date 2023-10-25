@@ -16,6 +16,24 @@
       "message": "this is a code smell - why does git simulation need to know about something specific to rest simulation?",
       "revId": "7173ed68a29fee64beb0b0ad8f0c5e9d0de779c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c6044d2_85971242",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-25T11:00:06Z",
+      "side": 1,
+      "message": "You\u0027re right it\u0027s a little strange, but the way the Git simulation works, it creates changes upfront for the REST simulation. That way the REST simulation doesn\u0027t create its own changes (unless it\u0027s testing the change creation). This means that most of the REST scenarios will fail if the Git simulation isn\u0027t run beforehand. I believe this design decision was taken to reduce the time it takes for the REST simulation to run (but someone correct me if that\u0027s wrong, or if there\u0027s another reason).\n\nNote that the code _already_ does this - this change just specifies the REST scenarios in the REST simulation. Specifying them in the base class is misleading, as the scenarios passed to the Git are REST scenarios.",
+      "parentUuid": "e98bfbd9_82675af0",
+      "revId": "7173ed68a29fee64beb0b0ad8f0c5e9d0de779c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
