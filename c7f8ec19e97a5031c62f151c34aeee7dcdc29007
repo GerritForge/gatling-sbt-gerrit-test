@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afa0f57f_b08c8c28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-25T14:28:39Z",
+      "side": 1,
+      "message": "Don\u0027t merge until we can confirm if there is a good reason to keep the flag. If so, maybe we should rename it, or at least provide some clarity on its current naming.",
+      "revId": "c7f8ec19e97a5031c62f151c34aeee7dcdc29007",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
