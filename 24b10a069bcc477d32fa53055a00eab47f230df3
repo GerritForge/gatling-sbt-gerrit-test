@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f02d0d2_f9300b3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-25T10:56:35Z",
+      "side": 1,
+      "message": "Great find, thanks for the detailed explanation! \n\nI think we need a follow up change to remove the distinction between authenticated and anonymous scenarios. There is only one anonymous scenario, `ListThenGetDetails`, which as you said sets up an authenticated session 😕 \nSo let\u0027s just have one list of all rest scenarios.",
+      "revId": "24b10a069bcc477d32fa53055a00eab47f230df3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
