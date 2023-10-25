@@ -16,6 +16,24 @@
       "message": "Great find, thanks for the detailed explanation! \n\nI think we need a follow up change to remove the distinction between authenticated and anonymous scenarios. There is only one anonymous scenario, `ListThenGetDetails`, which as you said sets up an authenticated session 😕 \nSo let\u0027s just have one list of all rest scenarios.",
       "revId": "24b10a069bcc477d32fa53055a00eab47f230df3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcd00d51_34ad1afb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-25T11:03:12Z",
+      "side": 1,
+      "message": "Yes, I agree. let\u0027s see what others say who are more familiar with the design decisions. Maybe the scenario changed and thus we don\u0027t need to categorise it as an anonymous function anymore? As it stands it\u0027s confusing to declare it as such, because it doesn\u0027t look like it is.",
+      "parentUuid": "2f02d0d2_f9300b3a",
+      "revId": "24b10a069bcc477d32fa53055a00eab47f230df3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
