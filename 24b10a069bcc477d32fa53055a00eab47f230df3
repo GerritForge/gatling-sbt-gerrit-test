@@ -34,6 +34,24 @@
       "parentUuid": "2f02d0d2_f9300b3a",
       "revId": "24b10a069bcc477d32fa53055a00eab47f230df3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98848d89_ea857f67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-25T14:29:23Z",
+      "side": 1,
+      "message": "Created a change [1] for this, so we can comment on it directly.\n\n[1] https://review.gerrithub.io/c/GerritForge/gatling-sbt-gerrit-test/+/1171238",
+      "parentUuid": "bcd00d51_34ad1afb",
+      "revId": "24b10a069bcc477d32fa53055a00eab47f230df3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
