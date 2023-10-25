@@ -34,6 +34,24 @@
       "parentUuid": "e98bfbd9_82675af0",
       "revId": "7173ed68a29fee64beb0b0ad8f0c5e9d0de779c8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ee95f3d_371d03d5",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-25T11:26:02Z",
+      "side": 1,
+      "message": "Yeah ok, I see it now.",
+      "parentUuid": "7c6044d2_85971242",
+      "revId": "7173ed68a29fee64beb0b0ad8f0c5e9d0de779c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
