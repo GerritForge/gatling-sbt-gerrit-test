@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e98bfbd9_82675af0",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-25T10:44:30Z",
+      "side": 1,
+      "message": "this is a code smell - why does git simulation need to know about something specific to rest simulation?",
+      "revId": "7173ed68a29fee64beb0b0ad8f0c5e9d0de779c8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
