@@ -22,6 +22,30 @@
       },
       "revId": "0a4164c870a3e79aa4c6963bb56fe4bad7bac3f2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d51b4fb9_f369f2d6",
+        "filename": "simulation.env",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-27T10:20:10Z",
+      "side": 1,
+      "message": "I actually moved them to match the way the scenarios are listed in their _respective package_. The tag scenario is in a different package, hence why its in the bottom in the simulation.env file. I think its easier to spot if something is missing this way. But let me know if you disagree",
+      "parentUuid": "83d53556_b500c778",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 34
+      },
+      "revId": "0a4164c870a3e79aa4c6963bb56fe4bad7bac3f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
