@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83d53556_b500c778",
+        "filename": "simulation.env",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-27T10:16:41Z",
+      "side": 1,
+      "message": "nit: All the other vars are in alphabetical order, would move this to line 29",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 34
+      },
+      "revId": "0a4164c870a3e79aa4c6963bb56fe4bad7bac3f2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
