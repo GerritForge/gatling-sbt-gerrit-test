@@ -4,7 +4,7 @@ import gerritforge.GerritRestSimulation.{allRestScenarios, authenticatedScenario
 import gerritforge.GerritTestConfig._
 import gerritforge.scenarios.ScenarioBase
 import gerritforge.scenarios.rest.changes._
-import gerritforge.scenarios.rest.tags.CreateAndDeleteTag
+import gerritforge.scenarios.rest.tags.{CreateAndDeleteMultipleTags, CreateAndDeleteTag}
 import io.gatling.core.Predef._
 import io.gatling.http.Predef.http
 import io.gatling.http.protocol.HttpProtocol
@@ -59,6 +59,7 @@ object GerritRestSimulation {
     MarkChangeWIP,
     PostComment,
     SubmitChange,
+    CreateAndDeleteMultipleTags,
     CreateAndDeleteTag,
     AddPatchset
   )
