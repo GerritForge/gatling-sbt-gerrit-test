@@ -14,7 +14,7 @@ import java.net.HttpURLConnection.HTTP_NO_CONTENT
 object CreateAndDeleteMultipleTags extends RestScenarioBase {
 
   private def currentTimestamp: Long = System.currentTimeMillis()
-  private val tagsToDeleteAtOnce = 3
+  private val tagsToDeleteAtOnce = sys.env.get("NUMBER_OF_TAGS_TO_DELETE_AT_ONCE").map(_.toInt).getOrElse(3)
 
   case class TagDetail(ref: String, revision: String)
 
