@@ -141,6 +141,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc851ffb_9aec3f98",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-30T12:04:04Z",
+      "side": 1,
+      "message": "The number of tags should be configurable. For this change having hardcoded is fine, but we should have a follow-up change that take it from an environment variable.\n\nWe have seen failures with LOCKs when removing hundreds of tags at once.",
+      "parentUuid": "256edb9d_80b4eb38",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80ef7320_0c4ea564",
