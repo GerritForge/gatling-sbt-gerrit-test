@@ -33,6 +33,47 @@
       "message": "this threshold is open to suggestions, the thinking here is that the smaller the number the more delete requests we will generate.",
       "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03eded99_02910883",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-30T08:48:20Z",
+      "side": 1,
+      "message": "Out of curiousity, have you tried with a small number if no tags are left in the repository after the execution of this scenario ? \n\nAn alternative would be to make this number random within a range, so that we also test deletion of a large number of tags.",
+      "parentUuid": "bbb92eb7_b0eed8ab",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbcff80e_e85976ab",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-30T08:48:20Z",
+      "side": 1,
+      "message": "IMHO I would leave this as `delete tags` just to differentiate to the `delete tag` in the CreateAndDeleteTag scenario.",
+      "range": {
+        "startLine": 62,
+        "startChar": 18,
+        "endLine": 62,
+        "endChar": 46
+      },
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
