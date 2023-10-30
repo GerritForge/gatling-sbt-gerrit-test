@@ -159,6 +159,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e62af41_9a2b2e46",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T15:33:19Z",
+      "side": 1,
+      "message": "Addressed in a follow-up change [1]\n\n[1] https://review.gerrithub.io/c/GerritForge/gatling-sbt-gerrit-test/+/1171418",
+      "parentUuid": "cc851ffb_9aec3f98",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80ef7320_0c4ea564",
