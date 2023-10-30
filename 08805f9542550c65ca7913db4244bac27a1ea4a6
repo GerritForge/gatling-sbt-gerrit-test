@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "951d3536_e2447a34",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T10:15:23Z",
+      "side": 1,
+      "message": "\u003e Out of curiousity, have you tried with a small number if no tags are left in the repository after the execution of this scenario ?\n\nI think its inevitable that some tags will be left, because the test will terminate when the duration is reached, and by that time surely the number of existing tags for at least one user will be below the threshold and hence not deleted. I guess if the threshold is set to 1 then the chances of leaving any \"leftover\" tags is reduced significantly. But leaving tags is not an issue, because they will be deleted on the next test run.\n\n\u003e An alternative would be to make this number random within a range, so that we also test deletion of a large number of tags.\n\nYes, but how large is a \"large number of tags\" and do you have an idea for the range? Keep in mind that in order to accumulate a lot of tags for a user, say 100 or 200, and to be able to execute multiple such tag-delete requests, then the test will need to run for a long period of time - which currently is not the case on the CI (tests run for 2 mins by default).",
+      "parentUuid": "03eded99_02910883",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cbcff80e_e85976ab",
         "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
         "patchSetId": 1
@@ -66,6 +84,30 @@
       "writtenOn": "2023-10-30T08:48:20Z",
       "side": 1,
       "message": "IMHO I would leave this as `delete tags` just to differentiate to the `delete tag` in the CreateAndDeleteTag scenario.",
+      "range": {
+        "startLine": 62,
+        "startChar": 18,
+        "endLine": 62,
+        "endChar": 46
+      },
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9715e9fc_a8b94d12",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T10:15:23Z",
+      "side": 1,
+      "message": "isn\u0027t it better to provide a more descriptive name for the operation you are executing? Isn\u0027t it more difficult for the eye to distinguish between `delete tag` and `delete tags` in the gatling output?",
+      "parentUuid": "cbcff80e_e85976ab",
       "range": {
         "startLine": 62,
         "startChar": 18,
