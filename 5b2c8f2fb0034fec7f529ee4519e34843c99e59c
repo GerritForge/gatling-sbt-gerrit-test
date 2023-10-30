@@ -39,6 +39,30 @@
       },
       "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f6b7f39_f9091817",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T12:41:05Z",
+      "side": 1,
+      "message": "As with every other gatling test, we are relying on the implicit check that Gatling performs (what you quoted above). Do you want to add an explicit status check?",
+      "parentUuid": "31b8fbaf_e4cdccfe",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
