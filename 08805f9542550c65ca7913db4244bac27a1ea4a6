@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "256edb9d_80b4eb38",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-30T10:30:05Z",
+      "side": 1,
+      "message": "\u003e Yes, but how large is a \"large number of tags\" and do you have an idea for the range?\n\nNot sure tbh. Missing some backround information on why we added this test in the first place. I believe it was introduced to check that the delete-tags is working properly because it was creating some problems with some clients. Maybe @danielesassoli@gmail.com knows?",
+      "parentUuid": "951d3536_e2447a34",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cbcff80e_e85976ab",
         "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
         "patchSetId": 1
@@ -108,6 +126,30 @@
       "side": 1,
       "message": "isn\u0027t it better to provide a more descriptive name for the operation you are executing? Isn\u0027t it more difficult for the eye to distinguish between `delete tag` and `delete tags` in the gatling output?",
       "parentUuid": "cbcff80e_e85976ab",
+      "range": {
+        "startLine": 62,
+        "startChar": 18,
+        "endLine": 62,
+        "endChar": 46
+      },
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bfd75ca_61da86d5",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2023-10-30T10:30:05Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "9715e9fc_a8b94d12",
       "range": {
         "startLine": 62,
         "startChar": 18,
