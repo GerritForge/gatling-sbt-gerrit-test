@@ -18,6 +18,40 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dd16c04_15dc7a3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-30T10:53:11Z",
+      "side": 1,
+      "message": "LGTM, two nits and one question. As soon the question is answered, the +1 is on your side.",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bc3e4cf_59c33b38",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-30T10:53:11Z",
+      "side": 1,
+      "message": "Why do you remove `anonymousScenarios` from the list?",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bbb92eb7_b0eed8ab",
@@ -85,6 +119,40 @@
       "side": 1,
       "message": "\u003e Yes, but how large is a \"large number of tags\" and do you have an idea for the range?\n\nNot sure tbh. Missing some backround information on why we added this test in the first place. I believe it was introduced to check that the delete-tags is working properly because it was creating some problems with some clients. Maybe @danielesassoli@gmail.com knows?",
       "parentUuid": "951d3536_e2447a34",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80ef7320_0c4ea564",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-30T10:53:11Z",
+      "side": 1,
+      "message": "nit: instead of pattern matching, another option could be something similar to: \n```\ntransform(tagsMaybe \u003d\u003e tagsMaybe.fold(throw _, identity))\n```",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9572165_84e81dce",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1020779
+      },
+      "writtenOn": "2023-10-30T10:53:11Z",
+      "side": 1,
+      "message": "nit: would this be more readable?:\n```\n.map(_.stripPrefix(\"refs/tags/\"))\n```",
       "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
