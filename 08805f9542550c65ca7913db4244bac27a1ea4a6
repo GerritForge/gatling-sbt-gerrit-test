@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8c87aab_e7ffc930",
+        "filename": "src/test/scala/gerritforge/GerritRestSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T11:11:54Z",
+      "side": 1,
+      "message": "because I\u0027m an idiot and forgot to restore it when I finished testing locally. Good catch!",
+      "parentUuid": "3bc3e4cf_59c33b38",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bbb92eb7_b0eed8ab",
@@ -140,6 +158,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fee18c6a_e34d30a5",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T11:11:54Z",
+      "side": 1,
+      "message": "personally I find the existing code easier to understand.",
+      "parentUuid": "80ef7320_0c4ea564",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9572165_84e81dce",
@@ -153,6 +189,24 @@
       "writtenOn": "2023-10-30T10:53:11Z",
       "side": 1,
       "message": "nit: would this be more readable?:\n```\n.map(_.stripPrefix(\"refs/tags/\"))\n```",
+      "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46f23902_ddb76db2",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T11:11:54Z",
+      "side": 1,
+      "message": "good catch! This is not only more readable, it is also the right thing to do. the `.drop` will drop 10 chars from the ref, even it doesn\u0027t contain the `refs/tags/` prefix!",
+      "parentUuid": "b9572165_84e81dce",
       "revId": "08805f9542550c65ca7913db4244bac27a1ea4a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
