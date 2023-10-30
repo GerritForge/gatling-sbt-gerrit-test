@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b24b2bd2_7a505e1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-30T11:18:15Z",
+      "side": 1,
+      "message": "I am giving a V+1 as I have tested it on the CI with 3 users for 2 mins and with 5 users for 10 mins, both tests were successful. Although the `ListThenGetDetails` was not part of the run, due to my stupidity, i am still confident the tests will pass once this is merged.",
+      "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
