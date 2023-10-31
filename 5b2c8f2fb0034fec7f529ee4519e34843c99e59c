@@ -63,6 +63,30 @@
       },
       "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6158f83e_b817a7c4",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-31T09:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f6b7f39_f9091817",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
