@@ -33,6 +33,24 @@
       "message": "Ah, one thing (sorry), can we put this in config instead of inline? We have other env variables that are read that way, and then picked up by pureconfig - that gives us consistency in how these are applied.",
       "revId": "58a061bb793e82f0a7d9f01047e832b593b40f35",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae3ecb46_fa9f2906",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-31T12:04:30Z",
+      "side": 1,
+      "message": "I actually thought about that as well. However, I opted against it for 2 reasons:\n1. The config is generally for settings applicable for _all_ the tests, not just one scenario. For example, you have things like number of users, test duration, tokens etc. It will be awkward to have a setting just for one test. \n2. All the PAUSE variables are not in config, so they are read in the same way as I do here.",
+      "parentUuid": "77c6808b_cb65dbd9",
+      "revId": "58a061bb793e82f0a7d9f01047e832b593b40f35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
