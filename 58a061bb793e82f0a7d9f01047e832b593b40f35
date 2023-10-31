@@ -51,6 +51,24 @@
       "parentUuid": "77c6808b_cb65dbd9",
       "revId": "58a061bb793e82f0a7d9f01047e832b593b40f35",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fbe8ffd_adb05075",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-10-31T12:05:43Z",
+      "side": 1,
+      "message": "Yup, there\u0027s already a change for that https://gerrit-review.googlesource.com/c/gerrit-ci-scripts/+/391382",
+      "parentUuid": "519f0387_3e5729be",
+      "revId": "58a061bb793e82f0a7d9f01047e832b593b40f35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
