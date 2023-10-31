@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b87c4a8d_b17ea772",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/tags/CreateAndDeleteMultipleTags.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2023-10-31T13:18:37Z",
+      "side": 1,
+      "message": "As discussed IRL, this is not possible, `$userId` concurrent iteration uniqueness.",
+      "parentUuid": "26af138c_4570f978",
+      "revId": "5b2c8f2fb0034fec7f529ee4519e34843c99e59c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "867a2bb0_d1411fc5",
