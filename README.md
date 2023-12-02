@@ -9,9 +9,9 @@ This project uses SBT 1, which is available [here](https://www.scala-sbt.org/dow
 Pre-requisites
 --------------
 
-Run Gerrit v3.2.x with a project available for load-testing purposes and
+Run Gerrit v3.7.x or newer with a project available for load-testing purposes and
 create a user with a well-known password and associated SSH key.
-The project needs to have force-push and create-reference permissions enabled
+The project needs to have create-reference permissions enabled
 in the ACLs for the load-test user. Additionally, if the user is different
 from the local git user (you will see "invalid committer" errors
 in the `target/simulation.log`) you will need the forge-committer-identity permission.
@@ -52,6 +52,8 @@ $ git clone https://github.com/gerritforge/gatling-sbt-gerrit-test.git && cd gat
 
 Run all simulations
 -------------------
+
+First makre sure that env variables from simulation.env are available in your shell, then run:
 
 ```bash
 $ sbt gatling:test
