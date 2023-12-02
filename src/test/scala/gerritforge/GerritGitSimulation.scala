@@ -8,8 +8,13 @@ import io.gatling.core.Predef._
 
 class GerritGitSimulation extends Simulation {
 
+  val maybeSshUrl = testConfig.sshUrl.filterNot(_.isEmpty)
+  val maybeHttpUrl = testConfig.httpUrl
+    .filterNot(_.isEmpty)
+    .map(url => s"$url/a")
+
   val scenarios =
-    (testConfig.sshUrl.filterNot(_.isEmpty) ++ testConfig.httpUrl.filterNot(_.isEmpty))
+    (maybeSshUrl ++ maybeHttpUrl)
       .flatMap(
         url =>
           List(
