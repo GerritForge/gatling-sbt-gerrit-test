@@ -9,9 +9,9 @@ This project uses SBT 1, which is available [here](https://www.scala-sbt.org/dow
 Pre-requisites
 --------------
 
-Run Gerrit v3.2.x with a project available for load-testing purposes and
+Run Gerrit v3.7.x or newer with a project available for load-testing purposes and
 create a user with a well-known password and associated SSH key.
-The project needs to have force-push and create-reference permissions enabled
+The project needs to have create-reference permissions enabled
 in the ACLs for the load-test user. Additionally, if the user is different
 from the local git user (you will see "invalid committer" errors
 in the `target/simulation.log`) you will need the forge-committer-identity permission.
@@ -43,6 +43,16 @@ Variable | Description | Sample
  REVIEWER_ACCOUNT | Account of the user executing the review | 1000000
  NUMBER_OF_TAGS_TO_DELETE_AT_ONCE | How many tags to "bulk" delete with one request | 3
 
+Additionally, every test accepts an optional "${scenarioName}_PAUSE" and a
+"${scenarioName}_STDDEV_PAUSE" environment variable, that can either be set or not.
+
+For example: `AbandonThenRestoreChange_PAUSE`
+
+This will set `pause` value for each step of that scenario, helping it become more realistic.
+The scenario name is the simple name of the class implementing that scenario.
+Setting the pause per test also helps if the server under test struggles with the
+load of http requests.
+
 Get the project
 ---------------
 
@@ -50,6 +60,12 @@ Get the project
 $ git clone https://github.com/gerritforge/gatling-sbt-gerrit-test.git && cd gatling-sbt-gerrit-test
 ```
 
+Expose simulation.env variables
+-------------------
+
+```base
+cat simulation.env | xargs -L 1 echo export | source /dev/stdin
+```
 Run all simulations
 -------------------
 
@@ -91,15 +107,6 @@ For running the tests from Docker, with the environment variables defined in
 ```bash
 $ make run
 ```
-Additionally, every test accepts an optional "${scenarioName}_PAUSE" and a
-"${scenarioName}_STDDEV_PAUSE" environment variable, that can either be set or not.
-
-For example: `AbandonThenRestoreChange_PAUSE`
-
-This will set `pause` value for each step of that scenario, helping it become more realistic.
-The scenario name is the simple name of the class implementing that scenario.
-Setting the pause per test also helps if the server under test struggles with the
-load of http requests.
 
 For making a parallel execution of multiple runs with concurrent Docker:
 
