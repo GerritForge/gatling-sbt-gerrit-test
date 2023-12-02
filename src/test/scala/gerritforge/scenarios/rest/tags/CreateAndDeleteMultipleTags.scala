@@ -14,7 +14,8 @@ import java.net.HttpURLConnection.HTTP_NO_CONTENT
 object CreateAndDeleteMultipleTags extends RestScenarioBase {
 
   private def currentTimestamp: Long = System.currentTimeMillis()
-  private val tagsToDeleteAtOnce = sys.env.get("NUMBER_OF_TAGS_TO_DELETE_AT_ONCE").map(_.toInt).getOrElse(3)
+  private val tagsToDeleteAtOnce =
+    sys.env.get("NUMBER_OF_TAGS_TO_DELETE_AT_ONCE").map(_.toInt).getOrElse(3)
 
   case class TagDetail(ref: String, revision: String)
 
@@ -23,7 +24,7 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
       .feed(userIdFeeder.circular)
       .exec { session =>
         val userId = session("userId").as[String]
-        val tagId = s"scnmultipletags-$userId-$currentTimestamp"
+        val tagId  = s"scnmultipletags-$userId-$currentTimestamp"
         session.set("tagId", tagId)
       }
       .exec(
@@ -46,7 +47,7 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
               .transform(decode[List[TagDetail]](_))
               .transform {
                 case Right(tagDetailList) => tagDetailList
-                case Left(decodingError) => throw decodingError
+                case Left(decodingError)  => throw decodingError
               }
               .saveAs("tagDetails")
           )
@@ -67,7 +68,7 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
               .body(StringBody(s"""{"tags": #{tagNames}}"""))
               .asJson
               .check(status.is(HTTP_NO_CONTENT))
-        )
-        .pause(pauseDuration, pauseStdDev)
+          )
+          .pause(pauseDuration, pauseStdDev)
       }
 }
