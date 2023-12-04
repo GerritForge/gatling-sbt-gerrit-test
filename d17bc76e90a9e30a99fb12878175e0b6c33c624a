@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff43fc5c_332f28ca",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-04T10:15:01Z",
+      "side": 1,
+      "message": "why remove the `force-push` instruction? I remember i added it in the README as I had problems pushing.",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f0505ea_87a81a22",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-04T10:15:01Z",
+      "side": 1,
+      "message": "nit: typo `make`",
+      "range": {
+        "startLine": 56,
+        "startChar": 6,
+        "endLine": 56,
+        "endChar": 11
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e909589_4c4b3cb2",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-04T10:15:01Z",
+      "side": 1,
+      "message": "This is not the right place to put this IMHO. It should be put either in the pre-requisite section, or in the configuration section where we list the environment variables. Also, the section on the PAUSE variables (L96-104) should also move in the configuration section, it is buried in the docker section where it doesnt belong and its very easy to miss.",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
