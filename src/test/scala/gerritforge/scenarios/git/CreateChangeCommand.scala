@@ -27,7 +27,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
               s"$url/${testConfig.project}",
               s"#{refSpec}-#{userId}",
               userId = "#{userId}",
-              requestName = "Push to setup create branch"
+              requestName = "Create branch"
             )
           )
         )
@@ -43,7 +43,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
-              requestName = "Push create branch"
+              requestName = "Push to new branch"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
