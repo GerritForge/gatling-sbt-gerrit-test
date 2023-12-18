@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c9a7a80_be917da9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-18T19:46:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee166ed2_75e6dde8",
+      "revId": "544488e248972a7b36a9e51112220058f92c2493",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ee1bd50_d9e1f0b4",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-12-04T11:14:22Z",
       "side": 1,
       "message": "nit: `testConfig.sshUrl.filter(_.nonEmpty)`\n\n(Although I know this isn\u0027t your code, since you are touching it here) I personally find this easier to understand.",
+      "revId": "544488e248972a7b36a9e51112220058f92c2493",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0099e6ec_84628951",
+        "filename": "src/test/scala/gerritforge/GerritGitSimulation.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-18T19:46:11Z",
+      "side": 1,
+      "message": "Addressed with Iddc83e6",
+      "parentUuid": "0ee1bd50_d9e1f0b4",
       "revId": "544488e248972a7b36a9e51112220058f92c2493",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
