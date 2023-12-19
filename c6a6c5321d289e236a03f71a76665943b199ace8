@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27e29e97_75dc5a62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-19T09:53:36Z",
+      "side": 1,
+      "message": "Can you elaborate on the implementation? I think as a minimum you should mention this is an optional setting \u0026 it works together with the account cookie.",
+      "revId": "c6a6c5321d289e236a03f71a76665943b199ace8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3bc02c1_e4af47c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-19T09:53:36Z",
+      "side": 1,
+      "message": "Missing Docs",
+      "revId": "c6a6c5321d289e236a03f71a76665943b199ace8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "912b5151_9df6585c",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1020920
+      },
+      "writtenOn": "2023-12-19T09:53:36Z",
+      "side": 1,
+      "message": "nit\n```suggestion\n        val (cookieName, cookieValue) \u003d c.split(\u0027:\u0027) match { case Array(name, value) \u003d\u003e (name, value)\n```",
+      "revId": "c6a6c5321d289e236a03f71a76665943b199ace8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
