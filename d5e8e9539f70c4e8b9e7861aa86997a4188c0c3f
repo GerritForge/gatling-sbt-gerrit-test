@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9759190e_4ac5c1dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-19T09:07:19Z",
+      "side": 1,
+      "message": "Can you also explain why is not enough to add the `/a` in the http url in the config?",
+      "revId": "d5e8e9539f70c4e8b9e7861aa86997a4188c0c3f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
