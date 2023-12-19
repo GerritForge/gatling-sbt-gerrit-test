@@ -3,6 +3,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b5bab21c_61fb109a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-19T08:58:25Z",
+      "side": 1,
+      "message": "nit: README",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f10483_6b0c1842",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-19T08:58:25Z",
+      "side": 1,
+      "message": "Can you explain what you are changing?",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38759696_9ce5663a",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-19T08:58:25Z",
+      "side": 1,
+      "message": "Why change the version? Did we change the API, and is it no longer compatible with 3.2?",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff43fc5c_332f28ca",
         "filename": "README.md",
         "patchSetId": 1
@@ -54,6 +117,24 @@
       "writtenOn": "2023-12-04T10:15:01Z",
       "side": 1,
       "message": "This is not the right place to put this IMHO. It should be put either in the pre-requisite section, or in the configuration section where we list the environment variables. Also, the section on the PAUSE variables (L96-104) should also move in the configuration section, it is buried in the docker section where it doesnt belong and its very easy to miss.",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca71e25c_a3a08788",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-19T08:58:25Z",
+      "side": 1,
+      "message": "\u003e This is not the right place to put this IMHO. \n\nI wouldn\u0027t mind leaving it here,however I would put a oneliner to do it. Something like: `cat simulation.env | xargs -L 1 echo export | source /dev/stdin`",
+      "parentUuid": "7e909589_4c4b3cb2",
       "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
