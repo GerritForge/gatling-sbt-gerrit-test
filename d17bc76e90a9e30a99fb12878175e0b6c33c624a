@@ -41,6 +41,48 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fb33d30_a3ccaf08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-22T02:24:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2f10483_6b0c1842",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c44811bf_93e0c663",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-22T02:24:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5bab21c_61fb109a",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38759696_9ce5663a",
@@ -66,6 +108,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c5e9d408_de4bb212",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-22T02:24:10Z",
+      "side": 1,
+      "message": "Only because 3.7 is the latest support version, it might run with previous versions but don\u0027t think we ensure it?\nHappy to revert this.",
+      "parentUuid": "38759696_9ce5663a",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff43fc5c_332f28ca",
         "filename": "README.md",
         "patchSetId": 1
@@ -77,6 +143,24 @@
       "writtenOn": "2023-12-04T10:15:01Z",
       "side": 1,
       "message": "why remove the `force-push` instruction? I remember i added it in the README as I had problems pushing.",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf875411_3b824268",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2023-12-22T02:24:10Z",
+      "side": 1,
+      "message": "I don\u0027t believe it\u0027s required, I\u0027ve not needed it when running the tool recently.\n\nBefore my refactoring ages ago it was required, but now it\u0027s not anymore.\n\nLet me know if you find this to be incorrect though.",
+      "parentUuid": "ff43fc5c_332f28ca",
       "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
