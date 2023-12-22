@@ -132,6 +132,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9390214a_df78e1c5",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2023-12-22T16:50:57Z",
+      "side": 1,
+      "message": "I think that if we want to start tightening the tests to run against a specific Gerrit version we should start adding branches, which is a bigger topic of discussion. We can\u0027t enforce it by just adding it in the README.\n\nFor the time being I would leave it as it is, and we can discuss if it is the case of start creating branches. WDYT?",
+      "parentUuid": "c5e9d408_de4bb212",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff43fc5c_332f28ca",
         "filename": "README.md",
         "patchSetId": 1
