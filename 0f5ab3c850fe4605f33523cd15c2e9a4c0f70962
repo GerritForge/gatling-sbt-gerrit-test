@@ -52,6 +52,24 @@
       "parentUuid": "04575626_348a0a17",
       "revId": "0f5ab3c850fe4605f33523cd15c2e9a4c0f70962",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed905e2a_ea42ba91",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-01-02T14:52:56Z",
+      "side": 1,
+      "message": "First version works on MacOS but not un *Nix",
+      "parentUuid": "abedbe70_922eb259",
+      "revId": "0f5ab3c850fe4605f33523cd15c2e9a4c0f70962",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
