@@ -154,6 +154,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fda5507f_b4adb5e7",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-01-02T12:22:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9390214a_df78e1c5",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff43fc5c_332f28ca",
@@ -185,6 +209,24 @@
       "side": 1,
       "message": "I don\u0027t believe it\u0027s required, I\u0027ve not needed it when running the tool recently.\n\nBefore my refactoring ages ago it was required, but now it\u0027s not anymore.\n\nLet me know if you find this to be incorrect though.",
       "parentUuid": "ff43fc5c_332f28ca",
+      "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cd4e269_ab080ba1",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-01-02T12:22:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf875411_3b824268",
       "revId": "d17bc76e90a9e30a99fb12878175e0b6c33c624a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
