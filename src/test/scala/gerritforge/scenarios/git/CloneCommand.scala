@@ -25,7 +25,7 @@ class CloneCommand(val url: String) extends GitScenarioBase {
               "push",
               s"$url/${testConfig.project}",
               s"#{refSpec}",
-              requestName = "Push to setup Clone"
+              requestName = s"Push to setup Clone over $protocol"
             )
           )
         )
@@ -34,7 +34,7 @@ class CloneCommand(val url: String) extends GitScenarioBase {
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
-            "clone",
+            s"Clone over $protocol",
             s"$url/${testConfig.project}",
             "#{refSpec}",
             ignoreFailureRegexps = List(".*want.+not valid.*")
