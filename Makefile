@@ -1,5 +1,6 @@
 .PHONY:	run build prepare publish parallel-run
 
+TARGET_SIMULATION?=GerritGitSimulation
 DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
 JOBS:=2
 
@@ -15,6 +16,10 @@ run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \
 		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
+
+run-single:
+	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+			$(DOCKER_IMAGE) -s gerritforge.$(TARGET_SIMULATION) --run-mode local
 
 background-job-%:
 	mkdir -p `pwd`/target/gatling
