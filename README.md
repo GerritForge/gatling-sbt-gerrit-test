@@ -114,6 +114,12 @@ For making a parallel execution of multiple runs with concurrent Docker:
 $ make JOBS=2 parallel-run
 ```
 
+Run a single simulation with the concurrent Docker image:
+
+```bash
+$ make run-single TARGET_SIMULATION=GerritRestSimulation
+```
+
 *NOTES*:
 * When running multiple jobs in parallel, the make command would
 end immediately, and the simulations will continue to run in the background.
