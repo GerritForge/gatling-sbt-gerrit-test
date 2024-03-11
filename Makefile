@@ -26,3 +26,7 @@ parallel-run:
 
 push: build
 	sbt dockerBuildAndPush
+
+run-ghs:
+	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+			$(DOCKER_IMAGE) -s gerritforge.GerritRealLifeSimulation --run-mode local
