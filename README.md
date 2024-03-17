@@ -41,6 +41,7 @@ Variable | Description | Sample
  DURATION | Total duration of the test | 2m
  RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
  REVIEWER_ACCOUNT | Account of the user executing the review | 1000000
+ STDDEV_SEED | Standard deviation random generator seed | Random seed
  NUMBER_OF_TAGS_TO_DELETE_AT_ONCE | How many tags to "bulk" delete with one request | 3
 
 Additionally, every test accepts an optional "${scenarioName}_PAUSE" and a
