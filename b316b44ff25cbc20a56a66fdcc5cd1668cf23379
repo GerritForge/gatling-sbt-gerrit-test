@@ -3,6 +3,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1564330d_52f4138b",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "I don\u0027t think this project should \"know\" about `ghs` - it adds a soft dependency. Can\u0027t we call it something more generic? The commit summary suggests it\u0027s adding `cue-lang traffic`, so maybe something to that effect?",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6ddd3b5_ab5eec07",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "Can we think of a better name than \"RealLife\" to describe this simulation?",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26466324_55b0ed64",
         "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
         "patchSetId": 4
@@ -26,6 +60,64 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb0a7e96_7dcd2c4e",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "26466324_55b0ed64",
+      "range": {
+        "startLine": 51,
+        "startChar": 27,
+        "endLine": 51,
+        "endChar": 42
+      },
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ba4cf1c_0fde6173",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "Nit: here and elsewhere, we don\u0027t need to explicitly do `FiniteDuration/TimeUnit.SECONDS`. we can just `import scala.concurrent.duration`, allowing us to do `$Int.seconds`.",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45db8393_5de50af5",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "Nit: if we\u0027re making the above values private, I think these should follow suit, I don\u0027t see why some members are kept private and others not, when their use cases are the same.",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1986abdd_dbcaf261",
         "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
         "patchSetId": 4
@@ -43,6 +135,23 @@
         "endLine": 114,
         "endChar": 60
       },
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06bc8f2d_69131334",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:46:22Z",
+      "side": 1,
+      "message": "Should this (or even from L132) live somewhere common? It looks like boilerplate, and is also used in `GerritRestSimulation`.",
       "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
