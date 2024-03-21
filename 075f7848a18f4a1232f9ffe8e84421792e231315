@@ -79,6 +79,23 @@
       "message": "Not 100% sure what we\u0027re achieving here, are we saying that Gatling\u0027s method doesn\u0027t return a value with a random standard deviation, but rather always applies the same value?",
       "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46dd3b00_976a0a9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-03-21T08:57:59Z",
+      "side": 1,
+      "message": "I now understand that we\u0027re trying to have a reproducible standard deviation, in a way \"limiting\" the randomicity, or at least making it reproducible.\nThis makes sense to me.",
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
