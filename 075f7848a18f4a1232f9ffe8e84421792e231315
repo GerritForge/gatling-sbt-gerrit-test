@@ -96,6 +96,23 @@
       "message": "I now understand that we\u0027re trying to have a reproducible standard deviation, in a way \"limiting\" the randomicity, or at least making it reproducible.\nThis makes sense to me.",
       "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a85e14ed_25a30320",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-03-21T09:57:10Z",
+      "side": 1,
+      "message": "Nit: unnecessary braces (also we could have this assignment on a single line).",
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
