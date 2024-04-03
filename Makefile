@@ -6,10 +6,10 @@ JOBS:=2
 build: prepare
 	sbt docker
 
-prepare: id_rsa
+prepare: id_ed25519
 
-id_rsa:
-	ssh-keygen -t rsa -b 2048 -f ./id_rsa -N '' -m PEM
+id_ed25519:
+	ssh-keygen -t ed25519 -b 2048 -f ./id_ed25519 -N '' -m PEM
 
 run:
 	for simulation in GerritGitSimulation GerritRestSimulation; do \

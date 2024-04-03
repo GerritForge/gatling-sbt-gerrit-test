@@ -56,7 +56,7 @@ docker / dockerfile := {
     stageFile(new File("src/test/scala/gerritforge"), "simulations/")
     copyRaw("simulations/", "/opt/gatling/user-files/simulations/")
     copyRaw("conf/", "/opt/gatling/conf/")
-    stageFiles(Seq("id_rsa", "id_rsa.pub", "config").map(new File(_)), ".ssh/")
+    stageFiles(Seq("id_ed25519", "id_ed25519.pub", "config").map(new File(_)), ".ssh/")
     addRaw(".ssh/", "/root/.ssh/")
     stageFile(new File(".gitconfig"), ".gitconfig")
     addRaw(".gitconfig", ".gitconfig")
