@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3dfb3e0_6c5b9a34",
+        "filename": "src/test/scala/gerritforge/GerritGHSSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-03T18:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4d414a7_c171d1bb",
+      "range": {
+        "startLine": 23,
+        "startChar": 12,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "da95e01d8a5b9f0d81c8852983ac1bc45efcd467",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "deed52a6_fb05e98b",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-12T15:41:40Z",
       "side": 1,
       "message": "```suggestion\nobject GerritRealLifeSimulation {\n```",
+      "range": {
+        "startLine": 59,
+        "startChar": 7,
+        "endLine": 59,
+        "endChar": 26
+      },
+      "revId": "da95e01d8a5b9f0d81c8852983ac1bc45efcd467",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74a6d96b_1041d416",
+        "filename": "src/test/scala/gerritforge/GerritGHSSimulation.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-03T18:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "deed52a6_fb05e98b",
       "range": {
         "startLine": 59,
         "startChar": 7,
