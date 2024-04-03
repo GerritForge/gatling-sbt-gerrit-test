@@ -6,15 +6,16 @@ import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSessio
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritRealLifeSimulation._
 import gerritforge.GerritTestConfig.testConfig
+import gerritforge.SimulationUtil.httpProtocol
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import gerritforge.scenarios.rest.changes.{AbandonThenRestoreChange, PostComment, SubmitChange}
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
+
 import scala.concurrent.duration.FiniteDuration
 import io.gatling.core.Predef.normalPausesWithStdDevDuration
 import io.gatling.core.controller.inject.closed.ClosedInjectionStep
-import io.gatling.http.Predef.http
-import io.gatling.http.protocol.HttpProtocol
+
 import scala.concurrent.duration._
 
 // This simulation is based on the traffic extracted from the cue-lang project logs.
@@ -116,24 +117,4 @@ object GerritRealLifeSimulation {
   private val receivePackDuration = testConfig.duration * scenariosPct(receivePackScenario) / 100
   private val submitDuration      = testConfig.duration * scenariosPct(submitScenario) / 100
   private val abandonDuration     = testConfig.duration * scenariosPct(abandonScenario) / 100
-
-  private val httpProtocol: HttpProtocol = testConfig.httpUrl
-    .map(
-      url =>
-        http
-          .baseUrl(url)
-          .inferHtmlResources(
-            AllowList(),
-            DenyList(""".*\.js""", """.*\.css""", """.*\.ico""", """.*\.woff2""", """.*\.png""")
-          )
-          .acceptHeader("*/*")
-          .acceptEncodingHeader("gzip, deflate")
-          .acceptLanguageHeader("en-GB,en;q=0.5")
-          .userAgentHeader("gatling-test")
-    )
-    .getOrElse(
-      throw new IllegalArgumentException(
-        "GERRIT_HTTP_URL must be defined to run REST-API simulation"
-      )
-    )
 }
