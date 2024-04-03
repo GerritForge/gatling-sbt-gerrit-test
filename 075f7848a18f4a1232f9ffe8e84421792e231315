@@ -122,6 +122,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c16c2fee_20a02bd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-03T19:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d65e3b86_30602052",
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a85e14ed_25a30320",
@@ -135,6 +153,24 @@
       "writtenOn": "2024-03-21T09:57:10Z",
       "side": 1,
       "message": "Nit: unnecessary braces (also we could have this assignment on a single line).",
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d0adac2_2148879c",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-03T19:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a85e14ed_25a30320",
       "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
