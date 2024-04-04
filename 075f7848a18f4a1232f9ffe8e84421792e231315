@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "500600fb_33bd7a7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-04T08:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8cbba4f7_4ce214c9",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5795d8c5_937589a9",
@@ -61,6 +85,30 @@
       "side": 1,
       "message": "From what I now understand this is actually the opposite of what we\u0027re trying to do.",
       "parentUuid": "5795d8c5_937589a9",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 46
+      },
+      "revId": "075f7848a18f4a1232f9ffe8e84421792e231315",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9cb0d1e_18790b25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-04T08:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb4bf024_ba9c92ff",
       "range": {
         "startLine": 16,
         "startChar": 0,
