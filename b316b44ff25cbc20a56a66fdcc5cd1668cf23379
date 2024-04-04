@@ -142,6 +142,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be153908_58d8e813",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-04T09:03:23Z",
+      "side": 1,
+      "message": "Speaking with @ponch78@gmail.com the aim was to give CreateChange enough time to create enough changes for both `abandon` and `postComment` scenarios to operate on.\nGiven we\u0027re operating on a small repo, we can roughly assume all operations take the same amount of time, so using the sum of the 2 durations is a good enough first approximation.",
+      "parentUuid": "6e82b063_da02c98b",
+      "range": {
+        "startLine": 51,
+        "startChar": 27,
+        "endLine": 51,
+        "endChar": 42
+      },
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ba4cf1c_0fde6173",
