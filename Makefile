@@ -13,7 +13,7 @@ id_rsa:
 	ssh-keygen -t rsa -b 2048 -f ./id_rsa -N '' -m PEM
 
 run:
-	for simulation in GerritGitSimulation GerritRestSimulation; do \
+	for simulation in GerritRealLifeSimulation; do \
 		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
 
