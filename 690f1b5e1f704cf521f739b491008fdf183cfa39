@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22f3ddba_215a1732",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-08T14:14:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63884442_14fba7c1",
+      "revId": "690f1b5e1f704cf521f739b491008fdf183cfa39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bc935ae_7a5fbe97",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-08T13:44:36Z",
       "side": 1,
       "message": "If we use integer percentages instead of doubles (as mentioned in the other comment), the `*` overload for `Long` returns a `FiniteDuration`, then we wouldn\u0027t need to do the `toSeconds seconds` step.\n\nEDIT: As discussed, it does mean that we\u0027d have to `/ 100` so up to you, i.e.\n```\nprivate val httpCloneDuration \u003d testConfig.duration * scenariosPct(httpCloneScenario) / 100\n```",
+      "revId": "690f1b5e1f704cf521f739b491008fdf183cfa39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92d59b2e_01854cfc",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-08T14:14:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bc935ae_7a5fbe97",
       "revId": "690f1b5e1f704cf521f739b491008fdf183cfa39",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
