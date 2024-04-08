@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7465224_b1c3e6aa",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T13:44:36Z",
+      "side": 1,
+      "message": "Looks good 😊",
+      "parentUuid": "21a7f076_3afb5081",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6ddd3b5_ab5eec07",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "Any suggestion? What we did here was extract the traffic profile from a real project and try mimicking it. However, I don\u0027t think we necessarily want to tighten the name to the cue-lang project.\n\n`RealLife` was the best shot we came up with.",
       "parentUuid": "b6ddd3b5_ab5eec07",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6f40c47_50142e34",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T13:44:36Z",
+      "side": 1,
+      "message": "Hmm... yeah it\u0027s a tricky one. Maybe `Staging`, `Stage`, `ProdLike`?\n\nActually it may be better to name the profile according to the distribution, in this case maybe something like `MostlyClone`, `CloneOriented`, `CloneBased`? I quite like this but don\u0027t love those names.\n\nHappy to brainstorm together (or keep as-is if you feel `RealLife` still works best).\n\nAgree re: cue-lang, I don\u0027t think we need to mention it explicitly other than in this commit message (as you\u0027ve done).\n\nEDIT: Discussed on a call, we\u0027re going to keep this as-is and as the scenario name doesn\u0027t leak to other projects we can change it to be more meaningful should we add another profile.",
+      "parentUuid": "6272b72e_e1be6807",
       "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -332,6 +368,24 @@
       "side": 1,
       "message": "https://review.gerrithub.io/c/GerritForge/gatling-sbt-gerrit-test/+/1191223/1",
       "parentUuid": "27c3870c_1bb26b0f",
+      "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db75db73_82685434",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T13:44:36Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8cef94c7_736af6ab",
       "revId": "b316b44ff25cbc20a56a66fdcc5cd1668cf23379",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
