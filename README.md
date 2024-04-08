@@ -78,8 +78,8 @@ Run a single simulation
 -----------------------
 
 ```bash
-$ sbt "gatling:testOnly gerritforge.GerritGitSimulation"
-$ sbt "gatling:testOnly gerritforge.GerritRestSimulation"
+$ sbt "Gatling / testOnly gerritforge.GerritGitSimulation"
+$ sbt "Gatling / testOnly gerritforge.GerritRestSimulation"
 ```
 
 List all tasks
