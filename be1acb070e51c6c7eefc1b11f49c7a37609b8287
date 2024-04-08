@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fff94e3_37f1b232",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T19:39:43Z",
+      "side": 1,
+      "message": "Good spotting for some tidy up 😊",
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5701347a_0f4d34e8",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T19:39:43Z",
+      "side": 1,
+      "message": "Nit: while we\u0027re changing `stdDevDuration`, why don\u0027t we use the implicit `seconds` here too?",
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4d51c54_d6b46439",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T19:39:43Z",
+      "side": 1,
+      "message": "Nit: why not make this `seconds`? That way the val name would already be a duration",
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb41e84f_f8ef72b9",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-08T19:39:43Z",
+      "side": 1,
+      "message": "Maybe a separate change, but while we\u0027re here... this typo could be fixed.",
+      "range": {
+        "startLine": 23,
+        "startChar": 97,
+        "endLine": 23,
+        "endChar": 106
+      },
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
