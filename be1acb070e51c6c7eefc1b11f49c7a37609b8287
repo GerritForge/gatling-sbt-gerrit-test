@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f90ad45_01d26858",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-08T20:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5701347a_0f4d34e8",
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4d51c54_d6b46439",
@@ -52,6 +70,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99bc81da_fb2ebbf3",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-08T20:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4d51c54_d6b46439",
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb41e84f_f8ef72b9",
@@ -65,6 +101,30 @@
       "writtenOn": "2024-04-08T19:39:43Z",
       "side": 1,
       "message": "Maybe a separate change, but while we\u0027re here... this typo could be fixed.",
+      "range": {
+        "startLine": 23,
+        "startChar": 97,
+        "endLine": 23,
+        "endChar": 106
+      },
+      "revId": "be1acb070e51c6c7eefc1b11f49c7a37609b8287",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af0d3f75_310da736",
+        "filename": "src/test/scala/gerritforge/scenarios/PauseScenarioSettings.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-04-08T20:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb41e84f_f8ef72b9",
       "range": {
         "startLine": 23,
         "startChar": 97,
