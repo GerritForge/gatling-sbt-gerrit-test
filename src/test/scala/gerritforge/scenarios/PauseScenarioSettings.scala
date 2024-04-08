@@ -1,7 +1,7 @@
 package gerritforge.scenarios
 
-import scala.concurrent.duration.{Duration, FiniteDuration}
 import scala.util.Random
+import scala.concurrent.duration._
 
 trait PauseScenarioSettings {
   def scenarioName: String = {
@@ -17,11 +17,12 @@ trait PauseScenarioSettings {
   }
 
   lazy val pauseDuration: FiniteDuration =
-    FiniteDuration(sys.env.getOrElse(s"${scenarioName}_PAUSE", "0").toLong, "seconds")
-  lazy val stdDevDuration =
-    FiniteDuration(sys.env.getOrElse(s"${scenarioName}_STDDEV_PAUSE", "0").toLong, "seconds")
+    sys.env.getOrElse(s"${scenarioName}_PAUSE", "0").toLong seconds
+  lazy val stdDevDuration: FiniteDuration =
+    sys.env.getOrElse(s"${scenarioName}_STDDEV_PAUSE", "0").toLong seconds
+
   println(
-    s"$scenarioName: sleeping for ${pauseDuration.toMillis} ms with a ${stdDevDuration.toMillis}ms stdandard deviation"
+    s"$scenarioName: sleeping for ${pauseDuration.toMillis} ms with a ${stdDevDuration.toMillis}ms standard deviation"
   )
-  lazy val pauseStdDev: Duration = random.nextGaussian() * stdDevDuration
+  lazy val pauseStdDev: FiniteDuration = random.nextGaussian().toLong * stdDevDuration
 }
