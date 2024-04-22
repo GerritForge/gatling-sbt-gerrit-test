@@ -1,11 +1,13 @@
 package gerritforge.scenarios.git
 
 import com.github.barbasa.gatling.git.GatlingGitConfiguration
-import gerritforge.GerritTestConfig.testConfig
-import java.util.UUID
+//import gerritforge.GerritTestConfig.testConfig
+
+//import java.util.UUID
 import gerritforge.scenarios.ScenarioBase
 
 import java.net.InetAddress
+import scala.util.Random
 
 trait GitScenarioBase extends ScenarioBase {
 
@@ -16,8 +18,7 @@ trait GitScenarioBase extends ScenarioBase {
   implicit val gitConfig = GatlingGitConfiguration()
 
   val refSpecFeeder =
-    (1 to testConfig.numUsers) map { idx =>
-      Map("refSpec" -> s"branch-$hostname-$idx-$scenarioName-${UUID.randomUUID()}")
-    //RandomUUID is needed to ensure unique-ness across different runs.
-    }
+    Iterator.continually(
+      Map("refSpec" -> s"branch-$hostname-$scenarioName-${Random.nextInt(999999)}")
+    )
 }
