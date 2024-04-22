@@ -9,7 +9,7 @@ object Gerrit extends GitServer {
   override def createChange(origin: String, ref: String, userId: String)(
       implicit
       conf: GatlingGitConfiguration
-  ): GitRequestBuilder = {
+  ) = {
     new GitRequestBuilder(
       GitRequestSession(
         "push",
