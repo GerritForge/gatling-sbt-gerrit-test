@@ -11,14 +11,13 @@ class GitSimulation extends Simulation {
   val maybeSshUrl = simulationConfig.sshUrl.filter(_.nonEmpty)
   val maybeHttpUrl = simulationConfig.httpUrl
     .filter(_.nonEmpty)
-    .map(url => s"$url/a")
 
   val scenarios =
     (maybeSshUrl ++ maybeHttpUrl)
       .flatMap(
         url =>
           List(
-            new CloneCommand(url).scn,
+            new CloneCommand(simulationConfig.gitBackend, url).scn,
             new CreateChangeCommand(
               simulationConfig.gitBackend,
               url,
