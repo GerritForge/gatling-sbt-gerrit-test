@@ -12,14 +12,10 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
     extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
-  override val refSpecFeeder: IndexedSeq[Map[String, String]] =
-    (1 to testConfig.numUsers) map { _ =>
-      Map("refSpec" -> "refs/for/master")
-    }
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
+      .feed(gitServer.refSpecFeeder)
       .feed(userIdFeeder.circular)
       .doIf { session =>
         !alreadyFedUsers.contains(session("userId").as[String])
@@ -33,10 +29,10 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
             // All the changes created will be chained.
             GitRequestSession(
               "pull",
-              s"$url/${testConfig.project}",
+              s"${gitServer.baseHttpUrl(url)}/${testConfig.project}${gitServer.httpUrlSuffix}",
               MasterRef,
               userId = "#{userId}",
-              requestName = s"Pull to setup Push over $protocol",
+              requestName = s"Pull to setup create change over $protocol",
               ignoreFailureRegexps = List(".*want.+not valid.*"),
               repoDirOverride = s"/tmp/$protocol-#{userId}"
             )
@@ -46,7 +42,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
       .exec(
         gitServer
           .createChange(
-            s"$url/${testConfig.project}",
+            url,
             "#{refSpec}",
             "#{userId}",
             protocol,
@@ -54,5 +50,4 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           )
       )
       .pause(pauseDuration, pauseStdDev)
-
 }
