@@ -3,10 +3,12 @@ package gerritforge.scenarios.git
 import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritTestConfig._
+import gerritforge.scenarios.git.backend.GitServer
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
+class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHashtags: Seq[String])
+    extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
@@ -35,17 +37,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
       .pause(pauseDuration, pauseStdDev)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
-          new GitRequestBuilder(
-            GitRequestSession(
-              "push",
-              s"$url/${testConfig.project}",
-              "HEAD:refs/for/#{refSpec}-#{userId}",
-              computeChangeId = true,
-              pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
-              userId = "#{userId}",
-              requestName = s"Push to new branch over $protocol"
-            )
-          )
+          gitServer.createChange(s"$url/${testConfig.project}", "#{refSpec}-#{userId}", "#{userId}", protocol)
         ).pause(pauseDuration, pauseStdDev)
       }
 }
