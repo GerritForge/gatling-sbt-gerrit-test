@@ -15,4 +15,8 @@ trait GitServer {
       implicit conf: GatlingGitConfiguration
   ): ChainBuilder
 
+  def baseHttpUrl(url: String): String
+  val httpUrlSuffix: String = ""
+
+  val refSpecFeeder: IndexedSeq[Map[String, String]]
 }
