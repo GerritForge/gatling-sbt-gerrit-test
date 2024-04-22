@@ -14,10 +14,10 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
+      .feed(refSpecFeeder)
       .feed(userIdFeeder.circular)
-      .doIf { session =>
-        !alreadyFedUsers.contains(session("userId").as[String])
+      .doIf { _ =>
+        true
       } {
         exec { session =>
           alreadyFedUsers = session("userId").as[String] :: alreadyFedUsers
@@ -26,7 +26,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           new GitRequestBuilder(
             GitRequestSession(
               "push",
-              s"$url/${testConfig.project}",
+              s"${gitServer.baseHttpUrl(url)}/${testConfig.project}${gitServer.httpUrlSuffix}",
               s"#{refSpec}-#{userId}",
               userId = "#{userId}",
               requestName = "Create branch"
@@ -37,7 +37,11 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
       .pause(pauseDuration, pauseStdDev)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
-          gitServer.createChange(s"$url/${testConfig.project}", "#{refSpec}-#{userId}", "#{userId}")
+          gitServer.createChange(
+            url,
+            "#{refSpec}-#{userId}",
+            "#{userId}"
+          )
         ).pause(pauseDuration, pauseStdDev)
       }
 }

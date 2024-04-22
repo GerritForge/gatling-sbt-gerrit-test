@@ -4,16 +4,16 @@ import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSessio
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import io.gatling.core.Predef._
 
-object Gerrit extends GitServer {
+case class Gerrit(repository: String) extends GitServer {
 
   override def createChange(origin: String, ref: String, userId: String)(
       implicit
       conf: GatlingGitConfiguration
-  ): GitRequestBuilder = {
+  ) = {
     new GitRequestBuilder(
       GitRequestSession(
         "push",
-        origin,
+        s"origin/$repository",
         s"HEAD:refs/for/$ref",
         computeChangeId = true,
         pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
@@ -22,4 +22,6 @@ object Gerrit extends GitServer {
       )
     )
   }
+
+  override def baseHttpUrl(url: String): String = url + "/a"
 }
