@@ -11,15 +11,18 @@ class GerritGitSimulation extends Simulation {
   val maybeSshUrl = testConfig.sshUrl.filter(_.nonEmpty)
   val maybeHttpUrl = testConfig.httpUrl
     .filter(_.nonEmpty)
-    .map(url => s"$url/a")
 
   val scenarios =
     (maybeSshUrl ++ maybeHttpUrl)
       .flatMap(
         url =>
           List(
-            new CloneCommand(url).scn,
-            new CreateChangeCommand(url, allRestScenarios.map(_.scenarioName)).scn
+            new CloneCommand(testConfig.gitBackend, url).scn,
+            new CreateChangeCommand(
+              testConfig.gitBackend,
+              url,
+              allRestScenarios.map(_.scenarioName)
+            ).scn
           )
       )
       .toList
