@@ -4,23 +4,21 @@ import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritTestConfig._
+import gerritforge.scenarios.git.backend.GitServer
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
-class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
+class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHashtags: Seq[String])
+    extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
-  override val refSpecFeeder: IndexedSeq[Map[String, String]] =
-    (1 to testConfig.numUsers) map { _ =>
-      Map("refSpec" -> "refs/for/master")
-    }
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
+      .feed(gitServer.refSpecFeeder)
       .feed(userIdFeeder.circular)
-      .doIf { session =>
-        !alreadyFedUsers.contains(session("userId").as[String])
+      .doIf { _ =>
+        true
       } {
         exec { session =>
           alreadyFedUsers = session("userId").as[String] :: alreadyFedUsers
@@ -30,6 +28,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
             // We only do a "git pull" once to setup the client environment.
             // All the changes created will be chained.
             GitRequestSession(
+//              s"${gitServer.baseHttpUrl(url)}/${testConfig.project}${gitServer.httpUrlSuffix}",
               "pull",
               s"$url/${testConfig.project}",
               MasterRef,
@@ -43,17 +42,11 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
       }
       .foreach(hashtagLoop, "hashtagId") {
         exec(
-          new GitRequestBuilder(
-            GitRequestSession(
-              "push",
-              s"$url/${testConfig.project}",
-              "HEAD:#{refSpec}",
-              computeChangeId = true,
-              pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
-              userId = "#{userId}",
-              requestName = s"Push new change over $protocol",
-              repoDirOverride = "/tmp/#{userId}"
-            )
+          gitServer.createChange(
+            url,
+            "#{refSpec}",
+            "#{userId}",
+            protocol
           )
         ).pause(pauseDuration, pauseStdDev)
       }

@@ -3,6 +3,8 @@ package gerritforge
 import pureconfig._
 import pureconfig.generic.auto._
 import EncodeUtils.encode
+import gerritforge.HttpConfig.httpConfig
+import gerritforge.scenarios.git.backend.{BitBucket, Gerrit}
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -20,7 +22,12 @@ case class GerritTestConfig(
     numUsers: Int,
     duration: FiniteDuration,
     restRunAnonymousUser: Boolean,
-    reviewerAccount: Int
+    reviewerAccount: Int,
+    backend: String
 ) {
   val encodedProject = encode(project)
+  val gitBackend = backend.toLowerCase() match {
+    case "bitbucket" => BitBucket(httpConfig.username, httpConfig.password, encodedProject)
+    case _           => Gerrit(encodedProject)
+  }
 }
