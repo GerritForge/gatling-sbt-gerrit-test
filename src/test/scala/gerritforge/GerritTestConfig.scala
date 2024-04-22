@@ -3,6 +3,7 @@ package gerritforge
 import pureconfig._
 import pureconfig.generic.auto._
 import EncodeUtils.encode
+import gerritforge.scenarios.git.backend.Gerrit
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -23,4 +24,5 @@ case class GerritTestConfig(
     reviewerAccount: Int
 ) {
   val encodedProject = encode(project)
+  val gitBackend     = Gerrit
 }
