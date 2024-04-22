@@ -19,7 +19,11 @@ class GerritGitSimulation extends Simulation {
         url =>
           List(
             new CloneCommand(url).scn,
-            new CreateChangeCommand(url, allRestScenarios.map(_.scenarioName)).scn
+            new CreateChangeCommand(
+              testConfig.gitBackend,
+              url,
+              allRestScenarios.map(_.scenarioName)
+            ).scn
           )
       )
       .toList
