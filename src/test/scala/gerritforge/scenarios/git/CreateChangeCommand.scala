@@ -12,14 +12,10 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
     extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
-  override val refSpecFeeder: IndexedSeq[Map[String, String]] =
-    (1 to simulationConfig.numUsers) map { _ =>
-      Map("refSpec" -> "refs/for/master")
-    }
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
+      .feed(gitServer.refSpecFeeder)
       .feed(userIdFeeder.circular)
       .doIf { session =>
         !alreadyFedUsers.contains(session("userId").as[String])
@@ -33,10 +29,10 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
             // All the changes created will be chained.
             GitRequestSession(
               "pull",
-              s"$url/${simulationConfig.project}",
+              gitServer.gitUrl(url, simulationConfig.project),
               MasterRef,
               userId = "#{userId}",
-              requestName = s"Pull to setup Push over $protocol",
+              requestName = s"Pull to setup create change over $protocol",
               ignoreFailureRegexps = List(".*want.+not valid.*"),
               repoDirOverride = s"/tmp/$protocol-#{userId}"
             )
@@ -47,7 +43,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
         gitServer match {
           case server: Gerrit =>
             server.createChangePerHashtag(
-              s"$url/${simulationConfig.project}",
+              url,
               "#{refSpec}",
               "#{userId}",
               protocol,
@@ -56,7 +52,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           case _ =>
             gitServer
               .createChange(
-                s"$url/${simulationConfig.project}",
+                url,
                 "#{refSpec}",
                 "#{userId}",
                 protocol

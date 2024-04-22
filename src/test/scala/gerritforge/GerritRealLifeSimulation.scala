@@ -11,10 +11,11 @@ import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import gerritforge.scenarios.rest.changes.{AbandonThenRestoreChange, PostComment, SubmitChange}
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
-
+import gerritforge.EncodeUtils.encode
 import scala.concurrent.duration.FiniteDuration
 import io.gatling.core.Predef.normalPausesWithStdDevDuration
 import io.gatling.core.controller.inject.closed.ClosedInjectionStep
+import gerritforge.scenarios.git.backend.Gerrit
 
 import scala.concurrent.duration._
 
@@ -96,9 +97,12 @@ object GerritRealLifeSimulation {
     )
 
   private val postCommentScenario: ScenarioBuilder = PostComment.scn
-  private val receivePackScenario                  = new CloneCommand(httpUrl).scn
-  private val submitScenario: ScenarioBuilder      = SubmitChange.scn
-  private val abandonScenario: ScenarioBuilder     = AbandonThenRestoreChange.scn
+  private val receivePackScenario = new CloneCommand(
+    Gerrit(encode(simulationConfig.project), simulationConfig.numUsers),
+    httpUrl
+  ).scn
+  private val submitScenario: ScenarioBuilder  = SubmitChange.scn
+  private val abandonScenario: ScenarioBuilder = AbandonThenRestoreChange.scn
   private val createChangeCommandScenario =
     new CreateChangeCommand(
       simulationConfig.gitBackend,
