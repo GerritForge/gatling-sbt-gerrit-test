@@ -7,7 +7,7 @@ trait GitServer {
 
   def createChange(
       origin: String,
-      ref: String,
+      refSpec: String,
       userId: String,
       protocol: String,
       pushOptions: Option[String] = Option.empty
@@ -15,4 +15,9 @@ trait GitServer {
       implicit conf: GatlingGitConfiguration
   ): ChainBuilder
 
+  def baseUrl(url: String): String
+  val httpUrlSuffix: String                = ""
+  def gitUrl(url: String, project: String) = s"${baseUrl(url)}/$project$httpUrlSuffix"
+
+  val refSpecFeeder: Iterator[Map[String, String]]
 }
