@@ -6,7 +6,7 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder.toAction
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ChainBuilder
 
-object Gerrit extends GitServer {
+case class Gerrit(repository: String, numUsers: Int) extends GitServer {
 
   override def createChange(
       origin: String,
@@ -27,11 +27,19 @@ object Gerrit extends GitServer {
             computeChangeId = true,
             pushOptions = s"hashtag=$hashtag,hashtag=#{userId}",
             userId = userId,
-            requestName = s"Push new change over $protocol",
-            repoDirOverride = s"/tmp/$protocol-#{userId}"
+            requestName = s"Push to create change over $protocol",
+            repoDirOverride = "/tmp/#{userId}"
           )
         )
       )
     }.toList)
   }
+
+  override def baseUrl(url: String): String = url + "/a"
+
+  override val refSpecFeeder: Iterator[Map[String, String]] =
+    Iterator
+      .continually(
+        Map("refSpec" -> "refs/for/master")
+      )
 }
