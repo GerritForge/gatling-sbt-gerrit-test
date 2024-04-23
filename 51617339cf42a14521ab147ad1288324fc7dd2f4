@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb6e1f87_d6b4e07e",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-23T09:57:22Z",
+      "side": 1,
+      "message": "Seems a bit strange to use Gerrit\u0027s http config to create BitBucket\u0027s?",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
