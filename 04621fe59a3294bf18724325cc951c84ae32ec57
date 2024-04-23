@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86e40548_473f0671",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-23T09:52:08Z",
+      "side": 1,
+      "message": "I don\u0027t see us using this in this change. If we need it for a subsequent change we should add it in there.",
+      "revId": "04621fe59a3294bf18724325cc951c84ae32ec57",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afe9742a_812de081",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/GitServer.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-04-23T09:52:08Z",
+      "side": 1,
+      "message": "Needs a run with scalafmt.",
+      "revId": "04621fe59a3294bf18724325cc951c84ae32ec57",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
