@@ -23,11 +23,11 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
         }.exec(
           new GitRequestBuilder(
             GitRequestSession(
-              "push",
+              "pull",
               s"$url/${testConfig.project}",
-              s"#{refSpec}-#{userId}",
-              userId = "#{userId}",
-              requestName = "Create branch"
+              "refs/heads/master",
+              ignoreFailureRegexps = List(".*want.+not valid.*"),
+              repoDirOverride = "/tmp/user-#{userId}"
             )
           )
         )
@@ -39,11 +39,12 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
             GitRequestSession(
               "push",
               s"$url/${testConfig.project}",
-              "HEAD:refs/for/#{refSpec}-#{userId}",
+              "HEAD:refs/for/master",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
-              requestName = "Push to new branch"
+              requestName = "Push to new branch",
+              repoDirOverride = "/tmp/user-#{userId}"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
