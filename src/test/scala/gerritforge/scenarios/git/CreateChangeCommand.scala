@@ -12,7 +12,6 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
       .feed(userIdFeeder.circular)
       .doIf { session =>
         !alreadyFedUsers.contains(session("userId").as[String])
@@ -22,28 +21,32 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
           session
         }.exec(
           new GitRequestBuilder(
+            // We only di a "git pull" once to setup the client environment.
+            // All the changes created will be chained.
             GitRequestSession(
-              "push",
+              "pull",
               s"$url/${testConfig.project}",
-              s"#{refSpec}-#{userId}",
+              GitRequestSession.MasterRef,
               userId = "#{userId}",
-              requestName = "Create branch"
+              requestName = "Pull to setup Push",
+              ignoreFailureRegexps = List(".*want.+not valid.*"),
+              repoDirOverride = "/tmp/#{userId}"
             )
           )
         )
       }
-      .pause(pauseDuration, pauseStdDev)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
           new GitRequestBuilder(
             GitRequestSession(
               "push",
               s"$url/${testConfig.project}",
-              "HEAD:refs/for/#{refSpec}-#{userId}",
+              "HEAD:refs/for/master",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
-              requestName = "Push to new branch"
+              requestName = "Push new change",
+              repoDirOverride = "/tmp/#{userId}"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
