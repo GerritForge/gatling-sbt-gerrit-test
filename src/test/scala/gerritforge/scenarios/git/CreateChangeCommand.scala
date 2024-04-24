@@ -12,7 +12,6 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
-      .feed(refSpecFeeder.circular)
       .feed(userIdFeeder.circular)
       .doIf { session =>
         !alreadyFedUsers.contains(session("userId").as[String])
@@ -22,28 +21,34 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
           session
         }.exec(
           new GitRequestBuilder(
+            // A "human" client would probably do a "git reset --hard origin/master" to align the
+            // client with the remote repo and avoid having uncommitted files locally.
+            // However, with the simulations we currently have, the only scenario merging
+            // changes to master, is the SubmitChange scenario, which merges changes without
+            // any file.
+            // This allows avoiding conflicts when doing a "git pull".
             GitRequestSession(
-              "push",
+              "pull",
               s"$url/${testConfig.project}",
-              s"#{refSpec}-#{userId}",
-              userId = "#{userId}",
-              requestName = "Create branch"
+              "refs/heads/master",
+              ignoreFailureRegexps = List(".*want.+not valid.*"),
+              repoDirOverride = "/tmp/user-#{userId}"
             )
           )
         )
       }
-      .pause(pauseDuration, pauseStdDev)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
           new GitRequestBuilder(
             GitRequestSession(
               "push",
               s"$url/${testConfig.project}",
-              "HEAD:refs/for/#{refSpec}-#{userId}",
+              "HEAD:refs/for/master",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
-              requestName = "Push to new branch"
+              requestName = "Push new change",
+              repoDirOverride = "/tmp/user-#{userId}"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
