@@ -17,7 +17,6 @@ trait GitScenarioBase extends ScenarioBase {
 
   val refSpecFeeder =
     (1 to testConfig.numUsers) map { idx =>
-      Map("refSpec" -> s"branch-$hostname-$idx-$scenarioName-${UUID.randomUUID()}")
-    //RandomUUID is needed to ensure unique-ness across different runs.
+      Map("refSpec" -> s"branch-$hostname-$idx")
     }
 }
