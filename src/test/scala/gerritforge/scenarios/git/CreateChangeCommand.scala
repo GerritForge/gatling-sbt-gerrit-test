@@ -1,6 +1,7 @@
 package gerritforge.scenarios.git
 
 import com.github.barbasa.gatling.git.GitRequestSession
+import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritTestConfig._
 import io.gatling.core.Predef._
@@ -9,6 +10,10 @@ import io.gatling.core.structure.ScenarioBuilder
 class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
+  override val refSpecFeeder: IndexedSeq[Map[String, String]] =
+    (1 to testConfig.numUsers) map { _ =>
+      Map("refSpec" -> "refs/for/master")
+    }
 
   override def scn: ScenarioBuilder =
     scenario(s"Create Change Command over $protocol")
@@ -22,28 +27,32 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
           session
         }.exec(
           new GitRequestBuilder(
+            // We only did a "git pull" once to setup the client environment.
+            // All the changes created will be chained.
             GitRequestSession(
-              "push",
+              "pull",
               s"$url/${testConfig.project}",
-              s"#{refSpec}-#{userId}",
+              MasterRef,
               userId = "#{userId}",
-              requestName = s"Create branch over $protocol"
+              requestName = s"Pull to setup Push over $protocol"
+              ignoreFailureRegexps = List(".*want.+not valid.*"),
+              repoDirOverride = "/tmp/#{userId}"
             )
           )
         )
       }
-      .pause(pauseDuration, pauseStdDev)
       .foreach(hashtagLoop, "hashtagId") {
         exec(
           new GitRequestBuilder(
             GitRequestSession(
               "push",
               s"$url/${testConfig.project}",
-              "HEAD:refs/for/#{refSpec}-#{userId}",
+              "HEAD:#{refSpec}",
               computeChangeId = true,
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
-              requestName = s"Push to new branch over $protocol"
+              requestName = s"Push new change over $protocol",
+              repoDirOverride = "/tmp/#{userId}"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
