@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ef828bb_2ff8e3a9",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-29T22:48:33Z",
+      "side": 0,
+      "message": "This is really usefull to break down the gatling summary a bit more and better identify which requests are failing.\n\nIf we do need to pull, we should give the session a requestName.",
+      "range": {
+        "startLine": 30,
+        "startChar": 14,
+        "endLine": 30,
+        "endChar": 43
+      },
+      "revId": "0fbb2928eadf3f29995367c51484e9f709dca6df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

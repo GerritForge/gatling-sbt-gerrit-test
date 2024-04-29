@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8b2bf79_9b219830",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-29T22:48:33Z",
+      "side": 1,
+      "message": "Do we even need to pull? What are we pulling if nothing is getting merged?",
+      "range": {
+        "startLine": 31,
+        "startChar": 14,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "a6f71a46bdc8e9deb316f7e5ebe5e0292eeeb202",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1dd8b25a_116e419f",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-04-29T22:48:33Z",
+      "side": 1,
+      "message": "Have we gone too far now? Realistic repos will still have a number of branches. Maybe we should make the number of branches we want a parameter and update our refSpecFeeder to create that many... (With the caveat that if we then reduce the number of branches configured, the branches would not be deleted; we\u0027d just create changes against fewer branches).",
+      "range": {
+        "startLine": 46,
+        "startChar": 14,
+        "endLine": 46,
+        "endChar": 37
+      },
+      "revId": "a6f71a46bdc8e9deb316f7e5ebe5e0292eeeb202",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
