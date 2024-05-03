@@ -151,6 +151,24 @@
       "parentUuid": "47899504_e1ec938e",
       "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a35bcbb_76a7bb5b",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T13:36:22Z",
+      "side": 1,
+      "message": "You\u0027re right, my bad.",
+      "parentUuid": "426253b1_66828e79",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
