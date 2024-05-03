@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c396373_c953de95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T08:58:27Z",
+      "side": 1,
+      "message": "Can we also briefly explain _why_ we are trying to avoid creating too many branches?",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22b49502_feec554f",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T08:58:27Z",
+      "side": 1,
+      "message": "Nit: this reads better without this comma.",
+      "range": {
+        "startLine": 27,
+        "startChar": 32,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f2c7a65_4c51ef61",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T08:58:27Z",
+      "side": 1,
+      "message": "Nit: we can use `GitRequestSession.MasterRef` for a constant here.",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47899504_e1ec938e",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T08:58:27Z",
+      "side": 1,
+      "message": "Nit: we can use `GitRequestSession.HeadToMasterRefSpec` for a constant here.",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a32ebc8_391beb82",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-03T08:58:27Z",
+      "side": 1,
+      "message": "I may be missing some context, but to follow on from Dani\u0027s point, does it matter if this change will never get merged? The change creation will still succeed, even if it needs to be rebased onto master first, no? We may a merge conflict warning, but can we safely ignore it?\nAlso if we run tests in parallel, it\u0027s quite possible this change will eventually have a merge conflict because `SubmitChange` has run after this change was created (if we\u0027re interested in using these changes in a later scenario).",
+      "parentUuid": "0550ddc5_2340b575",
+      "range": {
+        "startLine": 31,
+        "startChar": 14,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "a6f71a46bdc8e9deb316f7e5ebe5e0292eeeb202",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1dd8b25a_116e419f",
         "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
         "patchSetId": 8
