@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92df971_fa72274b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-03T10:40:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c396373_c953de95",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22b49502_feec554f",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-05-03T08:58:27Z",
       "side": 1,
       "message": "Nit: this reads better without this comma.",
+      "range": {
+        "startLine": 27,
+        "startChar": 32,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62585522_ae3f984a",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-03T10:40:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22b49502_feec554f",
       "range": {
         "startLine": 27,
         "startChar": 32,
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcfd343a_575ccba7",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-03T10:40:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f2c7a65_4c51ef61",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47899504_e1ec938e",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-05-03T08:58:27Z",
       "side": 1,
       "message": "Nit: we can use `GitRequestSession.HeadToMasterRefSpec` for a constant here.",
+      "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "426253b1_66828e79",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-03T10:40:09Z",
+      "side": 1,
+      "message": "This one resolved to `HEAD:refs/heads/master`, not `refs/for/master`",
+      "parentUuid": "47899504_e1ec938e",
       "revId": "eaba4155d1e52203ffbf90f1d79b70104196f62f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
