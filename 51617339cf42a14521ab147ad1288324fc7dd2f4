@@ -174,6 +174,24 @@
       "parentUuid": "21be4d18_0b245d4d",
       "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a690cf86_cef25270",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-07T11:03:18Z",
+      "side": 1,
+      "message": "I mean it\u0027s already imported by the wildcard `_`, so doesn\u0027t need to be specified explicitly.",
+      "parentUuid": "add4726f_6ad434bd",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
