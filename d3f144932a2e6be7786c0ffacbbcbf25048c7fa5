@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2d666ac_67e91ee8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-07T10:07:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c16f396_ca7ef9bc",
+      "range": {
+        "startLine": 10,
+        "startChar": 21,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "d3f144932a2e6be7786c0ffacbbcbf25048c7fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19da0883_f7f3822a",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3497fa2a_db37c552",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-07T10:07:36Z",
+      "side": 1,
+      "message": "Yep, makes sense. I thought about it, we can address it in a follow up.",
+      "parentUuid": "19da0883_f7f3822a",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "d3f144932a2e6be7786c0ffacbbcbf25048c7fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5367475b_79028f67",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-05-03T13:36:22Z",
       "side": 1,
       "message": "`did`",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 25
+      },
+      "revId": "d3f144932a2e6be7786c0ffacbbcbf25048c7fa5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29c0bb94_cbefeed7",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-07T10:07:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5367475b_79028f67",
       "range": {
         "startLine": 24,
         "startChar": 23,
