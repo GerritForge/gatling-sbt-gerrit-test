@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8b23565_1e1becd6",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T09:05:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86e40548_473f0671",
+      "revId": "04621fe59a3294bf18724325cc951c84ae32ec57",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afe9742a_812de081",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-23T09:52:08Z",
       "side": 1,
       "message": "Needs a run with scalafmt.",
+      "revId": "04621fe59a3294bf18724325cc951c84ae32ec57",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b9bc073_f8bd2bbf",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/GitServer.scala",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T09:05:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afe9742a_812de081",
       "revId": "04621fe59a3294bf18724325cc951c84ae32ec57",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
