@@ -192,6 +192,24 @@
       "parentUuid": "add4726f_6ad434bd",
       "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9110f35c_fdbfb391",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T13:58:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a690cf86_cef25270",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
