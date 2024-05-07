@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6280bfc9_1fb002c6",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-07T14:30:08Z",
+      "side": 1,
+      "message": "As this doesn\u0027t depend on the class parameters, shouldn\u0027t it live in the companion?",
+      "revId": "182bce2f87497f863b95d0bad9c0f7e295cada89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
