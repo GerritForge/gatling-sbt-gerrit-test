@@ -16,6 +16,24 @@
       "message": "As this doesn\u0027t depend on the class parameters, shouldn\u0027t it live in the companion?",
       "revId": "182bce2f87497f863b95d0bad9c0f7e295cada89",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "314dd6c2_8181f1dc",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T17:19:35Z",
+      "side": 1,
+      "message": "It doesn\u0027t in this first iteration, but it will in future ones, not sure there\u0027s much point in moving it as I plan for this chain to be submitted as one.",
+      "parentUuid": "6280bfc9_1fb002c6",
+      "revId": "182bce2f87497f863b95d0bad9c0f7e295cada89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
