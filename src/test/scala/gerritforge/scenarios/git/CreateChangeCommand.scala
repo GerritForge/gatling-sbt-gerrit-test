@@ -43,9 +43,16 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           )
         )
       }
-      .foreach(hashtagLoop, "hashtagId") {
-        exec(
-          gitServer.createChange(s"$url/${testConfig.project}", "#{refSpec}", "#{userId}", protocol)
-        ).pause(pauseDuration, pauseStdDev)
-      }
+      .exec(
+        gitServer
+          .createChange(
+            s"$url/${testConfig.project}",
+            "#{refSpec}",
+            "#{userId}",
+            protocol,
+            scenarioHashtags
+          )
+      )
+      .pause(pauseDuration, pauseStdDev)
+
 }
