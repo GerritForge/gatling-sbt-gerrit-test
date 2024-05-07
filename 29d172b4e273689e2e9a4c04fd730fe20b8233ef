@@ -33,6 +33,24 @@
       "message": "Nit: we can remove this import too.",
       "revId": "29d172b4e273689e2e9a4c04fd730fe20b8233ef",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39b60584_8e33bd1e",
+        "filename": "src/test/scala/gerritforge/scenarios/git/GitScenarioBase.scala",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-07T12:00:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d72530b_d8a7a6ed",
+      "revId": "29d172b4e273689e2e9a4c04fd730fe20b8233ef",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
