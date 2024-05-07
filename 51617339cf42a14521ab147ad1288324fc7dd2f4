@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37db6ac6_39b2ae35",
+        "filename": "src/test/scala/gerritforge/GerritHttpConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T10:24:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17701463_c1281960",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "833dd673_64dc5120",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-25T08:32:26Z",
       "side": 1,
       "message": "`final`",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2aacdc3_d0f5d43e",
+        "filename": "src/test/scala/gerritforge/GerritHttpConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T10:24:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "833dd673_64dc5120",
       "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f3b1510_41d0563a",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T10:24:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d101a783_46e0aa18",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb6e1f87_d6b4e07e",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a98f7bde_58176b68",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T10:24:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb6e1f87_d6b4e07e",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21be4d18_0b245d4d",
@@ -82,6 +154,24 @@
       "writtenOn": "2024-04-25T08:32:26Z",
       "side": 1,
       "message": "Nit: unnecessary import `StringBody`.",
+      "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "add4726f_6ad434bd",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-07T10:24:40Z",
+      "side": 1,
+      "message": "I believe it\u0027s used on L26?",
+      "parentUuid": "21be4d18_0b245d4d",
       "revId": "51617339cf42a14521ab147ad1288324fc7dd2f4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
