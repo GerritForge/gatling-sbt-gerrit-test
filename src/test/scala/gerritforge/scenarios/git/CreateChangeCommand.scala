@@ -4,7 +4,7 @@ import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritTestConfig._
-import gerritforge.scenarios.git.backend.GitServer
+import gerritforge.scenarios.git.backend.{Gerrit, GitServer}
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
@@ -43,9 +43,25 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           )
         )
       }
-      .foreach(hashtagLoop, "hashtagId") {
-        exec(
-          gitServer.createChange(s"$url/${testConfig.project}", "#{refSpec}", "#{userId}", protocol)
-        ).pause(pauseDuration, pauseStdDev)
+      .exec {
+        gitServer match {
+          case server: Gerrit =>
+            server.createChangePerHashtags(
+              s"$url/${testConfig.project}",
+              "#{refSpec}",
+              "#{userId}",
+              protocol,
+              scenarioHashtags
+            )
+          case _ =>
+            gitServer
+              .createChange(
+                s"$url/${testConfig.project}",
+                "#{refSpec}",
+                "#{userId}",
+                protocol
+              )
+        }
       }
+      .pause(pauseDuration, pauseStdDev)
 }
