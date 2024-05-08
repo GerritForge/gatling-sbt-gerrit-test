@@ -36,7 +36,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
               userId = "#{userId}",
               requestName = s"Pull to setup Push over $protocol",
               ignoreFailureRegexps = List(".*want.+not valid.*"),
-              repoDirOverride = "/tmp/#{userId}"
+              repoDirOverride = s"/tmp/$protocol-#{userId}"
             )
           )
         )
@@ -52,7 +52,7 @@ class CreateChangeCommand(val url: String, scenarioHashtags: Seq[String]) extend
               pushOptions = s"hashtag=#{hashtagId},hashtag=#{userId}",
               userId = "#{userId}",
               requestName = s"Push new change over $protocol",
-              repoDirOverride = "/tmp/#{userId}"
+              repoDirOverride = s"/tmp/$protocol-#{userId}"
             )
           )
         ).pause(pauseDuration, pauseStdDev)
