@@ -2,14 +2,14 @@ package gerritforge
 
 import com.github.barbasa.gatling.git.protocol.GitProtocol
 import gerritforge.GerritRestSimulation.allRestScenarios
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import io.gatling.core.Predef._
 
-class GerritGitSimulation extends Simulation {
+class GitSimulation extends Simulation {
 
-  val maybeSshUrl = testConfig.sshUrl.filter(_.nonEmpty)
-  val maybeHttpUrl = testConfig.httpUrl
+  val maybeSshUrl = simulationConfig.sshUrl.filter(_.nonEmpty)
+  val maybeHttpUrl = simulationConfig.httpUrl
     .filter(_.nonEmpty)
     .map(url => s"$url/a")
 
@@ -20,7 +20,7 @@ class GerritGitSimulation extends Simulation {
           List(
             new CloneCommand(url).scn,
             new CreateChangeCommand(
-              testConfig.gitBackend,
+              simulationConfig.gitBackend,
               url,
               allRestScenarios.map(_.scenarioName)
             ).scn
@@ -31,8 +31,8 @@ class GerritGitSimulation extends Simulation {
   setUp(
     scenarios.map(
       _.inject(
-        rampConcurrentUsers(1) to testConfig.numUsers during (testConfig.duration)
+        rampConcurrentUsers(1) to simulationConfig.numUsers during (simulationConfig.duration)
       )
     )
-  ).protocols(GitProtocol).maxDuration(testConfig.duration)
+  ).protocols(GitProtocol).maxDuration(simulationConfig.duration)
 }

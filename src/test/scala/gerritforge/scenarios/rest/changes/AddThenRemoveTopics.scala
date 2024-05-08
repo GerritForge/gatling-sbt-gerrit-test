@@ -1,6 +1,7 @@
 package gerritforge.scenarios.rest.changes
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.GerritConfig.gerritConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
@@ -15,8 +16,8 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Topic")
-          .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/topic")
-          .headers(addApiHeaders(testConfig.xsrfToken))
+          .put(s"/changes/${simulationConfig.encodedProject}~#{changeNumber}/topic")
+          .headers(addApiHeaders(gerritConfig.xsrfToken))
           .body(
             StringBody("""{"topic":"testTopic"}""")
           )
@@ -24,8 +25,8 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Remove Topic")
-          .delete(s"/changes/${testConfig.encodedProject}~#{changeNumber}/topic")
-          .headers(addApiHeaders(testConfig.xsrfToken, contentType = None))
+          .delete(s"/changes/${simulationConfig.encodedProject}~#{changeNumber}/topic")
+          .headers(addApiHeaders(gerritConfig.xsrfToken, contentType = None))
       )
       .pause(pauseDuration, pauseStdDev)
 }
