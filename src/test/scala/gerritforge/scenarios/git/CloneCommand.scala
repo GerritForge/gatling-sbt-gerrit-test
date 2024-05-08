@@ -2,7 +2,8 @@ package gerritforge.scenarios.git
 
 import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
-import gerritforge.GerritTestConfig._
+
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
@@ -23,7 +24,7 @@ class CloneCommand(val url: String) extends GitScenarioBase {
             //We push a new refspec as the subsequent clone needs the ref to exist.
             GitRequestSession(
               "push",
-              s"$url/${testConfig.project}",
+              s"$url/${simulationConfig.project}",
               s"#{refSpec}",
               requestName = s"Push to setup Clone over $protocol"
             )
@@ -35,7 +36,7 @@ class CloneCommand(val url: String) extends GitScenarioBase {
         new GitRequestBuilder(
           GitRequestSession(
             "clone",
-            s"$url/${testConfig.project}",
+            s"$url/${simulationConfig.project}",
             "#{refSpec}",
             ignoreFailureRegexps = List(".*want.+not valid.*"),
             requestName = s"Clone over $protocol"

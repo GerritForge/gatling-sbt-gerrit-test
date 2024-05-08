@@ -1,7 +1,8 @@
 package gerritforge.scenarios.rest.changes
 
 import gerritforge.EncodeUtils.encode
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.GerritTestConfig.gerritTestConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.rest.RestScenarioBase
 import gerritforge.scenarios.rest.changes.ChangeScenarioBase.ChangeDetail
 import io.circe.generic.auto._
@@ -17,15 +18,15 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def createChange =
     http("Create Change")
       .post("/changes/")
-      .headers(addApiHeaders(testConfig.xsrfToken))
-      .body(StringBody(s"""{"project":"${testConfig.project}",
+      .headers(addApiHeaders(gerritTestConfig.xsrfToken))
+      .body(StringBody(s"""{"project":"${simulationConfig.project}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
 
   def listChanges(filters: Option[String] = None) = {
     http("changes list and get first change")
       .get(
-        s"/changes/?n=500&q=status%3Aopen+project:${testConfig.encodedProject}${filters.getOrElse("")}&o=CURRENT_REVISION"
+        s"/changes/?n=500&q=status%3Aopen+project:${simulationConfig.encodedProject}${filters.getOrElse("")}&o=CURRENT_REVISION"
       )
       .headers(restApiHeader)
       .check(
@@ -62,8 +63,8 @@ trait ChangeScenarioBase extends RestScenarioBase {
 
   def authenticatedChangesPostRequest(title: String, url: String, body: String = "{}") =
     http(title)
-      .post(s"/changes/${testConfig.encodedProject}~#{changeNumber}$url")
-      .headers(addApiHeaders(testConfig.xsrfToken))
+      .post(s"/changes/${simulationConfig.encodedProject}~#{changeNumber}$url")
+      .headers(addApiHeaders(gerritTestConfig.xsrfToken))
       .body(StringBody(body))
 }
 
