@@ -5,8 +5,8 @@ import com.github.barbasa.gatling.git.protocol.GitProtocol
 import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritRealLifeSimulation._
-import gerritforge.GerritTestConfig.testConfig
 import gerritforge.SimulationUtil.httpProtocol
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import gerritforge.scenarios.rest.changes.{AbandonThenRestoreChange, PostComment, SubmitChange}
 import io.gatling.core.Predef._
@@ -25,10 +25,10 @@ class GerritRealLifeSimulation extends Simulation {
 
   def getScenarioProfile(duration: FiniteDuration): Seq[ClosedInjectionStep] = {
     Seq(
-      constantConcurrentUsers(testConfig.numUsers / 2) during duration / 3,
-      rampConcurrentUsers(testConfig.numUsers)
-        .to(testConfig.numUsers) during duration / 3,
-      constantConcurrentUsers(testConfig.numUsers / 2) during duration / 3
+      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3,
+      rampConcurrentUsers(simulationConfig.numUsers)
+        .to(simulationConfig.numUsers) during duration / 3,
+      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3
     )
   }
 
@@ -63,15 +63,15 @@ class GerritRealLifeSimulation extends Simulation {
           )
           .protocols(httpProtocol)
       )
-  ).maxDuration(testConfig.duration)
+  ).maxDuration(simulationConfig.duration)
 }
 
 object GerritRealLifeSimulation {
   implicit val gitConfig: GatlingGitConfiguration = GatlingGitConfiguration()
-  private val httpUrl: String                     = testConfig.httpUrl.get
+  private val httpUrl: String                     = simulationConfig.httpUrl.get
 
   private val refSpecFeederMaster =
-    (1 to testConfig.numUsers) map { _ =>
+    (1 to simulationConfig.numUsers) map { _ =>
       Map("refSpec" -> MasterRef)
     }
 
@@ -88,7 +88,7 @@ object GerritRealLifeSimulation {
       new GitRequestBuilder(
         GitRequestSession(
           "clone",
-          s"$httpUrl/${testConfig.project}",
+          s"$httpUrl/${simulationConfig.project}",
           s"#{refSpec}",
           ignoreFailureRegexps = List(".*want.+not valid.*")
         )
@@ -101,7 +101,7 @@ object GerritRealLifeSimulation {
   private val abandonScenario: ScenarioBuilder     = AbandonThenRestoreChange.scn
   private val createChangeCommandScenario =
     new CreateChangeCommand(
-      testConfig.gitBackend,
+      simulationConfig.gitBackend,
       httpUrl,
       Seq("AbandonThenRestoreChange", "PostComment")
     ).scn
@@ -116,9 +116,9 @@ object GerritRealLifeSimulation {
     abandonScenario     -> 1
   )
 
-  private val httpCloneDuration   = testConfig.duration * scenariosPct(httpCloneScenario) / 100
-  private val postCommentDuration = testConfig.duration * scenariosPct(postCommentScenario) / 100
-  private val receivePackDuration = testConfig.duration * scenariosPct(receivePackScenario) / 100
-  private val submitDuration      = testConfig.duration * scenariosPct(submitScenario) / 100
-  private val abandonDuration     = testConfig.duration * scenariosPct(abandonScenario) / 100
+  private val httpCloneDuration   = simulationConfig.duration * scenariosPct(httpCloneScenario) / 100
+  private val postCommentDuration = simulationConfig.duration * scenariosPct(postCommentScenario) / 100
+  private val receivePackDuration = simulationConfig.duration * scenariosPct(receivePackScenario) / 100
+  private val submitDuration      = simulationConfig.duration * scenariosPct(submitScenario) / 100
+  private val abandonDuration     = simulationConfig.duration * scenariosPct(abandonScenario) / 100
 }

@@ -1,6 +1,6 @@
 package gerritforge
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef.{AllowList, DenyList}
 import io.gatling.http.Predef.http
 import io.gatling.http.protocol.HttpProtocol
@@ -8,7 +8,7 @@ import io.gatling.core.Predef._
 
 object SimulationUtil {
 
-  val httpProtocol: HttpProtocol = testConfig.httpUrl
+  val httpProtocol: HttpProtocol = simulationConfig.httpUrl
     .map(
       url =>
         http

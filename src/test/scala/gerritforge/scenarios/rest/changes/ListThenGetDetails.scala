@@ -1,6 +1,6 @@
 package gerritforge.scenarios.rest.changes
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
@@ -42,7 +42,7 @@ object ListThenGetDetails extends ChangeScenarioBase {
               .get("/changes/#{id}/edit/?download-commands=true")
               .check(status.in(Seq(HTTP_OK, HTTP_NO_CONTENT))),
             http("get project config")
-              .get(s"/projects/${testConfig.encodedProject}/config"),
+              .get(s"/projects/${simulationConfig.encodedProject}/config"),
             http("get available actions")
               .get("/changes/#{id}/revisions/#{revision}/actions"),
             http("get list of reviewed files")
@@ -56,7 +56,7 @@ object ListThenGetDetails extends ChangeScenarioBase {
               .get("/changes/#{id}/revisions/#{revision}/related"),
             http("get cherry picks")
               .get(
-                s"/changes/?O=a&q=project%3A${testConfig.encodedProject}%20change%3A#{changeId}%20-change%3A#{changeNumber}%20-is%3Aabandoned"
+                s"/changes/?O=a&q=project%3A${simulationConfig.encodedProject}%20change%3A#{changeId}%20-change%3A#{changeNumber}%20-is%3Aabandoned"
               ),
             http("get conflicting changes")
               .get("/changes/?O=a&q=status%3Aopen%20conflicts%3A#{changeNumber}"),

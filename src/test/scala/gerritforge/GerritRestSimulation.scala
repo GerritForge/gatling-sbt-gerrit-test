@@ -1,8 +1,9 @@
 package gerritforge
 
 import gerritforge.GerritRestSimulation.{allRestScenarios, authenticatedScenarios}
-import gerritforge.GerritTestConfig._
+import gerritforge.config.GerritConfig._
 import gerritforge.SimulationUtil.httpProtocol
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.ScenarioBase
 import gerritforge.scenarios.rest.changes._
 import gerritforge.scenarios.rest.tags.{CreateAndDeleteMultipleTags, CreateAndDeleteTag}
@@ -13,7 +14,7 @@ import scala.concurrent.duration.FiniteDuration
 class GerritRestSimulation extends Simulation {
 
   val scenarios =
-    if (testConfig.restRunAnonymousUser)
+    if (gerritConfig.restRunAnonymousUser)
       allRestScenarios
     else authenticatedScenarios
 
@@ -21,10 +22,12 @@ class GerritRestSimulation extends Simulation {
   setUp(
     scenarios.toList.map(
       _.scn
-        .inject(rampConcurrentUsers(1) to testConfig.numUsers during testConfig.duration)
+        .inject(
+          rampConcurrentUsers(1) to simulationConfig.numUsers during simulationConfig.duration
+        )
         .pauses(normalPausesWithStdDevDuration(FiniteDuration(pauseStdDevSecs, "seconds")))
     )
-  ).protocols(httpProtocol).maxDuration(testConfig.duration)
+  ).protocols(httpProtocol).maxDuration(simulationConfig.duration)
 }
 
 object GerritRestSimulation {
