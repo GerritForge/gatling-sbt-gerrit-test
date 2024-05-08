@@ -3,7 +3,8 @@ package gerritforge.scenarios.git
 import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
-import gerritforge.GerritTestConfig._
+
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
@@ -17,7 +18,7 @@ class CloneCommand(val url: String) extends GitScenarioBase {
         new GitRequestBuilder(
           GitRequestSession(
             "clone",
-            s"$url/${testConfig.project}",
+            s"$url/${simulationConfig.project}",
             MasterRef,
             ignoreFailureRegexps = List(".*want.+not valid.*"),
             requestName = s"Clone over $protocol"

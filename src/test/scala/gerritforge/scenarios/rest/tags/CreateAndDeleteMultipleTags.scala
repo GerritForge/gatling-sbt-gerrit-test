@@ -1,6 +1,7 @@
 package gerritforge.scenarios.rest.tags
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.GerritTestConfig.gerritTestConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.rest.RestScenarioBase
 import io.circe.generic.auto._
 import io.circe.parser.decode
@@ -29,8 +30,8 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
       }
       .exec(
         http("create multiple tags")
-          .put(s"/projects/${testConfig.encodedProject}/tags/#{tagId}")
-          .headers(addApiHeaders(testConfig.xsrfToken))
+          .put(s"/projects/${simulationConfig.encodedProject}/tags/#{tagId}")
+          .headers(addApiHeaders(gerritTestConfig.xsrfToken))
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
@@ -38,9 +39,9 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
       .exec(
         http("list tags")
           .get(
-            s"/projects/${testConfig.encodedProject}/tags/?m=scnmultipletags-#{userId}-"
+            s"/projects/${simulationConfig.encodedProject}/tags/?m=scnmultipletags-#{userId}-"
           )
-          .headers(addApiHeaders(testConfig.xsrfToken))
+          .headers(addApiHeaders(gerritTestConfig.xsrfToken))
           .check(
             bodyString
               .transform(_.drop(XSS_LEN))
@@ -63,8 +64,8 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
           session.set("tagNames", tagsForUser)
         }.exec(
             http("delete multiple tags at once")
-              .post(s"/projects/${testConfig.encodedProject}/tags:delete")
-              .headers(addApiHeaders(testConfig.xsrfToken))
+              .post(s"/projects/${simulationConfig.encodedProject}/tags:delete")
+              .headers(addApiHeaders(gerritTestConfig.xsrfToken))
               .body(StringBody(s"""{"tags": #{tagNames}}"""))
               .asJson
               .check(status.is(HTTP_NO_CONTENT))

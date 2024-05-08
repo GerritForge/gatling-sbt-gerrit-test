@@ -1,6 +1,6 @@
 package gerritforge.scenarios.rest.changes
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.GerritTestConfig.gerritTestConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 
@@ -16,14 +16,14 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
         authenticatedChangesPostRequest(
           "Add Reviewer",
           "/reviewers",
-          s"""{"reviewer":${testConfig.reviewerAccount}}"""
+          s"""{"reviewer":${gerritTestConfig.reviewerAccount}}"""
         )
       )
       .pause(pauseDuration, pauseStdDev)
       .exec(
         authenticatedChangesPostRequest(
           "Remove Reviewer",
-          s"/reviewers/${testConfig.reviewerAccount}/delete",
+          s"/reviewers/${gerritTestConfig.reviewerAccount}/delete",
           """{"notify": "NONE"}"""
         )
       )
