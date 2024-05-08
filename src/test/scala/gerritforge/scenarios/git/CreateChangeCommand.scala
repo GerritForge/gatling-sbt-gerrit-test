@@ -3,7 +3,7 @@ package gerritforge.scenarios.git
 import com.github.barbasa.gatling.git.GitRequestSession
 import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
-import gerritforge.GerritTestConfig._
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.git.backend.{Gerrit, GitServer}
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
@@ -13,7 +13,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
   override val refSpecFeeder: IndexedSeq[Map[String, String]] =
-    (1 to testConfig.numUsers) map { _ =>
+    (1 to simulationConfig.numUsers) map { _ =>
       Map("refSpec" -> "refs/for/master")
     }
 
@@ -33,7 +33,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
             // All the changes created will be chained.
             GitRequestSession(
               "pull",
-              s"$url/${testConfig.project}",
+              s"$url/${simulationConfig.project}",
               MasterRef,
               userId = "#{userId}",
               requestName = s"Pull to setup Push over $protocol",
@@ -47,7 +47,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
         gitServer match {
           case server: Gerrit =>
             server.createChangePerHashtag(
-              s"$url/${testConfig.project}",
+              s"$url/${simulationConfig.project}",
               "#{refSpec}",
               "#{userId}",
               protocol,
@@ -56,7 +56,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           case _ =>
             gitServer
               .createChange(
-                s"$url/${testConfig.project}",
+                s"$url/${simulationConfig.project}",
                 "#{refSpec}",
                 "#{userId}",
                 protocol

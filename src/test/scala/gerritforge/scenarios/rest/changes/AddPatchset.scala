@@ -1,6 +1,7 @@
 package gerritforge.scenarios.rest.changes
 
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.GerritConfig.gerritConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
@@ -16,8 +17,8 @@ object AddPatchset extends ChangeScenarioBase {
       .pause(pauseDuration, pauseStdDev)
       .exec(
         http("Add Patchset")
-          .put(s"/changes/${testConfig.encodedProject}~#{changeNumber}/message")
-          .headers(addApiHeaders(testConfig.xsrfToken))
+          .put(s"/changes/${simulationConfig.encodedProject}~#{changeNumber}/message")
+          .headers(addApiHeaders(gerritConfig.xsrfToken))
           .body(
             StringBody(
               s"""{"message":"New commit message #{randomValue}\n\nChange-Id: #{changeId}\n","notify": "NONE"}"""
