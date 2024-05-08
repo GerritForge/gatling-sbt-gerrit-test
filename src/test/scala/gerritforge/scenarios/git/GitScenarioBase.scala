@@ -1,7 +1,7 @@
 package gerritforge.scenarios.git
 
 import com.github.barbasa.gatling.git.GatlingGitConfiguration
-import gerritforge.GerritTestConfig.testConfig
+import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.ScenarioBase
 
 import java.net.InetAddress
@@ -15,7 +15,7 @@ trait GitScenarioBase extends ScenarioBase {
   implicit val gitConfig = GatlingGitConfiguration()
 
   val refSpecFeeder =
-    (1 to testConfig.numUsers) map { idx =>
+    (1 to simulationConfig.numUsers) map { idx =>
       Map("refSpec" -> s"branch-$hostname-$idx")
     }
 }
