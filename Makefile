@@ -14,11 +14,12 @@ id_rsa:
 
 run:
 	for simulation in GitSimulation GerritRestSimulation; do \
-		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
 
 run-single:
-	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+#Note that env variables with the same names will be clobbered
+	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file bitbucket-simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$(TARGET_SIMULATION) --run-mode local
 
 background-job-%:
