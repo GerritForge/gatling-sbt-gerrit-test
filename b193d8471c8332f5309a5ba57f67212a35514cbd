@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7be88f28_7d21d162",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T11:08:03Z",
+      "side": 1,
+      "message": "So, I\u0027m having to use the HTTP url to create the change as it needs to be a post request.\nThis applies whether we\u0027re doing an SSH or HTTP simulation. The main downfall is that we\u0027re forcing the user to always run the http simulation if they want to test bitbucket.\n\nI could add a bitbucket specific config that is the same value, this way one can only run the SSH simulation, but not the HTTP one.\n\nHowever, didn\u0027t think it was a particularly clean solution, so open to suggestions.",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
