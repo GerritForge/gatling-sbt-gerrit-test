@@ -29,7 +29,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
             // All the changes created will be chained.
             GitRequestSession(
               "pull",
-              gitServer.gitUrl(url, simulationConfig.project),
+              gitServer.gitUrl(url, simulationConfig.repository),
               MasterRef,
               userId = "#{userId}",
               requestName = s"Pull to setup create change over $protocol",
@@ -43,7 +43,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
         gitServer match {
           case server: Gerrit =>
             server.createChangePerHashtag(
-              gitServer.gitUrl(url, simulationConfig.project),
+              gitServer.gitUrl(url, simulationConfig.repository),
               "#{refSpec}",
               "#{userId}",
               protocol,
@@ -52,7 +52,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
           case _ =>
             gitServer
               .createChange(
-                gitServer.gitUrl(url, simulationConfig.project),
+                gitServer.gitUrl(url, simulationConfig.repository),
                 "#{refSpec}",
                 "#{userId}",
                 protocol
