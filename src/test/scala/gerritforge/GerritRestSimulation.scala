@@ -1,7 +1,7 @@
 package gerritforge
 
 import gerritforge.GerritRestSimulation.{allRestScenarios, authenticatedScenarios}
-import gerritforge.config.GerritTestConfig._
+import gerritforge.config.GerritConfig._
 import gerritforge.SimulationUtil.httpProtocol
 import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.ScenarioBase
@@ -14,7 +14,7 @@ import scala.concurrent.duration.FiniteDuration
 class GerritRestSimulation extends Simulation {
 
   val scenarios =
-    if (gerritTestConfig.restRunAnonymousUser)
+    if (gerritConfig.restRunAnonymousUser)
       allRestScenarios
     else authenticatedScenarios
 

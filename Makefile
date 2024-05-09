@@ -1,6 +1,7 @@
 .PHONY:	run build prepare publish parallel-run
 
-TARGET_SIMULATION?=GerritGitSimulation
+TARGET_SIMULATION?=GitSimulation
+TARGET_BACKEND?=gerrit
 DOCKER_IMAGE:=gerritforge/gatling-sbt-gerrit-test
 JOBS:=2
 
@@ -13,12 +14,12 @@ id_rsa:
 	ssh-keygen -t rsa -b 2048 -f ./id_rsa -N '' -m PEM
 
 run:
-	for simulation in GerritGitSimulation GerritRestSimulation; do \
-		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+	for simulation in GitSimulation GerritRestSimulation; do \
+		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file bitbucket-simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
 
 run-single:
-	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file bitbucket-simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$(TARGET_SIMULATION) --run-mode local
 
 background-job-%:

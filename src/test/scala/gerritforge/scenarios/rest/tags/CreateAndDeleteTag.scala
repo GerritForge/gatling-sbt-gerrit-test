@@ -1,6 +1,6 @@
 package gerritforge.scenarios.rest.tags
 
-import gerritforge.config.GerritTestConfig.gerritTestConfig
+import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.rest.RestScenarioBase
 import io.gatling.core.structure.ScenarioBuilder
@@ -19,7 +19,7 @@ object CreateAndDeleteTag extends RestScenarioBase {
       .exec(
         http("create tag")
           .put(s"/projects/${simulationConfig.encodedProject}/tags/tag-$timestamp-#{userId}")
-          .headers(addApiHeaders(gerritTestConfig.xsrfToken))
+          .headers(addApiHeaders(gerritConfig.xsrfToken))
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
@@ -27,6 +27,6 @@ object CreateAndDeleteTag extends RestScenarioBase {
       .exec(
         http("delete tag")
           .delete(s"/projects/${simulationConfig.encodedProject}/tags/tag-$timestamp-#{userId}")
-          .headers(addApiHeaders(gerritTestConfig.xsrfToken, None))
+          .headers(addApiHeaders(gerritConfig.xsrfToken, None))
       )
 }

@@ -3,11 +3,11 @@ package gerritforge.config
 import pureconfig._
 import pureconfig.generic.auto._
 
-object GerritTestConfig {
-  val gerritTestConfig = ConfigSource.default.at("gerrit").loadOrThrow[GerritTestConfig]
+object GerritConfig {
+  val gerritConfig = ConfigSource.default.at("gerrit").loadOrThrow[GerritConfig]
 }
 
-case class GerritTestConfig(
+case class GerritConfig(
     accountCookie: Option[String],
     xsrfToken: Option[String],
     userAgent: String,

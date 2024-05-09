@@ -1,7 +1,7 @@
 package gerritforge.scenarios.rest.changes
 
 import gerritforge.EncodeUtils.encode
-import gerritforge.config.GerritTestConfig.gerritTestConfig
+import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.rest.RestScenarioBase
 import gerritforge.scenarios.rest.changes.ChangeScenarioBase.ChangeDetail
@@ -18,8 +18,8 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def createChange =
     http("Create Change")
       .post("/changes/")
-      .headers(addApiHeaders(gerritTestConfig.xsrfToken))
-      .body(StringBody(s"""{"project":"${simulationConfig.project}",
+      .headers(addApiHeaders(gerritConfig.xsrfToken))
+      .body(StringBody(s"""{"project":"${simulationConfig.repository}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
 
@@ -64,7 +64,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
   def authenticatedChangesPostRequest(title: String, url: String, body: String = "{}") =
     http(title)
       .post(s"/changes/${simulationConfig.encodedProject}~#{changeNumber}$url")
-      .headers(addApiHeaders(gerritTestConfig.xsrfToken))
+      .headers(addApiHeaders(gerritConfig.xsrfToken))
       .body(StringBody(body))
 }
 

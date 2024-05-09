@@ -2,6 +2,9 @@ package gerritforge.scenarios.git.backend
 import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
 import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
+import gerritforge.config.BitBucketConfig
+import gerritforge.config.BitBucketConfig.bitBucketConfig._
+import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
 import io.gatling.http.Predef.http
 
@@ -12,7 +15,7 @@ import scala.util.Random
 
 case class BitBucket(username: String, password: String, repository: String) extends GitServer {
 
-  def apiBaseUrl(projKey: String = "LOAD") = s"rest/api/latest/projects/$projKey/repos/$repository"
+  def apiBaseUrl = s"rest/api/latest/projects/$projectKey/repos/$repository"
   val basicAuthValue =
     Base64.getEncoder
       .encodeToString(s"$username:$password".getBytes(StandardCharsets.UTF_8))
@@ -46,7 +49,7 @@ case class BitBucket(username: String, password: String, repository: String) ext
     ).pause(500.milliseconds)
       .exec(
         http("Create Change over http")
-          .post(s"$origin/${apiBaseUrl()}/pull-requests")
+          .post(s"${simulationConfig.httpUrl.get}/$apiBaseUrl/pull-requests")
           .headers(
             Map(
               "Authorization" -> s"Basic $basicAuthValue",
@@ -62,20 +65,20 @@ case class BitBucket(username: String, password: String, repository: String) ext
                           |    "fromRef": {
                           |        "id": "$refSpec",
                           |        "repository": {
-                          |            "slug": "load-test",
+                          |            "slug": "$slug",
                           |            "name": null,
                           |            "project": {
-                          |                "key": "LOAD"
+                          |                "key": "$projectKey"
                           |            }
                           |        }
                           |    },
                           |    "toRef": {
                           |        "id": "$MasterRef",
                           |        "repository": {
-                          |            "slug": "load-test",
+                          |            "slug": "$slug",
                           |            "name": null,
                           |            "project": {
-                          |                "key": "LOAD"
+                          |                "key": "$projectKey"
                           |            }
                           |        }
                           |    },
