@@ -89,7 +89,7 @@ object GerritRealLifeSimulation {
       new GitRequestBuilder(
         GitRequestSession(
           "clone",
-          s"$httpUrl/${simulationConfig.project}",
+          s"$httpUrl/${simulationConfig.repository}",
           s"#{refSpec}",
           ignoreFailureRegexps = List(".*want.+not valid.*")
         )

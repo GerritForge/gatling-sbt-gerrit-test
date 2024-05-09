@@ -17,7 +17,7 @@ class CloneCommand(val gitServer: GitServer, val url: String) extends GitScenari
         new GitRequestBuilder(
           GitRequestSession(
             "clone",
-            gitServer.gitUrl(url, simulationConfig.project),
+            gitServer.gitUrl(url, simulationConfig.repository),
             MasterRef,
             ignoreFailureRegexps = List(".*want.+not valid.*"),
             requestName = s"Clone over $protocol"

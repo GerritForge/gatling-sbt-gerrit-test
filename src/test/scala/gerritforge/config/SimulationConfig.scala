@@ -14,15 +14,24 @@ object SimulationConfig {
 final case class SimulationConfig(
     httpUrl: Option[String],
     sshUrl: Option[String],
-    project: String,
+    repository: String,
     numUsers: Int,
     duration: FiniteDuration,
     backend: String
 ) {
-  val encodedProject = encode(project)
+  val encodedProject = encode(repository)
   val gitBackend = backend.toLowerCase() match {
+<<<<<<< HEAD
     case "bitbucket" => BitBucket(httpConfig.username, httpConfig.password, encodedProject)
     case "gerrit"    => Gerrit(encodedProject, numUsers)
     case _           => throw new Exception("Unsupported backend")
+=======
+    case "bitbucket" =>
+      println("creating bitbucket")
+      BitBucket(httpConfig.username, httpConfig.password, encodedProject)
+    case _           =>
+      println("creating gerrit")
+      Gerrit(encodedProject, numUsers)
+>>>>>>> 59ecf42 (Make BitBucket simulation configurable)
   }
 }
