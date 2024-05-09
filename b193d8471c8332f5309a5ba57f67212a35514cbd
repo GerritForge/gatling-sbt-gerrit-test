@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76534388_a0d4e4c1",
+        "filename": "Makefile",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "No? The simulation has changed name from `GerritGitSimulation` to `GitSimulation`, that\u0027s all, I think?",
+      "parentUuid": "b2fadf71_e4505b72",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8f427857_b4c86671",
         "filename": "simulation.env",
         "patchSetId": 18
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-09T14:07:38Z",
       "side": 1,
       "message": "Does this change the default backend to BitBucket? Won\u0027t this break existing code that runs these tests?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0b876b3_a69792e2",
+        "filename": "simulation.env",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "My bad, didn\u0027t mean to commit it set to bitbucket.",
+      "parentUuid": "8f427857_b4c86671",
       "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -71,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5b351e7c_6205fc5c",
+        "filename": "src/test/scala/gerritforge/config/GerritConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "Good point, I meant to do it there, thanks.",
+      "parentUuid": "5a736fbc_72f8688e",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7e786931_3752cfcb",
         "filename": "src/test/scala/gerritforge/config/HttpConfig.scala",
         "patchSetId": 18
@@ -99,6 +153,24 @@
       "writtenOn": "2024-05-09T14:07:38Z",
       "side": 1,
       "message": "It would be better to have an explicit case for Gerrit so we catch typos in config (e.g. `bitbukcet`), and have the default case error.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb0eccd_fe17a3d5",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e83e975d_b013e0d1",
       "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -139,6 +211,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8cea77e5_d17c5447",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "yeah this bit actually changes entirely when we get to configuring bitbucket properly, so maybe not much point addressing it here.",
+      "parentUuid": "daf92ceb_31934c56",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "860061fa_6a21f23a",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
         "patchSetId": 18
@@ -150,6 +240,24 @@
       "writtenOn": "2024-05-09T14:07:38Z",
       "side": 1,
       "message": "Do we risk creating the same branch name twice? Would it matter if we did?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "494a33a8_80c06f66",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "yeah, I was thinking about this too. It might be worth adding a some sort of run-id so we don\u0027t risk creating the same branch twice over multiple runs. I suspect that it would cause the call to fail.",
+      "parentUuid": "860061fa_6a21f23a",
       "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -191,6 +299,30 @@
       "side": 1,
       "message": "Do you mean bitbucket doesn\u0027t support pushes over ssh?\n\nWould it make sense to add the protocol as an argument to the class?\n\nAlso (tangential), would a typeclass represent the push more tidily?",
       "parentUuid": "7be88f28_7d21d162",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f171a166_81c83d42",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T15:22:12Z",
+      "side": 1,
+      "message": "No, bitbucket does support pushing over ssh(as I do from L37-46, if the protocol is SSH), the problem is that bitbucket doesn\u0027t support creating a PR over SSH, that needs to be a separate HTTP call. I suspect this will be the case for Github and Gitlab too.",
+      "parentUuid": "28761a34_385796ec",
       "range": {
         "startLine": 50,
         "startChar": 10,
