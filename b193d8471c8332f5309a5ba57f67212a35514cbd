@@ -3,6 +3,159 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b2fadf71_e4505b72",
+        "filename": "Makefile",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Are we changing the default behaviour here for `run`? Shouldn\u0027t this be mentioned in the commit message?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f427857_b4c86671",
+        "filename": "simulation.env",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Does this change the default backend to BitBucket? Won\u0027t this break existing code that runs these tests?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46473df3_ef9fc018",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Doesn\u0027t this put us in the awkward position of being able to run `GerritRealLifeSimulation` with a non-Gerrit backend?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a736fbc_72f8688e",
+        "filename": "src/test/scala/gerritforge/config/GerritConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Nit: this could be done in the parent change (where the config objects are split).",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e786931_3752cfcb",
+        "filename": "src/test/scala/gerritforge/config/HttpConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Nit: we are reading the config file three times from disk. Maybe it would be better to have a single read of the config file and create our separate config instances in the same place? Not a biggie, maybe one for a separate change.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e83e975d_b013e0d1",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "It would be better to have an explicit case for Gerrit so we catch typos in config (e.g. `bitbukcet`), and have the default case error.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef59ed88_918368a9",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Nit: this doesn\u0027t look like an ADT, and I don\u0027t think we use it in a pattern match. Maybe a regular class would be a better fit for it.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "daf92ceb_31934c56",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Nit: as we always call this with an empty paren set, maybe making this a `val` and hard-coding `LOAD` would be simpler. We can always parameterise it later if required, we don\u0027t need to now though.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "860061fa_6a21f23a",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Do we risk creating the same branch name twice? Would it matter if we did?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7be88f28_7d21d162",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
         "patchSetId": 18
@@ -20,6 +173,64 @@
         "endLine": 50,
         "endChar": 49
       },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28761a34_385796ec",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Do you mean bitbucket doesn\u0027t support pushes over ssh?\n\nWould it make sense to add the protocol as an argument to the class?\n\nAlso (tangential), would a typeclass represent the push more tidily?",
+      "parentUuid": "7be88f28_7d21d162",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "695542b4_fe24b2a0",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "This could be more consistent with `apiBaseUrl`. Maybe `httpBaseUrl`? Or call the other one `baseApiUrl`.",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65063f00_eda1ce32",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T14:07:38Z",
+      "side": 1,
+      "message": "Looking at where this is called, you could hide this logic from the caller by adding a method `projectUrl(baseUrl: String, projectName: String)` (or similar) to `GitServer`. It would make your call sites cleaner and development easier as they wouldn\u0027t need to remember to make the additional call to `httpUrlSuffix`.\n\nEDIT: actually do we even need `projectName` if `repository` is defined as a class param? Maybe requires a bit more thought?",
       "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
