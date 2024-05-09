@@ -29,7 +29,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
             // All the changes created will be chained.
             GitRequestSession(
               "pull",
-              s"${gitServer.baseHttpUrl(url)}/${simulationConfig.project}${gitServer.httpUrlSuffix}",
+              s"${gitServer.baseHttpUrl(url)}/${simulationConfig.repository}${gitServer.httpUrlSuffix}",
               MasterRef,
               userId = "#{userId}",
               requestName = s"Pull to setup create change over $protocol",
