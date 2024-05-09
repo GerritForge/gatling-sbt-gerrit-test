@@ -14,12 +14,12 @@ object SimulationConfig {
 final case class SimulationConfig(
     httpUrl: Option[String],
     sshUrl: Option[String],
-    project: String,
+    repository: String,
     numUsers: Int,
     duration: FiniteDuration,
     backend: String
 ) {
-  val encodedProject = encode(project)
+  val encodedProject = encode(repository)
   val gitBackend = backend.toLowerCase() match {
     case "bitbucket" => BitBucket(httpConfig.username, httpConfig.password, encodedProject)
     case "gerrit"    => Gerrit
