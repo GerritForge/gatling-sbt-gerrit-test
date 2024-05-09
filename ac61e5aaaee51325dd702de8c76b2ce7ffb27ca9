@@ -47,6 +47,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e619a16_869070c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T17:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a7836bc_c1a40ee4",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "ac61e5aaaee51325dd702de8c76b2ce7ffb27ca9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecc199c3_d1e740f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T17:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "851bb1dd_ad266a0f",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "ac61e5aaaee51325dd702de8c76b2ce7ffb27ca9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14bf2605_67036c62",
@@ -64,6 +112,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8385f1d7_318f0a08",
+        "filename": "src/test/scala/gerritforge/config/GerritTestConfig.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T17:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14bf2605_67036c62",
+      "revId": "ac61e5aaaee51325dd702de8c76b2ce7ffb27ca9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00f29bc3_9b9e09a9",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-05-09T13:15:05Z",
       "side": 1,
       "message": "Make this `final`.",
+      "revId": "ac61e5aaaee51325dd702de8c76b2ce7ffb27ca9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26c47ffc_bfdb5629",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T17:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00f29bc3_9b9e09a9",
       "revId": "ac61e5aaaee51325dd702de8c76b2ce7ffb27ca9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
