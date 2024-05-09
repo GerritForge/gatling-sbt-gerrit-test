@@ -1,6 +1,6 @@
 package gerritforge.scenarios.rest
 
-import gerritforge.config.GerritTestConfig.gerritTestConfig
+import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.scenarios.ScenarioBase
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
@@ -39,7 +39,7 @@ trait RestScenarioBase extends ScenarioBase {
   }
 
   def setupAuthenticatedSession(scnTitle: String): ScenarioBuilder = {
-    gerritTestConfig.accountCookie match {
+    gerritConfig.accountCookie match {
       case Some(cookie) =>
         scenario(scnTitle)
           .exec(addCookie(Cookie("GerritAccount", cookie)))
