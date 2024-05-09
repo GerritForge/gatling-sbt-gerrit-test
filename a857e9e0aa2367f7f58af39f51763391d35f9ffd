@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed5119db_03924ccb",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T13:08:44Z",
+      "side": 1,
+      "message": "This API is non-obvious now, we create a change for each hashtag, so we can create multiple changes, and yet this method is called `createChange` (singular). Also worth noting that if no hashtags are passed, no changes are created - this differs to what we had previously. Should we have another method to create a change per hashtag? Or alternatively let the caller do this?\n\nI think this method is doing a little too much.",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "a857e9e0aa2367f7f58af39f51763391d35f9ffd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
