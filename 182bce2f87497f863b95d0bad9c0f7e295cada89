@@ -34,6 +34,24 @@
       "parentUuid": "6280bfc9_1fb002c6",
       "revId": "182bce2f87497f863b95d0bad9c0f7e295cada89",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42873db7_bfb7fedd",
+        "filename": "src/test/scala/gerritforge/GerritTestConfig.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-09T12:54:07Z",
+      "side": 1,
+      "message": "I\u0027d normally suggest we do what\u0027s right for this commit so it makes sense independently of the others, but not a sticking point, so fair enough.",
+      "parentUuid": "314dd6c2_8181f1dc",
+      "revId": "182bce2f87497f863b95d0bad9c0f7e295cada89",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
