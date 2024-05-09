@@ -19,7 +19,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
     http("Create Change")
       .post("/changes/")
       .headers(addApiHeaders(gerritConfig.xsrfToken))
-      .body(StringBody(s"""{"project":"${simulationConfig.project}",
+      .body(StringBody(s"""{"project":"${simulationConfig.repository}",
            |"branch":"master",
            |"subject":"Test commit subject - ${Calendar.getInstance().getTime}"}""".stripMargin))
 
