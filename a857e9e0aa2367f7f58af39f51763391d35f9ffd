@@ -22,6 +22,30 @@
       },
       "revId": "a857e9e0aa2367f7f58af39f51763391d35f9ffd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f564764_fa5215eb",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-09T17:09:24Z",
+      "side": 1,
+      "message": "\u003eAlso worth noting that if no hashtags are passed, no changes are created - this \u003ediffers to what we had previously\n\nNot sure that\u0027s true, originally there used to be a loop over hashtags, so if we had no hashtags we still wouldn\u0027t create any changes.\n\nThe reason the caller can\u0027t do this is because hashtags are a Gerrit specific concept, so I was trying to leave CreateChangeCommand itself agnostic to weather we have hashtags or not.\n\nI agree, maybe it\u0027s a bit deceiving that we\u0027re creating more than one change, i could split it up to make it clearer, however I don\u0027t think we should change the signature of the method all that much.",
+      "parentUuid": "ed5119db_03924ccb",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "a857e9e0aa2367f7f58af39f51763391d35f9ffd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
