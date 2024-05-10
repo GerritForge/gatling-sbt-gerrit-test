@@ -88,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40631d66_96e71636",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-10T07:55:55Z",
+      "side": 1,
+      "message": "yeah good point, will pass the Gerrit backend directly.",
+      "parentUuid": "46473df3_ef9fc018",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a736fbc_72f8688e",
@@ -350,6 +368,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26c1fc1b_96b8c9fa",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-10T07:55:55Z",
+      "side": 1,
+      "message": "Thanks for pointing it out, this also checks of non-http backends, so I\u0027ve just called it baseUrl",
+      "parentUuid": "695542b4_fe24b2a0",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65063f00_eda1ce32",
@@ -363,6 +399,24 @@
       "writtenOn": "2024-05-09T14:07:38Z",
       "side": 1,
       "message": "Looking at where this is called, you could hide this logic from the caller by adding a method `projectUrl(baseUrl: String, projectName: String)` (or similar) to `GitServer`. It would make your call sites cleaner and development easier as they wouldn\u0027t need to remember to make the additional call to `httpUrlSuffix`.\n\nEDIT: actually do we even need `projectName` if `repository` is defined as a class param? Maybe requires a bit more thought?",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7d5d922_7066c062",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-10T07:55:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65063f00_eda1ce32",
       "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
