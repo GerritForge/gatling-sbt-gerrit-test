@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c219d2ce_bd7ce535",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-10T09:06:42Z",
+      "side": 1,
+      "message": "Maybe this should stay in `simulation`? It doesn\u0027t seem Gerrit-specific. Technically I suppose it\u0027s `http` config, but moving it there would be a different change.",
+      "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
