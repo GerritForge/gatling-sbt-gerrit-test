@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b3c6a69_3180dcfb",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021698
+      },
+      "writtenOn": "2024-05-10T08:11:54Z",
+      "side": 1,
+      "message": "This was not properly merged",
+      "revId": "aaa29dadb6e9a654e8b308122d857f3f415bec3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
