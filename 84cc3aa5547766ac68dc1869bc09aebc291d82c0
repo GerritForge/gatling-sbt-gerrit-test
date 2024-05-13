@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c95c35b8_851fd713",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2024-05-13T10:10:18Z",
+      "side": 1,
+      "message": "Could you elaborate more in the commit message what\u0027s the purpose of this change",
+      "revId": "84cc3aa5547766ac68dc1869bc09aebc291d82c0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
