@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "807bb5d5_389cbbd3",
+        "filename": "src/test/scala/gerritforge/GitSimulation.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2024-05-13T10:26:44Z",
+      "side": 0,
+      "message": "Is `GitSimulation` independent from the backend? If yes, we shouldn\u0027t append `/a` because it is only supported by Gerrit",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 26
+      },
+      "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

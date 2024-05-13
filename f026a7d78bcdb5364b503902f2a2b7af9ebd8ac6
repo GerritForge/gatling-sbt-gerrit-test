@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5932df36_9f57c6d9",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2024-05-13T10:26:44Z",
+      "side": 1,
+      "message": "why we have `LOAD` default?",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "f026a7d78bcdb5364b503902f2a2b7af9ebd8ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18ac1ff4_35c48c5c",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2024-05-13T10:26:44Z",
+      "side": 1,
+      "message": "should the pause be configurable?",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 28
+      },
+      "revId": "f026a7d78bcdb5364b503902f2a2b7af9ebd8ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
