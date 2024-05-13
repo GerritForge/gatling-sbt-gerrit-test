@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2deb9d87_b62660f8",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1005270
+      },
+      "writtenOn": "2024-05-13T10:29:16Z",
+      "side": 1,
+      "message": "Why passing both? We target Gerrit or BitBucket",
+      "range": {
+        "startLine": 21,
+        "startChar": 65,
+        "endLine": 21,
+        "endChar": 134
+      },
+      "revId": "c92104352603fcdbc0a5d526d90bfb7a0772e686",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
