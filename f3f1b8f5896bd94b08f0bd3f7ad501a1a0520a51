@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fbdcb55_56bdc4f1",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T20:52:38Z",
+      "side": 0,
+      "message": "Why this has been dropped?\nI think it should stay in the simulation namespace.",
+      "revId": "f3f1b8f5896bd94b08f0bd3f7ad501a1a0520a51",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
