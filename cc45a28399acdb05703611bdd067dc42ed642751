@@ -34,6 +34,24 @@
       "parentUuid": "c219d2ce_bd7ce535",
       "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f9c206a_f1043855",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-14T14:54:48Z",
+      "side": 1,
+      "message": "This is actually not-used, removing.",
+      "parentUuid": "0d76660a_c9d35313",
+      "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
