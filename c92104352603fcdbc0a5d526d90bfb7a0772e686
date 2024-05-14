@@ -22,6 +22,30 @@
       },
       "revId": "c92104352603fcdbc0a5d526d90bfb7a0772e686",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94630cf7_ab459f5a",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-14T13:12:10Z",
+      "side": 1,
+      "message": "I wanted to keep the script simple and not have an if statement in here. There\u0027s no harm in passing all env_variables to the container, then it can use only what it needs.",
+      "parentUuid": "2deb9d87_b62660f8",
+      "range": {
+        "startLine": 21,
+        "startChar": 65,
+        "endLine": 21,
+        "endChar": 134
+      },
+      "revId": "c92104352603fcdbc0a5d526d90bfb7a0772e686",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
