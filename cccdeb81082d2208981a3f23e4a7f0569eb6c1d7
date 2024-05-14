@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3f30190_9c0c023a",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "I was expecting the signature of the 2 backend to be the same. Why for example `BitBucket` doesn\u0027t need the number of users?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec562f9e_32ce5b91",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "Shall we call it create PR ?",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49223799_098d871a",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "Worth adding a timestamp in the description as we do for the git comits?",
+      "range": {
+        "startLine": 59,
+        "startChar": 32,
+        "endLine": 59,
+        "endChar": 43
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb21fdb7_40b5313a",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "What\u0027s this for?",
+      "range": {
+        "startLine": 66,
+        "startChar": 39,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ffc3108_e10120f8",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "I think PR is the Bitbucket jargon",
+      "range": {
+        "startLine": 31,
+        "startChar": 43,
+        "endLine": 31,
+        "endChar": 49
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

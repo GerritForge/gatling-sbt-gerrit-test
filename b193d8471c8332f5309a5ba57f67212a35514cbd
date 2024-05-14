@@ -354,6 +354,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c0bb80d_d671a6d1",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "What about adding the timestamp of the branch creation?",
+      "parentUuid": "494a33a8_80c06f66",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7be88f28_7d21d162",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
         "patchSetId": 18
@@ -413,6 +431,30 @@
       "side": 1,
       "message": "No, bitbucket does support pushing over ssh(as I do from L37-46, if the protocol is SSH), the problem is that bitbucket doesn\u0027t support creating a PR over SSH, that needs to be a separate HTTP call. I suspect this will be the case for Github and Gitlab too.",
       "parentUuid": "28761a34_385796ec",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "208d3aea_80e73742",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2024-05-14T21:27:14Z",
+      "side": 1,
+      "message": "\u003e The main downfall is that we\u0027re forcing the user to always run the http simulation if they want to test bitbucket.\n\nI think that\u0027s the nature of bitbucket, so the PR creation will always for through HTTP. I don\u0027t think it is a big deal, unless I am missing something.",
+      "parentUuid": "f171a166_81c83d42",
       "range": {
         "startLine": 50,
         "startChar": 10,
