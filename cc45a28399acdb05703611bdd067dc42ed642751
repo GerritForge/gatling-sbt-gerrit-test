@@ -22,6 +22,30 @@
       },
       "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "665d4325_40ffb70f",
+        "filename": "src/test/scala/gerritforge/GitSimulation.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-14T13:11:15Z",
+      "side": 0,
+      "message": "Yeah, GitSimulation is independent from the backend, so I\u0027m removing adding the `/a` as you say. This is now done within Gerrit.",
+      "parentUuid": "807bb5d5_389cbbd3",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 26
+      },
+      "revId": "cc45a28399acdb05703611bdd067dc42ed642751",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

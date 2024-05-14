@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ee304912_f48ff940",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-14T13:11:15Z",
+      "side": 1,
+      "message": "Because that\u0027s the project I\u0027ve been using so far. I\u0027ve made the configurable in a follow up change to reduce the scope of this one.",
+      "parentUuid": "5932df36_9f57c6d9",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "f026a7d78bcdb5364b503902f2a2b7af9ebd8ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "18ac1ff4_35c48c5c",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
         "patchSetId": 22
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-13T10:26:44Z",
       "side": 1,
       "message": "should the pause be configurable?",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 28
+      },
+      "revId": "f026a7d78bcdb5364b503902f2a2b7af9ebd8ac6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69649ec0_96c29be0",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-14T13:11:15Z",
+      "side": 1,
+      "message": "Good question, maybe. It should always be more than zero. This is not like other\npauses we add to the REST simulations were we\u0027re trying to imitate real traffic,\nthis is a pause dictated by the fact that if we push and immediately call the API bitbucket will fail to realise that there\u0027s already a branch created and fail the HTTP call.\n\nI assume for each bitbucket installation this might vary, but unsure whether we should make it configurable now.",
+      "parentUuid": "18ac1ff4_35c48c5c",
       "range": {
         "startLine": 47,
         "startChar": 12,
