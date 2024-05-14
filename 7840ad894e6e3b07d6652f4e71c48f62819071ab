@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb5a3e56_ea832f0a",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-14T14:05:17Z",
+      "side": 1,
+      "message": "Nit: make this `final`.",
+      "revId": "7840ad894e6e3b07d6652f4e71c48f62819071ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ab0efc_e0f498ba",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-14T14:05:17Z",
+      "side": 1,
+      "message": "`createChangePerHashtag` (singular)",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "7840ad894e6e3b07d6652f4e71c48f62819071ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
