@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e3c10b4_d4ab7bfc",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 28
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T12:47:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3c9502b_1fd9a710",
+      "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdca1e50_10e32521",
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "Can\u0027t pattern match on an object, AFAIK. Have made it a case class.",
       "parentUuid": "cdca1e50_10e32521",
+      "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "018e7189_4420d901",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 28
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T12:47:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf1c4357_44e03351",
       "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
