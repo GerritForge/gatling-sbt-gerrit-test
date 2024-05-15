@@ -467,6 +467,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ad8729a1_dad3c14f",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T09:20:29Z",
+      "side": 1,
+      "message": "What I\u0027m saying is that if someone wanted to run only the SSH simulation, it would fail as an HTTP url is still required for the bitbucket simulation.\nCurrently if an HTTP url is defined, it will run the HTTP simulation, if it\u0027s not defined, it won\u0027t run the HTTP simulation.\n\nHowever, now I\u0027m coupling the definition of the HTTP url to the success of the SSH scenario too, hence my suggestion of creating an additional config.",
+      "parentUuid": "208d3aea_80e73742",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "695542b4_fe24b2a0",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
         "patchSetId": 18

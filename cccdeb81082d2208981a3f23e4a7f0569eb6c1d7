@@ -95,6 +95,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d57fdd0b_41ea9082",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T09:20:29Z",
+      "side": 1,
+      "message": "Good question, apparently in the bit-bucket world, slug is the URL-friendly name of the repository, according to [bitbucket docs](https://confluence.atlassian.com/bbkb/what-is-a-repository-slug-1168845069.html).\n\nApparently it\u0027s also generated differently between Cloud and OnPrem versions of BitBucket! :facepalm:",
+      "parentUuid": "fb21fdb7_40b5313a",
+      "range": {
+        "startLine": 66,
+        "startChar": 39,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2ffc3108_e10120f8",
         "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
         "patchSetId": 24
