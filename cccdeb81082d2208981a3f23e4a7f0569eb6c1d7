@@ -47,6 +47,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60a59db8_8a1e64f7",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:01:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec562f9e_32ce5b91",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49223799_098d871a",
@@ -60,6 +84,30 @@
       "writtenOn": "2024-05-14T21:27:14Z",
       "side": 1,
       "message": "Worth adding a timestamp in the description as we do for the git comits?",
+      "range": {
+        "startLine": 59,
+        "startChar": 32,
+        "endLine": 59,
+        "endChar": 43
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02ebec47_1d099abf",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:01:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49223799_098d871a",
       "range": {
         "startLine": 59,
         "startChar": 32,
@@ -130,6 +178,30 @@
       "writtenOn": "2024-05-14T21:27:14Z",
       "side": 1,
       "message": "I think PR is the Bitbucket jargon",
+      "range": {
+        "startLine": 31,
+        "startChar": 43,
+        "endLine": 31,
+        "endChar": 49
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59772921_9e80ddf6",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:01:36Z",
+      "side": 1,
+      "message": "This is the Gerrit backend, though?",
+      "parentUuid": "2ffc3108_e10120f8",
       "range": {
         "startLine": 31,
         "startChar": 43,
