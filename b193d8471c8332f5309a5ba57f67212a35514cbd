@@ -591,6 +591,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0da4cae0_6fe30b3e",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-15T10:39:51Z",
+      "side": 1,
+      "message": "Ah, I see - so for BitBucket we can\u0027t run the ssh tests without running the http ones because we need to define an http config for the ssh tests, and the way `GitSimulation` determines if it needs to run the ssh/http tests is to see if their config is defined.\n\nI think it\u0027s a good point, maybe one we can address in a separate change if required, but yeah probably not one we need to address in this one.",
+      "parentUuid": "ad8729a1_dad3c14f",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 50,
+        "endChar": 49
+      },
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "695542b4_fe24b2a0",

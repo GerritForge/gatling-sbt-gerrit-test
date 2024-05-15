@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3c9502b_1fd9a710",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 28
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-15T10:39:51Z",
+      "side": 1,
+      "message": "Nit: maybe mention the backend name in the exception itself to help debug the misconfiguration.",
+      "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdca1e50_10e32521",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 28
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-15T10:39:51Z",
+      "side": 1,
+      "message": "Any reason this can\u0027t be an object? We can always change it back to a class if we need to add arguments, but I don\u0027t think any of the changes in this chain require this to be a class.",
+      "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
