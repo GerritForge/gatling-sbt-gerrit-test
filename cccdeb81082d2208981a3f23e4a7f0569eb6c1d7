@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fd9ac08_5c8542b0",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:24:47Z",
+      "side": 1,
+      "message": "Good point, Gerrit didn\u0027t need the numUsers.",
+      "parentUuid": "c3f30190_9c0c023a",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec562f9e_32ce5b91",
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "This is the Gerrit backend, though?",
       "parentUuid": "2ffc3108_e10120f8",
+      "range": {
+        "startLine": 31,
+        "startChar": 43,
+        "endLine": 31,
+        "endChar": 49
+      },
+      "revId": "cccdeb81082d2208981a3f23e4a7f0569eb6c1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "750ece2e_10edce0b",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:24:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59772921_9e80ddf6",
       "range": {
         "startLine": 31,
         "startChar": 43,
