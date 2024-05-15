@@ -16,6 +16,24 @@
       "message": "This was not properly merged",
       "revId": "aaa29dadb6e9a654e8b308122d857f3f415bec3e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d42fcf1a_9f24ae0f",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T13:54:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b3c6a69_3180dcfb",
+      "revId": "aaa29dadb6e9a654e8b308122d857f3f415bec3e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
