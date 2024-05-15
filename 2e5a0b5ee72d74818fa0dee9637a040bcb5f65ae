@@ -33,6 +33,24 @@
       "message": "Any reason this can\u0027t be an object? We can always change it back to a class if we need to add arguments, but I don\u0027t think any of the changes in this chain require this to be a class.",
       "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf1c4357_44e03351",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 28
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T12:27:11Z",
+      "side": 1,
+      "message": "Can\u0027t pattern match on an object, AFAIK. Have made it a case class.",
+      "parentUuid": "cdca1e50_10e32521",
+      "revId": "2e5a0b5ee72d74818fa0dee9637a040bcb5f65ae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
