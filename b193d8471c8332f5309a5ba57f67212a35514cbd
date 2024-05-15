@@ -212,6 +212,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc7435f9_fd4a961b",
+        "filename": "src/test/scala/gerritforge/config/HttpConfig.scala",
+        "patchSetId": 18
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-15T10:02:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7e786931_3752cfcb",
+      "revId": "b193d8471c8332f5309a5ba57f67212a35514cbd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e83e975d_b013e0d1",
