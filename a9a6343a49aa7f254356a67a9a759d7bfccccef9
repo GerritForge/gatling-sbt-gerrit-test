@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48cb6f91_5a499120",
+        "filename": "Makefile",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "Don\u0027t we need to pass `gerrit-simulation.env` to this target too?",
+      "revId": "a9a6343a49aa7f254356a67a9a759d7bfccccef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31530ba1_ebaaa932",
+        "filename": "simulation.env",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "Nit: unnecessary newline.",
+      "revId": "a9a6343a49aa7f254356a67a9a759d7bfccccef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "056a39de_74932707",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "Nit: existing - but shouldn\u0027t this be `${REPOSITORY}`? Surely we want to error if we haven\u0027t passed a repository?",
+      "range": {
+        "startLine": 5,
+        "startChar": 15,
+        "endLine": 5,
+        "endChar": 29
+      },
+      "revId": "a9a6343a49aa7f254356a67a9a759d7bfccccef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72247032_7820947f",
+        "filename": "src/test/scala/gerritforge/config/BitBucketConfig.scala",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "Make this `final`.",
+      "revId": "a9a6343a49aa7f254356a67a9a759d7bfccccef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ccb91b4_d7931de0",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/BitBucket.scala",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "Didn\u0027t we have a thread in a previous change where we said we\u0027d intentionally keep `projKey` as an argument?\n\n\nI\u0027m not suggesting we go back to make the change in the original change (that\u0027s submittable already), but if we decide to remove the argument here, this should become a `val`.",
+      "revId": "a9a6343a49aa7f254356a67a9a759d7bfccccef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

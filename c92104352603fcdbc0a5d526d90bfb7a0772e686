@@ -46,6 +46,30 @@
       },
       "revId": "c92104352603fcdbc0a5d526d90bfb7a0772e686",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b4ce59f_f6bf3a6c",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-05-16T10:46:30Z",
+      "side": 1,
+      "message": "True, but that\u0027s because we don\u0027t currently have the same environment variable in both files - if we did one would be clobbered. Don\u0027t know if we need to fix it in this change, but maybe we should at least leave a comment somewhere (above this line, perhaps)?",
+      "parentUuid": "94630cf7_ab459f5a",
+      "range": {
+        "startLine": 21,
+        "startChar": 65,
+        "endLine": 21,
+        "endChar": 134
+      },
+      "revId": "c92104352603fcdbc0a5d526d90bfb7a0772e686",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
