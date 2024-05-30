@@ -17,7 +17,12 @@ final case class SimulationConfig(
     repository: String,
     numUsers: Int,
     duration: FiniteDuration,
-    backend: String
+    backend: String,
+    cloneScnPct: Int = 82,
+    postCommentScnPct: Int = 11,
+    receivePackScnPct: Int = 4,
+    submitScnPct: Int = 2,
+    abandonScnPct: Int = 1
 ) {
   val encodedProject = encode(repository)
   val gitBackend = backend.toLowerCase() match {
