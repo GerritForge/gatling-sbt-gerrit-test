@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db36fe86_8074dbf6",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-05-30T10:16:46Z",
+      "side": 1,
+      "message": "Please add some defaults as the others.",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 20,
+        "endChar": 38
+      },
+      "revId": "edb8019828e32c5ebd160b3ccb6e5083c2ce2d67",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
