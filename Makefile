@@ -22,6 +22,10 @@ run-single:
 	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file bitbucket-simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$(TARGET_SIMULATION) --run-mode local
 
+run-real-life:
+#Note that env variables with the same names will be clobbered
+	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+			$(DOCKER_IMAGE) -s gerritforge.GerritRealLifeSimulation --run-mode local
 background-job-%:
 	mkdir -p `pwd`/target/gatling
 	make run &> `pwd`/target/gatling/$@.log &
