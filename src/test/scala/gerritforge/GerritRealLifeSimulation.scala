@@ -25,44 +25,42 @@ class GerritRealLifeSimulation extends Simulation {
 
   def getScenarioProfile(duration: FiniteDuration): Seq[ClosedInjectionStep] = {
     Seq(
-      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3,
+//      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3,
       rampConcurrentUsers(simulationConfig.numUsers)
-        .to(simulationConfig.numUsers) during duration / 3,
-      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3
+        .to(simulationConfig.numUsers) during duration,
+//      constantConcurrentUsers(simulationConfig.numUsers / 2) during duration / 3
     )
   }
 
   setUp(
-    httpCloneScenario
-      .inject(
-        getScenarioProfile(httpCloneDuration)
-      )
-      .protocols(GitProtocol),
-    receivePackScenario.inject(
-      getScenarioProfile(receivePackDuration)
-    ),
+//    httpCloneScenario
+//      .inject(
+//        getScenarioProfile(httpCloneDuration)
+//      )
+//      .protocols(GitProtocol),
+//    receivePackScenario.inject(
+//      getScenarioProfile(simulationConfig.duration)
+//    ),
     submitScenario
       .inject(
-        getScenarioProfile(submitDuration)
+        getScenarioProfile(simulationConfig.duration)
+      )
+      .protocols(httpProtocol),
+    abandonScenario
+      .inject(
+        getScenarioProfile(simulationConfig.duration)
+      )
+      .protocols(httpProtocol),
+    postCommentScenario
+      .inject(
+        getScenarioProfile(simulationConfig.duration)
       )
       .protocols(httpProtocol),
     createChangeCommandScenario
       .inject(
-        getScenarioProfile(abandonDuration + postCommentDuration)
+        getScenarioProfile(simulationConfig.duration)
       )
       .protocols(httpProtocol)
-      .andThen(
-        abandonScenario
-          .inject(
-            getScenarioProfile(abandonDuration)
-          )
-          .protocols(httpProtocol),
-        postCommentScenario
-          .inject(
-            getScenarioProfile(postCommentDuration)
-          )
-          .protocols(httpProtocol)
-      )
   ).maxDuration(simulationConfig.duration)
 }
 
@@ -90,7 +88,8 @@ object GerritRealLifeSimulation {
           "clone",
           s"$httpUrl/${simulationConfig.repository}",
           s"#{refSpec}",
-          ignoreFailureRegexps = List(".*want.+not valid.*")
+          ignoreFailureRegexps = List(".*want.+not valid.*"),
+          requestName = "Clone scenario"
         )
       )
     )
