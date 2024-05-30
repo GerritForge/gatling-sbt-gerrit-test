@@ -22,6 +22,30 @@
       },
       "revId": "290a67921439b3c96e19bfdbf22b4f61bab5405d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6a41aa8_959e29fe",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-05-30T10:08:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2c100a_52046b5b",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "290a67921439b3c96e19bfdbf22b4f61bab5405d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
