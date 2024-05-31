@@ -39,7 +39,7 @@ object GerritRestSimulation {
     ChangePrivateState,
     DeleteVote,
     MarkChangeWIP,
-    PostComment,
+    PostComment(),
     SubmitChange,
     CreateAndDeleteMultipleTags,
     CreateAndDeleteTag,

@@ -95,7 +95,7 @@ object GerritRealLifeSimulation {
       )
     )
 
-  private val postCommentScenario: ScenarioBuilder = PostComment.scn
+  private val postCommentScenario: ScenarioBuilder = PostComment().scn
   private val receivePackScenario = new CloneCommand(
     Gerrit,
     httpUrl
