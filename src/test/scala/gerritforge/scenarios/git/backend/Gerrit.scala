@@ -29,7 +29,8 @@ case object Gerrit extends GitServer {
             pushOptions = pushOptions.fold("")(identity),
             userId = userId,
             requestName = s"Push to create change over $protocol",
-            repoDirOverride = s"/tmp/$protocol-#{userId}"
+            repoDirOverride = s"/tmp/$protocol-#{userId}",
+            resetBeforePush = true
           )
         )
       )
