@@ -15,6 +15,7 @@ final case class SimulationConfig(
     httpUrl: Option[String],
     sshUrl: Option[String],
     repository: String,
+    localRepoPath: Option[String],
     numUsers: Int,
     duration: FiniteDuration,
     backend: String,
