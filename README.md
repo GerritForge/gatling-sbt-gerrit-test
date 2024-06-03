@@ -134,3 +134,17 @@ Before running the tests, make sure to add it to the users' SSH keys.
     It cannot be yourself or a non-existing user.
 * The repo the tests will run against (`GERRIT_PROJECT`) will need the following ACLs to be set:
 ![ACLs](./images/ACLs.png)
+
+Using Local Repositories
+------------------------------
+
+If we want to test against a large, already existing repository, cloning it for each user might
+become expensive and time consuming. Using a reference repository can help alleviate that burden.
+
+Simply add `LOCAL_REPO_PATH=file:<path-to-local-repo>` to `simulation.config` and the reference
+repository will be used.
+
+*NOTE*: Local Repository is only used in the `CreateChangeCommand`, as it doesn't make sense to
+performance test clone against a reference repo.
+*IMPORTANT*: If running using docker, remember to mount the repository onto the container by
+amending the Makefile.
