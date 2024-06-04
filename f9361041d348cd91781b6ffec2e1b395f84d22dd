@@ -116,6 +116,30 @@
       },
       "revId": "f9361041d348cd91781b6ffec2e1b395f84d22dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a6b956c_d3d09ae9",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-04T21:14:19Z",
+      "side": 1,
+      "message": "The problem isn\u0027t optimising the BLOB transfer, like in a reference repo, but rather running the push scenarios without having to run a clone at all.",
+      "parentUuid": "54586e8e_b5830ef5",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 33,
+        "endChar": 84
+      },
+      "revId": "f9361041d348cd91781b6ffec2e1b395f84d22dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
