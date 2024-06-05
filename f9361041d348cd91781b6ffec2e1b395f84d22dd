@@ -140,6 +140,30 @@
       },
       "revId": "f9361041d348cd91781b6ffec2e1b395f84d22dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4e47d69_155af9d7",
+        "filename": "src/test/scala/gerritforge/scenarios/git/CreateChangeCommand.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-05T08:10:41Z",
+      "side": 1,
+      "message": "That makes sense, I think this might just be a problem of naming then.\nIf this is not a `reference` repo, how about we rename this to `localRepoCloneUrl` or something along these lines?",
+      "parentUuid": "7a6b956c_d3d09ae9",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 33,
+        "endChar": 84
+      },
+      "revId": "f9361041d348cd91781b6ffec2e1b395f84d22dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
