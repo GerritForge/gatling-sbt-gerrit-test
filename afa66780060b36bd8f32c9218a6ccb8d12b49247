@@ -45,6 +45,52 @@
       },
       "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df7db8a0_86919700",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-07T13:01:55Z",
+      "side": 1,
+      "message": "repository will be cloned using the local repository path",
+      "range": {
+        "startLine": 144,
+        "startChar": 87,
+        "endLine": 146,
+        "endChar": 0
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58d981a0_ac0626eb",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-07T13:01:55Z",
+      "side": 1,
+      "message": "the local repository",
+      "range": {
+        "startLine": 148,
+        "startChar": 30,
+        "endLine": 148,
+        "endChar": 48
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
