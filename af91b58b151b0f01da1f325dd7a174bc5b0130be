@@ -22,6 +22,30 @@
       },
       "revId": "af91b58b151b0f01da1f325dd7a174bc5b0130be",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a68cb4a2_9b29b04c",
+        "filename": "src/test/scala/gerritforge/scenarios/git/backend/Gerrit.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-07T10:48:30Z",
+      "side": 1,
+      "message": "Resolving this, as it was a consequence of a dirty local worktree, discussed f2f with @danielesassoli@gmail.com",
+      "parentUuid": "d4ad6b62_aecc2554",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 37
+      },
+      "revId": "af91b58b151b0f01da1f325dd7a174bc5b0130be",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
