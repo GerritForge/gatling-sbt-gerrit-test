@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9bab5af_a2e6eefb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-10T08:54:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06f629f9_37cdb24e",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2fd2944_d087e087",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-07T10:47:27Z",
       "side": 1,
       "message": "Cloning from a local repository",
+      "range": {
+        "startLine": 142,
+        "startChar": 37,
+        "endLine": 142,
+        "endChar": 65
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9f55b8_55980ed0",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-10T08:54:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2fd2944_d087e087",
       "range": {
         "startLine": 142,
         "startChar": 37,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b7e1fea_0686a326",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-10T08:54:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7db8a0_86919700",
+      "range": {
+        "startLine": 144,
+        "startChar": 87,
+        "endLine": 146,
+        "endChar": 0
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58d981a0_ac0626eb",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-06-07T13:01:55Z",
       "side": 1,
       "message": "the local repository",
+      "range": {
+        "startLine": 148,
+        "startChar": 30,
+        "endLine": 148,
+        "endChar": 48
+      },
+      "revId": "afa66780060b36bd8f32c9218a6ccb8d12b49247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8c50b4_2cc8a78e",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-10T08:54:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58d981a0_ac0626eb",
       "range": {
         "startLine": 148,
         "startChar": 30,
