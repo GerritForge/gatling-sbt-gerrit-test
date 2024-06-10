@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96668fb8_1af40753",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-10T09:03:43Z",
+      "side": 1,
+      "message": "Let\u0027s wait to update the version of gatling-git before merging.",
+      "revId": "19ec10264e4906b82950bc21bcdb95f1b3f24f23",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
