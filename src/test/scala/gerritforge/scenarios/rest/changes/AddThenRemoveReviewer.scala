@@ -2,12 +2,12 @@ package gerritforge.scenarios.rest.changes
 
 import gerritforge.config.GerritConfig.gerritConfig
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 object AddThenRemoveReviewer extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add and Remove Reviewer")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -28,4 +28,6 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
         )
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Add and Remove Reviewer"
 }

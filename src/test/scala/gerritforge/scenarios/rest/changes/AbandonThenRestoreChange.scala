@@ -1,12 +1,12 @@
 package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 object AbandonThenRestoreChange extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Abandon and then Restore Change")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -25,4 +25,6 @@ object AbandonThenRestoreChange extends ChangeScenarioBase {
         )
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Abandon and then Restore Change"
 }
