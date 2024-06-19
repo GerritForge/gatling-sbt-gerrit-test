@@ -21,7 +21,6 @@ final case class SimulationConfig(
     backend: String,
     cloneScnPct: Int,
     postCommentScnPct: Int,
-    receivePackScnPct: Int,
     submitScnPct: Int,
     abandonScnPct: Int
 ) {
