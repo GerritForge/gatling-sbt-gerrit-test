@@ -1,22 +1,18 @@
 package gerritforge
 
-import com.github.barbasa.gatling.git.GitRequestSession.MasterRef
+import com.github.barbasa.gatling.git.GatlingGitConfiguration
 import com.github.barbasa.gatling.git.protocol.GitProtocol
-import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
-import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.GerritRealLifeSimulation._
 import gerritforge.SimulationUtil.httpProtocol
 import gerritforge.config.SimulationConfig.simulationConfig
+import gerritforge.scenarios.git.backend.Gerrit
 import gerritforge.scenarios.git.{CloneCommand, CreateChangeCommand}
 import gerritforge.scenarios.rest.changes.{AbandonThenRestoreChange, PostComment, SubmitChange}
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
-import scala.concurrent.duration.FiniteDuration
-import io.gatling.core.Predef.normalPausesWithStdDevDuration
 import io.gatling.core.controller.inject.closed.ClosedInjectionStep
-import gerritforge.scenarios.git.backend.Gerrit
+import io.gatling.core.structure.ScenarioBuilder
 
-import scala.concurrent.duration._
+import scala.concurrent.duration.FiniteDuration
 
 // This simulation is based on the traffic extracted from the cue-lang project logs.
 // By analyzing the logs we defined and reproduced the traffic shape (command
@@ -38,9 +34,6 @@ class GerritRealLifeSimulation extends Simulation {
         getScenarioProfile(httpCloneDuration)
       )
       .protocols(GitProtocol),
-    receivePackScenario.inject(
-      getScenarioProfile(receivePackDuration)
-    ),
     submitScenario
       .inject(
         getScenarioProfile(submitDuration)
@@ -70,33 +63,8 @@ object GerritRealLifeSimulation {
   implicit val gitConfig: GatlingGitConfiguration = GatlingGitConfiguration()
   private val httpUrl: String                     = simulationConfig.httpUrl.get
 
-  private val refSpecFeederMaster =
-    (1 to simulationConfig.numUsers) map { _ =>
-      Map("refSpec" -> MasterRef)
-    }
-
-  private val pauseLength = 3 seconds
-  private val pauseStdDev = normalPausesWithStdDevDuration(1 second)
-
-  private val httpCloneScenario: ScenarioBuilder = scenario(s"Clone Command over HTTP")
-    .feed(refSpecFeederMaster.circular)
-    .pause(
-      pauseLength,
-      pauseStdDev
-    )
-    .exec(
-      new GitRequestBuilder(
-        GitRequestSession(
-          "clone",
-          s"$httpUrl/${simulationConfig.repository}",
-          s"#{refSpec}",
-          ignoreFailureRegexps = List(".*want.+not valid.*")
-        )
-      )
-    )
-
   private val postCommentScenario: ScenarioBuilder = PostComment().scn
-  private val receivePackScenario = new CloneCommand(
+  private val httpCloneScenario = new CloneCommand(
     Gerrit,
     httpUrl
   ).scn
@@ -114,14 +82,12 @@ object GerritRealLifeSimulation {
   private val scenariosPct = Map(
     httpCloneScenario   -> simulationConfig.cloneScnPct,
     postCommentScenario -> simulationConfig.postCommentScnPct,
-    receivePackScenario -> simulationConfig.receivePackScnPct,
     submitScenario      -> simulationConfig.submitScnPct,
     abandonScenario     -> simulationConfig.abandonScnPct
   )
 
   private val httpCloneDuration   = simulationConfig.duration * scenariosPct(httpCloneScenario) / 100
   private val postCommentDuration = simulationConfig.duration * scenariosPct(postCommentScenario) / 100
-  private val receivePackDuration = simulationConfig.duration * scenariosPct(receivePackScenario) / 100
   private val submitDuration      = simulationConfig.duration * scenariosPct(submitScenario) / 100
   private val abandonDuration     = simulationConfig.duration * scenariosPct(abandonScenario) / 100
 }
