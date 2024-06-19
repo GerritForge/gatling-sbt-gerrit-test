@@ -1,12 +1,12 @@
 package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 object AddThenRemoveHashtags extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add then Remove Hashtags")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -27,4 +27,6 @@ object AddThenRemoveHashtags extends ChangeScenarioBase {
         )
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Add then Remove Hashtags"
 }

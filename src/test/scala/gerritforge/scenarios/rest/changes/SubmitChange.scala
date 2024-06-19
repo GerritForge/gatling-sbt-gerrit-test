@@ -1,13 +1,13 @@
 package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
 object SubmitChange extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Submit Change")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .exec(
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
@@ -28,4 +28,6 @@ object SubmitChange extends ChangeScenarioBase {
         )
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Submit Change"
 }

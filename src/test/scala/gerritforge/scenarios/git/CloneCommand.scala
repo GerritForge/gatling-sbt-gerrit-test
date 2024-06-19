@@ -6,13 +6,12 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.git.backend.GitServer
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 class CloneCommand(val gitServer: GitServer, val url: String) extends GitScenarioBase {
 
-  override def scn: ScenarioBuilder =
-    scenario(s"Clone Command over $protocol")
-      .feed(userIdFeeder.circular)
+  override def scnActions: ChainBuilder =
+    feed(userIdFeeder.circular)
       .exec(
         new GitRequestBuilder(
           GitRequestSession(
@@ -24,4 +23,6 @@ class CloneCommand(val gitServer: GitServer, val url: String) extends GitScenari
           )
         )
       )
+
+  override def scnTitle: String = s"Clone Command over $protocol"
 }

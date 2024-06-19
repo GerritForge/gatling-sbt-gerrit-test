@@ -1,10 +1,14 @@
 package gerritforge.scenarios
 
 import gerritforge.config.SimulationConfig.simulationConfig
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.Predef.scenario
+import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
 
 trait ScenarioBase extends PauseScenarioSettings {
-  def scn: ScenarioBuilder
+  def scnTitle: String
+  def scn: ScenarioBuilder = scenario(scnTitle).exec(scnActions)
+
+  def scnActions: ChainBuilder
 
   var alreadyFedUsers: List[String] = List.empty
   val userIdFeeder =

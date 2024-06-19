@@ -1,12 +1,12 @@
 package gerritforge.scenarios.rest.changes
 
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 object MarkChangeWIP extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Make change WIP")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -25,4 +25,6 @@ object MarkChangeWIP extends ChangeScenarioBase {
         )
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Make change WIP"
 }

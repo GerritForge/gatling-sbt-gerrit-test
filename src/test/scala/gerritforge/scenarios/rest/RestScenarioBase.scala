@@ -3,7 +3,7 @@ package gerritforge.scenarios.rest
 import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.scenarios.ScenarioBase
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef.{Cookie, addCookie}
 
 import java.util.UUID
@@ -38,11 +38,10 @@ trait RestScenarioBase extends ScenarioBase {
     xsrfCookie.fold(headers)(c => headers + ("x-gerrit-auth" -> c))
   }
 
-  def setupAuthenticatedSession(scnTitle: String): ScenarioBuilder = {
+  def setupAuthenticatedSession: ChainBuilder = {
     gerritConfig.accountCookie match {
       case Some(cookie) =>
-        scenario(scnTitle)
-          .exec(addCookie(Cookie("GerritAccount", cookie)))
+        exec(addCookie(Cookie("GerritAccount", cookie)))
       case None => throw new Exception("Requires authentication")
     }
   }

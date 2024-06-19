@@ -3,13 +3,13 @@ package gerritforge.scenarios.rest.changes
 import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
 object AddPatchset extends ChangeScenarioBase {
 
-  override def scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add Patchset")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .feed(randomFeeder)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
@@ -25,4 +25,6 @@ object AddPatchset extends ChangeScenarioBase {
             )
           )
       )
+
+  override def scnTitle: String = "Add Patchset"
 }

@@ -6,16 +6,15 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.config.SimulationConfig.simulationConfig
 import gerritforge.scenarios.git.backend.{Gerrit, GitServer}
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 
 class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHashtags: Seq[String])
     extends GitScenarioBase {
 
   val hashtagLoop = scenarioHashtags.to(LazyList).lazyAppendedAll(scenarioHashtags)
 
-  override def scn: ScenarioBuilder =
-    scenario(s"Create Change Command over $protocol")
-      .feed(gitServer.refSpecFeeder)
+  override def scnActions: ChainBuilder =
+    feed(gitServer.refSpecFeeder)
       .feed(userIdFeeder.circular)
       .doIf { session =>
         !alreadyFedUsers.contains(session("userId").as[String])
@@ -60,4 +59,6 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
         }
       }
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = s"Create Change Command over $protocol"
 }

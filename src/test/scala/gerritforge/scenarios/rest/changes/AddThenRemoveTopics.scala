@@ -3,13 +3,13 @@ package gerritforge.scenarios.rest.changes
 import gerritforge.config.GerritConfig.gerritConfig
 import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
 object AddThenRemoveTopics extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Add then Remove Topics")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -29,4 +29,6 @@ object AddThenRemoveTopics extends ChangeScenarioBase {
           .headers(addApiHeaders(gerritConfig.xsrfToken, contentType = None))
       )
       .pause(pauseDuration, pauseStdDev)
+
+  override def scnTitle: String = "Add then Remove Topics"
 }
