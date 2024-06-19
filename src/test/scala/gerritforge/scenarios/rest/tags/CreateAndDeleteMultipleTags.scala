@@ -6,8 +6,8 @@ import gerritforge.scenarios.rest.RestScenarioBase
 import io.circe.generic.auto._
 import io.circe.parser.decode
 import io.circe.syntax._
-import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.core.Predef._
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
 import java.net.HttpURLConnection.HTTP_NO_CONTENT
@@ -20,8 +20,8 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
 
   case class TagDetail(ref: String, revision: String)
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("Create and Delete Multiple Tags")
+  override val scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec { session =>
         val userId = session("userId").as[String]
@@ -72,4 +72,6 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
           )
           .pause(pauseDuration, pauseStdDev)
       }
+
+  override def scnTitle: String = "Create and Delete Multiple Tags"
 }

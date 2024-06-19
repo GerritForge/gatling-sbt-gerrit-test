@@ -2,15 +2,15 @@ package gerritforge.scenarios.rest.changes
 
 import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
-import io.gatling.core.structure.ScenarioBuilder
+import io.gatling.core.structure.ChainBuilder
 import io.gatling.http.Predef._
 
 import java.net.HttpURLConnection.{HTTP_NO_CONTENT, HTTP_OK}
 
 object ListThenGetDetails extends ChangeScenarioBase {
 
-  override val scn: ScenarioBuilder =
-    setupAuthenticatedSession("List and Get Change Details")
+  override def scnActions: ChainBuilder =
+    exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
@@ -64,4 +64,6 @@ object ListThenGetDetails extends ChangeScenarioBase {
               .get("/changes/#{id}/submitted_together?o=NON_VISIBLE_CHANGES")
           )
       )
+
+  override def scnTitle: String = "List and Get Change Details"
 }
