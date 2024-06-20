@@ -22,6 +22,30 @@
       },
       "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8497ddac_a593d3f3",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:16:11Z",
+      "side": 1,
+      "message": "I haven\u0027t found anything better than a StackOverflow answer [1], but AFAIK it\u0027s best practice to define everything in traits as def, class that implement said traits, can then decide weather they should be vals or not.\n\n\n[1] https://stackoverflow.com/questions/19642053/when-to-use-val-or-def-in-scala-traits#:~:text\u003dSince%20traits%20are%20usually%20abstract,you%20usually%20don\u0027t%20need.",
+      "parentUuid": "2fbebd4e_ce132f7b",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
