@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1064d56b_b7dd9e0e",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-06-20T08:34:37Z",
+      "side": 0,
+      "message": "I\u0027m probably missing some context here - so this is now `receivePackScenario`, and what it did originally has been deleted. Does this mean we did the clone twice? Don\u0027t we need to do the setup that was previously in the deleted `httpScenario` code?",
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
