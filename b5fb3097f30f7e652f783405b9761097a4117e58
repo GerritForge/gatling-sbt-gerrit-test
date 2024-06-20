@@ -16,6 +16,24 @@
       "message": "I\u0027m probably missing some context here - so this is now `receivePackScenario`, and what it did originally has been deleted. Does this mean we did the clone twice? Don\u0027t we need to do the setup that was previously in the deleted `httpScenario` code?",
       "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "753765b5_20f22e2e",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:20:07Z",
+      "side": 0,
+      "message": "Yes, a bit confusing. So, receive-pack are pushes, clones are upload-packs, so that was mistaken to begin with.\n\nFurthermore, the previous clone scenario did a bunch of set-up that we already do in CloneCommand.\n\nSo the correct way of doing this was to re-use the CloneCommand as cloneScenario, and remove the incorrect receivePack scenario as well as the needless set-up it was doing.",
+      "parentUuid": "1064d56b_b7dd9e0e",
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
