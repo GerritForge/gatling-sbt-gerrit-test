@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fbebd4e_ce132f7b",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-06-20T08:20:31Z",
+      "side": 1,
+      "message": "Haven\u0027t verified, but I think this can be a `val` now.",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
