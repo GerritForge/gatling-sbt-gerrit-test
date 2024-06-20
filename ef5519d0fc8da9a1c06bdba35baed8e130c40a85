@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49af98a1_a917f26b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:35:02Z",
+      "side": 1,
+      "message": "I hope it\u0027s clearer now.",
+      "parentUuid": "304ad261_f7255f25",
+      "range": {
+        "startLine": 9,
+        "startChar": 64,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f546d33a_57fb7849",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-20T08:48:00Z",
       "side": 1,
       "message": "Are the requests spread over the aforementioned percentage, or another distribution? If the former, maybe this should read something like `over the given percentage`?",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 40
+      },
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c37d1bce_c1d8ed95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:35:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f546d33a_57fb7849",
       "range": {
         "startLine": 11,
         "startChar": 13,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dd5d5cd_7498be73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:35:02Z",
+      "side": 1,
+      "message": "Wasn\u0027t clear at all, thanks!",
+      "parentUuid": "e118386e_7a5939a2",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 15,
+        "endChar": 10
+      },
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41d7f6b6_993c34c0",
@@ -83,6 +155,24 @@
       "writtenOn": "2024-06-20T08:48:00Z",
       "side": 1,
       "message": "This could do with a more descriptive name.",
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e347b2e1_bcfd4a91",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:35:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41d7f6b6_993c34c0",
       "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -117,6 +207,24 @@
       "writtenOn": "2024-06-20T08:51:28Z",
       "side": 1,
       "message": "This looks new - `createChangeScnPct`. Was it missed from a previous commit? I don\u0027t see a mention of it in the commit description. Maybe it belongs in a separate change?",
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f84b7fcc_b230a452",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-06-20T20:35:02Z",
+      "side": 1,
+      "message": "Previously, we used the sum of the durations for the abandon and submit scenarios as the total time for createChange scenario.\n\nHowever, there is no reason for these to be tied together as they run independently.\n\nYou\u0027re right, potentially this could be a separate change, happy to split it out.",
+      "parentUuid": "7f30b17a_a6cc1876",
       "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
