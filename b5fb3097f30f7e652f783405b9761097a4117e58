@@ -34,6 +34,24 @@
       "parentUuid": "1064d56b_b7dd9e0e",
       "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e1cf887_df6ccd10",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-06-21T13:11:07Z",
+      "side": 0,
+      "message": "Thanks for the explanation 😊",
+      "parentUuid": "753765b5_20f22e2e",
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
