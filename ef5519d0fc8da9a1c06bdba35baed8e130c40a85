@@ -227,6 +227,24 @@
       "parentUuid": "7f30b17a_a6cc1876",
       "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "171bcd6f_886a6b98",
+        "filename": "src/test/scala/gerritforge/config/SimulationConfig.scala",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-06-21T13:13:19Z",
+      "side": 1,
+      "message": "Ah, I see - up to you, but I\u0027m also fine with just updating the commit description if that\u0027s less legwork.",
+      "parentUuid": "f84b7fcc_b230a452",
+      "revId": "ef5519d0fc8da9a1c06bdba35baed8e130c40a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
