@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "451c0ce3_50129567",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-21T16:11:48Z",
+      "side": 1,
+      "message": "Running the RealLifeSimulation against gerrit with 6 users for 3 minutes, with the following percentages:\n\n  clone-scn-pct: 82\n  post-comment-scn-pct: 11\n  submit-scn-pct: 2\n  abandon-scn-pct: 1\n  create-change-scn-pct: 4\n  \nI can see the following result:\n\n```\n2024-06-21 17:57:43                                         180s elapsed\n---- Requests ------------------------------------------------------------------\n\u003e Global                                                   (OK\u003d2386   KO\u003d0     )\n\u003e changes list and get first change                        (OK\u003d217    KO\u003d0     )\n\u003e Post Comment                                             (OK\u003d202    KO\u003d0     )\n\u003e Clone: http://localhost:8080/a/dani-tony                 (OK\u003d1619   KO\u003d0     )\n\u003e Pull to setup create change over http                    (OK\u003d6      KO\u003d0     )\n\u003e Push to create change over http                          (OK\u003d156    KO\u003d0     )\n\u003e Create Change                                            (OK\u003d52     KO\u003d0     )\n\u003e Approve Change                                           (OK\u003d52     KO\u003d0     )\n\u003e Submit Change                                            (OK\u003d52     KO\u003d0     )\n\u003e abandon change                                           (OK\u003d15     KO\u003d0     )\n\u003e restore change                                           (OK\u003d15     KO\u003d0     )\n```\n\nWith the following percentages of executions:\n\n  clone-scn-pct: 67 (should have been 82)\n  post-comment-scn-pct: 8 (should have been 11)\n  submit-scn-pct: 2 (correct)\n  abandon-scn-pct:  1\n  create-change-scn-pct: 6 (should have been 4)\n  \nThe result somewhat diverge a bit from the wanted distribution, due to time spent in unconfigured actions, such as:\n\n- changes list and get first change\n- restore change\n- Pull to setup create change over http\n\nAdditionally, this discrepancy is due to:\n\n- `SubmitAction` creating its own change (irrespective of the create_change_pct)\n- `CreateChange` always create two changes, one with `abandon` hashtag, one with `postComment` hashtag, resulting in twice the number of changes specified in config.\n\nHowever I would say this is still an improvement from the previous distribution that was completely off.\n\n\n@luca.milanesio@gmail.com WDYT?",
+      "revId": "1a6556f69affacd50c829fc72e1edcc6d0d1550d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
