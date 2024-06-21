@@ -46,6 +46,30 @@
       },
       "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "225db134_6cd5f14d",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/RestScenarioBase.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1019805
+      },
+      "writtenOn": "2024-06-21T13:06:53Z",
+      "side": 1,
+      "message": "That\u0027s a good point - normally true for unimplemented members (or if we rely on any), which I didn\u0027t think was the case here. I\u0027m pretty sure we only want to evaluate this once only - in which case maybe a `lazy val` is safer? So if we were to override it the subclass would then not be allowed to use a `def`, but that\u0027s ok I think. In this case we don\u0027t _actually_ run anything, we just prepare the scenario, which then gets run later.\n\nAnyway not a biggie as I believe in practice this only gets called once per scenario anyway.",
+      "parentUuid": "8497ddac_a593d3f3",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "b5fb3097f30f7e652f783405b9761097a4117e58",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
