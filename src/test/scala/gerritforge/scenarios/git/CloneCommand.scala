@@ -19,7 +19,8 @@ class CloneCommand(val gitServer: GitServer, val url: String) extends GitScenari
             gitServer.gitUrl(url, simulationConfig.repository),
             MasterRef,
             ignoreFailureRegexps = List(".*want.+not valid.*"),
-            requestName = s"Clone over $protocol"
+            requestName = s"Clone over $protocol",
+            deleteWorkdirOnExit = true
           )
         )
       )
