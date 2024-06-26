@@ -46,7 +46,7 @@ object GerritRealLifeSimulation {
   implicit val gitConfig: GatlingGitConfiguration = GatlingGitConfiguration()
   private val httpUrl: String                     = simulationConfig.httpUrl.get
 
-  private val postCommentActions: ChainBuilder = PostComment().scnActions
+  private val postCommentActions: ChainBuilder = PostComment(queryFilter = List.empty).scnActions
   private val cloneCommandActions = new CloneCommand(
     Gerrit,
     httpUrl
