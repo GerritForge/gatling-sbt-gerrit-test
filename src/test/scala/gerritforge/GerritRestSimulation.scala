@@ -32,7 +32,7 @@ class GerritRestSimulation extends Simulation {
 
 object GerritRestSimulation {
   val authenticatedScenarios = List(
-    AbandonThenRestoreChange,
+    AbandonThenRestoreChange(),
     AddThenRemoveHashtags,
     AddThenRemoveReviewer,
     AddThenRemoveTopics,
