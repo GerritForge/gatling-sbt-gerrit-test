@@ -42,8 +42,12 @@ trait ChangeScenarioBase extends RestScenarioBase {
   }
 
   def listChangesWithHashtags(hashtags: List[String]) = {
-    val hashtagQuery = hashtags.map(h => s"hashtag:$h").mkString("+")
-    listChanges(Some(s"+$hashtagQuery"))
+    hashtags match {
+      case Nil => listChanges()
+      case _ =>
+        val hashtagQuery = hashtags.map(h => s"hashtag:$h").mkString("+")
+        listChanges(Some(s"+$hashtagQuery"))
+    }
   }
 
   def pickRandomChange =
