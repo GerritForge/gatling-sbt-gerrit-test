@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "363c3cdc_76c9250f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-26T19:02:17Z",
+      "side": 1,
+      "message": "There is a problem in the code: we pass the query filters as a list of hashtags and we rely on that error for exploiting this feature.\n\nWe should:\n1. Fix the problem\n2. Rebase this change on the fix",
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "213c3d41_f5a96935",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-26T19:02:17Z",
+      "side": 1,
+      "message": "This is subtle: you pass an empty list in the queryFilter because you know that there is a problem in PostComment.scala:12 and that is used as a list of hashtags.",
+      "range": {
+        "startLine": 49,
+        "startChar": 61,
+        "endLine": 49,
+        "endChar": 85
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb7d05b0_e780b814",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-26T19:02:17Z",
+      "side": 1,
+      "message": "We assume that the caller is actually passing a list of query filters, because of the (wrong) call made at PostComment.scala:12",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 31
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9af20428_0c033b4b",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/PostComment.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-26T19:02:17Z",
+      "side": 1,
+      "message": "This looks wrong: why are we passing the query filter as they were a list of hashtags?",
+      "range": {
+        "startLine": 12,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 47
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
