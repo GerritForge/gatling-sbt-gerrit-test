@@ -58,6 +58,6 @@ object GerritRealLifeSimulation {
     new CreateChangeCommand(
       simulationConfig.gitBackend,
       httpUrl,
-      Seq("AbandonThenRestoreChange", "PostComment")
+      Seq("SomeHashtag")
     ).scnActions
 }
