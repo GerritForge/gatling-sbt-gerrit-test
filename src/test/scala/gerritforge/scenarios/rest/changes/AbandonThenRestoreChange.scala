@@ -3,12 +3,14 @@ package gerritforge.scenarios.rest.changes
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ChainBuilder
 
-object AbandonThenRestoreChange extends ChangeScenarioBase {
+case class AbandonThenRestoreChange(
+    queryFilter: List[String] = List("AbandonThenRestoreChange", "#{userId}")
+) extends ChangeScenarioBase {
 
   override def scnActions: ChainBuilder =
     exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
-      .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
+      .exec(listChangesWithHashtags(queryFilter))
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(

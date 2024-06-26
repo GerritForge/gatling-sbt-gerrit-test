@@ -51,8 +51,9 @@ object GerritRealLifeSimulation {
     Gerrit,
     httpUrl
   ).scnActions
-  private val submitActions: ChainBuilder  = SubmitChange.scnActions
-  private val abandonActions: ChainBuilder = AbandonThenRestoreChange.scnActions
+  private val submitActions: ChainBuilder = SubmitChange.scnActions
+  private val abandonActions
+      : ChainBuilder = AbandonThenRestoreChange(queryFilter = List.empty).scnActions
   private val createChangeCommandActions: ChainBuilder =
     new CreateChangeCommand(
       simulationConfig.gitBackend,
