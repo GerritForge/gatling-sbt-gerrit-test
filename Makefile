@@ -17,6 +17,11 @@ run:
 		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
 			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
 
+run-oauth:
+	for simulation in GerritOauthSimulation; do \
+		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
+			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
+
 run-single:
 #Note that env variables with the same names will be clobbered
 	docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file bitbucket-simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
