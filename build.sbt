@@ -34,7 +34,12 @@ libraryDependencies ++= Seq(
   "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVer % Test,
   "io.gatling"            % "gatling-test-framework"    % gatlingVer % Test,
   "org.scalatest"         %% "scalatest"                % "3.0.8" % Test,
+<<<<<<< PATCH SET (f351ab Add simulation to test oauth plugin)
+  "org.jsoup"             % "jsoup"                     % "1.14.3",
+  "com.gerritforge"       %% "gatling-git"              % "3.1.0" excludeAll (
+=======
   "com.gerritforge"       %% "gatling-git"              % "3.1.2" excludeAll (
+>>>>>>> BASE      (a2ae5b Cleanup workdir upon Clone completion)
     ExclusionRule(organization = "io.gatling"),
     ExclusionRule(organization = "io.gatling.highcharts")
   )
