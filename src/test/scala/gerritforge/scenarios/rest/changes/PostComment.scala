@@ -3,13 +3,13 @@ package gerritforge.scenarios.rest.changes
 import io.gatling.core.Predef._
 import io.gatling.core.structure.ChainBuilder
 
-case class PostComment(queryFilter: List[String] = List("PostComment", "#{userId}"))
+case class PostComment(hashtags: List[String] = List("PostComment", "#{userId}"))
     extends ChangeScenarioBase {
 
   override def scnActions: ChainBuilder =
     exec(setupAuthenticatedSession)
       .feed(userIdFeeder.circular)
-      .exec(listChangesWithHashtags(queryFilter))
+      .exec(listChangesWithHashtags(hashtags))
       .exec(pickRandomChange)
       .pause(pauseDuration, pauseStdDev)
       .exec(
