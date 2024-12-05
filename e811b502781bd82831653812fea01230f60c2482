@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "14fcfe54_3d9b5551",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-05T19:03:35Z",
+      "side": 1,
+      "message": "Also needs to be rebased on master and fixed the SBT compilation issues.",
+      "revId": "e811b502781bd82831653812fea01230f60c2482",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c74102b2_f907f033",
         "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
         "patchSetId": 3
