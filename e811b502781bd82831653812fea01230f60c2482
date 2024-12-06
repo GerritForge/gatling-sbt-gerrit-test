@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de1f85e7_31ec6738",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-06T14:49:27Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "14fcfe54_3d9b5551",
+      "revId": "e811b502781bd82831653812fea01230f60c2482",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c74102b2_f907f033",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-12-05T18:08:02Z",
       "side": 1,
       "message": "Hardcoded? This should be read from the",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "e811b502781bd82831653812fea01230f60c2482",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c18113c_40702275",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-06T14:49:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c74102b2_f907f033",
       "range": {
         "startLine": 19,
         "startChar": 13,
