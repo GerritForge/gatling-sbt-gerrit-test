@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ccc67ff_a6091600",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-10T09:14:58Z",
+      "side": 1,
+      "message": "Best to NOT have defaults for this, as it would assume we are running it on Docker on the same instance of the servers, which isn\u0027t obvious and not given for granted.\n\nJust leave it out the other URLs at L2 and L3.",
+      "range": {
+        "startLine": 58,
+        "startChar": 2,
+        "endLine": 58,
+        "endChar": 42
+      },
+      "revId": "38e91960b25cc89741d979a632c98b713380c4f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba5e7ee5_5a9e5266",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-10T09:14:58Z",
+      "side": 1,
+      "message": "Any rationale behind this ramp?",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "38e91960b25cc89741d979a632c98b713380c4f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
