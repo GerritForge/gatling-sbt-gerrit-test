@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0dce8cd_34df9329",
+        "filename": "src/test/scala/gerritforge/GerritRealLifeSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-11T09:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "213c3d41_f5a96935",
+      "range": {
+        "startLine": 49,
+        "startChar": 61,
+        "endLine": 49,
+        "endChar": 85
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb7d05b0_e780b814",
@@ -64,6 +88,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01b6af9a_2507328b",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/ChangeScenarioBase.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-11T09:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb7d05b0_e780b814",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 31
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9af20428_0c033b4b",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-06-26T19:02:17Z",
       "side": 1,
       "message": "This looks wrong: why are we passing the query filter as they were a list of hashtags?",
+      "range": {
+        "startLine": 12,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 47
+      },
+      "revId": "a47f85865c40521db69e5717dc5e8f77e33b5b53",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1e408a6_98645d5b",
+        "filename": "src/test/scala/gerritforge/scenarios/rest/changes/PostComment.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-11T09:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9af20428_0c033b4b",
       "range": {
         "startLine": 12,
         "startChar": 36,
