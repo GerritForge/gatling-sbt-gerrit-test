@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a41fdcd7_8f9ad774",
+        "filename": "src/test/resources/application.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-12T11:19:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ccc67ff_a6091600",
+      "range": {
+        "startLine": 58,
+        "startChar": 2,
+        "endLine": 58,
+        "endChar": 42
+      },
+      "revId": "38e91960b25cc89741d979a632c98b713380c4f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba5e7ee5_5a9e5266",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-10T09:14:58Z",
       "side": 1,
       "message": "Any rationale behind this ramp?",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "38e91960b25cc89741d979a632c98b713380c4f3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8ef803f_aa9c12cd",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-12T11:19:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5e7ee5_5a9e5266",
       "range": {
         "startLine": 27,
         "startChar": 10,
