@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "647c0bda_c5429e8f",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:07:49Z",
+      "side": 1,
+      "message": "Why 1? Should this be `SimulationConfig.numUsers` instead?",
+      "range": {
+        "startLine": 27,
+        "startChar": 34,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6ccdd0e_bb39805a",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidUserLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:07:49Z",
+      "side": 1,
+      "message": "This is absolutely *identical* to the `InvalidCredentialsLogin` scenario: having a non-existent user or a wrong credential is from an OAuth authentication perspective the same exact scenario.\n\nWhat is the rationale of having this copy\u0026paste scenario?\n\nBear in mind that we want to test Gerrit\u0027s OAuth authentication and NOT that KeyCloak is working.",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e0f507f_11262d23",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:07:49Z",
+      "side": 1,
+      "message": "This isn\u0027t enough: we also need to issue a redirection to the final URL and make sure that the Gerrit session is logged in.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 11
+      },
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
