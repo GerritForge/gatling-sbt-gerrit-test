@@ -41,6 +41,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f886ae5_97099126",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:27:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1ccaa0c9_d2e07af7",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6ccdd0e_bb39805a",
@@ -75,6 +93,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a328767_3ec7039c",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidUserLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8c27e8d_b60b7047",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19b78150_a35d2b20",
@@ -92,6 +128,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e993c8e7_538a3eaf",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19b78150_a35d2b20",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70472647_ba2ff9d0",
@@ -105,6 +159,24 @@
       "writtenOn": "2024-12-14T21:26:11Z",
       "side": 1,
       "message": "Invalid ScalaFmt",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "058ea0f0_79da4d30",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70472647_ba2ff9d0",
       "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
