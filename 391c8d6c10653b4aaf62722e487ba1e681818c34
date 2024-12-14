@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1ccaa0c9_d2e07af7",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:26:11Z",
+      "side": 1,
+      "message": "Invalid ScalaFmt",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b6ccdd0e_bb39805a",
         "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidUserLogin.scala",
         "patchSetId": 6
@@ -37,6 +54,57 @@
       "writtenOn": "2024-12-14T21:07:49Z",
       "side": 1,
       "message": "This is absolutely *identical* to the `InvalidCredentialsLogin` scenario: having a non-existent user or a wrong credential is from an OAuth authentication perspective the same exact scenario.\n\nWhat is the rationale of having this copy\u0026paste scenario?\n\nBear in mind that we want to test Gerrit\u0027s OAuth authentication and NOT that KeyCloak is working.",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8c27e8d_b60b7047",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidUserLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:26:11Z",
+      "side": 1,
+      "message": "Invalid ScalaFmt",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19b78150_a35d2b20",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:26:11Z",
+      "side": 1,
+      "message": "Invalid ScalaFmt",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70472647_ba2ff9d0",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-14T21:26:11Z",
+      "side": 1,
+      "message": "Invalid ScalaFmt",
       "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
