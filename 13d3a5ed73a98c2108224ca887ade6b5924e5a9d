@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44b00f44_9ad2fc4b",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-16T18:13:33Z",
+      "side": 1,
+      "message": "I thought we had settled on `constantConcurrentUsers`?",
+      "range": {
+        "startLine": 28,
+        "startChar": 10,
+        "endLine": 28,
+        "endChar": 61
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aff1c0d_4c392c2a",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-16T18:13:33Z",
+      "side": 1,
+      "message": "nit:can be inlined",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 7
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31f88b29_30affffc",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-16T18:13:33Z",
+      "side": 1,
+      "message": "My ignorance here, but is this enough to check that gerrit authentication failed correctly? Shouldn\u0027t it return even an error code?",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
