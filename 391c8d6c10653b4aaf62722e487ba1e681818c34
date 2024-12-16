@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "305edb3d_3f2646f0",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-16T14:58:22Z",
+      "side": 1,
+      "message": "Done. However, I’m not sure why we need to test with multiple users. These are functional tests, and load testing the OAuth provider doesn’t seem to provide any real benefit.",
+      "parentUuid": "647c0bda_c5429e8f",
+      "range": {
+        "startLine": 27,
+        "startChar": 34,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ccaa0c9_d2e07af7",
@@ -111,6 +135,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39ce8c2a_54819dfe",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidUserLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-16T14:58:22Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "b6ccdd0e_bb39805a",
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19b78150_a35d2b20",
@@ -194,6 +236,30 @@
       "writtenOn": "2024-12-14T21:07:49Z",
       "side": 1,
       "message": "This isn\u0027t enough: we also need to issue a redirection to the final URL and make sure that the Gerrit session is logged in.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 11
+      },
+      "revId": "391c8d6c10653b4aaf62722e487ba1e681818c34",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59751049_9bc15471",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-16T14:58:22Z",
+      "side": 1,
+      "message": "Good point, I missed it in the initial patchset, was just checking that the oauth provider would redirect to Gerrit. Done",
+      "parentUuid": "7e0f507f_11262d23",
       "range": {
         "startLine": 28,
         "startChar": 0,
