@@ -164,6 +164,30 @@
       },
       "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075e4f23_0ae8a982",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-16T20:49:52Z",
+      "side": 1,
+      "message": "I believe we should assert something on the response: it feels wrong that we assert an HTTP status 200 for a failed result.\n\nWhat does the response give as output for the failure? Only an HTTP status 200 without anything else?",
+      "parentUuid": "4745d13b_6f6a3157",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
