@@ -188,6 +188,30 @@
       },
       "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ccc293_fc52b6fe",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-17T09:21:12Z",
+      "side": 1,
+      "message": "Nothing relevant in the headers, but in the body there is a message `Invalid username or password` Please check patchset 10.",
+      "parentUuid": "075e4f23_0ae8a982",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
