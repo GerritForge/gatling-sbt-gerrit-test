@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d8ee8f1_38c60d6b",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-17T23:29:05Z",
+      "side": 1,
+      "message": "I do not understand this _magic_ with redirects and replacement of the URL specified by the provider and the one configured. Can you explain it?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 3
+      },
+      "revId": "27e9e43b494e311f37d444a1d0319009c26e1572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
