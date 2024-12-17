@@ -212,6 +212,30 @@
       },
       "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f9cd727_b4ca112b",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/InvalidCredentialsLogin.scala",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2024-12-17T09:38:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1ccc293_fc52b6fe",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "13d3a5ed73a98c2108224ca887ade6b5924e5a9d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
