@@ -22,6 +22,30 @@
       },
       "revId": "27e9e43b494e311f37d444a1d0319009c26e1572",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38e9ba31_c78d0b92",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-18T09:24:00Z",
+      "side": 1,
+      "message": "That is because Gerrit is set to login to the URL defined in the provider plugin configuration`root-url`. That can be configured in the target environment of these tests to an unreachable URL (i.e. localhost) when running the tests in docker.",
+      "parentUuid": "8d8ee8f1_38c60d6b",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 3
+      },
+      "revId": "27e9e43b494e311f37d444a1d0319009c26e1572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
