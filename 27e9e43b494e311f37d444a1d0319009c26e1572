@@ -70,6 +70,30 @@
       },
       "revId": "27e9e43b494e311f37d444a1d0319009c26e1572",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "013571d4_99e57598",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-20T19:31:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "329f1fc4_25594bdd",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 3
+      },
+      "revId": "27e9e43b494e311f37d444a1d0319009c26e1572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
