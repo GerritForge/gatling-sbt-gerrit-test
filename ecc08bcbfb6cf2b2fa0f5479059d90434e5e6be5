@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19056a55_fb65ce46",
+        "filename": "src/test/scala/gerritforge/config/OauthConfig.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-21T02:27:34Z",
+      "side": 1,
+      "message": "I don\u0027t believe this class is needed at all: the OAuth configuration in the provider has all the details needed for redirecting to the credentials check form and then redirect back to Gerrit URL.",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e44a51ae_0869acf1",
+        "filename": "src/test/scala/gerritforge/config/OauthConfig.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-21T02:27:34Z",
+      "side": 1,
+      "message": "Why is this needed in the config of the tests? The redirection to Gerrit is defined in the OAuth provider, not in the simulation.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5b2cb5d_43c0d0cd",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-21T02:27:34Z",
+      "side": 1,
+      "message": "The redirection to Gerrit URL is defined in the OAuth provider config, not in the simulation.",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 98
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
