@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5c97a87_317688eb",
+        "filename": "src/test/scala/gerritforge/config/OauthConfig.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-23T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19056a55_fb65ce46",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e44a51ae_0869acf1",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1996f41_0f7ca211",
+        "filename": "src/test/scala/gerritforge/config/OauthConfig.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-23T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e44a51ae_0869acf1",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5b2cb5d_43c0d0cd",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-12-21T02:27:34Z",
       "side": 1,
       "message": "The redirection to Gerrit URL is defined in the OAuth provider config, not in the simulation.",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 98
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1d63a27_95a608bb",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-23T08:15:49Z",
+      "side": 1,
+      "message": "Not exactly, the `redirect_uri` is passed from Gerrit Oauth plugin upon login, and its value is derived from `gerrit.canonicalWebUrl`. \nThis method was intended to have the simulation also be able to redirect to Gerrit even when inside docker. \nAnyway it has been removed now and adding instructions on how to set up the test environment.",
+      "parentUuid": "a5b2cb5d_43c0d0cd",
       "range": {
         "startLine": 54,
         "startChar": 10,
