@@ -11,7 +11,7 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Add Reviewer",
@@ -19,7 +19,7 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
           s"""{"reviewer":${gerritConfig.reviewerAccount}}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Remove Reviewer",
@@ -27,7 +27,7 @@ object AddThenRemoveReviewer extends ChangeScenarioBase {
           """{"notify": "NONE"}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Add and Remove Reviewer"
 }

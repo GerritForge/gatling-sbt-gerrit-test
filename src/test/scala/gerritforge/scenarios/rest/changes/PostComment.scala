@@ -11,7 +11,7 @@ case class PostComment(queryFilter: List[String] = List("PostComment", "#{userId
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(queryFilter))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Post Comment",
@@ -21,7 +21,7 @@ case class PostComment(queryFilter: List[String] = List("PostComment", "#{userId
             |"reviewers":[],"ignore_automatic_attention_set_rules":true,"add_to_attention_set":[]}""".stripMargin
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Post Comment"
 }

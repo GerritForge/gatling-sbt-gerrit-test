@@ -23,7 +23,7 @@ object CreateAndDeleteTag extends RestScenarioBase {
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         http("delete tag")
           .delete(s"/projects/${simulationConfig.encodedProject}/tags/tag-$timestamp-#{userId}")

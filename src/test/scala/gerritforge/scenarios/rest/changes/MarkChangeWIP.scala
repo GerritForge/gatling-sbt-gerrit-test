@@ -10,21 +10,21 @@ object MarkChangeWIP extends ChangeScenarioBase {
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Mark Change as WIP",
           "/wip"
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Mark Change as Ready",
           "/ready"
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Make change WIP"
 }

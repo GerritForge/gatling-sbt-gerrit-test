@@ -12,7 +12,7 @@ object SubmitChange extends ChangeScenarioBase {
         createChange
           .check(regex("_number\":(\\d+),").saveAs("changeNumber"))
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Approve Change",
@@ -20,14 +20,14 @@ object SubmitChange extends ChangeScenarioBase {
           """{"labels":{"Code-Review":2}}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Submit Change",
           "/revisions/1/submit"
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Submit Change"
 }

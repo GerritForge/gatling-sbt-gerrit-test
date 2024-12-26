@@ -17,7 +17,7 @@ object DeleteVote extends ChangeScenarioBase {
           """{"labels":{"Code-Review":-1}}""".stripMargin
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Remove Vote for Label",
@@ -25,7 +25,7 @@ object DeleteVote extends ChangeScenarioBase {
           """{"notify": "NONE"}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Delete Vote"
 }

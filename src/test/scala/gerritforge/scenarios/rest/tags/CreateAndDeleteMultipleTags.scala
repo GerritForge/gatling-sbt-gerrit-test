@@ -35,7 +35,7 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
           .body(StringBody("""{"revision":"HEAD"}"""))
           .asJson
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         http("list tags")
           .get(
@@ -70,7 +70,7 @@ object CreateAndDeleteMultipleTags extends RestScenarioBase {
               .asJson
               .check(status.is(HTTP_NO_CONTENT))
           )
-          .pause(pauseDuration, pauseStdDev)
+          .pause(pauseDuration, pauseType)
       }
 
   override def scnTitle: String = "Create and Delete Multiple Tags"

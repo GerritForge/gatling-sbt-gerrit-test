@@ -14,7 +14,7 @@ object ListThenGetDetails extends ChangeScenarioBase {
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         http("get change details")
           .get("#{changeUrl}")

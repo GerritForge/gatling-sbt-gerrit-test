@@ -59,7 +59,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
               )
         }
       }
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = s"Create Change Command over $protocol"
 }

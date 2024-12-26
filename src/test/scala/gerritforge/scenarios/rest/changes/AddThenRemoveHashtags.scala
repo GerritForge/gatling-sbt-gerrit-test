@@ -10,7 +10,7 @@ object AddThenRemoveHashtags extends ChangeScenarioBase {
       .feed(userIdFeeder.circular)
       .exec(listChangesWithHashtags(List(scenarioName, "#{userId}")))
       .exec(pickRandomChange)
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Add Hashtag",
@@ -18,7 +18,7 @@ object AddThenRemoveHashtags extends ChangeScenarioBase {
           """{"add":["test", "test1", "test2"]}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
       .exec(
         authenticatedChangesPostRequest(
           "Remove Hastag",
@@ -26,7 +26,7 @@ object AddThenRemoveHashtags extends ChangeScenarioBase {
           """{"remove":["test"]}"""
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = "Add then Remove Hashtags"
 }
