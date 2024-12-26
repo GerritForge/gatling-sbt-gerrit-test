@@ -17,6 +17,7 @@ final case class SimulationConfig(
     repository: String,
     localRepoPath: Option[String],
     numUsers: Int,
+    numParallelScenarios: Int,
     duration: FiniteDuration,
     backend: String,
     cloneScnPct: Double,
