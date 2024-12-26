@@ -140,6 +140,30 @@
       },
       "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "775791d0_e1d7c841",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/SuccessfulLogin.scala",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-26T08:03:42Z",
+      "side": 1,
+      "message": "\u003e Not exactly, the `redirect_uri` is passed from Gerrit Oauth plugin upon login, and its value is derived from `gerrit.canonicalWebUrl`. \n\nThat doesn\u0027t sound right: does that mean that the OAuth provide would redirect to any URLs? I haven\u0027t checked Keycloak to be honest, but GitHub\u0027s OAuth won\u0027t allow any redirection URLs.\n\n\u003e This method was intended to have the simulation also be able to redirect to Gerrit even when inside docker. \n\nWhen you are willing to use an alternative canonical web URL you can just set this in the gerrit.config, without all this magic happening. That would achieve what you need here.",
+      "parentUuid": "e1d63a27_95a608bb",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 98
+      },
+      "revId": "ecc08bcbfb6cf2b2fa0f5479059d90434e5e6be5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
