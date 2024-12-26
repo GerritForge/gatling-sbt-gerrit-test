@@ -1,5 +1,7 @@
 package gerritforge.scenarios
 
+import io.gatling.core.pause.NormalWithStdDevDuration
+
 import scala.util.Random
 import scala.concurrent.duration._
 
@@ -24,5 +26,5 @@ trait PauseScenarioSettings {
   println(
     s"$scenarioName: sleeping for ${pauseDuration.toMillis} ms with a ${stdDevDuration.toMillis}ms standard deviation"
   )
-  lazy val pauseStdDev: FiniteDuration = random.nextGaussian().toLong * stdDevDuration
+  lazy val pauseStdDev = new NormalWithStdDevDuration(random.nextGaussian().toLong * stdDevDuration)
 }
