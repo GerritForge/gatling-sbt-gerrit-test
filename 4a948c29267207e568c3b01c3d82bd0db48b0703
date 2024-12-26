@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55180fa3_6d02f633",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-26T08:50:05Z",
+      "side": 1,
+      "message": "Why is this needed? The pauses are already embedded in the scenarios.",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 91
+      },
+      "revId": "4a948c29267207e568c3b01c3d82bd0db48b0703",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5716ffa1_415375cd",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-12-26T08:50:05Z",
+      "side": 1,
+      "message": "Do we need a random value here?",
+      "range": {
+        "startLine": 37,
+        "startChar": 64,
+        "endLine": 37,
+        "endChar": 100
+      },
+      "revId": "4a948c29267207e568c3b01c3d82bd0db48b0703",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
