@@ -48,7 +48,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
               "#{userId}",
               protocol,
               scenarioHashtags,
-              sleep = Some((pauseDuration, pauseStdDev))
+              sleep = Some((pauseDuration, pauseType))
             )
           case _ =>
             gitServer
@@ -57,7 +57,7 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
                 "#{refSpec}",
                 "#{userId}",
                 protocol,
-                sleep = Some((pauseDuration, pauseStdDev))
+                sleep = Some((pauseDuration, pauseType))
               )
         }
       }
