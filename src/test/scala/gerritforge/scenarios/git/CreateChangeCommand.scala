@@ -47,7 +47,8 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
               "#{refSpec}",
               "#{userId}",
               protocol,
-              scenarioHashtags
+              scenarioHashtags,
+              sleep = Some((pauseDuration, pauseStdDev))
             )
           case _ =>
             gitServer
@@ -55,11 +56,15 @@ class CreateChangeCommand(val gitServer: GitServer, val url: String, scenarioHas
                 gitServer.gitUrl(url, simulationConfig.repository),
                 "#{refSpec}",
                 "#{userId}",
-                protocol
+                protocol,
+                sleep = Some((pauseDuration, pauseStdDev))
               )
         }
       }
+<<<<<<< PATCH SET (8aac44 Fix sleep duration for creating changes)
+=======
       .pause(pauseDuration, pauseType)
+>>>>>>> BASE      (78f3c9 Introduce pause after clones)
 
   override def scnTitle: String = s"Create Change Command over $protocol"
 }
