@@ -5,11 +5,12 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import gerritforge.config.BitBucketConfig.bitBucketConfig._
 import gerritforge.config.SimulationConfig.simulationConfig
 import io.gatling.core.Predef._
+import io.gatling.core.pause.PauseType
 import io.gatling.http.Predef.http
 
 import java.nio.charset.StandardCharsets
 import java.util.Base64
-import scala.concurrent.duration.DurationInt
+import scala.concurrent.duration.{DurationInt, FiniteDuration}
 import scala.util.Random
 
 final case class BitBucket(username: String, password: String, repository: String)
@@ -31,7 +32,8 @@ final case class BitBucket(username: String, password: String, repository: Strin
       refSpec: String,
       userId: String,
       protocol: String,
-      pushOptions: Option[String] = Option.empty
+      pushOptions: Option[String] = Option.empty,
+      sleep: Option[(FiniteDuration, PauseType)] = Option.empty
   )(
       implicit conf: GatlingGitConfiguration
   ) = {
