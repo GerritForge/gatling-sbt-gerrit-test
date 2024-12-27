@@ -23,19 +23,17 @@ case object Gerrit extends GitServer {
       implicit conf: GatlingGitConfiguration
   ): ChainBuilder = {
     def pushChange: GitRequestActionBuilder = {
-      toActionBuilder(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            origin,
-            s"HEAD:$refSpec",
-            computeChangeId = true,
-            pushOptions = pushOptions.fold("")(identity),
-            userId = userId,
-            requestName = s"Push to create change over $protocol",
-            repoDirOverride = s"/tmp/$protocol-#{userId}",
-            resetTo = "origin/master"
-          )
+      new GitRequestBuilder(
+        GitRequestSession(
+          "push",
+          origin,
+          s"HEAD:$refSpec",
+          computeChangeId = true,
+          pushOptions = pushOptions.fold("")(identity),
+          userId = userId,
+          requestName = s"Push to create change over $protocol",
+          repoDirOverride = s"/tmp/$protocol-#{userId}",
+          resetTo = "origin/master"
         )
       )
     }
