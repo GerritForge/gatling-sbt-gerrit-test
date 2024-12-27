@@ -24,7 +24,7 @@ class CloneCommand(val gitServer: GitServer, val url: String) extends GitScenari
           )
         )
       )
-      .pause(pauseDuration, pauseStdDev)
+      .pause(pauseDuration, pauseType)
 
   override def scnTitle: String = s"Clone Command over $protocol"
 }
