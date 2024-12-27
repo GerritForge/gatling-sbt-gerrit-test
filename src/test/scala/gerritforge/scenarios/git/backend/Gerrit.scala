@@ -5,7 +5,10 @@ import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder.toActionBuilder
 import io.gatling.core.Predef._
+import io.gatling.core.pause.PauseType
 import io.gatling.core.structure.ChainBuilder
+
+import scala.concurrent.duration.FiniteDuration
 
 case object Gerrit extends GitServer {
 
@@ -14,29 +17,29 @@ case object Gerrit extends GitServer {
       refSpec: String,
       userId: String,
       protocol: String,
-      pushOptions: Option[String] = Option.empty
+      pushOptions: Option[String] = Option.empty,
+      sleep: Option[(FiniteDuration, PauseType)] = Option.empty
   )(
       implicit conf: GatlingGitConfiguration
   ): ChainBuilder = {
     def pushChange: GitRequestActionBuilder = {
-      toActionBuilder(
-        new GitRequestBuilder(
-          GitRequestSession(
-            "push",
-            origin,
-            s"HEAD:$refSpec",
-            computeChangeId = true,
-            pushOptions = pushOptions.fold("")(identity),
-            userId = userId,
-            requestName = s"Push to create change over $protocol",
-            repoDirOverride = s"/tmp/$protocol-#{userId}",
-            resetTo = "origin/master"
-          )
+      new GitRequestBuilder(
+        GitRequestSession(
+          "push",
+          origin,
+          s"HEAD:$refSpec",
+          computeChangeId = true,
+          pushOptions = pushOptions.fold("")(identity),
+          userId = userId,
+          requestName = s"Push to create change over $protocol",
+          repoDirOverride = s"/tmp/$protocol-#{userId}",
+          resetTo = "origin/master"
         )
       )
     }
 
-    new ChainBuilder(List(pushChange))
+    val createChangeBuilder = new ChainBuilder(List(pushChange))
+    sleep.fold(createChangeBuilder)(sleep => createChangeBuilder.pause(sleep._1, sleep._2))
   }
 
   def createChangePerHashtag(
@@ -44,7 +47,8 @@ case object Gerrit extends GitServer {
       refSpec: String,
       userId: String,
       protocol: String,
-      hashtags: Seq[String]
+      hashtags: Seq[String],
+      sleep: Option[(FiniteDuration, PauseType)] = Option.empty
   )(
       implicit conf: GatlingGitConfiguration
   ): ChainBuilder = {
@@ -57,7 +61,8 @@ case object Gerrit extends GitServer {
               refSpec,
               userId,
               protocol,
-              Option(s"hashtag=$hashtag,hashtag=#{userId}")
+              Option(s"hashtag=$hashtag,hashtag=#{userId}"),
+              sleep
             )
         )
         .flatMap(_.actionBuilders)
