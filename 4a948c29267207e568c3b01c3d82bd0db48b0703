@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4655d1c5_4dbe7b15",
+        "filename": "src/test/scala/gerritforge/GerritOauthSimulation.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-31T09:06:33Z",
+      "side": 1,
+      "message": "True, same is valid in the rest simulations, will address that in a different change.",
+      "parentUuid": "55180fa3_6d02f633",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 91
+      },
+      "revId": "4a948c29267207e568c3b01c3d82bd0db48b0703",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5716ffa1_415375cd",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-26T08:50:05Z",
       "side": 1,
       "message": "Do we need a random value here?",
+      "range": {
+        "startLine": 37,
+        "startChar": 64,
+        "endLine": 37,
+        "endChar": 100
+      },
+      "revId": "4a948c29267207e568c3b01c3d82bd0db48b0703",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "108a582d_b66a6295",
+        "filename": "src/test/scala/gerritforge/scenarios/oauth/OauthScenarioBase.scala",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1005963
+      },
+      "writtenOn": "2024-12-31T09:06:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5716ffa1_415375cd",
       "range": {
         "startLine": 37,
         "startChar": 64,
