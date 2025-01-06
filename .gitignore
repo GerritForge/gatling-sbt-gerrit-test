@@ -5,7 +5,7 @@
 .project
 .settings
 .vscode/
-id_rsa*
+id_rsa
 metals.sbt
 simulation.log
 target
