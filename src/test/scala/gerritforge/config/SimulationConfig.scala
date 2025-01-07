@@ -23,7 +23,8 @@ final case class SimulationConfig(
     postCommentScnPct: Double,
     submitScnPct: Double,
     abandonScnPct: Double,
-    createChangeScnPct: Double
+    createChangeScnPct: Double,
+    maxNumChanges: Option[Int]
 ) {
   val encodedProject = encode(repository)
   val gitBackend = backend.toLowerCase() match {
