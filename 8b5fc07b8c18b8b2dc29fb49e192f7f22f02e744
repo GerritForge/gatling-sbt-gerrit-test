@@ -47,6 +47,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "760d9899_7b3ea064",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-07T16:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6a920f2_96602fd5",
+      "range": {
+        "startLine": 20,
+        "startChar": 52,
+        "endLine": 20,
+        "endChar": 57
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43d91d40_02d73e26",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-07T16:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "149233cc_7720fb13",
+      "range": {
+        "startLine": 20,
+        "startChar": 5,
+        "endLine": 20,
+        "endChar": 14
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9aeacd5_e57dbc12",
@@ -60,6 +108,30 @@
       "writtenOn": "2025-01-07T15:47:13Z",
       "side": 1,
       "message": "Why do you need to check both `.get` and `.incrementAndGet`?",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f000903e_6aecce33",
+        "filename": "src/test/scala/gerritforge/scenarios/ChangeSimulationLimit.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-07T16:49:49Z",
+      "side": 1,
+      "message": "\u003e Why do you need to check both `.get` and `.incrementAndGet`?\n\nYou need to read this expression in the boolean evaluation priority:\n\n- If `counter.get() \u003e\u003d maxNumberOfChanges` *return* `false`\n- Otherwise `counter.incrementAndGet()` *and*\n- If the new counter value (result of `counter.incrementAndGet()` is still `\u003e\u003d maxNumberOfChanges` *return* `false`\n- Otherwise *return* `true`\n\nDoes it make more sense now?",
+      "parentUuid": "d9aeacd5_e57dbc12",
       "range": {
         "startLine": 12,
         "startChar": 4,
