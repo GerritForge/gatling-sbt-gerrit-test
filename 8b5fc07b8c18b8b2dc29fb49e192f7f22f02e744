@@ -140,6 +140,30 @@
       },
       "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae14c6fc_f16e1828",
+        "filename": "src/test/scala/gerritforge/scenarios/ChangeSimulationLimit.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2025-01-07T16:55:44Z",
+      "side": 1,
+      "message": "yeah but isn\u0027t it sufficient to just do `counter.incrementAndGet() \u003c maxNumberOfChanges`?",
+      "parentUuid": "f000903e_6aecce33",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
