@@ -212,6 +212,30 @@
       },
       "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3be99ceb_b750ed22",
+        "filename": "src/test/scala/gerritforge/scenarios/ChangeSimulationLimit.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-07T17:07:47Z",
+      "side": 1,
+      "message": "\u003e At most it will only increment once when it\u0027s not needed, while we\u0027re executing the first check every single time.\n\nIn my experience, reading state is quick, updating a mutable state is slow.\nA double-read isn\u0027t a big issue, but updating every time even when it isn\u0027t needed is more expensive.\n\n\u003e Anyway, not a big deal.\n\nTrue, either way isn\u0027t a big deal, we\u0027re talking about micro-seconds or less here 😄",
+      "parentUuid": "80bf4f4d_b4c968be",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
