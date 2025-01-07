@@ -4,6 +4,7 @@ import com.github.barbasa.gatling.git.action.GitRequestActionBuilder
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder
 import com.github.barbasa.gatling.git.{GatlingGitConfiguration, GitRequestSession}
 import com.github.barbasa.gatling.git.request.builder.GitRequestBuilder.toActionBuilder
+import gerritforge.scenarios.ChangeSimulationLimit
 import io.gatling.core.Predef._
 import io.gatling.core.pause.PauseType
 import io.gatling.core.structure.ChainBuilder
@@ -38,7 +39,9 @@ case object Gerrit extends GitServer {
       )
     }
 
-    val createChangeBuilder = new ChainBuilder(List(pushChange))
+    val createChangeBuilder: ChainBuilder = doIf(_ => ChangeSimulationLimit.canCreateNewChange) {
+      new ChainBuilder(List(pushChange))
+    }
     sleep.fold(createChangeBuilder)(sleep => createChangeBuilder.pause(sleep._1, sleep._2))
   }
 
