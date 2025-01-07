@@ -45,6 +45,29 @@
       },
       "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9aeacd5_e57dbc12",
+        "filename": "src/test/scala/gerritforge/scenarios/ChangeSimulationLimit.scala",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2025-01-07T15:47:13Z",
+      "side": 1,
+      "message": "Why do you need to check both `.get` and `.incrementAndGet`?",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "8b5fc07b8c18b8b2dc29fb49e192f7f22f02e744",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
