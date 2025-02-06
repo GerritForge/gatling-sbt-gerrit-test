@@ -38,6 +38,7 @@ Variable | Description | Sample
  GIT_HTTP_PASSWORD | Password for Git/HTTP testing | secret
  GIT_TIMEOUT | Timeout in seconds for Git operations testing | 30
  NUM_USERS | Number of concurrent user sessions | 10
+ USERS_OFFSET | Starting offset used to generate the first username | 1
  DURATION | Total duration of the test | 2m
  RUN_ANONYMOUS_USER | Run REST api simulation for anonymous user | true
  REVIEWER_ACCOUNT | Account of the user executing the review | 1000000
