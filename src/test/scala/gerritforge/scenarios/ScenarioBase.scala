@@ -12,5 +12,6 @@ trait ScenarioBase extends PauseScenarioSettings {
 
   var alreadyFedUsers: List[String] = List.empty
   val userIdFeeder =
-    (1 to simulationConfig.numUsers).map(userId => Map("userId" -> s"user-$userId"))
+    (simulationConfig.usersOffset until simulationConfig.usersOffset + simulationConfig.numUsers)
+      .map(userId => Map("userId" -> s"user-$userId"))
 }
