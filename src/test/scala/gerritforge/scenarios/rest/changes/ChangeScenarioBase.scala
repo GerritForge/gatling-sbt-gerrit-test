@@ -47,7 +47,7 @@ trait ChangeScenarioBase extends RestScenarioBase {
   }
 
   def pickRandomChange =
-    doIf(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
+    doIfOrElse(session => session("changeDetails").as[List[ChangeDetail]].nonEmpty) {
       exec { session =>
         val changes = session("changeDetails").as[List[ChangeDetail]]
         val change  = changes(Random.nextInt(changes.size))
@@ -59,6 +59,8 @@ trait ChangeScenarioBase extends RestScenarioBase {
           "revision"     -> encode(change.current_revision)
         )
       }
+    } {
+      exitHere
     }
 
   def authenticatedChangesPostRequest(title: String, url: String, body: String = "{}") =
