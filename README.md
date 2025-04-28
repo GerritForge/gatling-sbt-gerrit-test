@@ -29,9 +29,9 @@ The simulations use the following environment variable to run the tests:
 
 Variable | Description | Sample
 ---------|-------------|---------
- GERRIT_HTTP_URL | Gerrit GUI URL | http://host.docker.internal:8080
- GERRIT_SSH_URL | Gerrit SSH URL | ssh://admin@host.docker.internal:29418
- GERRIT_PROJECT | Gerrit project for load test | load-test
+ HTTP_URL | Gerrit GUI URL | http://host.docker.internal:8080
+ SSH_URL | Gerrit SSH URL | ssh://admin@host.docker.internal:29418
+ REPOSITORY | Gerrit project for load test | load-test
  ACCOUNT_COOKIE | HTTP Cookie to access the Gerrit GUI | aSceprr3WikzGrfwg2PvpOhMMcH5qp3ehW
  XSRF_TOKEN | XSRF_TOKEN Cookie to access the Gerrit GUI for pOST operations | 7d02b54405863778dfe1
  GIT_HTTP_USERNAME | Username for Git/HTTP testing | admin
