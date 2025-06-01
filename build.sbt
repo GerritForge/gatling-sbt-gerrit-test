@@ -22,6 +22,8 @@ scalacOptions := Seq(
   "-Xfatal-warnings"        // Fail if there are any compile time warnings
 )
 
+javaOptions in Test += "-Dorg.eclipse.jgit.util.sha1.implementation=JDKNATIVE"
+
 val gatlingVer = "3.9.0"
 
 val circeVer = "0.13.0"
