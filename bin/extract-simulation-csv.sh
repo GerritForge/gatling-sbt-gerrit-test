@@ -7,4 +7,4 @@ then
   exit -1
 fi
 
-cat $1 | grep REQUEST | grep OK | awk -F'\t' '{print $3","$5-$4}' | datamash -t ',' --sort --group 1 mean 2 perc:95 2 > $2
+cat $1 | grep REQUEST | grep OK | awk -F'\t' '{print $3","$5-$4}' | datamash -R2 -t ',' --sort --group 1 mean 2 perc:95 2 > $2
