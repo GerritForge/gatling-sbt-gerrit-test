@@ -13,9 +13,9 @@ id_rsa:
 	ssh-keygen -t rsa -b 2048 -f ./id_rsa -N '' -m PEM
 
 run:
-	for simulation in GitSimulation GerritRestSimulation; do \
+	(for simulation in GitSimulation GerritRestSimulation; do \
 		docker run -e JAVA_OPTS="-Xmx4g" --rm --env-file simulation.env --env-file gerrit-simulation.env -v "$$(pwd)/target/gatling:/opt/gatling/results" \
-			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done
+			$(DOCKER_IMAGE) -s gerritforge.$$simulation --run-mode local; done) &
 
 run-single:
 #Note that env variables with the same names will be clobbered
